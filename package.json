@@ -1,0 +1,12 @@
+{
+  "name": "lugia-mega",
+  "version": "0.9.0",
+  "description": "Lugin MEGA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["lugia", "create-app", "electron", "cli"],
+  "author": "hjb2012",
+  "license": "ISC"
+}
