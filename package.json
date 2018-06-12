@@ -1,7 +1,7 @@
 {
   "name": "lugia-mega",
-  "version": "0.9.0",
-  "description": "用可视化的方式辅助开发者极速构建前端应用",
+  "version": "0.1.0",
+  "description": "一个基于前端物料库体系的可视化开发工具",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
