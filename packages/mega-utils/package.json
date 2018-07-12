@@ -1,0 +1,15 @@
+{
+  "name": "@lugia/mega-utils",
+  "version": "1.0.0",
+  "description": "This package includes some utilities used by @lugia/mega.",
+  "main": "./lib/index.js",
+  "repository": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "author": "@lugia#hanjingbo",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "ora": "^2.1.0",
+    "react-dev-utils": "^5.0.1",
+    "strip-json-comments": "^2.0.1"
+  }
+}

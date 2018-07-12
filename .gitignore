@@ -1,0 +1,14 @@
+.DS_Store
+tmp
+/node_modules
+/.history
+/packages/*/node_modules
+/website/build
+/packages/mega-jest/examples/*/node_modules
+lib
+dist
+coverage
+yarn-error.log
+npm-debug.log*
+lerna-debug.log
+.changelog

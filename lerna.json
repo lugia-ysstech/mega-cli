@@ -1,0 +1,14 @@
+{
+  "lerna": "2.0.0",
+  "changelog": {
+    "labels": {
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix"
+    },
+    "repo": "lugia/mega",
+    "cacheDir": ".changelog"
+  },
+  "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "version": "independent"
+}

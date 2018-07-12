@@ -1,0 +1,6 @@
+{
+  "alias": {
+    "react": "./react",
+    "mixin": "./mixin.less"
+  }
+}

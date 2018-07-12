@@ -1,0 +1,48 @@
+{
+  "name": "@lugia/mega-jest",
+  "version": "1.0.0",
+  "bin": {
+    "mega-jest": "./bin/mega-jest.js"
+  },
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+  },
+  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "authors": "@lugia#hanjingbo",
+  "bugs": {
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@babel/core": "7.0.0-beta.51",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.51",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.51",
+    "@babel/polyfill": "7.0.0-beta.51",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.2.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "cosmiconfig": "^5.0.5",
+    "debug": "^3.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-cli": "^23.2.0",
+    "jsdom": "^11.11.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "ts-jest-babel-7": "^22.0.7",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "jest": "^23.2.0"
+  }
+}
