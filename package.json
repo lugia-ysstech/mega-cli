@@ -14,13 +14,17 @@
     "test": "node ./packages/mega-jest/bin/mega-jest.js",
     "test:watch": "node ./packages/mega-jest/bin/mega-jest.js -w",
     "coverage": "node ./packages/mega-jest/bin/mega-jest.js --coverage",
-    "lint": "eslint --ext .js packages",
+    "prettier": "prettier --trailing-comma all --single-quote --write",
+    "lint": "eslint --ext .js packages scripts",
+    "lint:fix": "eslint --fix --ext .js packages scripts",
     "precommit": "lint-staged",
     "publish": "./scripts/publish.js"
   },
   "lint-staged": {
     "*.js": [
-      "prettier --trailing-comma all --single-quote --write",
+      "yarn run lint:fix",
+      "yarn run prettier",
+      "yarn run lint",
       "git add"
     ]
   },
