@@ -1,7 +1,7 @@
 {
-  "name": "@lugia/mega-utils",
+  "name": "@lugia/mega-scripts",
   "version": "1.0.0",
-  "description": "This package includes some utilities used by @lugia/mega.",
+  "description": "dev, build, test, mock",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
@@ -14,10 +14,5 @@
   },
   "author": "@lugia#hanjingbo",
   "license": "MIT",
-  "dependencies": {
-    "immutable": "^3.8.2",
-    "ora": "^2.1.0",
-    "react-dev-utils": "^5.0.1",
-    "strip-json-comments": "^2.0.1"
-  }
+  "dependencies": {}
 }
