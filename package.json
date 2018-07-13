@@ -15,17 +15,28 @@
     "test:watch": "node ./packages/mega-jest/bin/mega-jest.js -w",
     "coverage": "node ./packages/mega-jest/bin/mega-jest.js --coverage",
     "prettier": "prettier --trailing-comma all --single-quote --write",
+    "stylelint": "stylelint",
     "lint": "eslint --ext .js packages scripts",
     "lint:fix": "eslint --fix --ext .js packages scripts",
     "precommit": "lint-staged",
     "publish": "./scripts/publish.js"
   },
   "lint-staged": {
-    "*.js": [
-      "yarn run lint:fix",
-      "yarn run prettier",
-      "yarn run lint",
-      "git add"
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint --fix",
+        "yarn run prettier",
+        "eslint",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "yarn run prettier --parser typescript",
+        "git add"
+      ],
+      "*.{css,sass,scss,less,sss}": "stylelint"
+    },
+    "ignore": [
+      "*.min.{js,css}"
     ]
   },
   "devDependencies": {
@@ -51,6 +62,8 @@
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.2",
     "slash": "^2.0.0",
+    "stylelint": "^9.3.0",
+    "stylelint-config-standard": "^18.2.0",
     "through2": "^2.0.3",
     "vinyl-fs": "^3.0.3"
   },
