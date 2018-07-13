@@ -53,15 +53,11 @@ function assertBuildResult(cwd) {
   actualFiles.forEach(file => {
     const actualFile = readFileSync(join(actualDir, file), 'utf-8');
     const expectFile = readFileSync(join(expectDir, file), 'utf-8');
-    expect(
-      actualFile
-        .replace(/\/\/ EXTERNAL MODULE[^\n]+/g, '// $EXTERNAL_MODULE$')
-        .trim(),
-    ).toBe(expectFile.trim());
+    expect(actualFile.trim()).toBe(expectFile.trim());
   });
 }
 
-describe('build', () => {
+describe('[mega-webpack]:build', () => {
   const fixtures = join(__dirname, './fixtures');
   readdirSync(fixtures)
     .filter(dir => dir.charAt(0) !== '.')
