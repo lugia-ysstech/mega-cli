@@ -84,7 +84,7 @@ const is = value => {
     value instanceof Boolean ||
     value instanceof Number
   ) {
-    throw new TypeError("Please don't use object wrappers for primitive types");
+    throw new TypeError("Please don't use object wrappers for primitive types"); // eslint-disable-line
   }
 
   return 'Object';

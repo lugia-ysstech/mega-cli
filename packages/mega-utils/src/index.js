@@ -12,7 +12,7 @@
 
 import logger from './logger';
 
-const info = "import xxx from '@lugia/mega-utils/lib/xxx'";
+const info = "import xxx from '@lugia/mega-utils/lib/xxx'"; // eslint-disable-line
 
 logger.info(info);
 
