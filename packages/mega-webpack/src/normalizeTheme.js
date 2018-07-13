@@ -14,7 +14,7 @@ export default function(theme, opts = {}) {
         return themeConfig;
       }
     } else {
-      throw new Error("theme file don't exists");
+      throw new Error("theme file don't exists"); // eslint-disable-line
     }
   }
   return theme;

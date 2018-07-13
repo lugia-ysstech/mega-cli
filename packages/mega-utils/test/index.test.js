@@ -14,6 +14,6 @@ import utils from '../lib/index';
 
 describe('[mega-utils]', () => {
   it('index.js export empty obj', () => {
-    expect(utils).toBe("import xxx from '@lugia/mega-utils/lib/xxx'");
+    expect(utils).toBe("import xxx from '@lugia/mega-utils/lib/xxx'"); // eslint-disable-line
   });
 });

@@ -11,7 +11,6 @@
  */
 
 import logger from '../lib/logger';
-import { purple, cyan, yellow, red, green } from '../lib/bashColor';
 
 describe('[logger]', () => {
   it('debug', () => {
