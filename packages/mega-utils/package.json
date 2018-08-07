@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "immutable": "^3.8.2",
-    "ora": "^2.1.0",
+    "ora": "^3.0.0",
     "react-dev-utils": "^5.0.1",
     "strip-json-comments": "^2.0.1"
   }

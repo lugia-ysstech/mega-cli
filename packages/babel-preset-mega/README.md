@@ -1,4 +1,4 @@
-# babel-preset-mega
+# @lugia/babel-preset-mega
 
 ## Usage
 

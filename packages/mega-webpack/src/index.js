@@ -13,7 +13,11 @@
 export { default as build } from './build';
 export { default as dev } from './dev';
 export { default as getConfig } from './getConfig';
-export { default as getUserConfig } from './getUserConfig';
+export {
+  default as getUserConfig,
+  watchConfigs,
+  unwatchConfigs,
+} from './getUserConfig';
 export { default as getUserConfigPlugins } from './getUserConfig/getPlugins';
 export { default as registerBabel } from './registerBabel';
 

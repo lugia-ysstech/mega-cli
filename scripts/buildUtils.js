@@ -48,7 +48,7 @@ function transform(opts = {}) {
   const winPath = slash(path);
   const isBrowser = isBrowserTransform(winPath);
   console.log(
-    chalk[isBrowser ? 'yellow' : 'blue'](
+    chalk[isBrowser ? 'yellow' : 'green'](
       `[TRANSFORM] ${winPath.replace(`${cwd}/`, '')}`,
     ),
   );

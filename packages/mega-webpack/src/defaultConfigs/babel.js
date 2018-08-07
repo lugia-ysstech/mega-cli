@@ -1,3 +1,5 @@
-export default {
-  presets: [require.resolve('@lugia/babel-preset-mega')],
-};
+export default function(ops = {}) {
+  return {
+    presets: [require.resolve('@lugia/babel-preset-mega'), ops],
+  };
+}

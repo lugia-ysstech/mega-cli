@@ -1,20 +1,4 @@
-const validateBoolOption = (name, value, defaultValue) => {
-  if (typeof value === 'undefined') {
-    value = defaultValue;
-  }
-
-  if (typeof value !== 'boolean') {
-    throw new Error(`Preset mega: '${name}' option must be a boolean.`);
-  }
-
-  return value;
-};
-
-module.exports = function(api, opts, env) {
-  if (!opts) {
-    opts = {};
-  }
-
+module.exports = function(api, opts = {}, env) {
   const isEnvDevelopment = env === 'development';
   const isEnvProduction = env === 'production';
   const isEnvTest = env === 'test';
@@ -22,7 +6,7 @@ module.exports = function(api, opts, env) {
 
   if (!isEnvDevelopment && !isEnvProduction && !isEnvTest) {
     throw new Error(
-      `${'Using `babel-preset-mega` requires that you specify `NODE_ENV` or ' +
+      `${'Using `@lugia/babel-preset-mega` requires that you specify `NODE_ENV` or ' +
         '`BABEL_ENV` environment variables. Valid values are "development", ' +
         '"test", and "production". Instead, received: '}${JSON.stringify(
         env,
@@ -34,29 +18,33 @@ module.exports = function(api, opts, env) {
     presets: [
       isEnvTest && [
         // ES features necessary for user's Node version
-        require('@babel/preset-env').default,
+        require.resolve('@babel/preset-env'),
         {
-          targets: {
+          targets: opts.targets || {
             node: '6.12',
           },
         },
       ],
       (isEnvProduction || isEnvDevelopment) && [
         // Latest stable ECMAScript features
-        require('@babel/preset-env').default,
+        require.resolve('@babel/preset-env'),
         {
           // `entry` transforms `@babel/polyfill` into individual requires for
           // the targeted browsers. This is safer than `usage` which performs
           // static code analysis to determine what's required.
           // This is probably a fine default to help trim down bundles when
           // end-users inevitably import '@babel/polyfill'.
-          useBuiltIns: 'entry',
+          useBuiltIns: opts.useBuiltIns || 'entry',
           // Do not transform modules to CJS
           modules: false,
+          targets: opts.targets || {
+            browsers: opts.browsers || ['last 2 versions'],
+          },
+          debug: opts.debug,
         },
       ],
       [
-        require('@babel/preset-react').default,
+        require.resolve('@babel/preset-react'),
         {
           // Adds component stack to warning messages
           // Adds __self attribute to JSX which React will use for some warnings
@@ -66,21 +54,21 @@ module.exports = function(api, opts, env) {
           useBuiltIns: true,
         },
       ],
-      isFlowEnabled && [require('@babel/preset-flow').default],
+      isFlowEnabled && [require.resolve('@babel/preset-flow')],
     ].filter(Boolean),
     plugins: [
       // Experimental macros support. Will be documented after it's had some time
       // in the wild.
-      require('babel-plugin-macros'),
+      require.resolve('babel-plugin-macros'),
       // Necessary to include regardless of the environment because
       // in practice some other transforms (such as object-rest-spread)
       // don't work without it: https://github.com/babel/babel/issues/7215
-      require('@babel/plugin-transform-destructuring').default,
+      require.resolve('@babel/plugin-transform-destructuring'),
       // class { handleClick = () => { } }
       // Enable loose mode to use assignment instead of defineProperty
       // See discussion in https://github.com/facebook/create-react-app/issues/4263
       [
-        require('@babel/plugin-proposal-class-properties').default,
+        require.resolve('@babel/plugin-proposal-class-properties'),
         {
           loose: true,
         },
@@ -89,14 +77,15 @@ module.exports = function(api, opts, env) {
       // extends helper. Note that this assumes `Object.assign` is available.
       // { ...todo, completed: true }
       [
-        require('@babel/plugin-proposal-object-rest-spread').default,
+        require.resolve('@babel/plugin-proposal-object-rest-spread'),
         {
           useBuiltIns: true,
         },
       ],
+      [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
       // Polyfills the runtime needed for async/await and generators
       [
-        require('@babel/plugin-transform-runtime').default,
+        require.resolve('@babel/plugin-transform-runtime'),
         {
           helpers: false,
           polyfill: false,
@@ -105,24 +94,38 @@ module.exports = function(api, opts, env) {
       ],
       isEnvProduction && [
         // Remove PropTypes from production build
-        require('babel-plugin-transform-react-remove-prop-types').default,
+        require.resolve('babel-plugin-transform-react-remove-prop-types'),
         {
           removeImport: true,
         },
       ],
       // function* () { yield 42; yield 43; }
       !isEnvTest && [
-        require('@babel/plugin-transform-regenerator').default,
+        require.resolve('@babel/plugin-transform-regenerator'),
         {
           // Async functions are converted to generators by @babel/preset-env
           async: false,
         },
       ],
       // Adds syntax support for import()
-      require('@babel/plugin-syntax-dynamic-import').default,
+      require.resolve('@babel/plugin-syntax-dynamic-import'),
       isEnvTest &&
         // Transform dynamic import to require
-        require('babel-plugin-transform-dynamic-import').default,
+        require.resolve('babel-plugin-transform-dynamic-import'),
     ].filter(Boolean),
   };
 };
+
+function validateBoolOption(name, value, defaultValue) {
+  if (typeof value === 'undefined') {
+    value = defaultValue;
+  }
+
+  if (typeof value !== 'boolean') {
+    throw new Error(
+      `@lugia/babel-preset-mega: '${name}' option must be a boolean.`,
+    );
+  }
+
+  return value;
+}

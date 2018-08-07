@@ -216,6 +216,13 @@
     "@babel/helper-replace-supers" "7.0.0-beta.47"
     "@babel/plugin-syntax-class-properties" "7.0.0-beta.47"
 
+"@babel/plugin-proposal-decorators@^7.0.0-beta.47":
+  version "7.0.0-beta.47"
+  resolved "http://192.168.102.79:5001/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.0.0-beta.47.tgz#5e8943c8f8eb3301f911ef0dcd3ed64cf28c723e"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.47"
+    "@babel/plugin-syntax-decorators" "7.0.0-beta.47"
+
 "@babel/plugin-proposal-object-rest-spread@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "http://192.168.102.79:5001/@babel/plugin-proposal-object-rest-spread/download/@babel/plugin-proposal-object-rest-spread-7.0.0-beta.47.tgz#e1529fddc88e948868ee1d0edaa27ebd9502322d"
@@ -247,6 +254,12 @@
 "@babel/plugin-syntax-class-properties@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "http://192.168.102.79:5001/@babel/plugin-syntax-class-properties/download/@babel/plugin-syntax-class-properties-7.0.0-beta.47.tgz#de52bed12fd472c848e1562f57dd4a202fe27f11"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.47"
+
+"@babel/plugin-syntax-decorators@7.0.0-beta.47":
+  version "7.0.0-beta.47"
+  resolved "http://192.168.102.79:5001/@babel/plugin-syntax-decorators/download/@babel/plugin-syntax-decorators-7.0.0-beta.47.tgz#a42f10fcd651940bc475d93b3ac23432b4a8a293"
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.47"
 

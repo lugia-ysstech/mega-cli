@@ -1,1 +1,1 @@
-export { default } from 'react-dev-utils/webpackHotDevClient';
+import 'react-dev-utils/webpackHotDevClient';

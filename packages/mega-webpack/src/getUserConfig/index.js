@@ -151,11 +151,12 @@ export default function getUserConfig(opts = {}) {
   }
 
   // Replace npm variables
+  let userPKG = {};
   const pkgFile = resolve(cwd, 'package.json');
   if (Object.keys(config).length && existsSync(pkgFile)) {
-    const pkg = JSON.parse(readFileSync(pkgFile, 'utf-8'));
+    userPKG = JSON.parse(readFileSync(pkgFile, 'utf-8'));
     config = Object.keys(config).reduce((memo, key) => {
-      memo[key] = replaceNpmVariables(config[key], pkg);
+      memo[key] = replaceNpmVariables(config[key], userPKG);
       return memo;
     }, {});
   }
@@ -201,6 +202,7 @@ export default function getUserConfig(opts = {}) {
                 newVal: newConfig[name],
                 config,
                 newConfig,
+                userPKG,
               });
             }
           }
@@ -215,7 +217,7 @@ export default function getUserConfig(opts = {}) {
 
   debug(`UserConfig: ${JSON.stringify(config)}`);
 
-  return { config, watch: watchConfigsAndRun };
+  return { config, userPKG, watch: watchConfigsAndRun };
 }
 
 export function watchConfigs(opts = {}) {

@@ -1,6 +1,6 @@
 # @lugia/mega-utils
 
-> 一些实用的工具，主要为 `mega-scripts`, `mega-creater`, `lugia-devtool`, `mega-webpack` 等服务。
+> 一些实用的工具，主要为 `@lugia/mega-scripts`, `@lugia/mega-creater`, `@lugia/devtool`, `@lugia/mega-webpack` 等服务。
 
 ## 包含
 

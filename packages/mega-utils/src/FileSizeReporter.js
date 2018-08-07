@@ -1,1 +1,1 @@
-export { default } from 'react-dev-utils/FileSizeReporter';
+export * from 'react-dev-utils/FileSizeReporter';

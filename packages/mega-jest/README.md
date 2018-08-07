@@ -1,4 +1,4 @@
-# @lugia/mega-test
+# @lugia/mega-jest
 
 > 基于 Jest、enzyme
 

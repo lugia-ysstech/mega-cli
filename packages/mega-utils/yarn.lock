@@ -352,9 +352,9 @@ opn@5.2.0:
   dependencies:
     is-wsl "^1.1.0"
 
-ora@^2.1.0:
-  version "2.1.0"
-  resolved "http://registry.npm.taobao.org/ora/download/ora-2.1.0.tgz#6caf2830eb924941861ec53a173799e008b51e5b"
+ora@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/ora/download/ora-3.0.0.tgz#8179e3525b9aafd99242d63cc206fd64732741d0"
   dependencies:
     chalk "^2.3.1"
     cli-cursor "^2.1.0"

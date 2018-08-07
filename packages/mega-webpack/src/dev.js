@@ -4,6 +4,9 @@ import {
   createCompiler,
   prepareUrls,
 } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
+import is from '@lugia/mega-utils/lib/is';
+import useYarn from '@lugia/mega-utils/lib/useYarn';
+import errorOverlayMiddleware from '@lugia/mega-utils/lib/errorOverlayMiddleware';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import chalk from 'chalk';
@@ -16,34 +19,46 @@ const HOST = process.env.HOST || '0.0.0.0';
 const PROTOCOL = process.env.HTTPS ? 'https' : 'http';
 const noop = () => {};
 
-process.env.NODE_ENV = 'development';
-
 export default function dev({
   webpackConfig,
-  extraMiddlewares,
-  beforeServerWithApp,
+  userPKG = {},
+  beforeMiddleware,
+  afterMiddleware,
   beforeServer,
   afterServer,
   contentBase,
   onCompileDone = noop,
   onCompileInvalid = noop,
+  index,
+  port,
   proxy,
   autoOpenBrowser = true,
   historyApiFallback = {
     disableDotRule: true,
   },
 }) {
+  process.env.NODE_ENV = 'development';
   if (!webpackConfig) {
     throw new Error('webpackConfig should be supplied.');
   }
-  choosePort(DEFAULT_PORT)
+  choosePort(port || DEFAULT_PORT)
     .then(port => {
       if (port === null) {
         return;
       }
 
+      const appName =
+        is.object(userPKG) && is.string(userPKG.name)
+          ? userPKG.name
+          : 'Your App';
       const urls = prepareUrls(PROTOCOL, HOST, port);
-      const compiler = createCompiler(webpack, webpackConfig, 'Your App', urls);
+      const compiler = createCompiler(
+        webpack,
+        webpackConfig,
+        appName,
+        urls,
+        useYarn(),
+      );
 
       // Webpack startup recompilation fix. Remove when @sokra fixes the bug.
       // https://github.com/webpack/webpack/issues/2983
@@ -63,6 +78,7 @@ export default function dev({
         onCompileInvalid();
       });
       const serverConfig = {
+        index,
         disableHostCheck: true,
         compress: true,
         clientLogLevel: 'none',
@@ -82,15 +98,15 @@ export default function dev({
         https: !!process.env.HTTPS,
         contentBase: contentBase || process.env.CONTENT_BASE,
         before(app) {
-          if (beforeServerWithApp) {
-            beforeServerWithApp(app);
+          if (beforeMiddleware) {
+            beforeMiddleware(app);
           }
+          // This lets us open files from the runtime error overlay.
+          app.use(errorOverlayMiddleware());
         },
         after(app) {
-          if (extraMiddlewares) {
-            extraMiddlewares.forEach(middleware => {
-              app.use(middleware);
-            });
+          if (afterMiddleware) {
+            afterMiddleware(app);
           }
         },
       };

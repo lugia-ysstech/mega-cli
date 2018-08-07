@@ -11,6 +11,8 @@ import eslintFormatter from '@lugia/mega-utils/lib/eslintFormatter';
 import stringifyObject from '@lugia/mega-utils/lib/stringifyObject';
 import stripLastSlash from '@lugia/mega-utils/lib/stripLastSlash';
 import readCommentsJSON from '@lugia/mega-utils/lib/readCommentsJSON';
+import InterpolateHtmlPlugin from '@lugia/mega-utils/lib/InterpolateHtmlPlugin';
+import getClientEnvironment from '@lugia/mega-utils/lib/getClientEnvironment';
 import is from '@lugia/mega-utils/lib/is';
 import assert from 'assert';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -21,7 +23,7 @@ import { sync as resolveSync } from 'resolve';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
 import uglifyJSConfig from './defaultConfigs/uglifyJS';
-import babelConfig from './defaultConfigs/babel';
+import defaultBabelConfig from './defaultConfigs/babel';
 import defaultBrowsers from './defaultConfigs/browsers';
 import normalizeTheme from './normalizeTheme';
 import { applyWebpackConfig } from './applyWebpackConfig';
@@ -33,8 +35,12 @@ const debug = require('debug')('@lugia/mega-webpack:getConfig');
 export default function getConfig(opts = {}) {
   assert(opts.cwd, 'opts.cwd must be specified');
 
+  const { PUBLIC_PATH } = process.env;
   const isDev = process.env.NODE_ENV === 'development';
+  const publicUrl = isDev ? '' : stripLastSlash(PUBLIC_PATH || '');
+  const env = getClientEnvironment(publicUrl);
   const theme = normalizeTheme(opts.theme);
+  const browsers = opts.browserslist || defaultBrowsers;
   const postcssOptions = {
     // Necessary for external CSS imports to work
     // https://github.com/facebook/create-react-app/issues/2677
@@ -42,7 +48,7 @@ export default function getConfig(opts = {}) {
     plugins: () => [
       require('postcss-flexbugs-fixes'), // eslint-disable-line
       autoprefixer({
-        browsers: opts.browserslist || defaultBrowsers,
+        browsers,
         flexbox: 'no-2009',
       }),
       ...(is.array(opts.extraPostCSSPlugins) ? opts.extraPostCSSPlugins : []),
@@ -252,8 +258,11 @@ export default function getConfig(opts = {}) {
   const jsHash = !isDev && opts.hash ? '.[chunkhash:8]' : '';
   const cssHash = !isDev && opts.hash ? '.[contenthash:8]' : '';
 
+  debug(`isDev: ${isDev}`);
+  debug(`jsHash: ${jsHash}`);
+
   const babelOptions = {
-    ...(opts.babel || babelConfig),
+    ...(opts.babel || defaultBabelConfig({ browsers })),
     cacheDirectory: process.env.BABEL_CACHE !== 'none',
     babelrc: !!process.env.BABELRC,
   };
@@ -273,7 +282,7 @@ export default function getConfig(opts = {}) {
     },
   ];
   const babelOptionsDeps = {
-    ...(opts.babel || babelConfig),
+    ...(opts.babel || defaultBabelConfig({ browsers })),
     cacheDirectory: process.env.BABEL_CACHE !== 'none',
     babelrc: !!process.env.BABELRC,
   };
@@ -473,6 +482,10 @@ export default function getConfig(opts = {}) {
         }),
         {
           test: /\.html$/,
+          exclude:
+            opts.html && opts.html.template
+              ? resolve(opts.cwd, opts.html.template)
+              : undefined,
           loader: require.resolve('file-loader'),
           options: {
             name: '[name].[ext]',
@@ -528,8 +541,33 @@ export default function getConfig(opts = {}) {
             ...(opts.serviceworker
               ? [
                   new SWPrecacheWebpackPlugin({
+                    // By default, a cache-busting query parameter is appended to requests
+                    // used to populate the caches, to ensure the responses are fresh.
+                    // If a URL is already hashed by Webpack, then there is no concern
+                    // about it being stale, and the cache-busting can be skipped.
+                    dontCacheBustUrlsMatching: /\.\w{8}\./,
                     filename: 'service-worker.js',
+                    logger(message) {
+                      if (message.indexOf('Total precache size is') === 0) {
+                        // This message occurs for every build and is a bit too noisy.
+                        return;
+                      }
+                      if (message.indexOf('Skipping static resource') === 0) {
+                        // This message obscures real errors so we ignore it.
+                        // https://github.com/facebookincubator/create-react-app/issues/2612
+                        return;
+                      }
+                      console.log(message);
+                    },
                     minify: !(process.env.COMPRESS === 'none'),
+                    // For unknown URLs, fallback to the index page
+                    navigateFallback: `${publicUrl}/${(opts.html &&
+                      opts.html.filename) ||
+                      'index.html'}`,
+                    // Ignores URLs starting from /__ (useful for Firebase):
+                    // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
+                    navigateFallbackWhitelist: [/^(?!\/__).*/],
+                    // Don't precache sourcemaps (they're large) and build asset manifest:
                     staticFileGlobsIgnorePatterns: [
                       /\.map$/,
                       /asset-manifest\.json$/,
@@ -541,7 +579,7 @@ export default function getConfig(opts = {}) {
             ...(opts.manifest
               ? [
                   new ManifestPlugin({
-                    fileName: 'manifest.json',
+                    fileName: 'asset-manifest.json',
                     ...opts.manifest,
                   }),
                 ]
@@ -571,7 +609,9 @@ export default function getConfig(opts = {}) {
           : {}),
         ...stringifyObject(opts.define || {}),
       }),
-      ...(opts.html ? [new HTMLWebpackPlugin(opts.html)] : []),
+      ...(opts.html
+        ? [new InterpolateHtmlPlugin(env.raw), new HTMLWebpackPlugin(opts.html)]
+        : []),
       new CaseSensitivePathsPlugin(),
       new webpack.LoaderOptionsPlugin({
         options: {
@@ -610,8 +650,8 @@ export default function getConfig(opts = {}) {
       : {},
   };
 
-  if (process.env.PUBLIC_PATH) {
-    config.output.publicPath = `${stripLastSlash(process.env.PUBLIC_PATH)}/`;
+  if (PUBLIC_PATH) {
+    config.output.publicPath = `${stripLastSlash(PUBLIC_PATH)}/`;
   }
 
   return applyWebpackConfig(opts.cwd, config);

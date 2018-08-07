@@ -1,1 +1,1 @@
-export { default } from 'react-dev-utils/WebpackDevServerUtils';
+export * from 'react-dev-utils/WebpackDevServerUtils';
