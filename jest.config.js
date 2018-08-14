@@ -4,7 +4,8 @@ module.exports = {
     '/node_modules/',
     '/examples/',
     '/lib/',
-    '/babel-preset-mega/',
+    '/babel-preset-mega/test.js',
+    '/mega-scripts/src/test.js',
   ],
   collectCoverageFrom: ['packages/**/src/**/*.{ts,tsx,js,jsx}'],
 };

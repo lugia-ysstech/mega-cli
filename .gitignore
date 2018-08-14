@@ -5,6 +5,7 @@ tmp
 /packages/*/node_modules
 /website/build
 /packages/mega-jest/examples/*/node_modules
+/packages/mega-scripts/test/fixtures/**/node_modules
 lib
 dist
 coverage

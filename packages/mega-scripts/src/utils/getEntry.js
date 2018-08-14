@@ -14,10 +14,10 @@ const webpackHotDevClientPath = require.resolve(
 // 3. 字符串
 // 4. 数组
 export default function(opts = {}) {
-  const { cwd, entry, isBuild } = opts;
+  const { cwd = '', entry, isBuild } = opts;
 
   let entryObj = null;
-  if (!entry) {
+  if (is.undefined(entry)) {
     entryObj = getEntry(getExistsDefaultEntry(cwd));
   } else if (is.string(entry)) {
     const files = getFiles(entry, cwd);

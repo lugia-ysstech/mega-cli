@@ -1,7 +1,8 @@
 import webpack from 'webpack';
-import glob from 'glob';
 import { join } from 'path';
-import { readFileSync, readdirSync, existsSync } from 'fs';
+// import { sync as rimraf } from 'rimraf';
+import { readdirSync, existsSync } from 'fs';
+import assertBuildResult from './assertBuildResult';
 import getUserConfig from '../src/getUserConfig';
 import getConfig from '../src/getConfig';
 
@@ -31,6 +32,7 @@ function build(opts, done) {
     index: getEntry(opts.cwd),
   };
   webpackConfig.output.path = join(opts.cwd, 'dist');
+  // rimraf(webpackConfig.output.path);
   const compiler = webpack(webpackConfig);
   compiler.run(err => {
     if (err) {
@@ -41,28 +43,12 @@ function build(opts, done) {
   });
 }
 
-function assertBuildResult(cwd) {
-  const actualDir = join(cwd, 'dist');
-  const expectDir = join(cwd, 'expected');
-
-  const actualFiles = glob.sync('**/*', { cwd: actualDir, nodir: true });
-  const expectFiles = glob.sync('**/*', { cwd: expectDir, nodir: true });
-
-  expect(actualFiles.length).toEqual(expectFiles.length);
-
-  actualFiles.forEach(file => {
-    const actualFile = readFileSync(join(actualDir, file), 'utf-8');
-    const expectFile = readFileSync(join(expectDir, file), 'utf-8');
-    expect(actualFile.trim()).toBe(expectFile.trim());
-  });
-}
-
 describe('[mega-webpack]:build', () => {
   const fixtures = join(__dirname, './fixtures');
   readdirSync(fixtures)
     .filter(dir => dir.charAt(0) !== '.')
     .forEach(dir => {
-      const fn = dir.indexOf('-only') > -1 ? it.only : it;
+      const fn = dir.indexOf('-only') > -1 ? test.only : test;
       fn(dir, done => {
         const cwd = join(fixtures, dir);
         process.chdir(cwd);

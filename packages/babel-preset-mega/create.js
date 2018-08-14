@@ -21,7 +21,7 @@ module.exports = function(api, opts = {}, env) {
         require.resolve('@babel/preset-env'),
         {
           targets: opts.targets || {
-            node: '6.12',
+            node: 'current',
           },
         },
       ],
@@ -38,7 +38,7 @@ module.exports = function(api, opts = {}, env) {
           // Do not transform modules to CJS
           modules: false,
           targets: opts.targets || {
-            browsers: opts.browsers || ['last 2 versions'],
+            browsers: opts.browsers || ['last 2 versions', 'ie 10'],
           },
           debug: opts.debug,
         },
