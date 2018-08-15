@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import { join } from 'path';
 import { readdirSync } from 'fs';
 import build from '../lib/utils/build';
@@ -23,7 +22,6 @@ function testBuild(cwd, done) {
       }
     })
     .catch(e => {
-      console.log(chalk.red(e.stack));
       throw new Error(e);
     });
 }

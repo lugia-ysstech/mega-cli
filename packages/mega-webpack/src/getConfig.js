@@ -17,6 +17,7 @@ import is from '@lugia/mega-utils/lib/is';
 import assert from 'assert';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import ProgressPlugin from 'progress-bar-webpack-plugin';
 import { sync as resolveSync } from 'resolve';
@@ -624,6 +625,10 @@ export default function getConfig(opts = {}) {
         ? [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)]
         : []),
       ...commonsPlugins,
+      new CleanWebpackPlugin([outputPath, ...(opts.clean || [])], {
+        root: opts.cwd,
+        verbose: false,
+      }),
       ...copyPlugins,
       ...(process.env.ANALYZE
         ? [

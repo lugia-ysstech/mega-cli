@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import chalk from 'chalk';
-import { sync as rimraf } from 'rimraf';
 import assert from 'assert';
 import is from '@lugia/mega-utils/lib/is';
 import formatWebpackMessages from '@lugia/mega-utils/lib/formatWebpackMessages';
@@ -17,13 +16,6 @@ const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 function buildWebpack(opts = {}) {
   const { webpackConfig, watch, success, fail } = opts;
   debug(`webpack config: ${JSON.stringify(webpackConfig)}`);
-  debug(
-    `Clean output path ${webpackConfig.output.path.replace(
-      `${process.cwd()}/`,
-      '',
-    )}`,
-  );
-  rimraf(webpackConfig.output.path);
 
   function successHandler({ stats, warnings }) {
     if (warnings.length) {

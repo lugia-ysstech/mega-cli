@@ -12,7 +12,7 @@ export default function(opts = {}) {
   const babel = resolve(__dirname, './babel.js');
   const paths = getPaths(cwd);
 
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     // register babel for config files
     registerBabel(babel, {
       cwd,
@@ -36,6 +36,7 @@ export default function(opts = {}) {
       webpackConfig,
       watch,
       success: resolve,
+      fail: reject,
     });
   });
 }
