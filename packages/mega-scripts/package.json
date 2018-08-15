@@ -4,7 +4,7 @@
   "description": "cli tool for dev, build, test, and mock.",
   "main": "./lib/index.js",
   "bin": {
-    "mega-scripts": "./bin/mega-scripts.js"
+    "lugia-scripts": "./bin/mega-scripts.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +17,6 @@
   },
   "author": "@lugia#hanjingbo",
   "license": "MIT",
-  "files": [
-    "bin",
-    "src",
-    "lib"
-  ],
   "dependencies": {
     "@babel/core": "7.0.0-beta.47",
     "@babel/polyfill": "7.0.0-beta.47",
@@ -35,7 +30,7 @@
     "chalk": "^2.4.1",
     "chokidar": "^2.0.4",
     "debug": "^3.1.0",
-    "express-http-proxy": "^0.11.0",
+    "express-http-proxy": "^1.2.0",
     "glob": "^7.1.2",
     "graceful-process": "^1.2.0",
     "lodash.escaperegexp": "^4.1.2",
@@ -44,21 +39,13 @@
     "yargs": "^12.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.47",
-    "@babel/preset-env": "^7.0.0-beta.47",
-    "@babel/preset-react": "^7.0.0-beta.47",
-    "@babel/preset-stage-0": "^7.0.0-beta.47",
-    "babel-eslint": "^8.2.6",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
-    "expect": "^23.4.0",
-    "got": "^8.3.2",
-    "rimraf": "^2.6.2",
-    "vinyl-fs": "^3.0.3"
+    "got": "^9.0.0"
   },
+  "files": [
+    "bin",
+    "lib",
+    "yarn.lock"
+  ],
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.2.0"

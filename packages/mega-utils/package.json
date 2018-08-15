@@ -19,5 +19,13 @@
     "ora": "^3.0.0",
     "react-dev-utils": "^5.0.1",
     "strip-json-comments": "^2.0.1"
+  },
+  "files": [
+    "lib",
+    "yarn.lock"
+  ],
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.2.0"
   }
 }

@@ -1,5 +1,5 @@
 import { join } from 'path';
-import getEntry from '../src/utils/getEntry';
+import getEntry from '../lib/utils/getEntry';
 
 const fixtures = join(__dirname, 'fixtures/getEntry');
 

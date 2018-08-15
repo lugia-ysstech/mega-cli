@@ -13,14 +13,6 @@
   "bugs": {
     "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
   },
-  "files": [
-    "index.js",
-    "create.js",
-    "dependencies.js",
-    "dev.js",
-    "prod.js",
-    "test.js"
-  ],
   "dependencies": {
     "@babel/core": "7.0.0-beta.47",
     "@babel/plugin-proposal-class-properties": "7.0.0-beta.47",
@@ -39,5 +31,17 @@
     "babel-plugin-macros": "2.2.2",
     "babel-plugin-transform-dynamic-import": "2.0.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.13"
+  },
+  "files": [
+    "index.js",
+    "create.js",
+    "dev.js",
+    "prod.js",
+    "test.js",
+    "yarn.lock"
+  ],
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.2.0"
   }
 }

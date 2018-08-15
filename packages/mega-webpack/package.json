@@ -75,7 +75,11 @@
   },
   "files": [
     "lib",
-    "src"
+    "yarn.lock"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.2.0"
+  }
 }

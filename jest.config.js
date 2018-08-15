@@ -7,5 +7,5 @@ module.exports = {
     '/babel-preset-mega/test.js',
     '/mega-scripts/src/test.js',
   ],
-  collectCoverageFrom: ['packages/**/src/**/*.{ts,tsx,js,jsx}'],
+  collectCoverageFrom: ['packages/*/lib/**/*.{ts,tsx,js,jsx}'],
 };

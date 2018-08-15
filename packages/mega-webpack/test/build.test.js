@@ -3,8 +3,8 @@ import { join } from 'path';
 // import { sync as rimraf } from 'rimraf';
 import { readdirSync, existsSync } from 'fs';
 import assertBuildResult from './assertBuildResult';
-import getUserConfig from '../src/getUserConfig';
-import getConfig from '../src/getConfig';
+import getUserConfig from '../lib/getUserConfig';
+import getConfig from '../lib/getConfig';
 
 process.env.NODE_ENV = 'production';
 process.env.COMPRESS = 'none';
