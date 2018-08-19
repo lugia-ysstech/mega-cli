@@ -7,6 +7,7 @@ import {
 } from '@lugia/mega-webpack';
 import noopServiceWorkerMiddleware from '@lugia/mega-utils/lib/noopServiceWorkerMiddleware';
 import chalk from 'chalk';
+import browserSync from 'browser-sync';
 import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';
@@ -26,6 +27,38 @@ export default function runDev(opts = {}) {
     configOnly: true,
   });
 
+  let isFirstCompile = true;
+  let bs = null;
+
+  function initBrowserSync({
+    appName,
+    urls,
+    cwd,
+    disableBrowserSync,
+    autoOpenBrowser,
+  }) {
+    disableBrowserSync =
+      process.env.BROWSER_SYNC === 'none' ? true : disableBrowserSync;
+    autoOpenBrowser = process.env.BROWSER === 'none' ? false : autoOpenBrowser;
+
+    if (disableBrowserSync || !isFirstCompile) return;
+
+    bs = browserSync.create(appName || undefined);
+    bs.init({
+      open: autoOpenBrowser,
+      // ui: false,
+      notify: false,
+      proxy: {
+        target: urls.localUrlForBrowser,
+        ws: true,
+      },
+      cwd,
+      // port: ,
+    });
+
+    isFirstCompile = false;
+  }
+
   // get user config
   let config = null;
   let userPKG = null;
@@ -40,6 +73,8 @@ export default function runDev(opts = {}) {
     // 监听配置项变更，然后重新执行 dev 逻辑
     watchConfigs().on('all', (event, path) => {
       debug(`[${event}] ${path}, unwatch and reload`);
+      bs && bs.active && bs.exit(); // eslint-disable-line
+      bs = null;
       unwatchConfigs();
       runDev(opts);
     });
@@ -54,11 +89,12 @@ export default function runDev(opts = {}) {
     paths,
     entry,
   });
+  const autoOpenBrowser = config.openBrowser || true;
 
   dev({
     webpackConfig,
     userPKG,
-    openBrowser: true,
+    autoOpenBrowser,
     index: config.html && config.html.filename,
     port: config.port,
     proxy: config.proxy || {},
@@ -79,6 +115,20 @@ export default function runDev(opts = {}) {
     },
     afterServer(devServer) {
       returnedWatchConfig(devServer);
+    },
+    onCompileDone({ urls, appName }) {
+      if (isFirstCompile) {
+        initBrowserSync({
+          urls,
+          appName,
+          cwd,
+          autoOpenBrowser,
+          disableBrowserSync: config.disableBrowserSync,
+        });
+        isFirstCompile = false;
+      } else {
+        bs && bs.active && bs.reload(); // eslint-disable-line
+      }
     },
   });
 }

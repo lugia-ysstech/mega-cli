@@ -13,6 +13,7 @@ describe('mock', () => {
       env: {
         CLEAR_CONSOLE: 'none',
         BROWSER: 'none',
+        BROWSER_SYNC: 'none',
         PORT,
       },
     });

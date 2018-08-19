@@ -52,6 +52,13 @@ export default function dev({
           ? userPKG.name
           : 'Your App';
       const urls = prepareUrls(PROTOCOL, HOST, port);
+      const urlsInfo = {
+        port,
+        urls,
+        appName,
+        HOST,
+        PROTOCOL,
+      };
       const compiler = createCompiler(
         webpack,
         webpackConfig,
@@ -71,11 +78,11 @@ export default function dev({
       compiler.plugin('done', stats => {
         send({ type: DONE });
         stats.startTime -= timefix;
-        onCompileDone();
+        onCompileDone(urlsInfo);
       });
       compiler.plugin('invalid', () => {
         send({ type: COMPILING });
-        onCompileInvalid();
+        onCompileInvalid(urlsInfo);
       });
       const serverConfig = {
         index,
@@ -130,7 +137,7 @@ export default function dev({
         }
         send({ type: STARTING });
         if (afterServer) {
-          afterServer(devServer);
+          afterServer(devServer, urlsInfo);
         }
       });
     })
