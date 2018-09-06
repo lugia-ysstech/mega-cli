@@ -35,6 +35,11 @@ switch (script) {
     break;
   }
   default:
-    console.log(`Unknown script ${chalk.cyan(script)}.`);
+    console.log('');
+    console.log(
+      `${chalk.red('Unknown command')} ${chalk.yellow(script)}${chalk.red(
+        '.',
+      )}`,
+    );
     break;
 }

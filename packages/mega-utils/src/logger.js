@@ -30,11 +30,11 @@ function write(msg) {
 }
 
 function log(type, ...msg) {
-  write(`${COLORS.get(type)(type.toLowerCase())}: ${[...msg].join('')}`);
+  write(`${COLORS.get(type)(type.toLowerCase())} ${[...msg].join('')}`);
 }
 
-function line(str, len = 1) {
-  const ln = new Array(Math.max(1, len - str.length)).join('-');
+function line(str, len = 1, separator = '-') {
+  const ln = new Array(Math.max(1, len - str.length)).join(separator);
   return ` ${ln} `;
 }
 
@@ -52,7 +52,7 @@ export default {
   },
 
   loading(msg) {
-    log('LOADING', yellow(`${msg} ...`));
+    log('LOADING', `${msg} ...`);
   },
 
   error(msg) {
@@ -77,6 +77,10 @@ export default {
 
     info.push('');
     info.forEach(i => write(i));
+  },
+
+  br() {
+    write('');
   },
 
   $line: line,

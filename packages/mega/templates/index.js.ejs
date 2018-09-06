@@ -1,0 +1,10 @@
+<% if (scaffoldConfig.enableCodeSplitting) { -%>
+import Loadable from 'react-loadable';
+
+export default Loadable({
+  loader: () => import('./<%= className %>'),
+});
+<% } else { -%>
+import <%= className %> from './<%= className %>';
+export default <%= className %>;
+<% } -%>

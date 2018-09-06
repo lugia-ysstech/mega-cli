@@ -14,4 +14,4 @@
  * VSCode DEBUG
  */
 
-require('./packages/mega-webpack/test/a.js');
+require('./packages/mega/lib/pageGenerate');

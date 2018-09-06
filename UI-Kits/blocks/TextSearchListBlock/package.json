@@ -1,0 +1,29 @@
+{
+  "name": "text-search-list-block",
+  "version": "1.0.0",
+  "description": "文本搜索列表",
+  "author": {
+    "name": "xxxx",
+    "email": "xxx@ysstech.com"
+  },
+  "files": [
+    "src/",
+    "lib/"
+  ],
+  "dependencies": {
+    "react": "^16.2.0",
+    "prop-types": "^15.5.8"
+  },
+  "publishConfig": {
+    "type": "npm",
+    "registry": "http://192.168.102.79:5001/"
+  },
+  "blockConfig": {
+    "name": "example-block",
+    "title": "文本搜索列表",
+    "categories": [
+      "其他"
+    ],
+    "screenshot": "./xxx.png"
+  }
+}

@@ -8,13 +8,36 @@
  * Copyright (c) 2018 @lugia
  */
 
-import { execSync } from 'child_process';
+import which from 'which';
+import findPkg from 'find-pkg';
+import { resolve } from 'path';
+import is from './is';
 
-export default function useYarn() {
-  try {
-    execSync('yarnpkg --version', { stdio: 'ignore' });
-    return true;
-  } catch (e) {
-    return false;
+export default function useYarn(cwd, needYarn = false) {
+  needYarn = needYarn || (cwd && isYarnWS(cwd));
+  const yarnAvailable = isYarnAvailable();
+  if (needYarn && !yarnAvailable) {
+    throw new Error('Please install yarn[https://github.com/yarnpkg/yarn]!');
   }
+  return yarnAvailable;
+}
+
+export function isYarnAvailable() {
+  return !is.empty(getYarnResolved());
+}
+
+export function getYarnResolved() {
+  const yarnpkg = which.sync('yarnpkg', { nothrow: true });
+  const yarn = which.sync('yarn', { nothrow: true });
+  if (is.empty(yarnpkg) && is.empty(yarn)) return null;
+  return { yarnpkg, yarn };
+}
+
+export function isYarnWS(cwd = '', end = false) {
+  // https://yarnpkg.com/lang/en/docs/workspaces/
+  const pkgPath = findPkg.sync(resolve(cwd));
+  const pkg = pkgPath && require(pkgPath); // eslint-disable-line
+  const workspaces = pkg && pkg.workspaces;
+  const patterns = (workspaces && workspaces.packages) || workspaces;
+  return end ? Boolean(patterns) : isYarnWS(resolve(cwd, '..'), true);
 }

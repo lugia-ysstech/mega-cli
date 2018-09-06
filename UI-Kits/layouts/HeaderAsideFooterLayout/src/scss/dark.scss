@@ -1,0 +1,34 @@
+@import '~@lugiadesign/skin/variables.scss';
+
+// Basic color variables
+$custom-layout-bg: #2e323f;
+
+// Layout dark styles
+$lugia-body-bg: $color-white !default;
+$lugia-layout-bg: $custom-layout-bg !default;
+$lugia-logo-text-color: $color-brand1-5 !default;
+$lugia-icon-down-color: $color-white !default;
+
+$lugia-header-menu-bg: $color-transparent !default;
+$lugia-header-text-color: $color-white !default;
+$lugia-header-text-hover-color: $color-brand1-5 !default;
+
+$lugia-aside-bg: $color-transparent !default;
+$lugia-aside-menu-bg: $color-transparent !default;
+$lugia-aside-text-color: $color-white !default;
+$lugia-aside-sub-text-color: $color-text1-2 !default;
+$lugia-aside-text-hover-color: $color-white !default;
+$lugia-aside-menu-item-selected-gradient-left-bg: $color-brand1-9 !default;
+$lugia-aside-menu-item-selected-gradient-right-bg: $color-brand1-5 !default;
+$lugia-aside-menu-item-selected-text-color: $color-white !default;
+$lugia-aside-menu-submenu-item-hover-bg: $color-transparent !default;
+$lugia-aside-menu-submenu-vertical-bg: $color-white !default;
+
+$lugia-copyright-text-color: $color-text1-3 !default;
+$lugia-copyright-text-hover-color: $color-brand1-5 !default;
+
+.lugia-dark.lugia-layout {
+  background-image: url(https://img.alicdn.com/tfs/TB1_YvwXTtYBeNjy1XdXXXXyVXa-1680-370.png);
+}
+
+$theme: 'dark';

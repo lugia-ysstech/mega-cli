@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const is = require('@lugia/mega-utils/lib/is').default;
+const create = require('../lib/create').default;
+const missingArgument = require('../lib/missingArgument').default;
+
+program
+  .name('create')
+  .arguments('<app-name> [scaffolding]')
+  .description('Create a new application from a scaffolding.', {
+    'app-name':
+      'Your application will be created in a directory called <app-name>.',
+    scaffolding: 'Use the specified [scaffolding] when creating application.',
+  })
+  .option('-n, --no-auto-install', 'not auto install dependencies')
+  .option('-l, --local', 'the specified is from a local path')
+  .option('-v, --verbose', 'print additional logs')
+  .option('-c, --clone', 'use git clone')
+  .option('--use-npm')
+  .action((appName, scaffolding) => {
+    if (is.empty(appName)) program.missingArgument(appName);
+    create(appName, scaffolding, program);
+  })
+  .parse(process.argv);
+
+missingArgument();

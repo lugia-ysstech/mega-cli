@@ -1,0 +1,25 @@
+{
+  "name": "blank-layout",
+  "version": "1.0.0",
+  "description": "空白布局",
+  "author": {
+    "name": "xxx",
+    "email": "xxx@xxxx.com"
+  },
+  "files": [
+    "src/",
+    "lib/"
+  ],
+  "dependencies": {
+    "react": "^16.2.0",
+    "prop-types": "^15.5.8"
+  },
+  "layoutConfig": {
+    "name": "blank-layout",
+    "title": "空白布局",
+    "categories": [
+      "其他"
+    ],
+    "screenshot": ""
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "header-aside-footer-layout",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "xxx",
+    "email": "xxx@axxx.com"
+  },
+  "files": [
+    "src/",
+    "lib/"
+  ],
+  "dependencies": {
+    "react": "^16.2.0",
+    "prop-types": "^15.5.8"
+  },
+  "publishConfig": {
+    "type": "npm",
+    "registry": "http://192.168.102.79:5001/"
+  },
+  "layoutConfig": {
+    "name": "header-aside-footer-layout",
+    "title": "xxx布局",
+    "categories": [
+      "其他"
+    ],
+    "screenshot": "./xxx.png",
+    "thumbnail": "https://xxx.png"
+  }
+}
