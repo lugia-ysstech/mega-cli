@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 import is from '@lugia/mega-utils/lib/is';
 import getPaths from './getPaths';
 import winPath from './winPath';
+import { sheet2json } from './sheet2json';
 
 const debug = require('debug')('@lugia/mega-scripts:mock');
 
@@ -36,7 +37,7 @@ function createMockHandler(method, path, value) {
   return function mockHandler(...args) {
     const res = args[1];
     if (is.function(value)) {
-      value(...args);
+      value(...args, { sheet2json });
     } else {
       res.json(value);
     }
@@ -106,6 +107,7 @@ function realApplyMock(devServer) {
     assert(
       is.function(config[key]) ||
         is.object(config[key]) ||
+        is.array(config[key]) ||
         is.string(config[key]),
       `mock value of ${key} should be function or object or string, but got ${is(
         config[key],
