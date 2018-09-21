@@ -1,7 +1,15 @@
 import babelJest from 'babel-jest';
 
 export default babelJest.createTransformer({
-  presets: [[require.resolve('@lugia/babel-preset-mega'), {}]],
+  presets: [
+    [
+      require.resolve('@lugia/babel-preset-mega'),
+      {
+        corejs: false,
+        helpers: false,
+      },
+    ],
+  ],
   plugins: [
     require.resolve('@babel/plugin-syntax-dynamic-import'),
     require.resolve('@babel/plugin-transform-modules-commonjs'),

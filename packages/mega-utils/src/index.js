@@ -14,6 +14,6 @@ import logger from './logger';
 
 const info = "import xxx from '@lugia/mega-utils/lib/xxx'"; // eslint-disable-line
 
-logger.info(info);
+logger.warn(info);
 
 export default info;

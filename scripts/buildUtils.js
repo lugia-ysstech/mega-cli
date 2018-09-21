@@ -20,24 +20,61 @@ const nodeBabelConfig = {
         },
       },
     ],
-    [require.resolve('@babel/preset-stage-0'), { decoratorsLegacy: true }],
+  ],
+  plugins: [
+    [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
+    [
+      require.resolve('@babel/plugin-proposal-class-properties'),
+      { loose: true },
+    ],
+    [
+      require.resolve('@babel/plugin-transform-runtime'),
+      {
+        corejs: false,
+        helpers: true,
+        regenerator: true,
+        useESModules: false,
+      },
+    ],
   ],
 };
 
+// need Webpack
 const browserBabelConfig = {
   presets: [
     [
       require.resolve('@babel/preset-env'),
       {
-        browsers: ['last 2 versions', 'IE 10'],
+        targets: {
+          ie: 9,
+        },
+        ignoreBrowserslistConfig: true,
+        useBuiltIns: false, // use @babel/polyfill
+        modules: false,
       },
     ],
     require.resolve('@babel/preset-react'),
-    [require.resolve('@babel/preset-stage-0'), { decoratorsLegacy: true }],
+  ],
+  plugins: [
+    [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
+    [
+      require.resolve('@babel/plugin-proposal-class-properties'),
+      { loose: true },
+    ],
+    [
+      require.resolve('@babel/plugin-transform-runtime'),
+      {
+        corejs: false,
+        helpers: true,
+        regenerator: true,
+        useESModules: true,
+      },
+    ],
   ],
 };
 
-const BROWSER_FILES = ['packages/mega-utils/src/stripLastSlash.js'];
+// const BROWSER_FILES = ['packages/mega-utils/src/stripLastSlash.js'];
+const BROWSER_FILES = [];
 
 function isBrowserTransform(path) {
   return BROWSER_FILES.includes(path.replace(`${slash(cwd)}/`, ''));

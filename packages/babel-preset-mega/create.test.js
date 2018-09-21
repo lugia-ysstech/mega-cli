@@ -19,10 +19,10 @@ describe('babel-preset-mega', () => {
     expect(dev().presets[0]).toEqual([
       'F:\\yssgitlab\\lugia-mega\\packages\\babel-preset-mega\\node_modules\\@babel\\preset-env\\lib\\index.js',
       {
-        useBuiltIns: 'entry',
+        useBuiltIns: false,
         modules: false,
         targets: { browsers: ['last 2 versions', 'ie 10'] },
-        debug: undefined,
+        ignoreBrowserslistConfig: true,
       },
     ]);
   });
@@ -31,10 +31,10 @@ describe('babel-preset-mega', () => {
     expect(prod().presets[0]).toEqual([
       'F:\\yssgitlab\\lugia-mega\\packages\\babel-preset-mega\\node_modules\\@babel\\preset-env\\lib\\index.js',
       {
-        useBuiltIns: 'entry',
+        useBuiltIns: false,
         modules: false,
         targets: { browsers: ['last 2 versions', 'ie 10'] },
-        debug: undefined,
+        ignoreBrowserslistConfig: true,
       },
     ]);
   });
@@ -43,7 +43,7 @@ describe('babel-preset-mega', () => {
     expect(test().presets[0]).toEqual([
       'F:\\yssgitlab\\lugia-mega\\packages\\babel-preset-mega\\node_modules\\@babel\\preset-env\\lib\\index.js',
       {
-        targets: { node: 'current' },
+        targets: { node: 8 },
       },
     ]);
   });

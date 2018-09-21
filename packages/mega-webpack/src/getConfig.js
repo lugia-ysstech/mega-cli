@@ -384,7 +384,10 @@ export default function getConfig(opts = {}) {
       // 别名，可以直接使用别名来代表设定的路径以及其他
       alias: {
         '@babel/runtime': dirname(
-          require.resolve('@babel/runtime/package.json'),
+          require.resolve('@babel/runtime-corejs2/package.json'),
+        ),
+        '@babel/runtime-corejs2': dirname(
+          require.resolve('@babel/runtime-corejs2/package.json'),
         ),
         ...opts.alias,
       },

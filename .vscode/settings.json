@@ -21,7 +21,7 @@
     },
     "vue"
   ],
-  "flow.enabled": true,
+  "flow.enabled": false,
   "flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
   "flow.useNPMPackagedFlow": true,
   "flow.runOnEdit": false

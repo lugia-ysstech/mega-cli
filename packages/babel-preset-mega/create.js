@@ -21,7 +21,7 @@ module.exports = function(api, opts = {}, env) {
         require.resolve('@babel/preset-env'),
         {
           targets: opts.targets || {
-            node: 'current',
+            node: 8,
           },
         },
       ],
@@ -34,13 +34,13 @@ module.exports = function(api, opts = {}, env) {
           // static code analysis to determine what's required.
           // This is probably a fine default to help trim down bundles when
           // end-users inevitably import '@babel/polyfill'.
-          useBuiltIns: opts.useBuiltIns || 'entry',
+          useBuiltIns: opts.useBuiltIns || false,
           // Do not transform modules to CJS
           modules: false,
           targets: opts.targets || {
             browsers: opts.browsers || ['last 2 versions', 'ie 10'],
           },
-          debug: opts.debug,
+          ignoreBrowserslistConfig: true,
         },
       ],
       [
@@ -73,6 +73,7 @@ module.exports = function(api, opts = {}, env) {
           loose: true,
         },
       ],
+      [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
       // The following two plugins use Object.assign directly, instead of Babel's
       // extends helper. Note that this assumes `Object.assign` is available.
       // { ...todo, completed: true }
@@ -82,14 +83,17 @@ module.exports = function(api, opts = {}, env) {
           useBuiltIns: true,
         },
       ],
-      [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
       // Polyfills the runtime needed for async/await and generators
       [
         require.resolve('@babel/plugin-transform-runtime'),
         {
-          helpers: false,
-          polyfill: false,
+          corejs: opts.corejs === false ? false : 2,
+          helpers: opts.helpers !== false,
           regenerator: true,
+          useESModules:
+            opts.useESModules === false
+              ? false
+              : isEnvDevelopment || isEnvProduction,
         },
       ],
       isEnvProduction && [

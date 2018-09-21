@@ -18,10 +18,11 @@
   "author": "#lugia# @hanjingbo",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "@lugia/mega-utils": "^1.0.0",
     "assert": "^1.4.1",
     "chalk": "^2.4.1",
-    "commander": "^2.17.1",
+    "commander": "^2.18.0",
     "download-git-repo": "^1.1.0",
     "ejs": "^2.6.1",
     "empty-dir": "^1.0.0",
