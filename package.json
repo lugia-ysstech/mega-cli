@@ -19,7 +19,7 @@
     "lint": "eslint --ext .js packages scripts",
     "lint:fix": "eslint --fix --ext .js packages scripts",
     "precommit": "lint-staged",
-    "publish": "./scripts/publish.js"
+    "publish": "node ./scripts/publish.js"
   },
   "lint-staged": {
     "linters": {
