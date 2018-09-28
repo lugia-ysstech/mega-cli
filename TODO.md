@@ -15,6 +15,12 @@ lugia.config.js
 - ~~[browser-sync](https://github.com/BrowserSync/browser-sync)~~
 - ~~mock: 支持引入 json、excel、csv 格式的文件作为数据来源~~
 
+browser-sync 热更新时命令行不刷新界面
+
+## use [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+
+## [HMR] 支持
+
 ## BUG
 
 ### packages/mega-webpack/test/build.test.js

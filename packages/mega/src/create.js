@@ -9,9 +9,9 @@ import download from 'download-git-repo';
 import logger from '@lugia/mega-utils/lib/logger';
 import canUseYarn from '@lugia/mega-utils/lib/useYarn';
 import cliSpinners from '@lugia/mega-utils/lib/cliSpinners';
+import homeOrTmp from '@lugia/mega-utils/lib/homeOrTmp';
 import install, { isOnline } from './install';
 import { isLocalScaffolding, getScaffoldingPath } from './localScaffolding';
-import homeOrTmp from './homeOrTmp';
 
 const defaultScaffolding = join(__dirname, '../scaffolding');
 
