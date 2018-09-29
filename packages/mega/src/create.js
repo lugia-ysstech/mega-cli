@@ -12,7 +12,7 @@ import cliSpinners from '@lugia/mega-utils/lib/cliSpinners';
 import homeOrTmp from '@lugia/mega-utils/lib/homeOrTmp';
 import install, { isOnline } from './install';
 import { isLocalScaffolding, getScaffoldingPath } from './localScaffolding';
-// test publish
+
 const defaultScaffolding = join(__dirname, '../scaffolding');
 
 export default async function create(
