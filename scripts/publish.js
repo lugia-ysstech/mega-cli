@@ -15,11 +15,11 @@ if (shell.exec('npm config get registry').stdout.indexOf(registry) === -1) {
 }
 
 const cwd = process.cwd();
-const ret = shell.exec('./node_modules/.bin/lerna updated').stdout;
-const updatedRepos = ret
-  .split('\n')
-  .map(line => line.replace('- ', ''))
-  .filter(line => line !== '');
+const updatedRepos = shell
+  .exec('yarn run lerna updated')
+  .stdout.split('\n')
+  .filter(line => /^- @lugia\//.test(line))
+  .map(line => line.replace('- ', ''));
 
 if (updatedRepos.length === 0) {
   console.log('No package is updated.');
@@ -33,11 +33,10 @@ if (buildCode === 1) {
 }
 
 const cp = fork(
-  join(process.cwd(), 'node_modules/.bin/lerna'),
+  join(cwd, './node_modules/lerna/bin/lerna.js'),
   ['publish', '--skip-npm'].concat(process.argv.slice(2)),
   {
-    stdio: 'inherit',
-    cwd: process.cwd(),
+    cwd,
   },
 );
 cp.on('error', err => {
@@ -56,7 +55,7 @@ cp.on('close', code => {
 function publishToNpm() {
   console.log(`repos to publish: ${updatedRepos.join(', ')}`);
   updatedRepos.forEach(repo => {
-    shell.cd(join(cwd, 'packages', repo));
+    shell.cd(join(cwd, 'packages', repo.replace('@lugia/', '')));
     console.log(`[${repo}] npm publish`);
     shell.exec('npm publish');
   });
