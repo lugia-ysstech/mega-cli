@@ -1,4 +1,4 @@
-import { join, basename } from 'path';
+import { join, basename, resolve } from 'path';
 import { sync as rm } from 'rimraf';
 import vfs from 'vinyl-fs';
 import { existsSync, renameSync, mkdirpSync } from 'fs-extra';
@@ -20,14 +20,18 @@ export default async function create(
   scaffolding = defaultScaffolding,
   { autoInstall, local, verbose, clone, useNpm },
 ) {
-  let appPath = join(process.cwd(), createPath);
+  let appPath = resolve(process.cwd(), createPath);
   if (existsSync(appPath)) {
     error(
       'Existing directory here, please run new command for an empty folder!',
     );
   }
 
-  mkdirpSync(appPath);
+  try {
+    mkdirpSync(appPath);
+  } catch (e) {
+    error(e);
+  }
   process.chdir(appPath);
   appPath = process.cwd();
   if (!emptyDir(appPath)) {
@@ -128,7 +132,7 @@ Inside that directory, you can run several commands:
 
 We suggest that you begin by typing:
 
-  ${chalk.cyan(`cd ${createPath}`)}
+  ${chalk.cyan(`cd ${appPath}`)}
   ${chalk.cyan(`${displayedCommand} start`)}
 
 Happy hacking!

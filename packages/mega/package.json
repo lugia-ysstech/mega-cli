@@ -38,6 +38,7 @@
   "files": [
     "bin",
     "lib",
+    "scaffolding",
     "yarn.lock"
   ],
   "engines": {
