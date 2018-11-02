@@ -44,7 +44,7 @@ export default async function create(
   const isonline = await isOnline();
   const tmpScaffoldingPath = join(
     homeOrTmp,
-    '.lugia/mega/official-UI-Kits/scaffoldings',
+    '.lugia/mega/tmp/official-react-materials/scaffoldings',
     scaffolding.replace(/[\/:]/g, '-').replace(/-+/g, '-'),
   );
 
