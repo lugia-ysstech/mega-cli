@@ -869,10 +869,10 @@
     babel-plugin-transform-dynamic-import "2.1.0"
     babel-plugin-transform-react-remove-prop-types "0.4.20"
 
-"@lugia/mega-jest@^1.1.0":
-  version "1.1.0"
-  resolved "http://192.168.102.79:5001/@lugia/mega-jest/download/@lugia/mega-jest-1.1.0.tgz#414e115c482a8fb63287a4f6aca4f283585bf629"
-  integrity sha1-QU4RXEgqj7Yyh6T2rKTyg1hb9ik=
+"@lugia/mega-jest@^1.1.1":
+  version "1.1.1"
+  resolved "http://192.168.102.79:5001/@lugia/mega-jest/download/@lugia/mega-jest-1.1.1.tgz#ffc33e529c42c66ba9d7175de02c0df5342f4a1d"
+  integrity sha1-/8M+UpxCxmup1xdd4CwN9TQvSh0=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
@@ -891,20 +891,21 @@
     identity-obj-proxy "^3.0.0"
     jest-cli "^23.6.0"
     jsdom "^13.0.0"
+    lodash.escaperegexp "^4.1.2"
     react "^16.6.1"
     react-dom "^16.6.1"
     ts-jest-babel-7 "^22.0.7"
     typescript "^2.9.2"
 
-"@lugia/mega-scripts@^1.1.0":
-  version "1.1.0"
-  resolved "http://192.168.102.79:5001/@lugia/mega-scripts/download/@lugia/mega-scripts-1.1.0.tgz#51a639fa55327825f960de9400769607d485086b"
-  integrity sha1-UaY5+lUyeCX5YN6UAHaWB9SFCGs=
+"@lugia/mega-scripts@^1.1.1":
+  version "1.1.1"
+  resolved "http://192.168.102.79:5001/@lugia/mega-scripts/download/@lugia/mega-scripts-1.1.1.tgz#6e57e096df143627a878a30ced3aeab0d6fa0506"
+  integrity sha1-blfglt8UNieoeKMM7TrqsNb6BQY=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/runtime" "^7.1.5"
     "@lugia/babel-preset-mega" "^1.0.1"
-    "@lugia/mega-jest" "^1.1.0"
+    "@lugia/mega-jest" "^1.1.1"
     "@lugia/mega-utils" "^1.2.0"
     "@lugia/mega-webpack" "^1.1.0"
     babel-plugin-add-module-exports "^1.0.0"

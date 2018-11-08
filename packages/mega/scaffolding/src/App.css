@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-image: url(./footer.png);
+  background-position: left bottom;
+  background-repeat: repeat-x;
 }
 
 .App-logo {
@@ -8,21 +12,34 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #fff;
   height: 150px;
-  padding: 20px;
-  color: white;
+  padding: 80px;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-intro {
-  font-size: large;
+  font-size: 1.5em;
+}
+
+code {
+  padding: 0.2em;
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  color: #0d4a59;
+  border-radius: 3px;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
