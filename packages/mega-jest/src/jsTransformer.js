@@ -1,6 +1,11 @@
 import babelJest from 'babel-jest';
+import { getUserConfig } from '@lugia/mega-webpack';
 
-export default babelJest.createTransformer({
+const { config } = getUserConfig({
+  cwd: process.cwd(),
+  configFileName: 'lugia.config.js',
+});
+const defaultConfig = {
   presets: [
     [
       require.resolve('@lugia/babel-preset-mega'),
@@ -26,6 +31,22 @@ export default babelJest.createTransformer({
     ],
   ],
   babelrc: !!process.env.BABELRC,
-});
+};
+
+export default babelJest.createTransformer(
+  config.babel
+    ? { ...defaultConfig, ...config.babel }
+    : {
+        presets: [
+          ...defaultConfig.presets,
+          ...(config.extraBabelPresets || []),
+        ],
+        plugins: [
+          ...defaultConfig.plugins,
+          ...(config.extraBabelPlugins || []),
+        ],
+        babelrc: defaultConfig.babelrc,
+      },
+);
 
 module.exports = exports.default;
