@@ -1,10 +1,11 @@
+import { join } from 'path';
 import babelJest from 'babel-jest';
-import { getUserConfig } from '@lugia/mega-webpack';
+import excapeRegExp from 'lodash.escaperegexp';
+import { getUserConfig, registerBabel } from '@lugia/mega-webpack';
 
-const { config } = getUserConfig({
-  cwd: process.cwd(),
-  configFileName: 'lugia.config.js',
-});
+const CONFIG_FILE_NAME = 'lugia.config.js';
+
+const cwd = process.cwd();
 const defaultConfig = {
   presets: [
     [
@@ -32,6 +33,23 @@ const defaultConfig = {
   ],
   babelrc: !!process.env.BABELRC,
 };
+
+registerBabel({
+  only: [new RegExp(excapeRegExp(join(cwd, CONFIG_FILE_NAME)))],
+  babelPreset: [
+    require.resolve('@lugia/babel-preset-mega'),
+    {
+      corejs: false,
+      helpers: false,
+    },
+  ],
+  disablePreventTest: true,
+});
+
+const { config } = getUserConfig({
+  cwd,
+  configFileName: CONFIG_FILE_NAME,
+});
 
 export default babelJest.createTransformer(
   config.babel
