@@ -12,6 +12,7 @@ import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';
 import { applyMock } from './mock';
+import { CONFIG_FILE_NAME } from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:dev');
 
@@ -64,20 +65,26 @@ export default function runDev(opts = {}) {
   let userPKG = null;
   let returnedWatchConfig = null;
   try {
-    ({ config, userPKG, watch: returnedWatchConfig } = getUserConfig({ cwd }));
+    ({ config, userPKG, watch: returnedWatchConfig } = getUserConfig({
+      cwd,
+      configFileName: CONFIG_FILE_NAME,
+    }));
     debug(`user config: ${JSON.stringify(config)}`);
   } catch (e) {
     console.error(chalk.red(e.message));
     debug('Get .webpackrc config failed, watch config and reload');
 
     // 监听配置项变更，然后重新执行 dev 逻辑
-    watchConfigs().on('all', (event, path) => {
-      debug(`[${event}] ${path}, unwatch and reload`);
-      bs && bs.active && bs.exit(); // eslint-disable-line
-      bs = null;
-      unwatchConfigs();
-      runDev(opts);
-    });
+    watchConfigs({ cwd, configFileName: CONFIG_FILE_NAME }).on(
+      'all',
+      (event, path) => {
+        debug(`[${event}] ${path}, unwatch and reload`);
+        bs && bs.active && bs.exit(); // eslint-disable-line
+        bs = null;
+        unwatchConfigs();
+        runDev(opts);
+      },
+    );
     return;
   }
 

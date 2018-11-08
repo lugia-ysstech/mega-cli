@@ -1,12 +1,10 @@
 import { existsSync, readFileSync } from 'fs';
 import { resolve } from 'path';
-import assert from 'assert';
 import didyoumean from 'didyoumean';
 import chalk from 'chalk';
 import isEqual from 'lodash.isequal';
 import is from '@lugia/mega-utils/lib/is';
 import clearConsole from '@lugia/mega-utils/lib/clearConsole';
-import readCommentsJSON from '@lugia/mega-utils/lib/readCommentsJSON';
 import { watch, unwatch } from './watch';
 import getPlugins from './getPlugins';
 
@@ -21,6 +19,7 @@ const pluginsMapByName = plugins.reduce((memo, p) => {
 
 let devServer = null;
 const USER_CONFIGS = 'USER_CONFIGS';
+const CONFIG_FILE_NAME = 'webpack.config.js';
 
 function throwError(msg) {
   printError(msg);
@@ -74,28 +73,18 @@ function replaceNpmVariables(value, pkg) {
 export default function getUserConfig(opts = {}) {
   const {
     cwd = process.cwd(),
-    configFile = '.webpackrc',
+    configFileName = CONFIG_FILE_NAME,
     disabledConfigs = [],
     preprocessor,
   } = opts;
 
-  // Read config from configFile and `${configFile}.js`
-  const rcFile = resolve(cwd, configFile);
-  const jsRCFile = resolve(cwd, `${configFile}.js`);
-
-  assert(
-    !(existsSync(rcFile) && existsSync(jsRCFile)),
-    `${configFile} file and ${configFile}.js file can not exist at the same time.`,
-  );
+  const configFile = resolve(cwd, configFileName);
 
   let config = {};
-  if (existsSync(rcFile)) {
-    config = readCommentsJSON(rcFile);
-  }
-  if (existsSync(jsRCFile)) {
+  if (existsSync(configFile)) {
     // no cache
-    delete require.cache[jsRCFile];
-    config = require(jsRCFile); // eslint-disable-line
+    delete require.cache[configFile];
+    config = require(configFile); // eslint-disable-line
     if (config.default) {
       config = config.default;
     }
@@ -221,12 +210,9 @@ export default function getUserConfig(opts = {}) {
 }
 
 export function watchConfigs(opts = {}) {
-  const { cwd = process.cwd(), configFile = '.webpackrc' } = opts;
-
-  const rcFile = resolve(cwd, configFile);
-  const jsRCFile = resolve(cwd, `${configFile}.js`);
-
-  return watch(USER_CONFIGS, [rcFile, jsRCFile]);
+  const { cwd = process.cwd(), configFileName = CONFIG_FILE_NAME } = opts;
+  const configFile = resolve(cwd, configFileName);
+  return watch(USER_CONFIGS, [configFile]);
 }
 
 export function unwatchConfigs() {

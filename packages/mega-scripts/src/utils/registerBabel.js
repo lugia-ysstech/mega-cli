@@ -1,15 +1,19 @@
 import { join } from 'path';
 import { registerBabel } from '@lugia/mega-webpack';
 import excapeRegExp from 'lodash.escaperegexp';
+import {
+  CONFIG_FILE_NAME,
+  MOCK_CONFIG_FILE,
+  MOCK_CONFIG_DIR,
+} from './constants';
 
 export default function(babelPreset, opts) {
   const { configOnly, disablePreventTest, ignore, cwd } = opts;
   const files = [
-    'mock.config.js',
-    '.webpackrc.js',
-    'webpack.config.js',
-    'mock',
-    'src',
+    CONFIG_FILE_NAME,
+    MOCK_CONFIG_FILE,
+    MOCK_CONFIG_DIR,
+    // 'src',
   ].map(file => excapeRegExp(join(cwd, file)));
   const only = configOnly ? [new RegExp(`(${files.join('|')})`)] : null;
 

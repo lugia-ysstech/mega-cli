@@ -27,24 +27,27 @@ export default function(opts = {}) {
     }
   }
 
-  return getConfig({
-    cwd,
-    hash: true,
-    manifest: {},
-    ...config,
+  return getConfig(
+    {
+      cwd,
+      hash: true,
+      manifest: {},
+      ...config,
 
-    entry: getEntry({
-      cwd: paths.appDirectory,
-      entry: entry || config.entry,
-      isBuild: !isDev,
-    }),
-    babel: config.babel || {
-      presets: [
-        [babel, { browsers: browserslist }],
-        ...(config.extraBabelPresets || []),
-      ],
-      plugins: config.extraBabelPlugins || [],
+      entry: getEntry({
+        cwd: paths.appDirectory,
+        entry: entry || config.entry,
+        isBuild: !isDev,
+      }),
+      babel: config.babel || {
+        presets: [
+          [babel, { browsers: browserslist }],
+          ...(config.extraBabelPresets || []),
+        ],
+        plugins: config.extraBabelPlugins || [],
+      },
+      browserslist,
     },
-    browserslist,
-  });
+    config.applyWebpack,
+  );
 }

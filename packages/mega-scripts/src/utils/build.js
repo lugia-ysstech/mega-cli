@@ -3,6 +3,7 @@ import { build, getUserConfig } from '@lugia/mega-webpack';
 import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';
+import { CONFIG_FILE_NAME } from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:build');
 
@@ -20,7 +21,7 @@ export default function(opts = {}) {
     });
 
     // get user config
-    const { config } = getUserConfig({ cwd });
+    const { config } = getUserConfig({ cwd, configFileName: CONFIG_FILE_NAME });
     debug(`user config: ${JSON.stringify(config)}`);
 
     // get webpack config

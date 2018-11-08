@@ -5,7 +5,6 @@ import is from '@lugia/mega-utils/lib/is';
 import formatWebpackMessages from '@lugia/mega-utils/lib/formatWebpackMessages';
 import printBuildError from '@lugia/mega-utils/lib/printBuildError';
 import { printFileSizesAfterBuild } from '@lugia/mega-utils/lib/FileSizeReporter';
-// import { warnIfExists as warnIfWebpackConfigExists } from './applyWebpackConfig';
 
 const debug = require('debug')('@lugia/mega-webpack:build');
 
@@ -85,9 +84,6 @@ export default function build(opts = {}) {
     is.plainObject(webpackConfig),
     'webpackConfig should be plain object.',
   );
-
-  // 存在 webpack.config.js 时提醒用户
-  // warnIfWebpackConfigExists(opts.cwd || cwd);
 
   buildWebpack(opts);
 }

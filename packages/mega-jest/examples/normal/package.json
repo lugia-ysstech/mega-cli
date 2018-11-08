@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "node ../../bin/mega-jest.js"
+    "test": "BABELRC=true node ../../bin/mega-jest.js"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^3.1.1"

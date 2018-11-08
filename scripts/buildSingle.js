@@ -15,7 +15,7 @@ const { buildPkg, watch } = require('./buildUtils');
 const arg = process.argv[2];
 const isWatch = arg === '-w' || arg === '--watch';
 
-['mega-scripts'].forEach(pkg => {
+['mega-utils'].forEach(pkg => {
   buildPkg(pkg);
   if (isWatch) watch(pkg);
 });

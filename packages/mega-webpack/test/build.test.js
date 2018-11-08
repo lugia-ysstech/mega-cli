@@ -24,10 +24,13 @@ function build(opts, done) {
   const { config: userConfig } = getUserConfig({
     cwd: opts.cwd,
   });
-  const webpackConfig = getConfig({
-    ...opts,
-    ...userConfig,
-  });
+  const webpackConfig = getConfig(
+    {
+      ...opts,
+      ...userConfig,
+    },
+    userConfig.applyWebpack,
+  );
   webpackConfig.entry = {
     index: getEntry(opts.cwd),
   };

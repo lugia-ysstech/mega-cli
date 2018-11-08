@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import merge from 'webpack-merge';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import SystemBellWebpackPlugin from 'system-bell-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -27,13 +28,12 @@ import uglifyJSConfig from './defaultConfigs/uglifyJS';
 import defaultBabelConfig from './defaultConfigs/babel';
 import defaultBrowsers from './defaultConfigs/browsers';
 import normalizeTheme from './normalizeTheme';
-import { applyWebpackConfig } from './applyWebpackConfig';
 import { getPkgPath, shouldTransform } from './es5ImcompatibleVersions';
 
 const { TsConfigPathsPlugin } = require('awesome-typescript-loader'); // eslint-disable-line
 const debug = require('debug')('@lugia/mega-webpack:getConfig');
 
-export default function getConfig(opts = {}) {
+export default function getConfig(opts = {}, applyConfig) {
   assert(opts.cwd, 'opts.cwd must be specified');
 
   const { PUBLIC_PATH } = process.env;
@@ -275,7 +275,7 @@ export default function getConfig(opts = {}) {
   ];
   const babelUse = [
     {
-      loader: join(__dirname, 'debugLoader.js'),
+      loader: require.resolve('@lugia/mega-utils/lib/debugLoader'),
     },
     {
       loader: require.resolve('babel-loader'),
@@ -289,7 +289,7 @@ export default function getConfig(opts = {}) {
   };
   const babelUseDeps = [
     {
-      loader: join(__dirname, 'debugLoader.js'),
+      loader: require.resolve('@lugia/mega-utils/lib/debugLoader'),
     },
     {
       loader: require.resolve('babel-loader'),
@@ -662,5 +662,15 @@ export default function getConfig(opts = {}) {
     config.output.publicPath = `${stripLastSlash(PUBLIC_PATH)}/`;
   }
 
-  return applyWebpackConfig(opts.cwd, config);
+  return applyWebpackConfig(applyConfig, config);
+}
+
+function applyWebpackConfig(applyConfig, config) {
+  if (is.function(applyConfig)) {
+    return applyConfig(config, {
+      webpack,
+      merge,
+    });
+  }
+  return config;
 }

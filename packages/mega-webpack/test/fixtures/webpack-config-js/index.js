@@ -1,4 +1,1 @@
-
-if (ABC === 'ggg') {
-  console.log('cde');
-}
+import 'react';

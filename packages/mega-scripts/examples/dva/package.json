@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dva": "^2.4.1",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  },
+  "scripts": {
+    "start": "node ../../bin/mega-scripts.js start",
+    "build": "node ../../bin/mega-scripts.js build",
+    "test": "node ../../bin/mega-scripts.js test -w"
+  }
+}

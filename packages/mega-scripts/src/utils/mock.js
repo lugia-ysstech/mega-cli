@@ -10,13 +10,14 @@ import is from '@lugia/mega-utils/lib/is';
 import getPaths from './getPaths';
 import winPath from './winPath';
 import { sheet2json } from './sheet2json';
+import { MOCK_CONFIG_FILE, MOCK_CONFIG_DIR } from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:mock');
 
 let error = null;
 const paths = getPaths(process.cwd());
-const mockConfigFile = paths.resolveApp('mock.config.js');
-const mockDir = paths.resolveApp('./mock/');
+const mockConfigFile = paths.resolveApp(MOCK_CONFIG_FILE);
+const mockDir = paths.resolveApp(MOCK_CONFIG_DIR);
 
 function getConfig() {
   if (existsSync(mockConfigFile)) {

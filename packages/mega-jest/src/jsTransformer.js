@@ -25,7 +25,7 @@ export default babelJest.createTransformer({
       },
     ],
   ],
-  babelrc: false,
+  babelrc: !!process.env.BABELRC,
 });
 
 module.exports = exports.default;
