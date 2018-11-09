@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import reactLogo from './react.logo.svg';
-import megaLogo from './mega.logo.png';
+import reactLogo from '../assets/react.logo.svg';
+import megaLogo from '../assets/logo.png';
 import './App.css';
 
 class App extends Component {
@@ -8,16 +8,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img
-            src={megaLogo}
-            style={{ height: '50px', margin: '15px' }}
-            alt="mega-logo"
-          />
+          <img src={megaLogo} alt="mega-logo" />
+          <span className="App-plus">+</span>
           <img src={reactLogo} className="App-logo" alt="react-logo" />
-          <h1 className="App-title">Lugia Mega && React</h1>
         </header>
+        <h1 className="App-title">Lugia Mega of React</h1>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <code>React 实现</code> 标准、高效、开箱即用的前端可视化开发工具
         </p>
       </div>
     );

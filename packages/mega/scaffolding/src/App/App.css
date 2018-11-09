@@ -1,28 +1,39 @@
 .App {
   text-align: center;
   height: 100vh;
-  background-image: url(./footer.png);
+  background-image: url(../assets/footer.png);
   background-position: left bottom;
   background-repeat: repeat-x;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 150px;
 }
 
 .App-header {
   background-color: #fff;
-  height: 150px;
-  padding: 80px;
+  padding: 120px 0 30px;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.App-plus {
+  font-size: 30px;
+  color: #aaa;
+  margin-left: 30px;
 }
 
 .App-title {
-  font-size: 2.5em;
+  font-size: 40px;
+  margin: 26px auto;
 }
 
 .App-intro {
-  font-size: 1.5em;
+  font-size: 24px;
 }
 
 code {
