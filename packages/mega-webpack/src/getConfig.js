@@ -359,7 +359,7 @@ export default function getConfig(opts = {}, applyConfig) {
       // Add /* filename */ comments to generated require()s in the output.
       pathinfo: isDev,
       filename: `[name]${jsHash}.js`,
-      publicPath: opts.publicPath || undefined,
+      publicPath: opts.publicPath || (isDev ? '/' : undefined),
       chunkFilename: `[name]${jsHash}.async.js`,
     },
     resolve: {

@@ -105,6 +105,7 @@ export default function runDev(opts = {}) {
     index: config.html && config.html.filename,
     port: config.port,
     proxy: config.proxy || {},
+    historyApiFallback: config.historyApiFallback,
     beforeMiddleware(app) {
       // This service worker file is effectively a 'no-op' that will reset any
       // previous service worker registered for the same host:port combination.
