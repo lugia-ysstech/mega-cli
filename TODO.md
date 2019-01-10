@@ -15,6 +15,8 @@ lugia.config.js
 - ~~[browser-sync](https://github.com/BrowserSync/browser-sync)~~
 - ~~mock: 支持引入 json、excel、csv 格式的文件作为数据来源~~
 
+proxy 代理的配置需要丰富，参考 [a](https://webpack.js.org/configuration/dev-server/#devserver-proxy)，[b](https://github.com/webpack/webpack-dev-server/blob/master/lib/Server.js)，直接在 mock.config.js 中加一个 proxy 字段做配置扩展，使用 http-proxy-middleware
+
 browser-sync 热更新时命令行不刷新界面
 
 ## use [react-hot-loader](https://github.com/gaearon/react-hot-loader)
@@ -78,3 +80,12 @@ bpack-plugin\index.js:66:5)
 les\webpack\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
     at F:\yssgitlab\lugia-mega\packages\mega-webpack\node_modules\webpack\node_modules\enhanced-resolve\lib
 ```
+
+## NEXT v2
+
+改进
+
+- 插件式，支持热插拔
+- [webpack-chain](https://github.com/neutrinojs/webpack-chain)
+- lugia.config.js
+- [cosmiconfig](https://github.com/davidtheclark/cosmiconfig)
