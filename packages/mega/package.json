@@ -4,8 +4,8 @@
   "description": "Quickly create react apps. Based on redux, lugiax and react-router.",
   "main": "./lib/index.js",
   "bin": {
-    "lugia-mega": "./bin/mega.js",
-    "mega": "./bin/mega.js"
+    "lugia-mega": "./bin/mega",
+    "mega": "./bin/mega"
   },
   "repository": {
     "type": "git",
