@@ -83,6 +83,7 @@ export function runCommand(command, args = [], close) {
   const child = spawn(command, args, {
     // keep color
     stdio: 'inherit',
+    env: process.env,
   });
 
   child.on('close', code => close && close(code));
