@@ -2,7 +2,7 @@
  * Created Date: Monday, September 3rd 2018, 10:46:46 am
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Monday, September 3rd 2018, 3:18:10 pm
+ * Last Modified: Wednesday, January 16th 2019, 12:25:42 am
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2018-present, #Lugia#.
@@ -57,7 +57,7 @@ describe('npmUtils', () => {
       registry: 'https://registry.npmjs.org/',
     });
     expect(version.dist.tarball).toBe(
-      'http://registry.npmjs.org/got/-/got-2.0.0.tgz',
+      'https://registry.npmjs.org/got/-/got-2.0.0.tgz',
     );
   });
 
