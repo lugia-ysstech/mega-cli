@@ -13,6 +13,8 @@ import findPkg from 'find-pkg';
 import { resolve } from 'path';
 import is from './is';
 
+const envPath = process.env.PATH || process.env.Path || process.env.path;
+
 export default function useYarn(cwd, needYarn = false) {
   needYarn = needYarn || (cwd && isYarnWS(cwd));
   const yarnAvailable = isYarnAvailable();
@@ -27,8 +29,8 @@ export function isYarnAvailable() {
 }
 
 export function getYarnResolved() {
-  const yarnpkg = which.sync('yarnpkg', { nothrow: true });
-  const yarn = which.sync('yarn', { nothrow: true });
+  const yarnpkg = which.sync('yarnpkg', { nothrow: true, path: envPath });
+  const yarn = which.sync('yarn', { nothrow: true, path: envPath });
   if (is.empty(yarnpkg) && is.empty(yarn)) return null;
   return { yarnpkg, yarn };
 }
