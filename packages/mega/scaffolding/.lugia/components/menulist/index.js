@@ -8,18 +8,19 @@ import React from 'react';
 import { go, Link } from '@lugia/lugiax-router';
 import styled from 'styled-components';
 import { Navmenu, Theme, consts as Widget } from '@lugia/lugia-web';
-import logo from '../../assets/logo.png';
-import menu from '../../menu';
+import logo from '../../assets/pro_logo.png';
+import menuData from '../../menu';
 
 const NavContainer = styled.div`
   display: inline-block;
-  min-height: 850px;
-  height: 100%;
   background: #000033;
+  min-height: ${props => props.menuMinHeight}px;
+  height: 100%;
 `;
 
 const styles = {
   padding: '30px',
+  width: '160px',
 };
 
 const Title = styled.div``;
@@ -32,10 +33,14 @@ const theme = {
 };
 
 export default class List extends React.Component<any> {
+  componentDidMount() {
+    const menuMinHeight = document.documentElement.clientHeight;
+    this.setState({ menuMinHeight });
+  }
   render() {
-    const { menuData } = menu;
+    const { menuMinHeight = 900 } = this.state || {};
     return (
-      <NavContainer>
+      <NavContainer menuMinHeight={menuMinHeight}>
         <Title>
           <img src={logo} style={styles} />
         </Title>
@@ -45,6 +50,7 @@ export default class List extends React.Component<any> {
             onSelect={this.onSelect}
             inlineType={'ellipse'}
             data={menuData}
+            // size={'large'}
           />
         </Theme>
       </NavContainer>

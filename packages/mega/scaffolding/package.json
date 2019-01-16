@@ -7,7 +7,7 @@
     "test": "lugia-scripts test -w"
   },
   "dependencies": {
-    "@lugia/lugia-web": "^1.0.78",
+    "@lugia/lugia-web": "^1.0.81",
     "@lugia/lugiax": "^1.0.6",
     "@lugia/lugiax-router": "^1.0.8",
     "history": "^4.7.2",
