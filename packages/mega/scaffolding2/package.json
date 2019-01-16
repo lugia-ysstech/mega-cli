@@ -1,0 +1,15 @@
+{
+  "name": "mega-scaffolding",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@lugia/mega-scripts": "^1.1.1",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  },
+  "scripts": {
+    "start": "lugia-scripts start",
+    "build": "lugia-scripts build",
+    "test": "lugia-scripts test -w"
+  }
+}
