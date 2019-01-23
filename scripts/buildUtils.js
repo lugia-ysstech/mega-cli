@@ -1,6 +1,7 @@
 const vfs = require('vinyl-fs');
 const babel = require('@babel/core');
 const through = require('through2');
+const Terser = require('terser');
 const chalk = require('chalk');
 const rimraf = require('rimraf');
 const { readdirSync, readFileSync, writeFileSync, existsSync } = require('fs');
@@ -109,11 +110,13 @@ function buildPkg(pkg) {
     ])
     .pipe(
       through.obj((f, enc, cb) => {
-        f.contents = new Buffer( // eslint-disable-line
-          transform({
-            content: f.contents,
-            path: f.path,
-          }),
+        f.contents = Buffer.from(
+          Terser.minify(
+            transform({
+              content: f.contents,
+              path: f.path,
+            }),
+          ).code,
         );
         cb(null, f);
       }),
