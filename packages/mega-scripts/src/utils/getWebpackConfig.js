@@ -1,6 +1,7 @@
 import { existsSync } from 'fs';
 import { resolve } from 'path';
 import { getConfig } from '@lugia/mega-webpack';
+import is from '@lugia/mega-utils/lib/is';
 import getEntry from './getEntry';
 
 const defaultBrowsers = ['last 2 versions'];
@@ -8,7 +9,7 @@ const debug = require('debug')('@lugia/mega-scripts:getWebpackConfig');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-export default function(opts = {}) {
+export default function(opts = {}, applyConfig) {
   const { cwd, config, babel, paths, entry } = opts;
 
   const browserslist = config.browserslist || defaultBrowsers;
@@ -16,7 +17,7 @@ export default function(opts = {}) {
   debug(`browserslist: ${browserslist}`);
 
   if (!config.html) {
-    config.html = {};
+    config.html = { _fromMegaScriptsDefault: true };
     const appPublicHtmlPath = resolve(paths.appPublic, 'index.html');
     if (existsSync(appPublicHtmlPath)) {
       config.html.template = appPublicHtmlPath;
@@ -25,13 +26,41 @@ export default function(opts = {}) {
     if (existsSync(appSrcHtmlPath)) {
       config.html.template = appSrcHtmlPath;
     }
+    if (!isDev) {
+      config.html.minify = {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      };
+    }
+  }
+
+  if (!is.function(applyConfig)) {
+    applyConfig = c => c;
   }
 
   return getConfig(
-    {
+    applyConfig({
       cwd,
       hash: true,
       manifest: {},
+      commons: [
+        {
+          name: 'vendors',
+          minChunks(module) {
+            // 把node_modules中的模块提取到vendors.js中
+            return (
+              module.resource &&
+              (/\.js$/.test(module.resource) ||
+                /\.css$/.test(module.resource)) &&
+              module.resource.indexOf('node_modules') > -1
+            );
+          },
+        },
+      ],
       ...config,
 
       entry: getEntry({
@@ -47,7 +76,7 @@ export default function(opts = {}) {
         plugins: config.extraBabelPlugins || [],
       },
       browserslist,
-    },
+    }),
     config.applyWebpack,
   );
 }

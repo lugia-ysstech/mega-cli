@@ -94,7 +94,7 @@ function transform(opts = {}) {
   return babel.transform(content, config).code;
 }
 
-function buildPkg(pkg) {
+function buildPkg(pkg, minify = false) {
   const pkgPath = join(cwd, 'packages', pkg);
   if (!existsSync(pkgPath)) {
     chalk.yellow(`[${pkg}] was not found`);
@@ -110,14 +110,14 @@ function buildPkg(pkg) {
     ])
     .pipe(
       through.obj((f, enc, cb) => {
-        f.contents = Buffer.from(
-          Terser.minify(
-            transform({
-              content: f.contents,
-              path: f.path,
-            }),
-          ).code,
-        );
+        let tcode = transform({
+          content: f.contents,
+          path: f.path,
+        });
+        if (minify) {
+          tcode = Terser.minify(tcode).code;
+        }
+        f.contents = Buffer.from(tcode);
         cb(null, f);
       }),
     )
@@ -148,11 +148,12 @@ function watch(pkg) {
 
 function build() {
   const dirs = readdirSync(join(cwd, 'packages'));
-  const arg = process.argv[2];
-  const isWatch = arg === '-w' || arg === '--watch';
+  const { argv } = process;
+  const isWatch = argv.includes('-w') || argv.includes('--watch');
+  const minify = argv.includes('-m') || argv.includes('--minify');
   dirs.forEach(pkg => {
     if (pkg.charAt(0) === '.') return;
-    buildPkg(pkg);
+    buildPkg(pkg, minify);
     if (isWatch) watch(pkg);
   });
 }

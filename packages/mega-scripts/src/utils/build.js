@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { build, getUserConfig } from '@lugia/mega-webpack';
+import { build, getUserConfig, applyWebpackConfig } from '@lugia/mega-webpack';
 import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';
@@ -8,7 +8,7 @@ import { CONFIG_FILE_NAME } from './constants';
 const debug = require('debug')('@lugia/mega-scripts:build');
 
 export default function(opts = {}) {
-  const { cwd = process.cwd(), watch, entry } = opts;
+  const { cwd = process.cwd(), watch, entry, applyWebpack, applyConfig } = opts;
 
   const babel = resolve(__dirname, './babel.js');
   const paths = getPaths(cwd);
@@ -25,13 +25,19 @@ export default function(opts = {}) {
     debug(`user config: ${JSON.stringify(config)}`);
 
     // get webpack config
-    const webpackConfig = getWebpackConfig({
-      cwd,
-      config,
-      babel,
-      paths,
-      entry,
-    });
+    const webpackConfig = applyWebpackConfig(
+      applyWebpack,
+      getWebpackConfig(
+        {
+          cwd,
+          config,
+          babel,
+          paths,
+          entry,
+        },
+        applyConfig,
+      ),
+    );
 
     build({
       webpackConfig,

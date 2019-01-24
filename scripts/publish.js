@@ -26,9 +26,9 @@ if (updatedRepos.length === 0) {
   process.exit(0);
 }
 
-const { code: buildCode } = shell.exec('yarn run build');
+const { code: buildCode } = shell.exec('yarn run build -m');
 if (buildCode === 1) {
-  console.error('Failed: yarn run build');
+  console.error('Failed: yarn run build -m');
   process.exit(1);
 }
 

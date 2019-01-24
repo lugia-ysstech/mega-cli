@@ -36,7 +36,7 @@ export default function runDev(opts = {}) {
     urls,
     cwd,
     disableBrowserSync,
-    autoOpenBrowser,
+    autoOpenBrowser = true,
   }) {
     disableBrowserSync =
       process.env.BROWSER_SYNC === 'none' ? true : disableBrowserSync;
@@ -96,7 +96,7 @@ export default function runDev(opts = {}) {
     paths,
     entry,
   });
-  const autoOpenBrowser = config.openBrowser || true;
+  const { openBrowser: autoOpenBrowser, disableBrowserSync } = config;
 
   dev({
     webpackConfig,
@@ -131,7 +131,7 @@ export default function runDev(opts = {}) {
           appName,
           cwd,
           autoOpenBrowser,
-          disableBrowserSync: config.disableBrowserSync,
+          disableBrowserSync,
         });
         isFirstCompile = false;
       } else {

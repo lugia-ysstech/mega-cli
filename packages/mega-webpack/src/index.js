@@ -12,7 +12,7 @@
 
 export { default as build } from './build';
 export { default as dev } from './dev';
-export { default as getConfig } from './getConfig';
+export { default as getConfig, applyWebpackConfig } from './getConfig';
 export {
   default as getUserConfig,
   watchConfigs,

@@ -359,7 +359,7 @@ export default function getConfig(opts = {}, applyConfig) {
       // Add /* filename */ comments to generated require()s in the output.
       pathinfo: isDev,
       filename: `[name]${jsHash}.js`,
-      publicPath: opts.publicPath || (isDev ? '/' : undefined),
+      publicPath: opts.publicPath || (isDev ? '/' : './'),
       chunkFilename: `[name]${jsHash}.async.js`,
     },
     resolve: {
@@ -665,7 +665,7 @@ export default function getConfig(opts = {}, applyConfig) {
   return applyWebpackConfig(applyConfig, config);
 }
 
-function applyWebpackConfig(applyConfig, config) {
+export function applyWebpackConfig(applyConfig, config) {
   if (is.function(applyConfig)) {
     return applyConfig(config, {
       webpack,
