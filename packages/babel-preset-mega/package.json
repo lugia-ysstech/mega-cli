@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Babel preset used by @lugia/mega",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
@@ -33,11 +33,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.20"
   },
   "files": [
-    "index.js",
-    "create.js",
-    "dev.js",
-    "prod.js",
-    "test.js",
+    "lib",
     "yarn.lock"
   ],
   "engines": {

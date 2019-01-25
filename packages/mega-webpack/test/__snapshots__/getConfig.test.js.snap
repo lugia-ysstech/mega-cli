@@ -69,7 +69,7 @@ Object {
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\index.js",
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
@@ -99,7 +99,7 @@ Object {
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\index.js",
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
@@ -130,7 +130,7 @@ Object {
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\index.js",
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
