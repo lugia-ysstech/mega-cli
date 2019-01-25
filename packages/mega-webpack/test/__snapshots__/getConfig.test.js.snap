@@ -1,0 +1,473 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[mega-webpack]:getConfig getConfig({ cwd: __dirname }) 1`] = `
+Object {
+  "bail": true,
+  "devtool": undefined,
+  "entry": null,
+  "externals": undefined,
+  "module": Object {
+    "rules": Array [
+      Object {
+        "enforce": "pre",
+        "exclude": /node_modules/,
+        "include": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\tslint-loader\\\\index.js",
+            "options": Object {
+              "emitErrors": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "enforce": "pre",
+        "exclude": /node_modules/,
+        "include": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "test": /\\\\\\.\\(js\\|jsx\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\eslint-loader\\\\index.js",
+            "options": Object {
+              "baseConfig": false,
+              "eslintPath": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\eslint\\\\lib\\\\api.js",
+              "formatter": [Function],
+              "ignore": true,
+              "useEslintrc": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "exclude": Array [
+          /\\\\\\.\\(html\\|ejs\\)\\$/,
+          /\\\\\\.json\\$/,
+          /\\\\\\.\\(js\\|jsx\\|ts\\|tsx\\)\\$/,
+          /\\\\\\.\\(css\\|less\\|scss\\|sass\\)\\$/,
+        ],
+        "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\url-loader\\\\index.js",
+        "options": Object {
+          "limit": 10000,
+          "name": "static/[name].[hash:8].[ext]",
+        },
+      },
+      Object {
+        "exclude": /node_modules/,
+        "include": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "test": /\\\\\\.js\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "babelrc": false,
+              "cacheDirectory": true,
+              "plugins": Array [],
+              "presets": Array [
+                Array [
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\index.js",
+                  Object {
+                    "browsers": Array [
+                      ">1%",
+                      "last 4 versions",
+                      "Firefox ESR",
+                      "not ie < 9",
+                    ],
+                  },
+                ],
+              ],
+            },
+          },
+        ],
+      },
+      Object {
+        "include": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "test": /\\\\\\.jsx\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "babelrc": false,
+              "cacheDirectory": true,
+              "plugins": Array [],
+              "presets": Array [
+                Array [
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\index.js",
+                  Object {
+                    "browsers": Array [
+                      ">1%",
+                      "last 4 versions",
+                      "Firefox ESR",
+                      "not ie < 9",
+                    ],
+                  },
+                ],
+              ],
+            },
+          },
+        ],
+      },
+      Object {
+        "exclude": /node_modules/,
+        "include": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "test": /\\\\\\.\\(ts\\|tsx\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "babelrc": false,
+              "cacheDirectory": true,
+              "plugins": Array [],
+              "presets": Array [
+                Array [
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\index.js",
+                  Object {
+                    "browsers": Array [
+                      ">1%",
+                      "last 4 versions",
+                      "Firefox ESR",
+                      "not ie < 9",
+                    ],
+                  },
+                ],
+              ],
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\awesome-typescript-loader\\\\dist\\\\entry.js",
+            "options": Object {
+              "configFileName": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\tsconfig.json",
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "exclude": undefined,
+        "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\file-loader\\\\index.js",
+        "options": Object {
+          "name": "[name].[ext]",
+        },
+        "test": /\\\\\\.html\\$/,
+      },
+      Object {
+        "exclude": [Function],
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "options": Object {
+              "omit": 0,
+              "remove": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "localIdentName": "[local]___[hash:base64:5]",
+              "minimize": Object {
+                "minifyFontValues": false,
+              },
+              "modules": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "ident": "postcss",
+              "plugins": [Function],
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "options": Object {
+              "omit": 0,
+              "remove": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "minimize": Object {
+                "minifyFontValues": false,
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "ident": "postcss",
+              "plugins": [Function],
+            },
+          },
+        ],
+      },
+      Object {
+        "exclude": [Function],
+        "test": /\\\\\\.less\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "options": Object {
+              "omit": 0,
+              "remove": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "localIdentName": "[local]___[hash:base64:5]",
+              "minimize": Object {
+                "minifyFontValues": false,
+              },
+              "modules": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "ident": "postcss",
+              "plugins": [Function],
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\less-loader\\\\dist\\\\cjs.js",
+            "options": Object {
+              "modifyVars": Object {},
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.less\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "options": Object {
+              "omit": 0,
+              "remove": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "minimize": Object {
+                "minifyFontValues": false,
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "ident": "postcss",
+              "plugins": [Function],
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\less-loader\\\\dist\\\\cjs.js",
+            "options": Object {
+              "modifyVars": Object {},
+            },
+          },
+        ],
+      },
+      Object {
+        "exclude": [Function],
+        "test": /\\\\\\.\\(sass\\|scss\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "options": Object {
+              "omit": 0,
+              "remove": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "localIdentName": "[local]___[hash:base64:5]",
+              "minimize": Object {
+                "minifyFontValues": false,
+              },
+              "modules": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "ident": "postcss",
+              "plugins": [Function],
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.\\(sass\\|scss\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "options": Object {
+              "omit": 0,
+              "remove": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "minimize": Object {
+                "minifyFontValues": false,
+              },
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "ident": "postcss",
+              "plugins": [Function],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "child_process": "empty",
+    "dgram": "empty",
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].async.js",
+    "filename": "[name].js",
+    "path": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\dist",
+    "pathinfo": false,
+    "publicPath": "./",
+  },
+  "performance": Object {},
+  "plugins": Array [
+    HashedModuleIdsPlugin {
+      "options": Object {
+        "hashDigest": "base64",
+        "hashDigestLength": 4,
+        "hashFunction": "md5",
+      },
+    },
+    ModuleConcatenationPlugin {
+      "options": Object {},
+    },
+    ExtractTextPlugin {
+      "filename": "[name].css",
+      "id": 1,
+      "options": Object {
+        "allChunks": true,
+      },
+    },
+    UglifyJsPlugin {
+      "options": Object {
+        "compress": Object {
+          "screw_ie8": true,
+          "warnings": false,
+        },
+        "mangle": Object {
+          "screw_ie8": true,
+        },
+        "output": Object {
+          "ascii_only": true,
+          "comments": false,
+          "screw_ie8": true,
+        },
+      },
+    },
+    DefinePlugin {
+      "definitions": Object {
+        "process.env.HMR": undefined,
+        "process.env.NODE_ENV": "\\"production\\"",
+      },
+    },
+    CaseSensitivePathsPlugin {
+      "fsOperations": 0,
+      "options": Object {},
+      "pathCache": Object {},
+      "primed": false,
+    },
+    LoaderOptionsPlugin {
+      "options": Object {
+        "options": Object {
+          "context": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\lib",
+        },
+        "test": Object {
+          "test": [Function],
+        },
+      },
+    },
+    ProgressPlugin {
+      "handler": [Function],
+      "profile": undefined,
+    },
+    CleanWebpackPlugin {
+      "options": Object {
+        "allowExternal": false,
+        "dry": false,
+        "root": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "verbose": false,
+      },
+      "paths": Array [
+        "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\dist",
+      ],
+    },
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "@babel/runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime-corejs2",
+      "@babel/runtime-corejs2": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime-corejs2",
+    },
+    "extensions": Array [
+      ".web.js",
+      ".web.jsx",
+      ".web.ts",
+      ".web.tsx",
+      ".js",
+      ".json",
+      ".jsx",
+      ".ts",
+      ".tsx",
+    ],
+    "modules": Array [
+      "node_modules",
+      "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules",
+    ],
+    "plugins": Array [],
+  },
+}
+`;

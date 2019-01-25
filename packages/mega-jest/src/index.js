@@ -1,13 +1,19 @@
 import jestCli from 'jest-cli';
 
-const debug = require('debug')('mega-jest');
+const debugJest = require('debug')('mega-jest');
 const explorer = require('cosmiconfig')('jest', { stopDir: process.cwd() });
 
 process.env.NODE_ENV = 'test';
 
-export default async function(opts = {}) {
-  const { watch, coverage, cwd = process.cwd() } = opts;
-
+export default async function({
+  watch,
+  updateSnapshot,
+  clearCache,
+  showConfig,
+  debug,
+  coverage,
+  cwd = process.cwd(),
+}) {
   let jestConfig = {};
   try {
     const { config } = await explorer.search();
@@ -59,6 +65,10 @@ export default async function(opts = {}) {
       .runCLI(
         {
           watch,
+          updateSnapshot,
+          clearCache,
+          showConfig,
+          debug,
           testPathPattern: process.argv
             .slice(2)
             .filter(arg => !arg.startsWith('-')),
@@ -67,7 +77,7 @@ export default async function(opts = {}) {
         [cwd],
       )
       .then(result => {
-        debug(result);
+        debugJest(result);
         const { results } = result;
         // const success = results.every(result => result.success);
         if (results.success) {

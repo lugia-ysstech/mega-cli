@@ -7,9 +7,9 @@ const fixtures = join(__dirname, './fixtures');
 describe('mock', () => {
   test('mock', done => {
     const PORT = 8987;
-    const mock = join(fixtures, 'mock');
-    process.chdir(mock);
+    const cwd = join(fixtures, 'mock');
     const p = fork(require.resolve('../lib/dev.js'), [], {
+      cwd,
       env: {
         CLEAR_CONSOLE: 'none',
         BROWSER: 'none',
@@ -35,9 +35,20 @@ describe('mock', () => {
           expect(JSON.parse(data[2])).toEqual({ c: true });
           expect(data[3]).toEqual({ a: 'b' });
           p.kill('SIGINT');
-          done();
         });
       }
+    });
+
+    p.on('close', (code, signal) => {
+      if (code === 0 || signal === 'SIGINT') {
+        done();
+      } else {
+        throw new Error(`code: ${code}, signal: ${signal}`);
+      }
+    });
+
+    p.on('error', err => {
+      throw new Error(err);
     });
   });
 });

@@ -10,9 +10,11 @@
  * Javascript will save your soul!
  */
 
-const getConfig = require('../lib/getConfig').default;
+import getConfig from '../lib/getConfig';
 
-const cwd = process.cwd();
-const config = getConfig({ cwd });
-
-console.log(config.module.rules);
+describe('[mega-webpack]:getConfig', () => {
+  test('getConfig({ cwd: __dirname })', () => {
+    const config = getConfig({ cwd: __dirname });
+    expect(config).toMatchSnapshot();
+  });
+});

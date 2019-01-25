@@ -14,8 +14,8 @@ import { join } from 'path';
 import { readFileSync } from 'fs';
 import glob from 'glob';
 
-export default function assertBuildResult(cwd) {
-  const actualDir = join(cwd, 'dist');
+export default function assertBuildResult(cwd, dest = 'dist') {
+  const actualDir = join(cwd, dest);
   const expectDir = join(cwd, 'expected');
 
   const actualFiles = glob.sync('**/*', { cwd: actualDir, nodir: true });
