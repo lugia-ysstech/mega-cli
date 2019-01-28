@@ -2,7 +2,7 @@
  * Created Date: Wednesday, January 23rd 2019, 5:40:43 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Thursday, January 24th 2019, 5:35:49 pm
+ * Last Modified: Friday, January 25th 2019, 6:28:32 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -11,8 +11,8 @@
  */
 
 import { join, parse } from 'path';
-import { existsSync } from 'fs-extra';
 import build from '@lugia/mega-scripts/lib/utils/build';
+import getDefaultEntry from './getDefaultEntry';
 
 const cwd = process.cwd();
 
@@ -87,22 +87,4 @@ export default function singleBuild(
     applyConfig,
     applyWebpack,
   });
-}
-
-function getDefaultEntry(cwd) {
-  if (existsSync(join(cwd, './main.js'))) {
-    return './main.js';
-  }
-  if (existsSync(join(cwd, './index.js'))) {
-    return './index.js';
-  }
-  if (existsSync(join(cwd, './App.jsx'))) {
-    return './App.jsx';
-  }
-
-  console.log(`
-  Failed to locate entry file in ${cwd}.
-  Valid entry file should be one of: main.js, index.js or App.jsx.
-`);
-  process.exit(1);
 }

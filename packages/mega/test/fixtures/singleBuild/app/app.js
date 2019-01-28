@@ -2,7 +2,7 @@
  * Created Date: Wednesday, January 23rd 2019, 7:20:38 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Thursday, January 24th 2019, 3:55:08 pm
+ * Last Modified: Monday, January 28th 2019, 11:25:29 am
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -20,5 +20,7 @@ console.log(ReactDom);
 function DD() {
   return <p>sads</p>;
 }
+
+ReactDom.render(<DD/>, document.getElementById('root'));
 
 module.exports = DD;

@@ -22,13 +22,7 @@ const noop = () => {};
 export default function dev({
   webpackConfig,
   userPKG = {},
-  beforeMiddleware,
-  afterMiddleware,
-  beforeServer,
-  afterServer,
   contentBase,
-  onCompileDone = noop,
-  onCompileInvalid = noop,
   index,
   port,
   proxy,
@@ -36,6 +30,12 @@ export default function dev({
   historyApiFallback = {
     disableDotRule: true,
   },
+  beforeMiddleware,
+  afterMiddleware,
+  beforeServer,
+  afterServer,
+  onCompileDone = noop,
+  onCompileInvalid = noop,
 }) {
   process.env.NODE_ENV = 'development';
   if (!webpackConfig) {
@@ -106,21 +106,21 @@ export default function dev({
         contentBase: contentBase || process.env.CONTENT_BASE,
         before(app) {
           if (beforeMiddleware) {
-            beforeMiddleware(app);
+            beforeMiddleware(app, urlsInfo);
           }
           // This lets us open files from the runtime error overlay.
           app.use(errorOverlayMiddleware());
         },
         after(app) {
           if (afterMiddleware) {
-            afterMiddleware(app);
+            afterMiddleware(app, urlsInfo);
           }
         },
       };
       const devServer = new WebpackDevServer(compiler, serverConfig);
 
       if (beforeServer) {
-        beforeServer(devServer);
+        beforeServer(devServer, urlsInfo);
       }
 
       devServer.listen(port, HOST, err => {

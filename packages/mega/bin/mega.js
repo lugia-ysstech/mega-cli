@@ -9,7 +9,15 @@ const pkg = require('../package.json');
 // Notify update when process exits
 updater({ pkg }).notify({ defer: true });
 
-const allCommands = ['create', 'list', 'generate', 'g', 'build', 'help'];
+const allCommands = [
+  'create',
+  'list',
+  'generate',
+  'g',
+  'build',
+  'serve',
+  'help',
+];
 
 program
   .version(pkg.version)
@@ -29,6 +37,10 @@ program
   .command(
     'build [entry] [options]',
     'build a .js or .jsx file in production mode with zero config',
+  )
+  .command(
+    'serve [options] [entry]',
+    'serve a .js or .jsx file in development mode with zero config',
   );
 
 program.on('--help', () => {

@@ -4,20 +4,30 @@ import {
   getUserConfig,
   watchConfigs,
   unwatchConfigs,
+  applyWebpackConfig,
 } from '@lugia/mega-webpack';
+import { prepareUrls } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
 import noopServiceWorkerMiddleware from '@lugia/mega-utils/lib/noopServiceWorkerMiddleware';
 import chalk from 'chalk';
 import browserSync from 'browser-sync';
+import detect from 'detect-port';
 import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';
 import { applyMock } from './mock';
-import { CONFIG_FILE_NAME } from './constants';
+import { CONFIG_FILE_NAME, DEFAULT_BROWSER_SYNC_PORT } from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:dev');
 
 export default function runDev(opts = {}) {
-  const { cwd = process.cwd(), entry } = opts;
+  const {
+    cwd = process.cwd(),
+    entry,
+    applyWebpack,
+    applyConfig,
+    onOpenPort,
+    _cliEnv = {},
+  } = opts;
 
   const babel = resolve(__dirname, './babel.js');
   const paths = getPaths(cwd);
@@ -34,6 +44,8 @@ export default function runDev(opts = {}) {
   function initBrowserSync({
     appName,
     urls,
+    HOST,
+    PROTOCOL,
     cwd,
     disableBrowserSync,
     autoOpenBrowser = true,
@@ -44,18 +56,48 @@ export default function runDev(opts = {}) {
 
     if (disableBrowserSync || !isFirstCompile) return;
 
+    if (browserSync.has(appName)) {
+      chalk.red(`[BROWSER_SYNC] This project (${appName}) is using it.\n`);
+      return;
+    }
+
     bs = browserSync.create(appName || undefined);
-    bs.init({
-      open: autoOpenBrowser,
-      // ui: false,
-      notify: false,
-      proxy: {
-        target: urls.localUrlForBrowser,
-        ws: true,
+
+    detect(DEFAULT_BROWSER_SYNC_PORT).then(
+      port => {
+        bs.init({
+          open: autoOpenBrowser,
+          // ui: false,
+          notify: false,
+          proxy: {
+            target: urls.localUrlForBrowser,
+            ws: true,
+          },
+          cwd,
+          port,
+        });
+
+        if (onOpenPort) {
+          const urls = prepareUrls(PROTOCOL, HOST, port);
+          onOpenPort(
+            {
+              port,
+              urls,
+              appName,
+              HOST,
+              PROTOCOL,
+            },
+            'BROWSER_SYNC',
+          );
+        }
       },
-      cwd,
-      // port: ,
-    });
+      err => {
+        chalk.red(
+          `[BROWSER_SYNC] Could not find an open port.\nNetwork error message: ${err.message ||
+            err}\n`,
+        );
+      },
+    );
 
     isFirstCompile = false;
   }
@@ -72,7 +114,7 @@ export default function runDev(opts = {}) {
     debug(`user config: ${JSON.stringify(config)}`);
   } catch (e) {
     console.error(chalk.red(e.message));
-    debug('Get .webpackrc config failed, watch config and reload');
+    debug(`Get ${CONFIG_FILE_NAME} config failed, watch config and reload`);
 
     // 监听配置项变更，然后重新执行 dev 逻辑
     watchConfigs({ cwd, configFileName: CONFIG_FILE_NAME }).on(
@@ -89,14 +131,23 @@ export default function runDev(opts = {}) {
   }
 
   // get webpack config
-  const webpackConfig = getWebpackConfig({
-    cwd,
-    config,
-    babel,
-    paths,
-    entry,
-  });
-  const { openBrowser: autoOpenBrowser, disableBrowserSync } = config;
+  const webpackConfig = applyWebpackConfig(
+    applyWebpack,
+    getWebpackConfig(
+      {
+        cwd,
+        config,
+        babel,
+        paths,
+        entry,
+      },
+      applyConfig,
+    ),
+  );
+  const {
+    openBrowser: autoOpenBrowser = _cliEnv.BROWSER,
+    disableBrowserSync = !_cliEnv.BROWSER_SYNC,
+  } = config;
 
   dev({
     webpackConfig,
@@ -121,14 +172,19 @@ export default function runDev(opts = {}) {
         console.log(e);
       }
     },
-    afterServer(devServer) {
+    afterServer(devServer, urlsInfo) {
+      if (onOpenPort) {
+        onOpenPort(urlsInfo, 'DEV_SERVER');
+      }
       returnedWatchConfig(devServer);
     },
-    onCompileDone({ urls, appName }) {
+    onCompileDone({ urls, appName, HOST, PROTOCOL }) {
       if (isFirstCompile) {
         initBrowserSync({
           urls,
           appName,
+          HOST,
+          PROTOCOL,
           cwd,
           autoOpenBrowser,
           disableBrowserSync,

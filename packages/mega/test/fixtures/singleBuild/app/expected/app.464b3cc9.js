@@ -1,1 +1,0 @@
-webpackJsonp([0],{"2O6T":function(o,n,e){function l(){return c.createElement("p",null,"sads")}var c=e("dmLA"),s=e("/k/u");console.log(321312),console.log(c),console.log(s),o.exports=l}},["2O6T"]);
