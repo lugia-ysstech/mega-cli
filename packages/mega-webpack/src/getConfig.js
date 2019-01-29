@@ -439,6 +439,7 @@ export default function getConfig(opts = {}, applyConfig) {
             /\.(html|ejs)$/,
             /\.json$/,
             /\.(js|jsx|ts|tsx)$/,
+            /\.lugiad$/,
             /\.(css|less|scss|sass)$/,
             ...(opts.urlLoaderExcludes || []),
           ],
@@ -473,6 +474,17 @@ export default function getConfig(opts = {}, applyConfig) {
                 transpileOnly: true,
                 ...(opts.typescript || {}),
               },
+            },
+          ],
+        },
+        {
+          test: /\.lugiad$/,
+          include: opts.cwd,
+          exclude: /node_modules/,
+          use: [
+            ...babelUse,
+            {
+              loader: require.resolve('@lugia/mega-utils/lib/lugiad-loader'),
             },
           ],
         },

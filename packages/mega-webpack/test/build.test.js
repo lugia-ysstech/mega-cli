@@ -15,6 +15,8 @@ process.env.__FROM_TEST = true;
 function getEntry(cwd) {
   if (existsSync(join(cwd, 'index.ts'))) {
     return join(cwd, 'index.ts');
+  } else if (existsSync(join(cwd, 'index.lugiad'))) {
+    return join(cwd, 'index.lugiad');
   } else {
     return join(cwd, 'index.js');
   }

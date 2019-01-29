@@ -45,6 +45,7 @@ Object {
           /\\\\\\.\\(html\\|ejs\\)\\$/,
           /\\\\\\.json\\$/,
           /\\\\\\.\\(js\\|jsx\\|ts\\|tsx\\)\\$/,
+          /\\\\\\.lugiad\\$/,
           /\\\\\\.\\(css\\|less\\|scss\\|sass\\)\\$/,
         ],
         "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\url-loader\\\\index.js",
@@ -149,6 +150,40 @@ Object {
               "configFileName": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\tsconfig.json",
               "transpileOnly": true,
             },
+          },
+        ],
+      },
+      Object {
+        "exclude": /node_modules/,
+        "include": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "test": /\\\\\\.lugiad\\$/,
+        "use": Array [
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "options": Object {
+              "babelrc": false,
+              "cacheDirectory": true,
+              "plugins": Array [],
+              "presets": Array [
+                Array [
+                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
+                  Object {
+                    "browsers": Array [
+                      ">1%",
+                      "last 4 versions",
+                      "Firefox ESR",
+                      "not ie < 9",
+                    ],
+                  },
+                ],
+              ],
+            },
+          },
+          Object {
+            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\lugiad-loader\\\\index.js",
           },
         ],
       },
