@@ -1,4 +1,6 @@
 import webpack from 'webpack';
+import MemoryFS from 'memory-fs';
+import { join, basename, dirname } from 'path';
 import chalk from 'chalk';
 import assert from 'assert';
 import is from '@lugia/mega-utils/lib/is';
@@ -13,7 +15,7 @@ const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
 function buildWebpack(opts = {}) {
-  const { webpackConfig, watch, success, fail } = opts;
+  const { webpackConfig, watch, useMemoryFS, success, fail } = opts;
   debug(`webpack config: ${JSON.stringify(webpackConfig)}`);
 
   const preLog = '[Lugia Mega]';
@@ -30,7 +32,13 @@ function buildWebpack(opts = {}) {
     logColor('green', log, post);
   };
 
+  let fs;
+  if (useMemoryFS) {
+    fs = new MemoryFS();
+  }
+
   function successHandler({ stats, warnings }) {
+    const outputPath = webpackConfig.output.path;
     if (warnings.length) {
       warnLog('Compiled with warnings.', ` ${new Date()}\n`);
       console.log(warnings.join('\n\n'));
@@ -39,24 +47,43 @@ function buildWebpack(opts = {}) {
       successLog('Compiled successfully.', ` ${new Date()}\n`);
     }
 
-    console.log(`${chalk.green('[Lugia Mega]')} File sizes after gzip:\n`);
-    printFileSizesAfterBuild(
-      stats,
-      {
-        root: webpackConfig.output.path,
-        sizes: {},
-      },
-      webpackConfig.output.path,
-      WARN_AFTER_BUNDLE_GZIP_SIZE,
-      WARN_AFTER_CHUNK_GZIP_SIZE,
-    );
-    console.log();
-    console.log('  Images and other types of assets omitted.\n');
+    if (!useMemoryFS) {
+      console.log(`${chalk.green('[Lugia Mega]')} File sizes after gzip:\n`);
+      printFileSizesAfterBuild(
+        stats,
+        {
+          root: outputPath,
+          sizes: {},
+        },
+        outputPath,
+        WARN_AFTER_BUNDLE_GZIP_SIZE,
+        WARN_AFTER_CHUNK_GZIP_SIZE,
+      );
+      console.log();
+      console.log('  Images and other types of assets omitted.\n');
+    }
 
     successLog('Build complete. The dist directory is ready to be deployed.\n');
 
+    let assets = [];
+    if (useMemoryFS) {
+      assets = stats
+        .toJson()
+        .assets.filter(asset => /\.(js|css)$/.test(asset.name))
+        .map(asset => {
+          const filePath = join(outputPath, asset.name);
+          const fileContent = fs.readFileSync(filePath).toString();
+          return {
+            path: filePath,
+            folder: join(basename(outputPath), dirname(asset.name)),
+            name: basename(asset.name),
+            content: fileContent,
+          };
+        });
+    }
+
     if (success) {
-      success({ stats, warnings });
+      success({ stats, warnings }, assets);
     }
   }
 
@@ -90,6 +117,9 @@ function buildWebpack(opts = {}) {
   }
 
   const compiler = webpack(webpackConfig);
+  if (useMemoryFS) {
+    compiler.outputFileSystem = fs;
+  }
   if (watch) {
     compiler.watch(200, doneHandler);
   } else {
