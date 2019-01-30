@@ -8,7 +8,15 @@ import { CONFIG_FILE_NAME } from './constants';
 const debug = require('debug')('@lugia/mega-scripts:build');
 
 export default function(opts = {}) {
-  const { cwd = process.cwd(), watch, entry, applyWebpack, applyConfig } = opts;
+  const {
+    cwd = process.cwd(),
+    watch,
+    entry,
+    useMemoryFS,
+    applyWebpack,
+    applyConfig,
+    configFile,
+  } = opts;
 
   const babel = resolve(__dirname, './babel.js');
   const paths = getPaths(cwd);
@@ -21,7 +29,10 @@ export default function(opts = {}) {
     });
 
     // get user config
-    const { config } = getUserConfig({ cwd, configFileName: CONFIG_FILE_NAME });
+    const { config } = getUserConfig({
+      cwd,
+      configFileName: configFile || CONFIG_FILE_NAME,
+    });
     debug(`user config: ${JSON.stringify(config)}`);
 
     // get webpack config
@@ -42,6 +53,7 @@ export default function(opts = {}) {
     build({
       webpackConfig,
       watch,
+      useMemoryFS,
       success: resolve,
       fail: reject,
     });

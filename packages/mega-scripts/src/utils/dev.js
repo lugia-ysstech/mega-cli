@@ -26,6 +26,7 @@ export default function runDev(opts = {}) {
     applyWebpack,
     applyConfig,
     onOpenPort,
+    configFile,
     _cliEnv = {},
   } = opts;
 
@@ -109,7 +110,7 @@ export default function runDev(opts = {}) {
   try {
     ({ config, userPKG, watch: returnedWatchConfig } = getUserConfig({
       cwd,
-      configFileName: CONFIG_FILE_NAME,
+      configFileName: configFile || CONFIG_FILE_NAME,
     }));
     debug(`user config: ${JSON.stringify(config)}`);
   } catch (e) {
