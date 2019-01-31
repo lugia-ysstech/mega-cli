@@ -223,7 +223,7 @@ export default function getConfig(opts = {}, applyConfig) {
   ];
 
   // 生产环境下用 ExtractTextPlugin 提取出来
-  if (!isDev) {
+  if (!isDev && !opts.disableCssExtract) {
     cssRules.forEach(rule => {
       rule.use = ExtractTextPlugin.extract({
         use: rule.use.slice(1),
@@ -550,10 +550,14 @@ export default function getConfig(opts = {}, applyConfig) {
               ? []
               : [new webpack.HashedModuleIdsPlugin()]),
             new webpack.optimize.ModuleConcatenationPlugin(),
-            new ExtractTextPlugin({
-              filename: `[name]${cssHash}.css`,
-              allChunks: true,
-            }),
+            ...(opts.disableCssExtract
+              ? []
+              : [
+                  new ExtractTextPlugin({
+                    filename: `[name]${cssHash}.css`,
+                    allChunks: true,
+                  }),
+                ]),
             ...(opts.serviceworker
               ? [
                   new SWPrecacheWebpackPlugin({
