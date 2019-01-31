@@ -83,7 +83,7 @@ function buildWebpack(opts = {}) {
     }
 
     if (success) {
-      success({ stats, warnings }, assets);
+      success({ stats, warnings, assets });
     }
   }
 

@@ -2,7 +2,7 @@
  * Created Date: Monday, January 28th 2019, 5:45:53 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Tuesday, January 29th 2019, 11:46:48 am
+ * Last Modified: Thursday, January 31st 2019, 4:06:16 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -27,7 +27,7 @@ describe('build', () => {
         entry: join(__dirname, './fixtures/normal/index.js'),
       }),
       useMemoryFS: true,
-      success(s, assets) {
+      success({ assets }) {
         expect(assets[0]).toMatchSnapshot({ path: expect.any(String) });
         done();
       },

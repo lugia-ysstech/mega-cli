@@ -7,7 +7,7 @@ import { CONFIG_FILE_NAME } from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:build');
 
-export default function(opts = {}) {
+export default function(opts = {}, cb) {
   const {
     cwd = process.cwd(),
     watch,
@@ -54,8 +54,18 @@ export default function(opts = {}) {
       webpackConfig,
       watch,
       useMemoryFS,
-      success: resolve,
-      fail: reject,
+      success: ({ stats, warnings, assets }) => {
+        if (cb) {
+          cb(undefined, { stats, warnings, assets });
+        }
+        resolve({ warnings, assets });
+      },
+      fail: err => {
+        if (cb) {
+          cb(err);
+        }
+        reject(err);
+      },
     });
   });
 }
