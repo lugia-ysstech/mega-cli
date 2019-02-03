@@ -81,6 +81,10 @@ les\webpack\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
     at F:\yssgitlab\lugia-mega\packages\mega-webpack\node_modules\webpack\node_modules\enhanced-resolve\lib
 ```
 
+## v1.0.0
+
+![todo](./docs/design/v1_todo.png)
+
 ## NEXT v2
 
 改进
