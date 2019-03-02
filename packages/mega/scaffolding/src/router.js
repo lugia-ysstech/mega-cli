@@ -1,10 +1,10 @@
 import { Redirect } from '@lugia/lugiax-router/target/lib';
 import React from 'react';
-import menuData from './menu';
+import routingConfig from './routing.config';
 
-const getMenuRouter = (menuData, routes) => {
+const getRouter = (routingConfig, routes) => {
   const rout = routes || {};
-  menuData.forEach(item => {
+  routingConfig.forEach(item => {
     const { component, value, path } = item;
     if (component) {
       rout[value] = {
@@ -19,7 +19,7 @@ const getMenuRouter = (menuData, routes) => {
     } else {
       const { children } = item;
       if (children) {
-        return getMenuRouter(children, rout);
+        return getRouter(children, rout);
       }
     }
   });
@@ -38,7 +38,7 @@ export default {
       );
     },
   },
-  ...getMenuRouter(menuData),
+  ...getRouter(routingConfig),
   '/404': {
     exact: true,
     render: async () => import('./components/404'),

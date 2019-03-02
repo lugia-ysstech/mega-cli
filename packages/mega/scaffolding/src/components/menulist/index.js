@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { Navmenu, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import logo from '../../assets/pro_logo.png';
-import menuData from '../../menu';
+import routingConfig from '../../routing.config';
 
 const NavContainer = styled.div`
   display: inline-block;
@@ -51,7 +51,7 @@ export default class List extends React.Component<any> {
             theme="dark"
             onSelect={this.onSelect}
             inlineType="ellipse"
-            data={menuData}
+            data={routingConfig}
             // size={'large'}
           />
         </Theme>
