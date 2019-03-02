@@ -112,7 +112,7 @@ export default class Header extends React.Component<> {
             <SearchButton>
               <Icon iconClass="lugia-icon-financial_search" />
             </SearchButton>
-            <Input placeholder={'搜索'} />
+            <Input placeholder="搜索" />
           </InputWrap>
 
           <CommonIconWrap>
@@ -129,10 +129,10 @@ export default class Header extends React.Component<> {
 
           <AvatarWrap>
             <Avatar
-              shape={'circle'}
+              shape="circle"
               src="http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/master/lugiaweb%E7%BB%84%E4%BB%B6/%E5%A4%B4%E5%83%8F/32.jpg"
               msgNum={99}
-              size={'large'}
+              size="large"
             />
           </AvatarWrap>
         </ActionListContainer>

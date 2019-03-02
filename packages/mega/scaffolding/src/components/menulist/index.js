@@ -7,7 +7,8 @@
 import React from 'react';
 import { go, Link } from '@lugia/lugiax-router';
 import styled from 'styled-components';
-import { Navmenu, Theme, consts as Widget } from '@lugia/lugia-web';
+import { Navmenu, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
 import logo from '../../assets/pro_logo.png';
 import menuData from '../../menu';
 
@@ -37,6 +38,7 @@ export default class List extends React.Component<any> {
     const menuMinHeight = document.documentElement.clientHeight;
     this.setState({ menuMinHeight });
   }
+
   render() {
     const { menuMinHeight = 900 } = this.state || {};
     return (
@@ -46,9 +48,9 @@ export default class List extends React.Component<any> {
         </Title>
         <Theme config={theme}>
           <Navmenu
-            theme={'dark'}
+            theme="dark"
             onSelect={this.onSelect}
-            inlineType={'ellipse'}
+            inlineType="ellipse"
             data={menuData}
             // size={'large'}
           />

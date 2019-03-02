@@ -3,7 +3,6 @@ export default {
   disableCSSModules: true,
   cssModulesWithAffix: true,
   publicPath: '/',
-  entry: './.lugia/index.js',
   extraBabelPlugins: [
     [
       'import',

@@ -54,8 +54,11 @@ export default function runDev(opts = {}) {
     disableBrowserSync =
       process.env.BROWSER_SYNC === 'none' ? true : disableBrowserSync;
     autoOpenBrowser = process.env.BROWSER === 'none' ? false : autoOpenBrowser;
-
+    console.log(1321);
+    console.log(disableBrowserSync);
+    console.log(isFirstCompile);
     if (disableBrowserSync || !isFirstCompile) return;
+    console.log(876861321);
 
     if (browserSync.has(appName)) {
       chalk.red(`[BROWSER_SYNC] This project (${appName}) is using it.\n`);

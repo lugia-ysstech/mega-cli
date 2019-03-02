@@ -9,7 +9,7 @@ const getMenuRouter = (menuData, routes) => {
     if (component) {
       rout[value] = {
         exact: true,
-        component: component,
+        component,
       };
     } else if (path) {
       rout[value] = {

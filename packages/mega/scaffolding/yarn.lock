@@ -846,10 +846,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@lugia/babel-preset-mega@^1.0.1":
-  version "1.0.1"
-  resolved "http://192.168.102.79:5001/@lugia/babel-preset-mega/download/@lugia/babel-preset-mega-1.0.1.tgz#eb5e537a5cc30b6553a149888527923abd3b6611"
-  integrity sha1-615TelzDC2VToUmIhSeSOr07ZhE=
+"@lugia/babel-preset-mega@^1.0.2":
+  version "1.0.2"
+  resolved "http://192.168.102.79:5001/@lugia/babel-preset-mega/download/@lugia/babel-preset-mega-1.0.2.tgz#8d3b8a572b6ca13e82498c0ae1b8a41da333026d"
+  integrity sha1-jTuKVytsoT6CSYwK4bikHaMzAm0=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-proposal-class-properties" "7.1.0"
@@ -869,10 +869,10 @@
     babel-plugin-transform-dynamic-import "2.1.0"
     babel-plugin-transform-react-remove-prop-types "0.4.20"
 
-"@lugia/lugia-web@^1.0.81":
-  version "1.0.81"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.81.tgz#a288771cd4610bc813221374f7dbb5859ccaba2f"
-  integrity sha1-ooh3HNRhC8gTIhN099u1hZzKui8=
+"@lugia/lugia-web@^1.0.89":
+  version "1.0.89"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.89.tgz#f95b19fb585b0dad25c0ea57ae702231fdf09ec5"
+  integrity sha1-+VsZ+1hbDa0lwOpXrnAiMf3wnsU=
   dependencies:
     "@lugia/type-utils" "^1.0.4"
     babel-polyfill "6.26.0"
@@ -881,8 +881,6 @@
     css-animation "1.4.1"
     enquire.js "^2.1.6"
     events "^3.0.0"
-    flow "^0.2.3"
-    flow-bin "^0.87.0"
     moment "^2.22.2"
     prop-types "15.5.10"
     prop-types-extra "1.0.1"
@@ -925,18 +923,18 @@
     "@lugia/lugiax-core" "^1.0.5"
     immutable "^3.8.2"
 
-"@lugia/mega-jest@^1.1.5":
-  version "1.1.5"
-  resolved "http://192.168.102.79:5001/@lugia/mega-jest/download/@lugia/mega-jest-1.1.5.tgz#45d4b4cdbd3bf8db65fa19dd3cc025a4290b877f"
-  integrity sha1-RdS0zb07+Ntl+hndPMAlpCkLh38=
+"@lugia/mega-jest@^1.2.2":
+  version "1.2.2"
+  resolved "http://192.168.102.79:5001/@lugia/mega-jest/download/@lugia/mega-jest-1.2.2.tgz#45be0891c441c3483231d9f58f42f75b551961b4"
+  integrity sha1-Rb4IkcRBw0gyMdn1j0L3W1UZYbQ=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
     "@babel/plugin-transform-modules-commonjs" "^7.1.0"
     "@babel/polyfill" "7.0.0"
     "@babel/runtime" "^7.1.5"
-    "@lugia/babel-preset-mega" "^1.0.1"
-    "@lugia/mega-webpack" "^1.2.2"
+    "@lugia/babel-preset-mega" "^1.0.2"
+    "@lugia/mega-webpack" "^1.3.2"
     babel-core "7.0.0-bridge.0"
     babel-jest "^23.6.0"
     babel-plugin-module-resolver "^3.1.1"
@@ -953,23 +951,24 @@
     ts-jest-babel-7 "^22.0.7"
     typescript "^2.9.2"
 
-"@lugia/mega-scripts@^1.2.2":
-  version "1.2.2"
-  resolved "http://192.168.102.79:5001/@lugia/mega-scripts/download/@lugia/mega-scripts-1.2.2.tgz#4a8234bf2f27031e7ff87645704f830e2cf7e9e7"
-  integrity sha1-SoI0vy8nAx5/+HZFcE+DDiz36ec=
+"@lugia/mega-scripts@^1.3.3":
+  version "1.3.3"
+  resolved "http://192.168.102.79:5001/@lugia/mega-scripts/download/@lugia/mega-scripts-1.3.3.tgz#ca112681a5cc6a8ec52fea2b0d0f9c894f765848"
+  integrity sha1-yhEmgaXMao7FL+orDQ+ciU92WEg=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/runtime" "^7.1.5"
-    "@lugia/babel-preset-mega" "^1.0.1"
-    "@lugia/mega-jest" "^1.1.5"
-    "@lugia/mega-utils" "^1.3.2"
-    "@lugia/mega-webpack" "^1.2.2"
+    "@lugia/babel-preset-mega" "^1.0.2"
+    "@lugia/mega-jest" "^1.2.2"
+    "@lugia/mega-utils" "^1.4.0"
+    "@lugia/mega-webpack" "^1.3.2"
     babel-plugin-add-module-exports "^1.0.0"
     body-parser "^1.18.3"
     browser-sync "^2.26.3"
     chalk "^2.4.1"
     chokidar "^2.0.4"
     debug "^3.2.6"
+    detect-port "^1.3.0"
     express-http-proxy "^1.5.0"
     glob "^7.1.3"
     graceful-process "^1.2.0"
@@ -980,10 +979,10 @@
     xlsx "^0.14.0"
     yargs "^12.0.2"
 
-"@lugia/mega-utils@^1.3.2":
-  version "1.3.2"
-  resolved "http://192.168.102.79:5001/@lugia/mega-utils/download/@lugia/mega-utils-1.3.2.tgz#2b03bf948e75b4fca7a520ba6ebc3f17f148f423"
-  integrity sha1-KwO/lI51tPynpSC6brw/F/FI9CM=
+"@lugia/mega-utils@^1.4.0":
+  version "1.4.0"
+  resolved "http://192.168.102.79:5001/@lugia/mega-utils/download/@lugia/mega-utils-1.4.0.tgz#96d1a2dc106ed60d9716d1b63dc10e9ff18064bf"
+  integrity sha1-ltGi3BBu1g2XFtG2PcEOn/GAZL8=
   dependencies:
     "@babel/runtime" "^7.1.5"
     find-pkg "^2.0.0"
@@ -1003,18 +1002,18 @@
     username "^4.0.0"
     which "^1.3.1"
 
-"@lugia/mega-webpack@^1.2.2":
-  version "1.2.2"
-  resolved "http://192.168.102.79:5001/@lugia/mega-webpack/download/@lugia/mega-webpack-1.2.2.tgz#2d417649ad7d4a9b573d258c54b059386fd81e08"
-  integrity sha1-LUF2Sa19SptXPSWMVLBZOG/YHgg=
+"@lugia/mega-webpack@^1.3.2":
+  version "1.3.2"
+  resolved "http://192.168.102.79:5001/@lugia/mega-webpack/download/@lugia/mega-webpack-1.3.2.tgz#35844d370d8753d238d26de4609323f7f2b8f623"
+  integrity sha1-NYRNNw2HU9I40m3kYJMj9/K49iM=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-transform-modules-commonjs" "7.1.0"
     "@babel/register" "7.0.0"
     "@babel/runtime" "^7.1.5"
     "@babel/runtime-corejs2" "^7.1.5"
-    "@lugia/babel-preset-mega" "^1.0.1"
-    "@lugia/mega-utils" "^1.3.2"
+    "@lugia/babel-preset-mega" "^1.0.2"
+    "@lugia/mega-utils" "^1.4.0"
     assert "^1.4.1"
     autoprefixer "^8.6.5"
     awesome-typescript-loader "^3.5.0"
@@ -1044,12 +1043,13 @@
     file-loader "^0.11.2"
     fork-ts-checker-webpack-plugin "^0.4.15"
     hard-source-webpack-plugin "^0.6.12"
-    html-webpack-plugin "^2.30.1"
+    html-webpack-plugin "^3.2.0"
     inquirer "^3.3.0"
     is-root "^2.0.0"
     less "^3.8.1"
     less-loader "^4.1.0"
     lodash.isequal "^4.5.0"
+    memory-fs "^0.4.1"
     pkg-up "^2.0.0"
     postcss "^6.0.23"
     postcss-flexbugs-fixes "^3.3.1"
@@ -2009,7 +2009,7 @@ blob@0.0.5:
   resolved "http://registry.npm.taobao.org/blob/download/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
   integrity sha1-1oDu7yX4zZGtUz9bAe7UjmTK9oM=
 
-bluebird@^3.4.7, bluebird@^3.5.1:
+bluebird@^3.5.1:
   version "3.5.3"
   resolved "http://registry.npm.taobao.org/bluebird/download/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
   integrity sha1-fQHG+WFsmlGrD4xUmnnf5uwz76c=
@@ -3574,6 +3574,14 @@ detect-port@^1.2.3:
     address "^1.0.1"
     debug "^2.6.0"
 
+detect-port@^1.3.0:
+  version "1.3.0"
+  resolved "http://registry.npm.taobao.org/detect-port/download/detect-port-1.3.0.tgz#d9c40e9accadd4df5cac6a782aefd014d573d1f1"
+  integrity sha1-2cQOmsyt1N9crGp4Ku/QFNVz0fE=
+  dependencies:
+    address "^1.0.1"
+    debug "^2.6.0"
+
 dev-ip@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/dev-ip/download/dev-ip-1.0.1.tgz#a76a3ed1855be7a012bb8ac16cb80f3c00dc28f0"
@@ -4837,16 +4845,6 @@ flatten@^1.0.2:
   resolved "http://registry.npm.taobao.org/flatten/download/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
   integrity sha1-2uRqnXj74lKSJYzB54CkHZXAN4I=
 
-flow-bin@^0.87.0:
-  version "0.87.0"
-  resolved "http://registry.npm.taobao.org/flow-bin/download/flow-bin-0.87.0.tgz#fab7f984d8cc767e93fa9eb01cf7d57ed744f19d"
-  integrity sha1-+rf5hNjMdn6T+p6wHPfVftdE8Z0=
-
-flow@^0.2.3:
-  version "0.2.3"
-  resolved "http://registry.npm.taobao.org/flow/download/flow-0.2.3.tgz#f8da65efa249127ec99376a28896572a9795d1af"
-  integrity sha1-+Npl76JJEn7Jk3aiiJZXKpeV0a8=
-
 flush-write-stream@^1.0.0:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/flush-write-stream/download/flush-write-stream-1.0.3.tgz#c5d586ef38af6097650b49bc41b55fabb19f35bd"
@@ -5504,17 +5502,18 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.4.x"
 
-html-webpack-plugin@^2.30.1:
-  version "2.30.1"
-  resolved "http://registry.npm.taobao.org/html-webpack-plugin/download/html-webpack-plugin-2.30.1.tgz#7f9c421b7ea91ec460f56527d78df484ee7537d5"
-  integrity sha1-f5xCG36pHsRg9WUn1430hO51N9U=
+html-webpack-plugin@^3.2.0:
+  version "3.2.0"
+  resolved "http://registry.npm.taobao.org/html-webpack-plugin/download/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
+  integrity sha1-sBq71yOsqqeze2r0SS69oD2d03s=
   dependencies:
-    bluebird "^3.4.7"
     html-minifier "^3.2.3"
     loader-utils "^0.2.16"
     lodash "^4.17.3"
     pretty-error "^2.0.2"
+    tapable "^1.0.0"
     toposort "^1.0.0"
+    util.promisify "1.0.0"
 
 htmlparser2@^3.9.1:
   version "3.10.0"
@@ -7445,7 +7444,7 @@ mem@^4.0.0:
     mimic-fn "^1.0.0"
     p-is-promise "^1.1.0"
 
-memory-fs@^0.4.0, memory-fs@~0.4.1:
+memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
   version "0.4.1"
   resolved "http://registry.npm.taobao.org/memory-fs/download/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
   integrity sha1-OpoguEYlI+RHz7x+i7gO1me/xVI=
@@ -9480,15 +9479,15 @@ react-dom@^16.6.1:
     prop-types "^15.6.2"
     scheduler "^0.11.0"
 
-react-dom@^16.6.3:
-  version "16.6.3"
-  resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-16.6.3.tgz#8fa7ba6883c85211b8da2d0efeffc9d3825cccc0"
-  integrity sha1-j6e6aIPIUhG42i0O/v/J04JczMA=
+react-dom@^16.8.3:
+  version "16.8.3"
+  resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-16.8.3.tgz#ae236029e66210783ac81999d3015dfc475b9c32"
+  integrity sha1-riNgKeZiEHg6yBmZ0wFd/EdbnDI=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.11.2"
+    scheduler "^0.13.3"
 
 react-error-overlay@1.0.9:
   version "1.0.9"
@@ -9575,15 +9574,15 @@ react@^16.6.1:
     prop-types "^15.6.2"
     scheduler "^0.11.0"
 
-react@^16.6.3:
-  version "16.6.3"
-  resolved "http://registry.npm.taobao.org/react/download/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
-  integrity sha1-Jdd8kZEda73SPbQecPsJTMHghxw=
+react@^16.8.3:
+  version "16.8.3"
+  resolved "http://registry.npm.taobao.org/react/download/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
+  integrity sha1-xvmIos6JU3XeIW7c+u3WuadkUdk=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.11.2"
+    scheduler "^0.13.3"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -10162,10 +10161,10 @@ scheduler@^0.11.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.11.2:
-  version "0.11.2"
-  resolved "http://registry.npm.taobao.org/scheduler/download/scheduler-0.11.2.tgz#a8db5399d06eba5abac51b705b7151d2319d33d3"
-  integrity sha1-qNtTmdBuulq6xRtwW3FR0jGdM9M=
+scheduler@^0.13.3:
+  version "0.13.3"
+  resolved "http://registry.npm.taobao.org/scheduler/download/scheduler-0.13.3.tgz#bed3c5850f62ea9c716a4d781f9daeb9b2a58896"
+  integrity sha1-vtPFhQ9i6pxxak14H52uubKliJY=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -11541,7 +11540,7 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   resolved "http://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-util.promisify@^1.0.0:
+util.promisify@1.0.0, util.promisify@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/util.promisify/download/util.promisify-1.0.0.tgz#440f7165a459c9a16dc145eb8e72f35687097030"
   integrity sha1-RA9xZaRZyaFtwUXrjnLzVocJcDA=
