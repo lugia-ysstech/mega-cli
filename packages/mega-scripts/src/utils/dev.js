@@ -7,6 +7,7 @@ import {
   applyWebpackConfig,
 } from '@lugia/mega-webpack';
 import { prepareUrls } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
+import is from '@lugia/mega-utils/lib/is';
 import noopServiceWorkerMiddleware from '@lugia/mega-utils/lib/noopServiceWorkerMiddleware';
 import chalk from 'chalk';
 import browserSync from 'browser-sync';
@@ -54,11 +55,12 @@ export default function runDev(opts = {}) {
     disableBrowserSync =
       process.env.BROWSER_SYNC === 'none' ? true : disableBrowserSync;
     autoOpenBrowser = process.env.BROWSER === 'none' ? false : autoOpenBrowser;
-    console.log(1321);
-    console.log(disableBrowserSync);
-    console.log(isFirstCompile);
+
+    debug('disableBrowserSync', disableBrowserSync);
+    debug('autoOpenBrowser', autoOpenBrowser);
+    debug('isFirstCompile', isFirstCompile);
+
     if (disableBrowserSync || !isFirstCompile) return;
-    console.log(876861321);
 
     if (browserSync.has(appName)) {
       chalk.red(`[BROWSER_SYNC] This project (${appName}) is using it.\n`);
@@ -69,6 +71,9 @@ export default function runDev(opts = {}) {
 
     detect(DEFAULT_BROWSER_SYNC_PORT).then(
       port => {
+        debug('localUrlForBrowser', urls.localUrlForBrowser);
+        debug('BROWSER_SYNC_PORT', port);
+
         bs.init({
           open: autoOpenBrowser,
           // ui: false,
@@ -150,7 +155,9 @@ export default function runDev(opts = {}) {
   );
   const {
     openBrowser: autoOpenBrowser = _cliEnv.BROWSER,
-    disableBrowserSync = !_cliEnv.BROWSER_SYNC,
+    disableBrowserSync = is.undefined(_cliEnv.BROWSER_SYNC)
+      ? undefined
+      : !_cliEnv.BROWSER_SYNC,
   } = config;
 
   dev({
