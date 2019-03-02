@@ -779,13 +779,6 @@ function bindHandleEvent(e) {
   }, external__window_React__default.a.createElement("div", {
     style: {
       position: 'absolute',
-      width: '1366px',
-      height: '1080px',
-      zIndex: '4000'
-    }
-  }, external__window_React__default.a.createElement("div", {
-    style: {
-      position: 'absolute',
       width: '32px',
       height: '32px',
       zIndex: '4000',
@@ -793,7 +786,7 @@ function bindHandleEvent(e) {
       top: '315px'
     }
   }, external__window_React__default.a.createElement(external__lugiaWeb_["Avatar"], {
-    defaultValue: ''
+    defaultValue: ""
   })), external__window_React__default.a.createElement("div", {
     style: {
       position: 'absolute',
@@ -804,7 +797,7 @@ function bindHandleEvent(e) {
       top: '521.6666666666667px'
     }
   }, external__window_React__default.a.createElement(external__lugiaWeb_["AmountInput"], {
-    defaultValue: ''
+    defaultValue: ""
   })), external__window_React__default.a.createElement("div", {
     style: {
       position: 'absolute',
@@ -815,7 +808,7 @@ function bindHandleEvent(e) {
       top: '448.33333333333337px'
     }
   }, external__window_React__default.a.createElement(external__lugiaWeb_["Badge"], {
-    defaultValue: ''
+    defaultValue: ""
   })), external__window_React__default.a.createElement("div", {
     style: {
       position: 'absolute',
@@ -826,7 +819,7 @@ function bindHandleEvent(e) {
       top: '418.33333333333337px'
     }
   }, external__window_React__default.a.createElement(external__lugiaWeb_["BackTop"], {
-    defaultValue: ''
+    defaultValue: ""
   })), external__window_React__default.a.createElement("div", {
     style: {
       position: 'absolute',
@@ -837,7 +830,7 @@ function bindHandleEvent(e) {
       top: '271.66666666666674px'
     }
   }, external__window_React__default.a.createElement(external__lugiaWeb_["Anchor"], {
-    defaultValue: ''
+    defaultValue: ""
   })), external__window_React__default.a.createElement("div", {
     style: {
       position: 'absolute',
@@ -848,8 +841,8 @@ function bindHandleEvent(e) {
       top: '308.33333333333337px'
     }
   }, external__window_React__default.a.createElement(external__lugiaWeb_["Card"], {
-    defaultValue: ''
-  })))));
+    defaultValue: ""
+  }))));
 });
 // CONCATENATED MODULE: ./index.js
 /**
