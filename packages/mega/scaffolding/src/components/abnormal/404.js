@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import notFound from '../../assets/images/404.png';
-import Abnormal from '../abnormal';
+import Abnormal from './index';
 
 export default class Pages extends React.Component<any, any> {
   render() {

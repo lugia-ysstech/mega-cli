@@ -880,10 +880,10 @@
     styled-components "3.4.9"
     uuid "^3.3.2"
 
-"@lugia/lugia-web@^1.0.89":
-  version "1.0.89"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.89.tgz#f95b19fb585b0dad25c0ea57ae702231fdf09ec5"
-  integrity sha1-+VsZ+1hbDa0lwOpXrnAiMf3wnsU=
+"@lugia/lugia-web@^1.0.90":
+  version "1.0.90"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.90.tgz#e26d1d10bce0bf121b0876d6d7cdfba10c97f550"
+  integrity sha1-4m0dELzgvxIbCHbW1837oQyX9VA=
   dependencies:
     "@lugia/type-utils" "^1.0.4"
     babel-polyfill "6.26.0"

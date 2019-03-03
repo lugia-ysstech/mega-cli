@@ -27,29 +27,29 @@ class User extends Component {
         <Container>
           <InputWrapper>
             <Input
-              size="default"
-              placeholder="请输入姓名"
+              size={'default'}
+              placeholder={'请输入姓名'}
               onChange={this.props.onChangeName}
             />
           </InputWrapper>
           <InputWrapper>
             <Input
-              size="default"
-              placeholder="请输入年龄"
+              size={'default'}
+              placeholder={'请输入年龄'}
               onChange={this.props.onChangeAge}
             />
           </InputWrapper>
           <InputWrapper>
             <Input
-              size="default"
-              placeholder="请输入电话号码"
+              size={'default'}
+              placeholder={'请输入电话号码'}
               onChange={this.props.onChangePhone}
             />
           </InputWrapper>
           <InputWrapper>
             <Input
-              size="default"
-              placeholder="请输入邮箱"
+              size={'default'}
+              placeholder={'请输入邮箱'}
               onChange={this.props.onChangeEmail}
             />
           </InputWrapper>

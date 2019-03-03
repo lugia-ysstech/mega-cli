@@ -8,12 +8,12 @@ const getRouter = (routingConfig, routes) => {
     const { component, value, path } = item;
     if (component) {
       rout[value] = {
-        exact: true,
-        component,
+        // exact: true,
+        component: component,
       };
     } else if (path) {
       rout[value] = {
-        exact: true,
+        // exact: true,
         render: () => import(`${path}`),
       };
     } else {
@@ -26,30 +26,27 @@ const getRouter = (routingConfig, routes) => {
   return rout;
 };
 export default {
-  '/': {
+  '/pages': {
+    render: async () => import('./pages/user'),
     exact: true,
-    render: async () => {
-      return () => (
-        <Redirect
-          to={{
-            pathname: '/analyse',
-          }}
-        />
-      );
-    },
   },
   ...getRouter(routingConfig),
-  '/404': {
-    exact: true,
+  '/pages/404': {
     render: async () => import('./components/404'),
   },
-  NotFound: {
+  '/pages/403': {
+    render: async () => import('./components/abnormal/403'),
+  },
+  '/pages/500': {
+    render: async () => import('./components/abnormal/500'),
+  },
+  ROOT: {
     isHidden: true,
     render: async () => {
       return () => (
         <Redirect
           to={{
-            pathname: '/404',
+            pathname: '/pages',
           }}
         />
       );

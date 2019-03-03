@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
 import { createRoute } from '@lugia/lugiax-router';
-import Header from './components/header';
-import MnueList from './components/menulist';
-import './App.css';
-import styled from 'styled-components';
-import router from './router';
+import { Redirect } from '@lugia/lugiax-router/target/lib';
+import register from './models/register';
 
-const ContentContainer = styled.div`
-  flex: 1;
-`;
-
-export default () => {
-  console.info('init main');
-  return (
-    <div className="app">
-      <MnueList />
-      <ContentContainer>
-        <Header />
-        {createRoute(router)}
-      </ContentContainer>
-    </div>
-  );
+export const firstRouter = {
+  '/': {
+    exact: true,
+    render: async () => {
+      return () => (
+        <Redirect
+          to={{
+            pathname: '/pages',
+          }}
+        />
+      );
+    },
+  },
+  '/pages': {
+    render: async () => import('./pages'),
+  },
+  '/register': {
+    render: async () => import('./register'),
+  },
+  '/login': {
+    exact: true,
+    render: async () => import('./login'),
+  },
+  LOGIN: {
+    isHidden: true,
+    render: async () => {
+      return () => (
+        <Redirect
+          to={{
+            pathname: '/login',
+          }}
+        />
+      );
+    },
+  },
 };
 
-const styles = {
-  padding: '30px',
+export default () => {
+  console.info('init main', firstRouter);
+  return <React.Fragment>{createRoute(firstRouter)}</React.Fragment>;
 };
