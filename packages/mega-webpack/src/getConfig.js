@@ -365,6 +365,7 @@ export default function getConfig(opts = {}, applyConfig) {
     resolve: {
       modules: [
         'node_modules',
+        resolve(opts.cwd, 'node_modules'),
         resolve(__dirname, '../node_modules'),
         ...(opts.extraResolveModules || []),
       ],
@@ -404,7 +405,6 @@ export default function getConfig(opts = {}, applyConfig) {
           : [
               {
                 test: /\.tsx?$/,
-                include: opts.cwd,
                 exclude: /node_modules/,
                 enforce: 'pre',
                 use: [
@@ -423,7 +423,6 @@ export default function getConfig(opts = {}, applyConfig) {
           : [
               {
                 test: /\.(js|jsx)$/,
-                include: opts.cwd,
                 exclude: /node_modules/,
                 enforce: 'pre',
                 use: [
@@ -451,18 +450,15 @@ export default function getConfig(opts = {}, applyConfig) {
         },
         {
           test: /\.js$/,
-          include: opts.cwd,
           exclude: /node_modules/,
           use: babelUse,
         },
         {
           test: /\.jsx$/,
-          include: opts.cwd,
           use: babelUse,
         },
         {
           test: /\.(ts|tsx)$/,
-          include: opts.cwd,
           exclude: /node_modules/,
           use: [
             ...babelUse,
@@ -479,7 +475,6 @@ export default function getConfig(opts = {}, applyConfig) {
         },
         {
           test: /\.lugiad$/,
-          include: opts.cwd,
           exclude: /node_modules/,
           use: [
             ...babelUse,
