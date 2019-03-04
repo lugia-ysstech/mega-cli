@@ -62,7 +62,7 @@
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.2",
     "slash": "^2.0.0",
-    "stylelint": "^9.7.1",
+    "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "terser": "^3.14.1",
     "through2": "^2.0.5",

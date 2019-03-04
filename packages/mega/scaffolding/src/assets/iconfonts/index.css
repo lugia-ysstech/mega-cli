@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'iconfont';
+  font-family: 'lugia-admin-iconfont';
   src: url('./font/iconfont.eot');
   src:
     url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
@@ -9,14 +9,16 @@
     url('./font/iconfont.svg#iconfont') format('svg');
 }
 
+/* stylelint-disable */
 .iconfont {
-  /* font-family: 'iconfont'; */
+  font-family: 'lugia-admin-iconfont';
 
   /* font-size: 16px; */
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* stylelint-enable */
 
 .icon-logo-weibo::before {
   content: '\e618';

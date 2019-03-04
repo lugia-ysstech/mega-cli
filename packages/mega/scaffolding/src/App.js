@@ -4,21 +4,6 @@ import { Redirect } from '@lugia/lugiax-router/target/lib';
 import register from './models/register';
 
 export const firstRouter = {
-  '/': {
-    exact: true,
-    render: async () => {
-      return () => (
-        <Redirect
-          to={{
-            pathname: '/pages',
-          }}
-        />
-      );
-    },
-  },
-  '/pages': {
-    render: async () => import('./pages'),
-  },
   '/register': {
     render: async () => import('./register'),
   },
@@ -26,17 +11,9 @@ export const firstRouter = {
     exact: true,
     render: async () => import('./login'),
   },
-  LOGIN: {
-    isHidden: true,
-    render: async () => {
-      return () => (
-        <Redirect
-          to={{
-            pathname: '/login',
-          }}
-        />
-      );
-    },
+  '/': {
+    // exact: true,
+    render: async () => import('./pages'),
   },
 };
 

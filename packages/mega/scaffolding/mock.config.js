@@ -2,7 +2,7 @@ const userList = [
   { id: 1, userName: 'admin', passWord: '123', cellPhone: '181' },
   { id: 2, userName: '222', cellPhone: '222' },
 ];
-const userList2 = [
+const userData = [
   {
     id: 1,
     name: '王易',
@@ -97,16 +97,18 @@ export default {
     const {
       query: { text },
     } = requestBody;
-    userList2.filter(item => {
-      if (item.path.indexOf(text) > -1)
-        res.json({ status: 200, allowPass: true });
-      else {
-        res.json({
-          status: 403,
-          allowPass: false,
-          error: '您没有访问权限',
-        });
-      }
+    let checkRole = false;
+    userData.filter(item => {
+      checkRole = item.path.indexOf(text) > -1;
     });
+    if (checkRole) {
+      res.json({ status: 200, allowPass: true });
+    } else {
+      res.json({
+        status: 403,
+        allowPass: false,
+        error: '您没有访问权限',
+      });
+    }
   },
 };

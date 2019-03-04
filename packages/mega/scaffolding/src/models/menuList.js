@@ -34,9 +34,9 @@ async function checkAuthorityeData(query) {
   if (value && status === 200) {
     go({ url: value });
   } else if (status === 500) {
-    go({ url: '/pages/500' });
+    go({ url: '/500' });
   } else {
-    go({ url: '/pages/403' });
+    go({ url: '/403' });
   }
 }
 
