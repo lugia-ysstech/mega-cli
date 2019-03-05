@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-utils",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "description": "This package includes some utilities used by @lugia/mega.",
   "main": "./lib/index.js",
   "repository": {
@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "@lugia/lugia-design": "^1.0.25",
+    "@lugia/lugia-design": "1.0.27",
     "find-pkg": "^2.0.0",
     "fullname": "^3.3.0",
     "got": "9.2.2",
