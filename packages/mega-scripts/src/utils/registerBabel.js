@@ -5,6 +5,7 @@ import {
   CONFIG_FILE_NAME,
   MOCK_CONFIG_FILE,
   MOCK_CONFIG_DIR,
+  CONFIG_DIR,
 } from './constants';
 
 export default function(babelPreset, opts) {
@@ -13,6 +14,7 @@ export default function(babelPreset, opts) {
     CONFIG_FILE_NAME,
     MOCK_CONFIG_FILE,
     MOCK_CONFIG_DIR,
+    CONFIG_DIR,
     // 'src',
   ].map(file => excapeRegExp(join(cwd, file)));
   const only = configOnly ? [new RegExp(`(${files.join('|')})`)] : null;

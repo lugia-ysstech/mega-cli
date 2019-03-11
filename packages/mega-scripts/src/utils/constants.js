@@ -2,7 +2,7 @@
  * Created Date: Thursday, November 8th 2018, 9:53:29 am
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Monday, January 28th 2019, 4:02:14 pm
+ * Last Modified: Friday, March 8th 2019, 5:36:49 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2018-present, #Lugia#.
@@ -11,6 +11,8 @@
  */
 
 export const CONFIG_FILE_NAME = 'lugia.config.js';
+
+export const CONFIG_DIR = './config/';
 
 export const MOCK_CONFIG_FILE = 'mock.config.js';
 
