@@ -6,6 +6,3 @@ fixtures/
 website/
 examples/
 coverage/
-
-# 暂时忽略，lugia-admin 完善后去除
-scaffolding/
