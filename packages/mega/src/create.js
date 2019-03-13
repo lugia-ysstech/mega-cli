@@ -1,24 +1,32 @@
 import { join, basename, resolve } from 'path';
+import { parse as urlParse } from 'url';
 import { sync as rm } from 'rimraf';
 import vfs from 'vinyl-fs';
 import { existsSync, renameSync, mkdirpSync } from 'fs-extra';
 import through from 'through2';
 import { sync as emptyDir } from 'empty-dir';
 import chalk from 'chalk';
-import download from 'download-git-repo';
 import logger from '@lugia/mega-utils/lib/logger';
 import canUseYarn from '@lugia/mega-utils/lib/useYarn';
 import cliSpinners from '@lugia/mega-utils/lib/cliSpinners';
+import downloadGit, {
+  normalize as normalizeGitRepo,
+} from '@lugia/mega-utils/lib/downloadGitRepo';
+import downloadNpm from '@lugia/mega-utils/lib/downloadNpmPackage';
+import getPackageInfo from '@lugia/mega-utils/lib/npmUtils';
 import homeOrTmp from '@lugia/mega-utils/lib/homeOrTmp';
 import install, { isOnline } from './install';
 import { isLocalScaffolding, getScaffoldingPath } from './localScaffolding';
 
-const defaultScaffolding = join(__dirname, '../scaffolding');
+const DefaultScaffolding = join(__dirname, '../scaffolding');
+const CacheScaffoldingDir = join(homeOrTmp, '.lugia/mega/cache/scaffoldings');
+const disableCache = !!process.env.MEGA_DISABLE_CACHE;
+const cwd = process.cwd();
 
 export default async function create(
   createPath,
-  scaffolding = defaultScaffolding,
-  { autoInstall, local, verbose, clone, useNpm },
+  scaffolding = DefaultScaffolding,
+  { autoInstall, local, verbose, clone, npm, npmRegistry, useNpm },
 ) {
   let appPath = resolve(process.cwd(), createPath);
   if (existsSync(appPath)) {
@@ -41,42 +49,85 @@ export default async function create(
   const appName = basename(appPath);
   const hasSlash = scaffolding.indexOf('/') > -1;
   const useYarn = useNpm ? false : canUseYarn(appPath);
+  const fromLocal =
+    local === true || (isLocalScaffolding(scaffolding) && npm !== true);
+  const fromNpm = npm === true;
   const isonline = await isOnline();
-  const tmpScaffoldingPath = join(
-    homeOrTmp,
-    '.lugia/mega/tmp/official-react-materials/scaffoldings',
-    scaffolding.replace(/[\/:]/g, '-').replace(/-+/g, '-'),
-  );
+  const offlineWarn = () => {
+    if (!isonline) {
+      logger.warn('You appear to be offline.');
+    }
+  };
+  const getCacheScaffoldingPath = post =>
+    join(CacheScaffoldingDir, post.replace(/[\/:]/g, '-').replace(/-+/g, '-'));
 
-  if (!isonline && !isLocalScaffolding(scaffolding)) {
-    logger.warn(
-      `You appear to be offline. Use cached scaffolding at ${chalk.yellow(
-        tmpScaffoldingPath,
-      )}.`,
-    );
-    scaffolding = tmpScaffoldingPath;
-  }
+  let cacheScaffoldingPath;
+  let spinner;
 
-  if (local === true || isLocalScaffolding(scaffolding)) {
-    const scaffoldingPath = getScaffoldingPath(scaffolding);
+  if (fromLocal) {
+    const scaffoldingPath = getScaffoldingPath(scaffolding, cwd);
     if (existsSync(scaffoldingPath)) {
       g(appPath, scaffoldingPath);
     } else {
       error(`Local scaffolding [${scaffolding}] not found.`);
     }
-  } else {
-    if (!hasSlash) {
-      scaffolding = `mega-scaffoldings/${scaffolding}`;
+    return;
+  }
+
+  if (fromNpm) {
+    try {
+      const {
+        name,
+        version,
+        dist: { shasum, tarball },
+      } = await getPackageInfo(scaffolding, { registry: npmRegistry });
+      cacheScaffoldingPath = getCacheScaffoldingPath(
+        `npm-${name}-${version}-${shasum}`,
+      );
+      if (existsSync(cacheScaffoldingPath) && !disableCache) {
+        g(appPath, cacheScaffoldingPath);
+      } else {
+        offlineWarn();
+        const { protocol, host } = urlParse(tarball);
+        spinner = cliSpinners(
+          `downloading scaffolding [${scaffolding}] from npm(${protocol}${host})`,
+        );
+        spinner.start();
+        if (existsSync(cacheScaffoldingPath)) rm(cacheScaffoldingPath);
+        await downloadNpm(scaffolding, cacheScaffoldingPath, {
+          registry: npmRegistry,
+        });
+        spinner.stop();
+        g(appPath, cacheScaffoldingPath);
+      }
+    } catch (error) {
+      error(error);
     }
-    const spinner = cliSpinners(`downloading scaffolding [${scaffolding}]`);
+    return;
+  }
+
+  if (!hasSlash) {
+    scaffolding = `mega-scaffoldings/${scaffolding}`;
+  }
+  const { type, checkout, url, origin } = normalizeGitRepo(scaffolding);
+  cacheScaffoldingPath = getCacheScaffoldingPath(
+    `${type}-${scaffolding}-${checkout}`,
+  );
+  if (existsSync(cacheScaffoldingPath) && !disableCache) {
+    g(appPath, cacheScaffoldingPath);
+  } else {
+    offlineWarn();
+    spinner = cliSpinners(
+      `downloading scaffolding [${scaffolding}] from ${url || origin}`,
+    );
     spinner.start();
-    if (existsSync(tmpScaffoldingPath)) rm(tmpScaffoldingPath);
-    download(scaffolding, tmpScaffoldingPath, { clone }, err => {
+    if (existsSync(cacheScaffoldingPath)) rm(cacheScaffoldingPath);
+    downloadGit(scaffolding, cacheScaffoldingPath, { clone }, err => {
       spinner.stop();
       if (err) {
         error(`Failed to download repo ${scaffolding}: ${err.message.trim()}`);
       }
-      g(appPath, tmpScaffoldingPath);
+      g(appPath, cacheScaffoldingPath);
     });
   }
 

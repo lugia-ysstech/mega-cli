@@ -24,8 +24,12 @@ export default function assertBuildResult(cwd, dest = 'dist') {
   expect(actualFiles.length).toEqual(expectFiles.length);
 
   actualFiles.forEach(file => {
-    const actualFile = readFileSync(join(actualDir, file), 'utf-8');
-    const expectFile = readFileSync(join(expectDir, file), 'utf-8');
-    expect(actualFile.trim()).toBe(expectFile.trim());
+    const actualFile = readFileSync(join(actualDir, file), 'utf-8')
+      .trim()
+      .replace(/\r\n|\r|\n/g, '\n');
+    const expectFile = readFileSync(join(expectDir, file), 'utf-8')
+      .trim()
+      .replace(/\r\n|\r|\n/g, '\n');
+    expect(actualFile).toBe(expectFile);
   });
 }

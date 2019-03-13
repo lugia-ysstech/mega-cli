@@ -17,7 +17,12 @@ program
   .option('-l, --local', 'the specified is from a local path')
   .option('-v, --verbose', 'print additional logs')
   .option('-c, --clone', 'use git clone')
-  .option('--use-npm')
+  .option('-p, --npm', 'the specified is from npm')
+  .option(
+    '-r, --npm-registry <url>',
+    'registry url for npm (default: configuration file ~/.npmrc)',
+  )
+  .option('--use-npm', 'use npm run install|start|test|build')
   .action((appName, scaffolding) => {
     if (is.empty(appName)) program.missingArgument(appName);
     create(appName, scaffolding, program);
