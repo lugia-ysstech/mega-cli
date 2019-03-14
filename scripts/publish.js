@@ -32,7 +32,7 @@ if (buildCode === 1) {
 }
 
 const cp = fork(
-  join(cwd, './node_modules/lerna/bin/lerna.js'),
+  join(cwd, './node_modules/lerna/cli.js'),
   ['publish', '--skip-npm'].concat(process.argv.slice(2)),
   {
     cwd,
