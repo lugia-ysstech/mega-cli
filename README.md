@@ -25,7 +25,7 @@ $ yarn
 
 ```bash
 # 引导安装所有 packages 的依赖
-$ yarn run bootstrap
+$ yarn bootstrap
 ```
 
 ### 开发
@@ -39,13 +39,13 @@ $ yarn start
 ### 测试
 
 ```bash
-$ yarn run test
+$ yarn test
 ```
 
 ### 生产构建
 
 ```bash
-$ yarn run build
+$ yarn build
 ```
 
 ### 运行单个 package 的测试
