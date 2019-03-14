@@ -23,10 +23,13 @@ const defaultConfig = {
       require.resolve('babel-plugin-module-resolver'),
       {
         alias: {
-          'ts-jest-babel-7': require.resolve('ts-jest-babel-7'),
-          react: require.resolve('react'),
-          'react-dom': require.resolve('react-dom'),
-          enzyme: require.resolve('enzyme'),
+          'ts-jest-babel-7': require.resolve('ts-jest-babel-7', [
+            cwd,
+            join(__dirname),
+          ]),
+          react: require.resolve('react', [cwd, join(__dirname)]),
+          'react-dom': require.resolve('react-dom', [cwd, join(__dirname)]),
+          enzyme: require.resolve('enzyme', [cwd, join(__dirname)]),
         },
       },
     ],
