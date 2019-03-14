@@ -18,8 +18,7 @@ const cwd = process.cwd();
 const updatedRepos = shell
   .exec('yarn run lerna updated')
   .stdout.split('\n')
-  .filter(line => /^- @lugia\//.test(line))
-  .map(line => line.replace('- ', ''));
+  .filter(line => /^@lugia\//.test(line));
 
 if (updatedRepos.length === 0) {
   console.log('No package is updated.');
