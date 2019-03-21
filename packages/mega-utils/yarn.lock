@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@lugia/lugia-design@^1.0.29":
-  version "1.0.29"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-design/download/@lugia/lugia-design-1.0.29.tgz#b5a0e43cbe800d589d9cc88d2057cf8062e2bc17"
-  integrity sha1-taDkPL6ADVidnMiNIFfPgGLivBc=
+"@lugia/lugia-design@^1.0.31":
+  version "1.0.31"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-design/download/@lugia/lugia-design-1.0.31.tgz#a7e43721028c49a93cbb5ed482e3bbfdf29e92ed"
+  integrity sha1-p+Q3IQKMSak8u17UguO7/fKeku0=
   dependencies:
     events "^3.0.0"
     ramda "^0.25.0"
