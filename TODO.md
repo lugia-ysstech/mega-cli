@@ -6,6 +6,8 @@
 
 [cosmiconfig](https://github.com/davidtheclark/cosmiconfig)
 
+配置文件需要单独做一个包，以便供其他包使用用户的配置项
+
 lugia.config.js
 
 ## lib ~ src sourcemap
