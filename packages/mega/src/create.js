@@ -2,7 +2,13 @@ import { join, basename, resolve } from 'path';
 import { parse as urlParse } from 'url';
 import { sync as rm } from 'rimraf';
 import vfs from 'vinyl-fs';
-import { existsSync, renameSync, mkdirpSync } from 'fs-extra';
+import {
+  existsSync,
+  renameSync,
+  mkdirpSync,
+  readJsonSync,
+  writeJSONSync,
+} from 'fs-extra';
 import through from 'through2';
 import { sync as emptyDir } from 'empty-dir';
 import chalk from 'chalk';
@@ -145,8 +151,20 @@ export default async function create(
       .on('end', () => {
         const gitignorePath = join(appPath, 'gitignore');
         if (existsSync(gitignorePath)) {
-          verbose && logger.info('rename gitignore -> .gitignore'); // eslint-disable-line
+          if (verbose) {
+            logger.info('rename gitignore -> .gitignore');
+          }
           renameSync(gitignorePath, join(appPath, '.gitignore'));
+        }
+        try {
+          const pkgPath = join(appPath, 'package.json');
+          const pkg = readJsonSync(pkgPath);
+          if (verbose) {
+            logger.info(`update package.json#name ${pkg.name} -> ${appName}`);
+          }
+          writeJSONSync(pkgPath, { ...pkg, name: appName });
+        } catch (error) {
+          error(error);
         }
         if (autoInstall) {
           install({
