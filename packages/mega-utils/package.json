@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "@lugia/lugia-design": "^1.0.31",
+    "@lugia/lugia-design": "^1.0.33",
     "download": "^7.1.0",
     "find-pkg": "^2.0.0",
     "fullname": "^3.3.0",
