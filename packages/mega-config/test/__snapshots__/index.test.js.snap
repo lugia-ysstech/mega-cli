@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mega-config getUserConfig() 1`] = `
+Object {
+  "config": Object {
+    "alias": Object {
+      "react": "./react",
+    },
+  },
+  "userPKG": Object {
+    "name": "test",
+    "version": "1.0.0",
+  },
+  "watch": [Function],
+}
+`;
+
+exports[`mega-config getUserConfigPlugins() 1`] = `
+Array [
+  Object {
+    "name": "alias",
+    "validate": [Function],
+  },
+  Object {
+    "name": "applyWebpack",
+    "validate": [Function],
+  },
+  Object {
+    "name": "babel",
+    "validate": [Function],
+  },
+  Object {
+    "name": "browserslist",
+    "validate": [Function],
+  },
+  Object {
+    "name": "clean",
+    "validate": [Function],
+  },
+  Object {
+    "name": "commons",
+    "validate": [Function],
+  },
+  Object {
+    "name": "copy",
+    "validate": [Function],
+  },
+  Object {
+    "name": "cssModulesExcludes",
+    "validate": [Function],
+  },
+  Object {
+    "name": "cssModulesWithAffix",
+    "validate": [Function],
+  },
+  Object {
+    "name": "define",
+    "validate": [Function],
+  },
+  Object {
+    "name": "devtool",
+    "validate": [Function],
+  },
+  Object {
+    "name": "disableBrowserSync",
+    "validate": [Function],
+  },
+  Object {
+    "name": "disableCSSModules",
+    "validate": [Function],
+  },
+  Object {
+    "name": "disableCSSSourceMap",
+    "validate": [Function],
+  },
+  Object {
+    "name": "disableDynamicImport",
+    "validate": [Function],
+  },
+  Object {
+    "name": "entry",
+    "validate": [Function],
+  },
+  Object {
+    "name": "env",
+    "validate": [Function],
+  },
+  Object {
+    "name": "es5ImcompatibleVersions",
+    "validate": [Function],
+  },
+  Object {
+    "name": "externals",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraBabelIncludes",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraBabelPlugins",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraBabelPresets",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraMega",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraPostCSSPlugins",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraResolveExtensions",
+    "validate": [Function],
+  },
+  Object {
+    "name": "extraResolveModules",
+    "validate": [Function],
+  },
+  Object {
+    "name": "hash",
+    "validate": [Function],
+  },
+  Object {
+    "name": "html",
+    "validate": [Function],
+  },
+  Object {
+    "name": "ignoreMomentLocale",
+    "validate": [Function],
+  },
+  Object {
+    "name": "manifest",
+    "validate": [Function],
+  },
+  Object {
+    "name": "openBrowser",
+    "validate": [Function],
+  },
+  Object {
+    "name": "outputPath",
+    "validate": [Function],
+  },
+  Object {
+    "name": "proxy",
+    "validate": [Function],
+  },
+  Object {
+    "name": "publicPath",
+    "validate": [Function],
+  },
+  Object {
+    "name": "sass",
+    "validate": [Function],
+  },
+  Object {
+    "name": "serviceworker",
+    "validate": [Function],
+  },
+  Object {
+    "name": "theme",
+    "validate": [Function],
+  },
+  Object {
+    "name": "typescript",
+    "validate": [Function],
+  },
+  Object {
+    "name": "urlLoaderExcludes",
+    "validate": [Function],
+  },
+]
+`;
