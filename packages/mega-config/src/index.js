@@ -19,7 +19,7 @@ const pluginsMapByName = plugins.reduce((memo, p) => {
 
 let devServer = null;
 const USER_CONFIGS = 'USER_CONFIGS';
-const CONFIG_FILE_NAME = 'webpack.config.js';
+const CONFIG_FILE_NAME = 'mega.config.js';
 
 function throwError(msg) {
   printError(msg);

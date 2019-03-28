@@ -25,6 +25,7 @@ function getEntry(cwd) {
 function build(opts, done) {
   const { config: userConfig } = getUserConfig({
     cwd: opts.cwd,
+    configFileName: 'webpack.config.js',
   });
   const webpackConfig = getConfig(
     {
