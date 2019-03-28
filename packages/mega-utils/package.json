@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-utils",
-  "version": "1.4.12",
+  "version": "1.4.13",
   "description": "This package includes some utilities used by @lugia/mega.",
   "main": "./lib/index.js",
   "repository": {
@@ -14,9 +14,9 @@
   "author": "#lugia# @hanjingbo",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
-    "@babel/register": "7.0.0",
     "@babel/plugin-transform-modules-commonjs": "7.1.0",
+    "@babel/register": "7.0.0",
+    "@babel/runtime": "^7.1.5",
     "@lugia/lugia-design": "^1.0.33",
     "babel-plugin-add-module-exports": "^1.0.0",
     "download": "^7.1.0",
