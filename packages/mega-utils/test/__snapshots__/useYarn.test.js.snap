@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useYarn getYarnResolved() 1`] = `
+Object {
+  "yarn": Any<String>,
+  "yarnpkg": Any<String>,
+}
+`;
