@@ -11,6 +11,12 @@
 - 私有的 `webpack` loader 和 plugin
 - 私有的 `gulp` plugin
 
+## registerBabel
+
+```js
+import registerBabel from '@lugia/mega-utils/lib/registerBabel';
+```
+
 **相关**
 
 - [babel](https://github.com/babel/babel)

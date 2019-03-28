@@ -1,11 +1,9 @@
 import { resolve } from 'path';
-import {
-  dev,
-  getUserConfig,
+import { dev, applyWebpackConfig } from '@lugia/mega-webpack';
+import getUserConfig, {
   watchConfigs,
   unwatchConfigs,
-  applyWebpackConfig,
-} from '@lugia/mega-webpack';
+} from '@lugia/mega-config';
 import { prepareUrls } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
 import is from '@lugia/mega-utils/lib/is';
 import noopServiceWorkerMiddleware from '@lugia/mega-utils/lib/noopServiceWorkerMiddleware';

@@ -1,0 +1,35 @@
+{
+  "name": "@lugia/mega-config",
+  "version": "1.0.0",
+  "description": "Find and load configuration from the user",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+  },
+  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "author": "#lugia# @hanjingbo",
+  "bugs": {
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "@lugia/mega-utils": "^1.4.12",
+    "assert": "^1.4.1",
+    "chalk": "^2.4.1",
+    "chokidar": "^2.0.4",
+    "debug": "^3.2.6",
+    "didyoumean": "^1.2.1",
+    "lodash.isequal": "^4.5.0",
+    "requireindex": "^1.2.0"
+  },
+  "files": [
+    "lib",
+    "yarn.lock"
+  ],
+  "engines": {
+    "node": ">=8.5.0",
+    "npm": ">=5.2.0"
+  }
+}

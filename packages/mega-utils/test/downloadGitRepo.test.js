@@ -173,7 +173,8 @@ describe('download-git-repo', () => {
         download(
           'direct:https://gitlab.com/flipxfx/download-git-repo-fixture/repository/archive.zip',
           dist,
-          () => {
+          err => {
+            if (err) return done(err);
             assertBuildResult(getDistPath('./master'));
             done();
           },
@@ -187,7 +188,8 @@ describe('download-git-repo', () => {
         download(
           'direct:https://gitlab.com/flipxfx/download-git-repo-fixture/repository/archive.zip?ref=my-branch',
           dist,
-          () => {
+          err => {
+            if (err) return done(err);
             assertBuildResult(getDistPath('./my-branch'));
             done();
           },
@@ -202,7 +204,8 @@ describe('download-git-repo', () => {
           'direct:https://gitlab.com/flipxfx/download-git-repo-fixture.git',
           dist,
           { clone: true },
-          () => {
+          err => {
+            if (err) return done(err);
             assertBuildResult(getDistPath('./master'));
             done();
           },
@@ -217,7 +220,8 @@ describe('download-git-repo', () => {
           'direct:https://gitlab.com/flipxfx/download-git-repo-fixture.git#my-branch',
           dist,
           { clone: true },
-          () => {
+          err => {
+            if (err) return done(err);
             assertBuildResult(getDistPath('./my-branch'));
             done();
           },

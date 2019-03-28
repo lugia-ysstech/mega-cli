@@ -2,7 +2,7 @@
  * Created Date: Tuesday, March 12th 2019, 2:06:51 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Wednesday, March 13th 2019, 4:23:28 pm
+ * Last Modified: Wednesday, March 27th 2019, 1:50:06 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -11,8 +11,8 @@
  */
 
 import downloadUrl from 'download';
-import gitclone from 'git-clone';
 import rm from 'rimraf';
+import gitclone from './gitClone';
 
 /**
  * Download `repo` to `dest` and callback `fn(err)`.

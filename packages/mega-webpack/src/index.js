@@ -7,18 +7,11 @@
  * -----
  * Copyright (c) 2018 @lugia
  * ------------------------------------
- * Javascript will save your soul!
+ * JavaScript will save your soul!
  */
 
 export { default as build } from './build';
 export { default as dev } from './dev';
 export { default as getConfig, applyWebpackConfig } from './getConfig';
-export {
-  default as getUserConfig,
-  watchConfigs,
-  unwatchConfigs,
-} from './getUserConfig';
-export { default as getUserConfigPlugins } from './getUserConfig/getPlugins';
-export { default as registerBabel } from './registerBabel';
 
 export { default } from 'webpack';

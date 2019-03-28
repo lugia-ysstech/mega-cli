@@ -8,21 +8,13 @@
 
 ## How to config
 
-在项目根目录下新建文件 `.webpackrc`：
-
-```json
-{
-  "alias": { "react": "preact-compat" }
-}
-```
-
-也可以使用 js，`.webpackrc.js`：
+在项目根目录下新建文件 `webpack.config.js`：
 
 ```js
 module.exports = {
   alias: {
-    react: "preact-compat"
-  }
+    react: 'preact-compat',
+  },
 };
 ```
 
@@ -60,7 +52,7 @@ module.exports = {
 在开发或者构建时使用，会获取预设的配置，包含构建 react 技术栈应用的所有 loader 和 plugin
 
 ```js
-import { getConfig } from "@lugia/mega-webpack";
+import { getConfig } from '@lugia/mega-webpack';
 
 const webpackConfig = getConfig(options);
 ```
@@ -70,14 +62,14 @@ const webpackConfig = getConfig(options);
 启动服务，开发
 
 ```js
-import { dev } from "@lugia/mega-webpack";
+import { dev } from '@lugia/mega-webpack';
 
 dev({
   webpackConfig,
   beforeServer,
   afterServer,
   proxy,
-  ...otherConfig
+  ...otherConfig,
 });
 ```
 
@@ -86,25 +78,19 @@ dev({
 打包构建
 
 ```js
-import { build } from "@lugia/mega-webpack";
+import { build } from '@lugia/mega-webpack';
 
 build({
   webpackConfig,
   success,
-  ...otherConfig
+  ...otherConfig,
 });
 ```
 
 **mega-webpack/webpack**
 
 ```js
-import webpack from "@lugia/mega-webpack";
-```
-
-**mega-webpack/registerBabel**
-
-```js
-import { registerBabel } from "@lugia/mega-webpack";
+import webpack from '@lugia/mega-webpack';
 ```
 
 ## 相关

@@ -218,3 +218,5 @@ export function watchConfigs(opts = {}) {
 export function unwatchConfigs() {
   unwatch(USER_CONFIGS);
 }
+
+export { getPlugins as getUserConfigPlugins };

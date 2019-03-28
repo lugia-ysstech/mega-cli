@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { registerBabel } from '@lugia/mega-webpack';
+import registerBabel from '@lugia/mega-utils/lib/registerBabel';
 import excapeRegExp from 'lodash.escaperegexp';
 import {
   CONFIG_FILE_NAME,

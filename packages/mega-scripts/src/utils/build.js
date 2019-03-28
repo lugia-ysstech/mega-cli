@@ -1,5 +1,6 @@
 import { resolve } from 'path';
-import { build, getUserConfig, applyWebpackConfig } from '@lugia/mega-webpack';
+import { build, applyWebpackConfig } from '@lugia/mega-webpack';
+import getUserConfig from '@lugia/mega-config';
 import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';

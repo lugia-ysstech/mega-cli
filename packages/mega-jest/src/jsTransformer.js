@@ -1,7 +1,8 @@
 import { join } from 'path';
 import babelJest from 'babel-jest';
 import excapeRegExp from 'lodash.escaperegexp';
-import { getUserConfig, registerBabel } from '@lugia/mega-webpack';
+import getUserConfig from '@lugia/mega-config';
+import registerBabel from '@lugia/mega-utils/lib/registerBabel';
 
 const CONFIG_FILE_NAME = 'lugia.config.js';
 
