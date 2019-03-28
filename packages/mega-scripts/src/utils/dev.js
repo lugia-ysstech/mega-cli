@@ -72,31 +72,34 @@ export default function runDev(opts = {}) {
         debug('localUrlForBrowser', urls.localUrlForBrowser);
         debug('BROWSER_SYNC_PORT', port);
 
-        bs.init({
-          open: autoOpenBrowser,
-          // ui: false,
-          notify: false,
-          proxy: {
-            target: urls.localUrlForBrowser,
-            ws: true,
-          },
-          cwd,
-          port,
-        });
-
-        if (onOpenPort) {
-          const urls = prepareUrls(PROTOCOL, HOST, port);
-          onOpenPort(
-            {
-              port,
-              urls,
-              appName,
-              HOST,
-              PROTOCOL,
+        bs.init(
+          {
+            open: autoOpenBrowser,
+            // ui: false,
+            notify: false,
+            proxy: {
+              target: urls.localUrlForBrowser,
+              ws: true,
             },
-            'BROWSER_SYNC',
-          );
-        }
+            cwd,
+            port,
+          },
+          () => {
+            if (onOpenPort) {
+              const urls = prepareUrls(PROTOCOL, HOST, port);
+              onOpenPort(
+                {
+                  port,
+                  urls,
+                  appName,
+                  HOST,
+                  PROTOCOL,
+                },
+                'BROWSER_SYNC',
+              );
+            }
+          },
+        );
       },
       err => {
         chalk.red(
