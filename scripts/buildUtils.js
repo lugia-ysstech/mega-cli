@@ -29,6 +29,12 @@ const nodeBabelConfig = {
       { loose: true },
     ],
     [
+      require.resolve('babel-plugin-add-module-exports'),
+      {
+        addDefaultProperty: true,
+      },
+    ],
+    [
       require.resolve('@babel/plugin-transform-runtime'),
       {
         corejs: false,
@@ -61,6 +67,12 @@ const browserBabelConfig = {
     [
       require.resolve('@babel/plugin-proposal-class-properties'),
       { loose: true },
+    ],
+    [
+      require.resolve('babel-plugin-add-module-exports'),
+      {
+        addDefaultProperty: true,
+      },
     ],
     [
       require.resolve('@babel/plugin-transform-runtime'),
