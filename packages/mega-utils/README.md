@@ -6,7 +6,7 @@
 
 - 文件的读写、处理
 - 路径的处理
-- 命令行界面工具，颜色、清屏、状态、日志输出......
+- 命令行界面工具，颜色、清屏、状态、日志输出 ......
 - 私有的 `babel` preset 和 plugin
 - 私有的 `webpack` loader 和 plugin
 - 私有的 `gulp` plugin
