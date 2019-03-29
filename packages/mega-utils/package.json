@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-utils",
-  "version": "1.4.14",
+  "version": "1.4.15",
   "description": "This package includes some utilities used by @lugia/mega.",
   "main": "./lib/index.js",
   "repository": {
