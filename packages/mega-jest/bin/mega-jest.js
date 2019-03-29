@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const jest = require('../lib').default;
+const jest = require('../lib');
 
 const args = process.argv.slice(2);
 

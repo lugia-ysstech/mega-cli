@@ -113,6 +113,8 @@ module.exports = function(api, opts = {}, env) {
       ],
       // Adds syntax support for import()
       require.resolve('@babel/plugin-syntax-dynamic-import'),
+      // add the module.exports if only the export default declaration exists.
+      require.resolve('babel-plugin-add-module-exports'),
       isEnvTest &&
         // Transform dynamic import to require
         require.resolve('babel-plugin-transform-dynamic-import'),

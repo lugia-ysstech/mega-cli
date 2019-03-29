@@ -28,12 +28,7 @@ const nodeBabelConfig = {
       require.resolve('@babel/plugin-proposal-class-properties'),
       { loose: true },
     ],
-    [
-      require.resolve('babel-plugin-add-module-exports'),
-      {
-        addDefaultProperty: true,
-      },
-    ],
+    [require.resolve('babel-plugin-add-module-exports')],
     [
       require.resolve('@babel/plugin-transform-runtime'),
       {
@@ -68,12 +63,7 @@ const browserBabelConfig = {
       require.resolve('@babel/plugin-proposal-class-properties'),
       { loose: true },
     ],
-    [
-      require.resolve('babel-plugin-add-module-exports'),
-      {
-        addDefaultProperty: true,
-      },
-    ],
+    [require.resolve('babel-plugin-add-module-exports')],
     [
       require.resolve('@babel/plugin-transform-runtime'),
       {

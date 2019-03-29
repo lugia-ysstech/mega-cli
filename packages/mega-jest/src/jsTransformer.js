@@ -70,5 +70,3 @@ export default babelJest.createTransformer(
         babelrc: defaultConfig.babelrc,
       },
 );
-
-module.exports = exports.default;

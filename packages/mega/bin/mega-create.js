@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const is = require('@lugia/mega-utils/lib/is').default;
-const create = require('../lib/create').default;
-const missingArgument = require('../lib/missingArgument').default;
+const is = require('@lugia/mega-utils/lib/is');
+const create = require('../lib/create');
+const missingArgument = require('../lib/missingArgument');
 
 program
   .name('create')

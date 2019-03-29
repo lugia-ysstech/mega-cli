@@ -12,13 +12,11 @@ if (argv._.length > 0) {
 }
 
 process.env.NODE_ENV = 'production';
-require('./utils/build')
-  .default({
-    cwd: process.cwd(),
-    watch: argv.watch,
-    entry,
-  })
-  .catch(e => {
-    console.error(chalk.red(`Build failed: ${e.message}`));
-    console.log(e);
-  });
+require('./utils/build')({
+  cwd: process.cwd(),
+  watch: argv.watch,
+  entry,
+}).catch(e => {
+  console.error(chalk.red(`Build failed: ${e.message}`));
+  console.log(e);
+});

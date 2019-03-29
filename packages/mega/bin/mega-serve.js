@@ -3,8 +3,8 @@
 process.env.NODE_ENV = 'development';
 
 const program = require('commander');
-const singleServe = require('../lib/singleServe').default;
-const missingArgument = require('../lib/missingArgument').default;
+const singleServe = require('../lib/singleServe');
+const missingArgument = require('../lib/missingArgument');
 
 program
   .name('serve')

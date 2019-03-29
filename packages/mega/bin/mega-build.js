@@ -3,8 +3,8 @@
 process.env.NODE_ENV = 'production';
 
 const program = require('commander');
-const singleBuild = require('../lib/singleBuild').default;
-const missingArgument = require('../lib/missingArgument').default;
+const singleBuild = require('../lib/singleBuild');
+const missingArgument = require('../lib/missingArgument');
 
 program
   .name('build')
