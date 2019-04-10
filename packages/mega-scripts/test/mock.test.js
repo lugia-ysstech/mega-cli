@@ -8,7 +8,7 @@ describe('mock', () => {
   test('mock', done => {
     const PORT = 8987;
     const cwd = join(fixtures, 'mock');
-    const p = fork(require.resolve('../lib/dev.js'), [], {
+    const p = fork(require.resolve('../lib/commands/dev.js'), [], {
       cwd,
       env: {
         CLEAR_CONSOLE: 'none',

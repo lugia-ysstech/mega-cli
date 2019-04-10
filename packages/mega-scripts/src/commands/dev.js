@@ -12,4 +12,4 @@ if (argv._.length > 0) {
 }
 
 process.env.NODE_ENV = 'development';
-require('./utils/dev')(ops);
+require('../utils/dev')(ops);

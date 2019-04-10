@@ -8,6 +8,7 @@
 
 # production
 /build
+/dll
 
 # misc
 .DS_Store

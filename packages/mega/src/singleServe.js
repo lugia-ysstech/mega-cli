@@ -2,7 +2,7 @@
  * Created Date: Wednesday, January 23rd 2019, 5:40:43 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Monday, January 28th 2019, 4:43:46 pm
+ * Last Modified: Thursday, April 11th 2019, 12:22:58 am
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -39,8 +39,10 @@ export default function singleBuild(
     return merge(webpackConfig, {
       resolve: {
         alias: {
-          react: require.resolve('react', [cwd, join(__dirname)]),
-          'react-dom': require.resolve('react-dom', [cwd, join(__dirname)]),
+          react: require.resolve('react', { paths: [cwd, join(__dirname)] }),
+          'react-dom': require.resolve('react-dom', {
+            paths: [cwd, join(__dirname)],
+          }),
         },
       },
     });
@@ -54,6 +56,7 @@ export default function singleBuild(
     _cliEnv: {
       BROWSER: open,
       BROWSER_SYNC: sync,
+      DLL: 'none',
     },
     onOpenPort({ urls }) {
       if (copy) {

@@ -20,10 +20,11 @@ switch (script) {
     console.log(pkg.version);
     break;
   }
+  case 'dll':
   case 'build':
   case 'dev':
   case 'test': {
-    const proc = fork(require.resolve(`./${script}.js`), args, {
+    const proc = fork(require.resolve(`./commands/${script}.js`), args, {
       stdio: 'inherit',
     });
     proc.once('exit', code => {

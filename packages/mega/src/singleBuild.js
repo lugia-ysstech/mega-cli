@@ -2,7 +2,7 @@
  * Created Date: Wednesday, January 23rd 2019, 5:40:43 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Friday, January 25th 2019, 6:28:32 pm
+ * Last Modified: Wednesday, April 10th 2019, 11:23:34 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -74,8 +74,10 @@ export default function singleBuild(
       },
       resolve: {
         alias: {
-          react: require.resolve('react', [cwd, join(__dirname)]),
-          'react-dom': require.resolve('react-dom', [cwd, join(__dirname)]),
+          react: require.resolve('react', { paths: [cwd, join(__dirname)] }),
+          'react-dom': require.resolve('react-dom', {
+            paths: [cwd, join(__dirname)],
+          }),
         },
       },
     });

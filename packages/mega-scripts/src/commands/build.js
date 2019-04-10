@@ -12,7 +12,7 @@ if (argv._.length > 0) {
 }
 
 process.env.NODE_ENV = 'production';
-require('./utils/build')({
+require('../utils/build')({
   cwd: process.cwd(),
   watch: argv.watch,
   entry,

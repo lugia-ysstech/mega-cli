@@ -74,7 +74,15 @@ Array [
     "validate": [Function],
   },
   Object {
+    "name": "disableDll",
+    "validate": [Function],
+  },
+  Object {
     "name": "disableDynamicImport",
+    "validate": [Function],
+  },
+  Object {
+    "name": "dllDependenciesExcludes",
     "validate": [Function],
   },
   Object {

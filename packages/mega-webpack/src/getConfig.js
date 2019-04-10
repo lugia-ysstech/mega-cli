@@ -242,7 +242,9 @@ export default function getConfig(opts = {}, applyConfig) {
     : resolve(opts.cwd, 'dist');
 
   // 把公共路径下的静态资源复制到 outputPath
-  const copyPlugins = opts.copy ? [new CopyWebpackPlugin(opts.copy)] : [];
+  const copyPlugins = opts.copy
+    ? [new CopyWebpackPlugin(opts.copy.map(c => ({ to: outputPath, ...c })))]
+    : [];
   if (existsSync(resolve(opts.cwd, 'public'))) {
     copyPlugins.push(
       new CopyWebpackPlugin([

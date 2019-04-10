@@ -1,4 +1,6 @@
 import { resolve } from 'path';
+import { execSync } from 'child_process';
+import { existsSync, readJsonSync } from 'fs-extra';
 import { dev, applyWebpackConfig } from '@lugia/mega-webpack';
 import getUserConfig, {
   watchConfigs,
@@ -7,14 +9,22 @@ import getUserConfig, {
 import { prepareUrls } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
 import is from '@lugia/mega-utils/lib/is';
 import noopServiceWorkerMiddleware from '@lugia/mega-utils/lib/noopServiceWorkerMiddleware';
+import HtmlWebpackIncludeAssetsPlugin from 'html-webpack-include-assets-plugin';
 import chalk from 'chalk';
 import browserSync from 'browser-sync';
 import detect from 'detect-port';
+import isEqual from 'lodash.isequal';
+import getDependenciesVersion from './getDependenciesVersion';
 import getWebpackConfig from './getWebpackConfig';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';
 import { applyMock } from './mock';
-import { CONFIG_FILE_NAME, DEFAULT_BROWSER_SYNC_PORT } from './constants';
+import {
+  CONFIG_FILE_NAME,
+  DEFAULT_BROWSER_SYNC_PORT,
+  DLL_OUTPUT,
+  DLL_NAME,
+} from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:dev');
 
@@ -140,13 +150,91 @@ export default function runDev(opts = {}) {
     return;
   }
 
+  const {
+    openBrowser: autoOpenBrowser = _cliEnv.BROWSER,
+    disableBrowserSync = is.undefined(_cliEnv.BROWSER_SYNC)
+      ? undefined
+      : !_cliEnv.BROWSER_SYNC,
+    copy,
+    dllDependenciesExcludes = [],
+  } = config;
+  const { dependencies = {} } = userPKG;
+  const disableDll =
+    config.disableDll || is.empty(dependencies) || _cliEnv.DLL === 'none';
+  const dllDir = resolve(process.cwd(), DLL_OUTPUT);
+  const dllManifest = resolve(dllDir, `${DLL_NAME}.manifest.json`);
+
+  // Warn if the DLL is not built / need update
+  if (!disableDll) {
+    let needUpdate = false;
+
+    try {
+      const dllDependencies = Object.keys(dependencies).filter(
+        dependency => !dllDependenciesExcludes.includes(dependency),
+      );
+      const dependenciesVersion = getDependenciesVersion(dllDependencies, cwd);
+      const oldDependenciesVersion = readJsonSync(
+        resolve(dllDir, `${DLL_NAME}.dependencies.json`),
+      );
+      needUpdate = !isEqual(dependenciesVersion, oldDependenciesVersion);
+
+      debug('dependenciesVersion', dependenciesVersion);
+      debug('oldDependenciesVersion', oldDependenciesVersion);
+    } catch (e) {} // eslint-disable-line
+
+    debug('needUpdate', needUpdate);
+
+    if (!(existsSync(dllDir) && existsSync(dllManifest)) || needUpdate) {
+      console.log(
+        chalk.black.bgYellow.bold(
+          `The DLL files are missing. Sit back while we ${
+            needUpdate ? 'update' : 'build'
+          } them for you.`,
+        ),
+      );
+      execSync(`node ${resolve('../../bin/mega-scripts.js')} dll`, {
+        stdio: 'inherit',
+      });
+    }
+  }
+
   // get webpack config
   const webpackConfig = applyWebpackConfig(
-    applyWebpack,
+    disableDll
+      ? applyWebpack
+      : (webpackConfig, { webpack, merge }) => {
+          return applyWebpackConfig(
+            applyWebpack,
+            merge(webpackConfig, {
+              plugins: [
+                new webpack.DllReferencePlugin({
+                  context: cwd,
+                  manifest: dllManifest,
+                  sourceType: 'var',
+                }),
+                new HtmlWebpackIncludeAssetsPlugin({
+                  assets: [`${DLL_NAME}.js`],
+                  append: false,
+                }),
+              ],
+            }),
+          );
+        },
     getWebpackConfig(
       {
         cwd,
-        config,
+        config: {
+          ...config,
+          copy: disableDll
+            ? copy
+            : [
+                {
+                  from: dllDir,
+                  toType: 'dir',
+                },
+                ...(copy || []),
+              ],
+        },
         babel,
         paths,
         entry,
@@ -154,12 +242,6 @@ export default function runDev(opts = {}) {
       applyConfig,
     ),
   );
-  const {
-    openBrowser: autoOpenBrowser = _cliEnv.BROWSER,
-    disableBrowserSync = is.undefined(_cliEnv.BROWSER_SYNC)
-      ? undefined
-      : !_cliEnv.BROWSER_SYNC,
-  } = config;
 
   dev({
     webpackConfig,
