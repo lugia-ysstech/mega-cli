@@ -2,7 +2,7 @@
  * Created Date: Tuesday, April 9th 2019, 5:42:26 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Wednesday, April 10th 2019, 11:07:33 pm
+ * Last Modified: Thursday, April 11th 2019, 3:54:08 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -43,11 +43,14 @@ export default function(opts = {}, cb) {
     debug(`user config: ${JSON.stringify(config)}`);
 
     const { dependencies = {} } = userPKG;
-    const { dllDependenciesExcludes = [] } = config;
+    const {
+      dllDependenciesExcludes = [],
+      dllDependenciesIncludes = [],
+    } = config;
     const dist = pathResolve(cwd, DLL_OUTPUT);
-    const dllDependencies = Object.keys(dependencies).filter(
-      dependency => !dllDependenciesExcludes.includes(dependency),
-    );
+    const dllDependencies = [
+      ...new Set([...Object.keys(dependencies), ...dllDependenciesIncludes]),
+    ].filter(dependency => !dllDependenciesExcludes.includes(dependency));
     const dependenciesVersion = getDependenciesVersion(dllDependencies, cwd);
 
     // get webpack config

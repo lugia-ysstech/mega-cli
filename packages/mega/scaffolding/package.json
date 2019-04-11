@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@lugia/mega-scripts": "^1.3.13",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@lugia/mega-scripts": "^1.3.22"
   },
   "scripts": {
     "start": "lugia-scripts start",
     "build": "lugia-scripts build",
+    "dll": "lugia-scripts dll",
     "test": "lugia-scripts test -w"
   }
 }
