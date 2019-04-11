@@ -192,7 +192,7 @@ export default function runDev(opts = {}) {
           } them for you.`,
         ),
       );
-      execSync(`node ${resolve('../../bin/mega-scripts.js')} dll`, {
+      execSync(`node ${require.resolve('../../bin/mega-scripts.js')} dll`, {
         stdio: 'inherit',
       });
     }
