@@ -312,14 +312,16 @@ export default function getConfig(opts = {}, applyConfig) {
   // 使用 user 的 eslint
   try {
     const { dependencies, devDependencies } = require(resolve('package.json')); // eslint-disable-line
-    if (dependencies.eslint || devDependencies) {
+    if (dependencies.eslint || devDependencies.eslint) {
       const eslintPath = resolveSync('eslint', {
         basedir: opts.cwd,
       });
       eslintOptions.eslintPath = eslintPath;
       debug(`use user's eslint bin: ${eslintPath}`);
     }
-  } catch (e) {} // eslint-disable-line
+  } catch (e) {
+    debug(e);
+  }
 
   // 读取用户的 eslintrc
   if (existsSync(resolve('.eslintrc'))) {

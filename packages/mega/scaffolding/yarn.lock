@@ -881,10 +881,10 @@
     styled-components "3.4.9"
     uuid "^3.3.2"
 
-"@lugia/mega-config@^1.0.3":
-  version "1.0.3"
-  resolved "http://192.168.102.79:5001/@lugia/mega-config/download/@lugia/mega-config-1.0.3.tgz#b38f633d6965c868a75a594150817ceef4d2cd50"
-  integrity sha1-s49jPWllyGinWllBUIF87vTSzVA=
+"@lugia/mega-config@^1.0.4":
+  version "1.0.4"
+  resolved "http://192.168.102.79:5001/@lugia/mega-config/download/@lugia/mega-config-1.0.4.tgz#1fc39977aea3f55c97136c3fd6e69ffe929c7d0b"
+  integrity sha1-H8OZd66j9VyXE2w/1uaf/pKcfQs=
   dependencies:
     "@babel/runtime" "^7.1.5"
     "@lugia/mega-utils" "^1.4.15"
@@ -896,10 +896,10 @@
     lodash.isequal "^4.5.0"
     requireindex "^1.2.0"
 
-"@lugia/mega-jest@^1.2.20":
-  version "1.2.20"
-  resolved "http://192.168.102.79:5001/@lugia/mega-jest/download/@lugia/mega-jest-1.2.20.tgz#c62f06d6b45b1109c25f683c63c614f50a1dfc19"
-  integrity sha1-xi8G1rRbEQnCX2g8Y8YU9Qod/Bk=
+"@lugia/mega-jest@^1.2.21":
+  version "1.2.21"
+  resolved "http://192.168.102.79:5001/@lugia/mega-jest/download/@lugia/mega-jest-1.2.21.tgz#3547bb8a7f8c90bc8e38f716ad13010bd764dfa6"
+  integrity sha1-NUe7in+MkLyOOPcWrRMBC9dk36Y=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
@@ -907,7 +907,7 @@
     "@babel/polyfill" "7.0.0"
     "@babel/runtime" "^7.1.5"
     "@lugia/babel-preset-mega" "^1.0.8"
-    "@lugia/mega-config" "^1.0.3"
+    "@lugia/mega-config" "^1.0.4"
     "@lugia/mega-utils" "^1.4.15"
     babel-core "7.0.0-bridge.0"
     babel-jest "^23.6.0"
@@ -925,18 +925,18 @@
     ts-jest-babel-7 "^22.0.7"
     typescript "^3.3.3333"
 
-"@lugia/mega-scripts@^1.3.22":
-  version "1.3.22"
-  resolved "http://192.168.102.79:5001/@lugia/mega-scripts/download/@lugia/mega-scripts-1.3.22.tgz#a3339b8cf111442fa1a1603207b4a6dc4045c7c0"
-  integrity sha1-ozObjPERRC+hoWAyB7Sm3EBFx8A=
+"@lugia/mega-scripts@^1.3.23":
+  version "1.3.23"
+  resolved "http://192.168.102.79:5001/@lugia/mega-scripts/download/@lugia/mega-scripts-1.3.23.tgz#56f226b1c601d2c8d690af4444486f07f4d41ae2"
+  integrity sha1-VvImscYB0sjWkK9EREhvB/TUGuI=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/runtime" "^7.1.5"
     "@lugia/babel-preset-mega" "^1.0.8"
-    "@lugia/mega-config" "^1.0.3"
-    "@lugia/mega-jest" "^1.2.20"
+    "@lugia/mega-config" "^1.0.4"
+    "@lugia/mega-jest" "^1.2.21"
     "@lugia/mega-utils" "^1.4.15"
-    "@lugia/mega-webpack" "^1.3.20"
+    "@lugia/mega-webpack" "^1.3.21"
     babel-plugin-add-module-exports "^1.0.0"
     body-parser "^1.18.3"
     browser-sync "^2.26.3"
@@ -986,10 +986,10 @@
     username "^4.0.0"
     which "^1.3.1"
 
-"@lugia/mega-webpack@^1.3.20":
-  version "1.3.20"
-  resolved "http://192.168.102.79:5001/@lugia/mega-webpack/download/@lugia/mega-webpack-1.3.20.tgz#0d7eee23ba42463a34f9b6507368fa5daa368125"
-  integrity sha1-DX7uI7pCRjo0+bZQc2j6Xao2gSU=
+"@lugia/mega-webpack@^1.3.21":
+  version "1.3.21"
+  resolved "http://192.168.102.79:5001/@lugia/mega-webpack/download/@lugia/mega-webpack-1.3.21.tgz#a6f6735cc700eff7aa29b207eca3cff77a4ffe46"
+  integrity sha1-pvZzXMcA7/eqKbIH7KPP93pP/kY=
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/runtime" "^7.1.5"
