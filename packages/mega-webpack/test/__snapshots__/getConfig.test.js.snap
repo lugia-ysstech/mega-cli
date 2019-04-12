@@ -425,16 +425,12 @@ Object {
     UglifyJsPlugin {
       "options": Object {
         "compress": Object {
-          "screw_ie8": true,
           "warnings": false,
-        },
-        "mangle": Object {
-          "screw_ie8": true,
         },
         "output": Object {
           "ascii_only": true,
+          "beautify": false,
           "comments": false,
-          "screw_ie8": true,
         },
       },
     },
