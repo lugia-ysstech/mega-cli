@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Find and load configuration from the user",
   "license": "MIT",
   "main": "./lib/index.js",

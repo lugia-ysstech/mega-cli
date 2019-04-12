@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-jest",
-  "version": "1.2.21",
+  "version": "1.2.22",
   "description": "base on jest && enzyme",
   "bin": {
     "lugia-jest": "./bin/mega-jest.js"
@@ -25,7 +25,7 @@
     "@babel/polyfill": "7.0.0",
     "@babel/runtime": "^7.1.5",
     "@lugia/babel-preset-mega": "^1.0.8",
-    "@lugia/mega-config": "^1.0.4",
+    "@lugia/mega-config": "^1.0.5",
     "@lugia/mega-utils": "^1.4.15",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
