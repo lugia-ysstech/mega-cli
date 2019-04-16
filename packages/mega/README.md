@@ -6,7 +6,7 @@
 
 ```bash
 ## 安装
-$ yarn global add @lugia/mega
+$ npm i -g @lugia/mega
 
 ## 查看版本
 $ mega -v
