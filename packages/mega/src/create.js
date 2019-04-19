@@ -162,7 +162,13 @@ export default async function create(
           if (verbose) {
             logger.info(`update package.json#name ${pkg.name} -> ${appName}`);
           }
-          writeJSONSync(pkgPath, { ...pkg, name: appName });
+          writeJSONSync(
+            pkgPath,
+            { ...pkg, name: appName },
+            {
+              spaces: 2,
+            },
+          );
         } catch (error) {
           error(error);
         }

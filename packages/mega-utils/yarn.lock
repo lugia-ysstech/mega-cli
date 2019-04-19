@@ -109,12 +109,14 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@lugia/lugia-design@^1.0.33":
-  version "1.0.33"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-design/download/@lugia/lugia-design-1.0.33.tgz#4dd133691d08ff1c95c1e1fa132edc61355c99a4"
-  integrity sha1-TdEzaR0I/xyVweH6Ey7cYTVcmaQ=
+"@lugia/lugia-design@^1.0.34-4":
+  version "1.0.34-4"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-design/download/@lugia/lugia-design-1.0.34-4.tgz#ee45b68ff04108b7ff5062a9f9114cbf9f1b96df"
+  integrity sha1-7kW2j/BBCLf/UGKp+RFMv58blt8=
   dependencies:
+    chance "^1.0.18"
     events "^3.0.0"
+    html2canvas "^1.0.0-rc.1"
     ramda "^0.25.0"
     rxjs "^6.3.3"
     styled-components "3.4.9"
@@ -292,6 +294,11 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
+
+base64-arraybuffer@^0.1.5:
+  version "0.1.5"
+  resolved "http://registry.npm.taobao.org/base64-arraybuffer/download/base64-arraybuffer-0.1.5.tgz#73926771923b5a19747ad666aa5cd4bf9c6e9ce8"
+  integrity sha1-c5JncZI7Whl0etZmqlzUv5xunOg=
 
 base64-js@^1.0.2:
   version "1.3.0"
@@ -480,6 +487,11 @@ chalk@^2.4.2:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
+
+chance@^1.0.18:
+  version "1.0.18"
+  resolved "http://registry.npm.taobao.org/chance/download/chance-1.0.18.tgz#79788fe6fca4c338bf404321c347eecc80f969ee"
+  integrity sha1-eXiP5vykwzi/QEMhw0fuzID5ae4=
 
 chardet@^0.4.0:
   version "0.4.2"
@@ -674,6 +686,13 @@ css-color-keywords@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/css-color-keywords/download/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
   integrity sha1-/qJhbcZ2spYmhrOvjb2+GAskTgU=
+
+css-line-break@1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/css-line-break/download/css-line-break-1.0.1.tgz#19f2063a33e95fb2831b86446c0b80c188af450a"
+  integrity sha1-GfIGOjPpX7KDG4ZEbAuAwYivRQo=
+  dependencies:
+    base64-arraybuffer "^0.1.5"
 
 css-to-react-native@^2.0.3:
   version "2.3.0"
@@ -1235,11 +1254,6 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "http://registry.npm.taobao.org/get-value/download/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
-git-clone@^0.1.0:
-  version "0.1.0"
-  resolved "http://registry.npm.taobao.org/git-clone/download/git-clone-0.1.0.tgz#0d76163778093aef7f1c30238f2a9ef3f07a2eb9"
-  integrity sha1-DXYWN3gJOu9/HDAjjyqe8/B6Lrk=
-
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "http://registry.npm.taobao.org/glob-parent/download/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"
@@ -1434,6 +1448,13 @@ hosted-git-info@^2.6.0:
   version "2.7.1"
   resolved "http://registry.npm.taobao.org/hosted-git-info/download/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
   integrity sha1-l/I2l3vW4SVAiTD/bePuxigewEc=
+
+html2canvas@^1.0.0-rc.1:
+  version "1.0.0-rc.1"
+  resolved "http://registry.npm.taobao.org/html2canvas/download/html2canvas-1.0.0-rc.1.tgz#422222d21332d05ca55d86954e5f413e17fae6fb"
+  integrity sha1-QiIi0hMy0FylXYaVTl9BPhf65vs=
+  dependencies:
+    css-line-break "1.0.1"
 
 http-cache-semantics@3.8.1:
   version "3.8.1"

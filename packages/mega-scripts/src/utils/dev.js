@@ -193,6 +193,7 @@ export default function runDev(opts = {}) {
           } them for you.`,
         ),
       );
+      // win 10 不行？
       execSync(`node ${require.resolve('../../bin/mega-scripts.js')} dll`, {
         stdio: 'inherit',
       });
