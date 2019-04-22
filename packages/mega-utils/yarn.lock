@@ -109,10 +109,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@lugia/lugia-design@^1.0.34-4":
-  version "1.0.34-4"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-design/download/@lugia/lugia-design-1.0.34-4.tgz#ee45b68ff04108b7ff5062a9f9114cbf9f1b96df"
-  integrity sha1-7kW2j/BBCLf/UGKp+RFMv58blt8=
+"@lugia/lugia-design@^1.0.34-8":
+  version "1.0.34-8"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-design/download/@lugia/lugia-design-1.0.34-8.tgz#e8353dc9bbc4b666bb37a0a482d6130b12dc17d6"
+  integrity sha1-6DU9ybvEtma7N6CkgtYTCxLcF9Y=
   dependencies:
     chance "^1.0.18"
     events "^3.0.0"
