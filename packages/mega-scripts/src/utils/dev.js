@@ -168,28 +168,43 @@ export default function runDev(opts = {}) {
   // Warn if the DLL is not built / need update
   if (!disableDll) {
     let needUpdate = true;
+    let needBuild = true;
 
     try {
-      const dllDependencies = [
-        ...new Set([...Object.keys(dependencies), ...dllDependenciesIncludes]),
-      ].filter(dependency => !dllDependenciesExcludes.includes(dependency));
-      const dependenciesVersion = getDependenciesVersion(dllDependencies, cwd);
-      const oldDependenciesVersion = readJsonSync(
-        resolve(dllDir, `${DLL_NAME}.dependencies.json`),
-      );
-      needUpdate = !isEqual(dependenciesVersion, oldDependenciesVersion);
-
-      debug('dependenciesVersion', dependenciesVersion);
-      debug('oldDependenciesVersion', oldDependenciesVersion);
+      needBuild = !(existsSync(dllDir) && existsSync(dllManifest));
     } catch (e) {} // eslint-disable-line
 
-    debug('needUpdate', needUpdate);
+    debug('needBuild', needBuild);
 
-    if (!(existsSync(dllDir) && existsSync(dllManifest)) || needUpdate) {
+    if (!needBuild) {
+      try {
+        const dllDependencies = [
+          ...new Set([
+            ...Object.keys(dependencies),
+            ...dllDependenciesIncludes,
+          ]),
+        ].filter(dependency => !dllDependenciesExcludes.includes(dependency));
+        const dependenciesVersion = getDependenciesVersion(
+          dllDependencies,
+          cwd,
+        );
+        const oldDependenciesVersion = readJsonSync(
+          resolve(dllDir, `${DLL_NAME}.dependencies.json`),
+        );
+        needUpdate = !isEqual(dependenciesVersion, oldDependenciesVersion);
+
+        debug('dependenciesVersion', dependenciesVersion);
+        debug('oldDependenciesVersion', oldDependenciesVersion);
+      } catch (e) {} // eslint-disable-line
+
+      debug('needUpdate', needUpdate);
+    }
+
+    if (needBuild || needUpdate) {
       console.log(
         chalk.black.bgYellow.bold(
           `The DLL files are missing. Sit back while we ${
-            needUpdate ? 'update' : 'build'
+            needBuild ? 'build' : 'update'
           } them for you.`,
         ),
       );
