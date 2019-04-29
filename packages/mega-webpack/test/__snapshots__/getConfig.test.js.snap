@@ -476,6 +476,7 @@ Object {
     "alias": Object {
       "@babel/runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime-corejs2",
       "@babel/runtime-corejs2": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime-corejs2",
+      "babel-runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-runtime",
     },
     "extensions": Array [
       ".web.js",
