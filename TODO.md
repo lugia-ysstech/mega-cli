@@ -25,6 +25,8 @@ browser-sync 热更新时命令行不刷新界面
 
 ## [HMR] 支持
 
+## webpack 4
+
 ## BUG
 
 ### packages/mega-webpack/test/build.test.js
@@ -87,11 +89,53 @@ les\webpack\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
 
 ![todo](./docs/design/v1_todo.png)
 
+- [ ] 可以将 SVG 作为一个 React 组件导入，还可以在 JSX 中使用这个 SVG
+      [Transform SVGs into React components](https://github.com/smooth-code/svgr)
+
+- [ ] @lugia/mega-polyfill
+      This package includes polyfills for various browsers.
+      [react-app-polyfill](https://github.com/facebook/create-react-app/tree/master/packages/react-app-polyfill)
+
+- [ ] [Workbox service worker](https://github.com/facebook/create-react-app/pull/4169)
+
+- [ ] 性能优化
+
+- [ ] Set baseUrl from jsconfig.json/tsconfig.json
+      https://github.com/facebook/create-react-app/pull/6656
+
+- [ ] Adds PostCSS Normalize
+      https://github.com/facebook/create-react-app/pull/5810
+
+- [ ] Support React Hooks
+      https://github.com/facebook/create-react-app/pull/5997
+
+- [ ] Update to core-js@3
+      https://github.com/facebook/create-react-app/pull/6769
+      https://babeljs.io/blog/2019/03/19/7.4.0#core-js-3-7646-https-githubcom-babel-babel-pull-7646
+
+- [ ] .graphql and .gql file loading with graphql.macro
+      https://github.com/facebook/create-react-app/pull/5481
+
+- [ ] move the TypeScript codebase from TSLint to typescript-eslint
+      https://github.com/typescript-eslint/typescript-eslint
+      https://github.com/facebook/create-react-app/pull/6513
+
+- [ ] 优化 browserslist 的配置项在 babel、autoprefixer
+      区分生产和开发环境？
+      https://github.com/facebook/create-react-app/pull/6608
+
+- [ ] @lugia/mega-jest
+      更新到 Jest 24
+      https://github.com/facebook/create-react-app/pull/6278
+
+- [ ] @lugia/mega-config
+      lugia.config.js
+      [cosmiconfig](https://github.com/davidtheclark/cosmiconfig)
+      [craco](https://github.com/sharegate/craco/blob/master/packages/craco/README.md)
+      [react-app-rewired](https://github.com/timarney/react-app-rewired)
+
 ## NEXT v2
 
-改进
-
-- 插件式，支持热插拔
-- [webpack-chain](https://github.com/neutrinojs/webpack-chain)
-- lugia.config.js
-- [cosmiconfig](https://github.com/davidtheclark/cosmiconfig)
+- [ ] 插件体系
+      插件式，支持热插拔
+      [webpack-chain](https://github.com/neutrinojs/webpack-chain)
