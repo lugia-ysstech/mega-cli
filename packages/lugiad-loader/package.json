@@ -1,0 +1,28 @@
+{
+  "name": "@lugia/lugiad-loader",
+  "version": "1.0.0",
+  "description": "Webpack loader for lugiad",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+  },
+  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "bugs": {
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+  },
+  "author": "#lugia# @hanjingbo",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
+    "@lugia/devtools-conversion": "^1.0.1"
+  },
+  "files": [
+    "lib",
+    "yarn.lock"
+  ],
+  "engines": {
+    "node": ">=8.5.0",
+    "npm": ">=5.2.0"
+  }
+}

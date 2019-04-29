@@ -17,7 +17,6 @@
     "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@babel/register": "^7.4.0",
     "@babel/runtime": "^7.4.3",
-    "@lugia/lugia-design": "^1.0.34-9",
     "babel-plugin-add-module-exports": "^1.0.2",
     "download": "^7.1.0",
     "find-pkg": "^2.0.0",
