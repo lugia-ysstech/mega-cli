@@ -82,9 +82,18 @@ export default function getConfig(opts = {}, applyConfig) {
   function getCSSLoader(opts = {}) {
     const { cssModules, less, sass, sassOptions } = opts;
 
+    // 由于 sass 安装比较慢，所以默认不启用
+    // 当检测到项目里安装 node-sass、sass-loader 时，
+    // 会启用 sass
     let hasSassLoader = true;
+    let sassLoader;
     try {
-      require.resolve('sass-loader');
+      sassLoader = require.resolve('sass-loader', {
+        paths: [opts.cwd, join(__dirname)],
+      });
+      require.resolve('node-sass', {
+        paths: [opts.cwd, join(__dirname)],
+      });
     } catch (e) {
       hasSassLoader = false;
     }
@@ -113,7 +122,7 @@ export default function getConfig(opts = {}, applyConfig) {
       ...(sass && hasSassLoader
         ? [
             {
-              loader: require.resolve('sass-loader'),
+              loader: sassLoader,
               options: sassOptions,
             },
           ]
