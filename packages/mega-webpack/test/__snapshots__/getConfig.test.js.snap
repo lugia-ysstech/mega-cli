@@ -456,10 +456,7 @@ Object {
         },
       },
     },
-    ProgressPlugin {
-      "handler": [Function],
-      "profile": undefined,
-    },
+    [Function],
     CleanWebpackPlugin {
       "options": Object {
         "allowExternal": false,

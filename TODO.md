@@ -124,9 +124,13 @@ les\webpack\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
       区分生产和开发环境？
       https://github.com/facebook/create-react-app/pull/6608
 
-- [ ] @lugia/mega-jest
+- [x] ~~_@lugia/mega-jest_~~ [2019-04-30]
       更新到 Jest 24
       https://github.com/facebook/create-react-app/pull/6278
+
+- [ ] Getting Started With Plug'n'Play
+      https://gist.github.com/arcanis/02b49752c385908479734d8027d7a6c7
+      https://github.com/facebook/create-react-app/pull/5269
 
 - [ ] @lugia/mega-config
       lugia.config.js
