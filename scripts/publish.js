@@ -6,7 +6,9 @@ const { fork } = require('child_process');
 
 const registry = 'http://192.168.102.79:5001/';
 
-if (shell.exec('npm config get registry').stdout.indexOf(registry) === -1) {
+if (
+  shell.exec('npm config get @lugia:registry').stdout.indexOf(registry) === -1
+) {
   console.error(
     'Failed: ',
     `set npm / yarn registry to ${registry} first. You can use [nrm](https://github.com/Pana/nrm).`,
