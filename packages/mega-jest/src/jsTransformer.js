@@ -24,10 +24,9 @@ const defaultConfig = {
       require.resolve('babel-plugin-module-resolver'),
       {
         alias: {
-          'ts-jest-babel-7': require.resolve('ts-jest-babel-7', [
-            cwd,
-            join(__dirname),
-          ]),
+          'ts-jest-babel-7': require.resolve('ts-jest-babel-7', {
+            paths: [cwd, join(__dirname)],
+          }),
           react: require.resolve('react', { paths: [cwd, join(__dirname)] }),
           'react-dom': require.resolve('react-dom', {
             paths: [cwd, join(__dirname)],
