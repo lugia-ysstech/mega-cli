@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-config",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Find and load configuration from the user",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "@lugia/mega-utils": "^1.4.19",
+    "@lugia/mega-utils": "^1.4.20",
     "assert": "^1.4.1",
     "chalk": "^2.4.1",
     "chokidar": "^2.0.4",
