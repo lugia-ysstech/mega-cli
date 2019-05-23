@@ -23,6 +23,7 @@ program
     'registry url for npm (default: configuration file ~/.npmrc)',
   )
   .option('--use-npm', 'use npm run install|start|test|build')
+  .option('--init-git', 'try init git')
   .action((appName, scaffolding) => {
     if (is.empty(appName)) program.missingArgument(appName);
     create(appName, scaffolding, program);

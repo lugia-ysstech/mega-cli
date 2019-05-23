@@ -22,6 +22,7 @@ import downloadNpm from '@lugia/mega-utils/lib/downloadNpmPackage';
 import getPackageInfo from '@lugia/mega-utils/lib/npmUtils';
 import homeOrTmp from '@lugia/mega-utils/lib/homeOrTmp';
 import install, { isOnline } from './install';
+import tryGitInit from './tryGitInit';
 import { isLocalScaffolding, getScaffoldingPath } from './localScaffolding';
 
 const DefaultScaffolding = join(__dirname, '../scaffolding');
@@ -32,7 +33,7 @@ const cwd = process.cwd();
 export default async function create(
   createPath,
   scaffolding = DefaultScaffolding,
-  { autoInstall, local, verbose, clone, npm, npmRegistry, useNpm },
+  { autoInstall, local, verbose, clone, npm, npmRegistry, useNpm, initGit },
 ) {
   let appPath = resolve(process.cwd(), createPath);
   if (existsSync(appPath)) {
@@ -178,16 +179,21 @@ export default async function create(
             useYarn,
             verbose,
           })
-            .then(printSuccess)
+            .then(createSuccess)
             .catch(e => error(e));
         } else {
-          printSuccess();
+          createSuccess();
         }
       })
       .resume();
   }
 
-  function printSuccess() {
+  function createSuccess() {
+    if (initGit && tryGitInit(appPath)) {
+      console.log();
+      console.log('Initialized a git repository.');
+    }
+
     const displayedCommand = useYarn ? 'yarn' : 'npm';
     console.log(`
 ${chalk.green('Success!')} Created ${chalk.green(appName)} at ${chalk.green(
