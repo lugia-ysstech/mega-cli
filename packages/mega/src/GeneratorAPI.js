@@ -2,7 +2,7 @@
  * Created Date: Thursday, May 30th 2019, 4:08:16 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Friday, May 31st 2019, 3:19:52 pm
+ * Last Modified: Friday, May 31st 2019, 6:04:36 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -13,6 +13,10 @@
 import is from '@lugia/mega-utils/lib/is';
 import mergeObj from '@lugia/mega-utils/lib/mergeDefaults';
 import chalk from 'chalk';
+import assert from 'assert';
+import fs from 'fs-extra';
+import rimraf from 'rimraf';
+import which from 'which';
 
 export default class GeneratorAPI {
   constructor(app, isonline, verbose) {
@@ -58,6 +62,12 @@ export default class GeneratorAPI {
   _utils() {
     return {
       chalk,
+      is,
+      mergeObj,
+      assert,
+      fs,
+      rimraf,
+      which,
     };
   }
 }
