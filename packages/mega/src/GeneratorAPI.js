@@ -2,7 +2,7 @@
  * Created Date: Thursday, May 30th 2019, 4:08:16 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Friday, May 31st 2019, 6:04:36 pm
+ * Last Modified: Friday, May 31st 2019, 6:17:32 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -11,6 +11,8 @@
  */
 
 import is from '@lugia/mega-utils/lib/is';
+import logger from '@lugia/mega-utils/lib/logger';
+import homeOrTmp from '@lugia/mega-utils/lib/homeOrTmp';
 import mergeObj from '@lugia/mega-utils/lib/mergeDefaults';
 import chalk from 'chalk';
 import assert from 'assert';
@@ -68,6 +70,8 @@ export default class GeneratorAPI {
       fs,
       rimraf,
       which,
+      logger,
+      homeOrTmp,
     };
   }
 }
