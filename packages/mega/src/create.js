@@ -2,13 +2,7 @@ import { join, basename, resolve } from 'path';
 import { parse as urlParse } from 'url';
 import { sync as rm } from 'rimraf';
 import vfs from 'vinyl-fs';
-import {
-  existsSync,
-  renameSync,
-  mkdirpSync,
-  readJsonSync,
-  writeJSONSync,
-} from 'fs-extra';
+import { existsSync, renameSync, mkdirpSync, writeJSONSync } from 'fs-extra';
 import through from 'through2';
 import { sync as emptyDir } from 'empty-dir';
 import chalk from 'chalk';
@@ -24,6 +18,7 @@ import homeOrTmp from '@lugia/mega-utils/lib/homeOrTmp';
 import install, { isOnline } from './install';
 import tryGitInit from './tryGitInit';
 import { isLocalScaffolding, getScaffoldingPath } from './localScaffolding';
+import GeneratorAPI from './GeneratorAPI';
 
 const DefaultScaffolding = join(__dirname, '../scaffolding');
 const CacheScaffoldingDir = join(homeOrTmp, '.lugia/mega/cache/scaffoldings');
@@ -149,7 +144,28 @@ export default async function create(
       })
       .pipe(fileFilter(appPath, scaffoldingPath, verbose))
       .pipe(vfs.dest(appPath))
-      .on('end', () => {
+      .on('end', async () => {
+        // 项目已经从脚手架中生成完成
+        // 获取项目的用户配置、package.json
+        const {
+          userConfig: { generator },
+          userPKG,
+        } = require('./getUserConfig');
+        const app = {
+          appName,
+          appPath,
+          useYarn,
+          autoInstall,
+          initGit,
+          pkg: {
+            ...userPKG,
+            name: appName,
+          },
+        };
+        const api = new GeneratorAPI(app, isonline, verbose);
+
+        // npm 不能发布 .gitignore 文件
+        // 把 gitignore 重命名为 .gitignore
         const gitignorePath = join(appPath, 'gitignore');
         if (existsSync(gitignorePath)) {
           if (verbose) {
@@ -157,49 +173,57 @@ export default async function create(
           }
           renameSync(gitignorePath, join(appPath, '.gitignore'));
         }
+
+        // 调用用户配置的 generator
+        if (generator) {
+          generator(api);
+        }
+
+        // 写入修改后的 package.json
         try {
           const pkgPath = join(appPath, 'package.json');
-          const pkg = readJsonSync(pkgPath);
+          const { pkg } = api.getApp();
           if (verbose) {
-            logger.info(`update package.json#name ${pkg.name} -> ${appName}`);
+            logger.info('update package.json');
           }
-          writeJSONSync(
-            pkgPath,
-            { ...pkg, name: appName },
-            {
-              spaces: 2,
-            },
-          );
+          writeJSONSync(pkgPath, pkg, {
+            spaces: 2,
+          });
         } catch (error) {
           error(error);
         }
+
+        // 安装项目依赖
         if (autoInstall) {
-          install({
-            cwd: appPath,
-            useYarn,
-            verbose,
-          })
-            .then(createSuccess)
-            .catch(e => error(e));
-        } else {
-          createSuccess();
+          try {
+            await install({
+              cwd: appPath,
+              useYarn,
+              verbose,
+            });
+          } catch (error) {
+            error(error);
+          }
         }
+
+        // 初始化 git
+        if (initGit && tryGitInit(appPath)) {
+          console.log();
+          console.log('Initialized a git repository.');
+        }
+
+        // 项目创建完成
+        // 打印成功结果
+        printSuccess(api.successLog);
       })
       .resume();
   }
 
-  function createSuccess() {
-    if (initGit && tryGitInit(appPath)) {
-      console.log();
-      console.log('Initialized a git repository.');
-    }
-
+  function printSuccess(successLog) {
     const displayedCommand = useYarn ? 'yarn' : 'npm';
-    console.log(`
-${chalk.green('Success!')} Created ${chalk.green(appName)} at ${chalk.green(
-      appPath,
-    )}
-
+    successLog =
+      successLog ||
+      `
 Inside that directory, you can run several commands:
 
   ${chalk.cyan(`${displayedCommand} start`)}
@@ -217,7 +241,13 @@ We suggest that you begin by typing:
   ${chalk.cyan(`${displayedCommand} start`)}
 
 Happy hacking!
-`);
+`;
+
+    console.log(`
+${chalk.green('Success!')} Created ${chalk.green(appName)} at ${chalk.green(
+      appPath,
+    )}
+${successLog}`);
   }
 }
 

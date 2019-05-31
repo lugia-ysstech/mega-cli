@@ -24,10 +24,12 @@ describe('[mergeDefaults]', () => {
 
   it('merge', () => {
     const obj = { f: { c: 0 } };
-    const src = { f: { a: 0 } };
-    expect(merge(obj, src)).toEqual({ f: { c: 0, a: 0 } });
-    expect(merge(src, obj)).toEqual({ f: { c: 0, a: 0 } });
-    expect(src).toEqual({ f: { a: 0 } });
+    const src = { f: { a: [0] } };
+    const obj1 = { f: { a: [1] } };
+    expect(merge(obj, src)).toEqual({ f: { c: 0, a: [0] } });
+    expect(merge(src, obj)).toEqual({ f: { c: 0, a: [0] } });
+    expect(merge(src, obj1)).toEqual({ f: { a: [1] } });
+    expect(src).toEqual({ f: { a: [0] } });
     expect(obj).toEqual({ f: { c: 0 } });
   });
 });

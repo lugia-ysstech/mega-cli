@@ -5,11 +5,11 @@ const Terser = require('terser');
 const chalk = require('chalk');
 const rimraf = require('rimraf');
 const { readdirSync, readFileSync, writeFileSync, existsSync } = require('fs');
-const { join } = require('path');
+const { join, parse } = require('path');
 const chokidar = require('chokidar');
 const slash = require('slash');
 
-const cwd = process.cwd();
+const cwd = slash(process.cwd());
 
 const nodeBabelConfig = {
   presets: [
@@ -80,12 +80,14 @@ const browserBabelConfig = {
 const BROWSER_FILES = [];
 
 function isBrowserTransform(path) {
-  return BROWSER_FILES.includes(path.replace(`${slash(cwd)}/`, ''));
+  return BROWSER_FILES.includes(path.replace(`${cwd}/`, ''));
 }
 
 function transform(opts = {}) {
-  const { content, path } = opts;
+  const { content, path, sourcemap } = opts;
+  const sourceMaps = !!sourcemap;
   const winPath = slash(path);
+  const { base: fileName } = parse(winPath);
   const isBrowser = isBrowserTransform(winPath);
   console.log(
     chalk[isBrowser ? 'yellow' : 'green'](
@@ -93,10 +95,18 @@ function transform(opts = {}) {
     ),
   );
   const config = isBrowser ? browserBabelConfig : nodeBabelConfig;
-  return babel.transform(content, config).code;
+  const { code, map, ast } = babel.transform(content, {
+    ...config,
+    sourceMaps,
+  });
+  return {
+    code: sourceMaps ? `${code}\n//# sourceMappingURL=${fileName}.map` : code,
+    map: sourceMaps ? { ...map, sources: [fileName], file: fileName } : map,
+    ast,
+  };
 }
 
-function buildPkg(pkg, minify = false) {
+function buildPkg(pkg, minify = false, sourcemap = false) {
   const pkgPath = join(cwd, 'packages', pkg);
   if (!existsSync(pkgPath)) {
     chalk.yellow(`[${pkg}] was not found`);
@@ -105,16 +115,20 @@ function buildPkg(pkg, minify = false) {
   rimraf.sync(join(pkgPath, 'lib'));
 
   vfs
-    .src([
-      `./packages/${pkg}/src/**/*.js`,
-      `!./packages/${pkg}/src/**/fixtures/**/*.js`,
-      `!./packages/${pkg}/src/**/*.test.js`,
-    ])
+    .src(
+      [
+        `./packages/${pkg}/src/**/*.js`,
+        `!./packages/${pkg}/src/**/fixtures/**/*.js`,
+        `!./packages/${pkg}/src/**/*.test.js`,
+      ],
+      sourcemap ? { sourcemaps: true } : undefined,
+    )
     .pipe(
       through.obj((f, enc, cb) => {
-        let tcode = transform({
-          content: f.contents,
-          path: f.path,
+        const { contents, path } = f;
+        let { code: tcode } = transform({
+          content: contents,
+          path,
         });
         if (minify) {
           tcode = Terser.minify(tcode).code;
@@ -123,10 +137,15 @@ function buildPkg(pkg, minify = false) {
         cb(null, f);
       }),
     )
-    .pipe(vfs.dest(`./packages/${pkg}/lib/`));
+    .pipe(
+      vfs.dest(
+        `./packages/${pkg}/lib/`,
+        sourcemap ? { sourcemaps: '.' } : undefined,
+      ),
+    );
 }
 
-function watch(pkg) {
+function watch(pkg, sourcemap) {
   const watcher = chokidar.watch(join(cwd, 'packages', pkg, 'src'), {
     ignoreInitial: true,
   });
@@ -136,11 +155,16 @@ function watch(pkg) {
     const relPath = fullPath.replace(slash(`${cwd}/packages/${pkg}/src/`), '');
     const content = readFileSync(fullPath, 'utf-8');
     try {
-      const code = transform({
+      const { code, map } = transform({
         content,
         path: fullPath,
+        sourcemap,
       });
-      writeFileSync(join(cwd, 'packages', pkg, 'lib', relPath), code, 'utf-8');
+      const destPath = join(cwd, 'packages', pkg, 'lib', relPath);
+      writeFileSync(destPath, code, 'utf-8');
+      if (sourcemap) {
+        writeFileSync(`${destPath}.map`, JSON.stringify(map), 'utf-8');
+      }
     } catch (e) {
       console.log(chalk.red('Compiled failed.'));
       console.log(chalk.red(e.message));
@@ -153,10 +177,11 @@ function build() {
   const { argv } = process;
   const isWatch = argv.includes('-w') || argv.includes('--watch');
   const minify = argv.includes('-m') || argv.includes('--minify');
+  const sourcemap = argv.includes('--map') || argv.includes('--sourcemap');
   dirs.forEach(pkg => {
     if (pkg.charAt(0) === '.') return;
-    buildPkg(pkg, minify);
-    if (isWatch) watch(pkg);
+    buildPkg(pkg, minify, sourcemap);
+    if (isWatch) watch(pkg, sourcemap);
   });
 }
 
