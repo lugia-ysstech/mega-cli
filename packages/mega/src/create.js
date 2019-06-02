@@ -148,9 +148,9 @@ export default async function create(
         // 项目已经从脚手架中生成完成
         // 获取项目的用户配置、package.json
         const {
-          userConfig: { generator },
+          config: { generator },
           userPKG,
-        } = require('./getUserConfig');
+        } = require('./getUserConfig')(appPath);
         const app = {
           appName,
           appPath,
