@@ -2,7 +2,13 @@ import { join, basename, resolve } from 'path';
 import { parse as urlParse } from 'url';
 import { sync as rm } from 'rimraf';
 import vfs from 'vinyl-fs';
-import { existsSync, renameSync, mkdirpSync, writeJSONSync } from 'fs-extra';
+import {
+  existsSync,
+  renameSync,
+  mkdirpSync,
+  writeJSONSync,
+  readJsonSync,
+} from 'fs-extra';
 import through from 'through2';
 import { sync as emptyDir } from 'empty-dir';
 import chalk from 'chalk';
@@ -149,8 +155,9 @@ export default async function create(
         // 获取项目的用户配置、package.json
         const {
           config: { generator },
-          userPKG,
         } = require('./getUserConfig')(appPath);
+        const pkgPath = join(appPath, 'package.json');
+        const userPKG = readJsonSync(pkgPath);
         const app = {
           appName,
           appPath,
@@ -181,7 +188,6 @@ export default async function create(
 
         // 写入修改后的 package.json
         try {
-          const pkgPath = join(appPath, 'package.json');
           const { pkg } = api.getApp();
           if (verbose) {
             logger.info('update package.json');
