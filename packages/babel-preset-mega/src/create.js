@@ -118,6 +118,7 @@ module.exports = function(api, opts = {}, env) {
       isEnvTest &&
         // Transform dynamic import to require
         require.resolve('babel-plugin-transform-dynamic-import'),
+      !isEnvProduction && require.resolve('babel-plugin-styled-components'),
     ].filter(Boolean),
   };
 };
