@@ -134,6 +134,10 @@ Array [
     "validate": [Function],
   },
   Object {
+    "name": "generator",
+    "validate": [Function],
+  },
+  Object {
     "name": "hash",
     "validate": [Function],
   },
