@@ -89,20 +89,36 @@ les\webpack\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
 
 ![todo](./docs/design/v1_todo.png)
 
-- [ ] 崩溃时可以恢复，对 redux 修改时做存储到 indexdb 做恢复
-- [ ] 用户日志查看、存储到本地
-- [ ] 资源管理
+- [x] ~~_崩溃时可以恢复，对 redux store 修改时做存储到 IndexedDB 做恢复_~~ [2019-07-04]
+
+- [x] ~~_用户日志查看、存储到本地_~~ [2019-07-04]
+
+- [x] ~~_资源图片管理_~~ [2019-07-04]
+
 - [x] ~~_mega 文档_~~ [2019-06-17]
+
 - [x] ~~_在 xxx 中打开_~~ [2019-06-17]
+
 - [x] ~~_依赖管理_~~ [2019-06-17]
+
 - [x] ~~_打开已存在的项目_~~ [2019-06-17]
-- [ ] 微前端的改造。mega 建主项目，可以集成微前端项目。用 mega 建的项目可以发布，发布之前把 lugiad 文件转义为 js 文件。模型层上需要替换掉 name 为 packagename+name
 
-* [x] ~~_mega 建 lerna 工程，里面提供几个样例 package，在工程里有个脚本可以快捷键 package，可以继续使用 mega 键 lerna 子 package_~~ [2019-06-17]
+- [ ] 微前端的改造。
+      mega 建主项目，可以集成微前端项目。
+      用 mega 建的项目可以发布，发布之前把 lugiad 文件转义为 js 文件。
+      模型层上需要替换掉 name 为 packagename+name
 
-* [ ] mega 菜单改造，功能加上
-* [ ] 用户习惯交互优化，存储起来
-* [ ] 创建项目的目录选择可选可输
+- [x] ~~_mega 建 lerna 工程_~~ [2019-06-17]
+      里面提供几个样例 package，
+      在工程里有个脚本可以快捷新建 package，
+      可以继续使用 mega 新建 lerna 子 package
+
+- [ ] mega 菜单改造，功能加上
+
+- [ ] 用户习惯交互优化，存储起来
+      分为应用级别、项目级别、页面级别等
+
+- [x] ~~_创建项目的目录选择可选可输_~~ [2019-07-04]
 
 - [ ] 可以将 SVG 作为一个 React 组件导入，还可以在 JSX 中使用这个 SVG
       [Transform SVGs into React components](https://github.com/smooth-code/svgr)
@@ -164,16 +180,16 @@ les\webpack\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
       vscode 插件设计
       vue-cli 3 插件设计
 
-* [ ] 快捷的生态共建能力，物料体系、插件体系
+- [ ] 快捷的生态共建能力，物料体系、插件体系
 
-* [ ] 在 cli 上对标 [umi](https://github.com/umijs/umi) 和 [vue-cli 3](https://github.com/vuejs/vue-cli)
+- [ ] 在 cli 上对标 [umi](https://github.com/umijs/umi) 和 [vue-cli 3](https://github.com/vuejs/vue-cli)
 
-* [ ] 在图形化界面上对标 [vue ui](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-ui/README.md) 和 [ice](https://github.com/alibaba/ice/)
+- [ ] 在图形化界面上对标 [vue ui](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-ui/README.md) 和 [ice](https://github.com/alibaba/ice/)
 
-* [ ] 在可视化页面设计系统上对标 [fusion](https://fusion.design/) 和 [sketch](https://www.sketch.com/)
+- [ ] 在可视化页面设计系统上对标 [fusion](https://fusion.design/) 和 [sketch](https://www.sketch.com/)
 
-* [ ] 重构 mock 服务，功能上 [mockit](https://github.com/boyney123/mockit)，[zero](https://github.com/boyney123/mockit)的基于文件系统的路由
+- [ ] 重构 mock 服务，功能上 [mockit](https://github.com/boyney123/mockit)，[zero](https://github.com/boyney123/mockit)的基于文件系统的路由
 
-* [ ] 引入文档服务，[ebook-cli](http://192.168.102.73:8081/hanjingbo/ebook-cli)、[语雀](https://www.yuque.com/)
+- [ ] 引入文档服务，[ebook-cli](http://192.168.102.73:8081/hanjingbo/ebook-cli)、[语雀](https://www.yuque.com/)
 
-* [ ] IDE 化，引入 [Monaco](https://github.com/react-monaco-editor/react-monaco-editor)、[xterm.js](https://github.com/xtermjs/xterm.js)、[ChromeDevTools](https://github.com/ChromeDevTools/awesome-chrome-devtools)、文件操作、Android/ios 模拟器，[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
+- [ ] IDE 化，引入 [Monaco](https://github.com/react-monaco-editor/react-monaco-editor)、[xterm.js](https://github.com/xtermjs/xterm.js)、[ChromeDevTools](https://github.com/ChromeDevTools/awesome-chrome-devtools)、文件操作、Android/ios 模拟器，[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
