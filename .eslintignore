@@ -6,3 +6,4 @@ fixtures/
 website/
 examples/
 coverage/
+packages/eslint-config-mega/test/rules

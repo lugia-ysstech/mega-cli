@@ -1,0 +1,51 @@
+{
+  "name": "@lugia/eslint-config-mega",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "ESLint configuration used by Lugia",
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+  },
+  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "author": "#lugia# @hanjingbo",
+  "bugs": {
+    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+  },
+  "files": [
+    "index.js",
+    "yarn.lock"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "babel-eslint": "^10.0.2",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-compat": "^3.2.0",
+    "eslint-plugin-flowtype": "^3.11.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "confusing-browser-globals": "^1.0.7"
+  },
+  "peerDependencies": {
+    "eslint": "^6.x",
+    "eslint-formatter-pretty": "^2.x",
+    "prettier": "^1.x"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-formatter-pretty": "^2.1.1",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6"
+  },
+  "eslintConfig": {
+    "extends": "./index.js"
+  }
+}
