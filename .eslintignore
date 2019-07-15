@@ -6,4 +6,5 @@ fixtures/
 website/
 examples/
 coverage/
-packages/eslint-config-mega/test/rules
+packages/eslint-config-mega/test/errors
+packages/eslint-config-mega/test/lints

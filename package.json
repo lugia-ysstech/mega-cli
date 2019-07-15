@@ -14,7 +14,7 @@
     "test": "yarn build && node ./packages/mega-jest/bin/mega-jest.js",
     "test:watch": "yarn build && node ./packages/mega-jest/bin/mega-jest.js -w",
     "coverage": "yarn build && node ./packages/mega-jest/bin/mega-jest.js --coverage",
-    "prettier": "prettier --trailing-comma all --single-quote --write",
+    "prettier": "prettier --single-quote --write",
     "postinstall": "yarn bootstrap",
     "stylelint": "stylelint",
     "lint": "eslint --format=pretty --ext .js packages scripts",
@@ -71,6 +71,7 @@
     "stylelint-config-standard": "^18.3.0",
     "terser": "^3.17.0",
     "through2": "^3.0.1",
+    "typescript": "^3.5.3",
     "vinyl-fs": "^3.0.3"
   },
   "engines": {

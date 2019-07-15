@@ -2,7 +2,7 @@
  * Created Date: Friday, July 12th 2019, 4:12:50 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Sunday, July 14th 2019, 5:01:01 pm
+ * Last Modified: Monday, July 15th 2019, 3:40:51 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -27,7 +27,7 @@ module.exports = {
     require.resolve('eslint-config-airbnb'),
     'plugin:prettier/recommended',
     require.resolve('eslint-config-prettier/flowtype'),
-    require.resolve('eslint-config-prettier/react'),
+    require.resolve('eslint-config-prettier/react')
   ],
   plugins: [
     'flowtype',
@@ -36,32 +36,32 @@ module.exports = {
     'compat',
     'jsx-a11y',
     'react',
-    'react-hooks',
+    'react-hooks'
   ],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    allowImportExportEverywhere: true,
+    allowImportExportEverywhere: true
   },
   env: {
     browser: true,
     commonjs: true,
     es6: true,
     jest: true,
-    node: true,
+    node: true
   },
   settings: {
     ...(process.env.NODE_ENV === 'development' ||
     process.env.NODE_ENV === 'production'
       ? {
           react: {
-            version: 'detect',
-          },
+            version: 'detect'
+          }
         }
-      : {}),
+      : {})
   },
 
   // https://github.com/typescript-eslint/typescript-eslint
@@ -74,12 +74,17 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true,
+          jsx: true
         },
 
         // typescript-eslint specific options
-        warnOnUnsupportedTypeScriptVersion: true,
+        warnOnUnsupportedTypeScriptVersion: true
       },
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'prettier/@typescript-eslint'
+      ],
       plugins: ['@typescript-eslint'],
       // If adding a typescript-eslint version of an existing ESLint rule,
       // make sure to disable the ESLint rule here.
@@ -103,21 +108,21 @@ module.exports = {
             functions: false,
             classes: false,
             variables: false,
-            typedefs: false,
-          },
+            typedefs: false
+          }
         ],
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {
             args: 'none',
-            ignoreRestSiblings: true,
-          },
+            ignoreRestSiblings: true
+          }
         ],
         'no-useless-constructor': 'off',
-        '@typescript-eslint/no-useless-constructor': 'warn',
-      },
-    },
+        '@typescript-eslint/no-useless-constructor': 'warn'
+      }
+    }
   ],
   rules: {
     'arrow-parens': 'off',
@@ -157,17 +162,36 @@ module.exports = {
         object: 'require',
         property: 'ensure',
         message:
-          'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting',
+          'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting'
       },
       {
         object: 'System',
         property: 'import',
         message:
-          'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting',
-      },
+          'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting'
+      }
     ],
 
-    'prettier/prettier': ['error', { singleQuote: true, parser: 'flow' }],
+    // https://github.com/prettier/eslint-plugin-prettier
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        overrides: [
+          {
+            files: ['*.js', '*.jsx'],
+            options: { parser: 'flow' }
+          }
+        ]
+      },
+      {
+        usePrettierrc: false,
+        fileInfoOptions: {
+          ignorePath: '# use .eslintignore'
+        }
+      }
+    ],
+
     'promise/param-names': 'error',
     'promise/always-return': 'error',
     'promise/catch-or-return': 'error',
@@ -180,16 +204,19 @@ module.exports = {
           'static-methods',
           'lifecycle',
           'everything-else',
-          'render',
-        ],
-      },
+          'render'
+        ]
+      }
     ],
     'react/jsx-no-bind': 'off',
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      'error',
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
+    ],
     'react/prefer-stateless-function': 'off',
 
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/exhaustive-deps': 'warn',
-    'react-hooks/rules-of-hooks': 'error',
-  },
+    'react-hooks/rules-of-hooks': 'error'
+  }
 };

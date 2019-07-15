@@ -1,6 +1,8 @@
 # @lugia/eslint-config-mega
 
-> ESLint configuration used by Lugia
+> ESLint configuration used by Lugia.
+
+**React, JSX, ES6, TypeScript and Flow syntax support**
 
 **Breaking changes in `ESLint v6`**
 [Plugins and shareable configs are no longer affected by ESLint's location](https://github.com/eslint/eslint/blob/master/docs/user-guide/migrating-to-6.0.0.md#-plugins-and-shareable-configs-are-no-longer-affected-by-eslints-location).
@@ -27,7 +29,7 @@ Adding support for the following:
 1. Install dependencies
 
 ```bash
-yarn add --dev eslint @lugia/eslint-config-mega eslint-formatter-pretty prettier
+yarn add --dev eslint @lugia/eslint-config-mega prettier
 ```
 
 2. Extend the config
@@ -37,6 +39,20 @@ yarn add --dev eslint @lugia/eslint-config-mega eslint-formatter-pretty prettier
 {
   "extends": "@lugia/mega"
 }
+```
+
+#### Use eslint-formatter-pretty
+
+[Pretty formatter for ESLint](https://github.com/sindresorhus/eslint-formatter-pretty)
+
+```bash
+yarn add --dev eslint-formatter-pretty
+```
+
+#### Use TypeScript
+
+```bash
+yarn add typescript
 ```
 
 #### Lugia Mega
