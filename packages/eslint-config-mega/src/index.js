@@ -2,7 +2,7 @@
  * Created Date: Friday, July 12th 2019, 4:12:50 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Monday, July 15th 2019, 3:40:51 pm
+ * Last Modified: Wednesday, July 17th 2019, 2:29:07 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -24,6 +24,7 @@ module.exports = {
 
   parser: require.resolve('babel-eslint'),
   extends: [
+    'plugin:jest/recommended',
     require.resolve('eslint-config-airbnb'),
     'plugin:prettier/recommended',
     require.resolve('eslint-config-prettier/flowtype'),

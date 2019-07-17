@@ -1,7 +1,7 @@
 {
   "name": "@lugia/eslint-config-mega",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "description": "ESLint configuration used by Lugia",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
   },
   "files": [
-    "index.js",
+    "lib",
     "yarn.lock"
   ],
   "license": "MIT",
@@ -24,10 +24,10 @@
     "confusing-browser-globals": "^1.0.7",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-compat": "^3.2.0",
+    "eslint-plugin-compat": "^3.3.0",
     "eslint-plugin-flowtype": "^3.11.1",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-jest": "^22.9.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.2.1",
@@ -49,6 +49,6 @@
     "npm": ">=5.2.0"
   },
   "eslintConfig": {
-    "extends": "./index.js"
+    "extends": "./lib/index.js"
   }
 }
