@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel-preset-mega engine: nodeApp 1`] = `
+Array [
+  Object {
+    "code": "import _regeneratorRuntime from \\"@babel/runtime/regenerator\\";
+import _asyncToGenerator from \\"@babel/runtime/helpers/esm/asyncToGenerator\\";
+export default
+/*#__PURE__*/
+_asyncToGenerator(
+/*#__PURE__*/
+_regeneratorRuntime.mark(function _callee() {
+  var go;
+  return _regeneratorRuntime.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          go = function _ref2() {};
+
+          _context.next = 3;
+          return go();
+
+        case 3:
+        case \\"end\\":
+          return _context.stop();
+      }
+    }
+  }, _callee);
+}));",
+    "file": "async.js",
+  },
+  Object {
+    "code": "var set = new Set([1, 2, 3]);
+[1, 2, 3].includes(2);",
+    "file": "core.js",
+  },
+  Object {
+    "code": "// eslint-disable-next-line
+function foo(one, two, three) {}",
+    "file": "flow.js",
+  },
+  Object {
+    "code": "// eslint-disable-next-line
+import React from 'react'; // eslint-disable-next-line
+
+import ReactDOM from 'react-dom';
+ReactDOM.render(React.createElement(\\"h1\\", null, \\"Hello, world!\\"), document.getElementById('root'));",
+    "file": "react.jsx",
+  },
+  Object {
+    "code": "// eslint-disable-next-line
+import * as React from 'react';
+
+function Hello(_ref) {
+  var name = _ref.name,
+      _ref$enthusiasmLevel = _ref.enthusiasmLevel,
+      enthusiasmLevel = _ref$enthusiasmLevel === void 0 ? 1 : _ref$enthusiasmLevel,
+      onIncrement = _ref.onIncrement,
+      onDecrement = _ref.onDecrement;
+
+  if (enthusiasmLevel <= 0) {
+    throw new Error('You could be a little more enthusiastic. :D');
+  }
+
+  return React.createElement(\\"div\\", {
+    className: \\"hello\\"
+  }, React.createElement(\\"div\\", {
+    className: \\"greeting\\"
+  }, \\"Hello \\", name + getExclamationMarks(enthusiasmLevel)), React.createElement(\\"div\\", null, React.createElement(\\"button\\", {
+    type: \\"button\\",
+    onClick: onDecrement
+  }, \\"-\\"), React.createElement(\\"button\\", {
+    type: \\"button\\",
+    onClick: onIncrement
+  }, \\"+\\")));
+}
+
+export default Hello; // helpers
+
+function getExclamationMarks(numChars) {
+  return Array(numChars + 1).join('!');
+}",
+    "file": "react.tsx",
+  },
+  Object {
+    "code": "var x = {
+  languageName: '',
+  enthusiasmLevel: 1
+};
+export default x;",
+    "file": "typescript.ts",
+  },
+]
+`;
