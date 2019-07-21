@@ -2,7 +2,7 @@ import openBrowser from '@lugia/mega-utils/lib/openBrowser';
 import clearConsole from '@lugia/mega-utils/lib/clearConsole';
 import {
   createCompiler,
-  prepareUrls,
+  prepareUrls
 } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
 import is from '@lugia/mega-utils/lib/is';
 import useYarn from '@lugia/mega-utils/lib/useYarn';
@@ -14,7 +14,7 @@ import send, { STARTING, COMPILING, DONE } from './send';
 import choosePort from './choosePort';
 
 const isInteractive = process.stdout.isTTY;
-const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8000;
+const DEFAULT_PORT = 8000;
 const HOST = process.env.HOST || '0.0.0.0';
 const PROTOCOL = process.env.HTTPS ? 'https' : 'http';
 const noop = () => {};
@@ -22,26 +22,26 @@ const noop = () => {};
 export default function dev({
   webpackConfig,
   userPKG = {},
-  contentBase,
+  contentBase = false,
   index,
-  port,
+  port: oPort,
   proxy,
   autoOpenBrowser = true,
   historyApiFallback = {
-    disableDotRule: true,
+    disableDotRule: true
   },
   beforeMiddleware,
   afterMiddleware,
   beforeServer,
   afterServer,
   onCompileDone = noop,
-  onCompileInvalid = noop,
+  onCompileInvalid = noop
 }) {
   process.env.NODE_ENV = 'development';
   if (!webpackConfig) {
     throw new Error('webpackConfig should be supplied.');
   }
-  choosePort(port || DEFAULT_PORT)
+  choosePort(parseInt(process.env.PORT, 10) || oPort || DEFAULT_PORT)
     .then(port => {
       if (port === null) {
         return;
@@ -57,14 +57,14 @@ export default function dev({
         urls,
         appName,
         HOST,
-        PROTOCOL,
+        PROTOCOL
       };
       const compiler = createCompiler(
         webpack,
         webpackConfig,
         appName,
         urls,
-        useYarn(),
+        useYarn()
       );
 
       // Webpack startup recompilation fix. Remove when @sokra fixes the bug.
@@ -72,12 +72,12 @@ export default function dev({
       // https://github.com/webpack/watchpack/issues/25
       const timefix = 11000;
       compiler.plugin('watch-run', (watching, callback) => {
-        watching.startTime += timefix;
+        watching.startTime += timefix; // eslint-disable-line
         callback();
       });
       compiler.plugin('done', stats => {
         send({ type: DONE });
-        stats.startTime -= timefix;
+        stats.startTime -= timefix; // eslint-disable-line
         onCompileDone(urlsInfo);
       });
       compiler.plugin('invalid', () => {
@@ -92,18 +92,18 @@ export default function dev({
         hot: true,
         quiet: true,
         headers: {
-          'access-control-allow-origin': '*',
+          'access-control-allow-origin': '*'
         },
         publicPath: webpackConfig.output.publicPath,
         watchOptions: {
-          ignored: /node_modules/,
+          ignored: /node_modules/
         },
         historyApiFallback,
         overlay: false,
         host: HOST,
         proxy,
         https: !!process.env.HTTPS,
-        contentBase: contentBase || process.env.CONTENT_BASE,
+        contentBase,
         before(app) {
           if (beforeMiddleware) {
             beforeMiddleware(app, urlsInfo);
@@ -115,7 +115,7 @@ export default function dev({
           if (afterMiddleware) {
             afterMiddleware(app, urlsInfo);
           }
-        },
+        }
       };
       const devServer = new WebpackDevServer(compiler, serverConfig);
 

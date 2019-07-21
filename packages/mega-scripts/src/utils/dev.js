@@ -1,10 +1,12 @@
+/* eslint-disable promise/catch-or-return, promise/always-return */
+
 import { resolve } from 'path';
 import { execSync } from 'child_process';
 import { existsSync, readJsonSync } from 'fs-extra';
 import { dev, applyWebpackConfig } from '@lugia/mega-webpack';
 import getUserConfig, {
   watchConfigs,
-  unwatchConfigs,
+  unwatchConfigs
 } from '@lugia/mega-config';
 import { prepareUrls } from '@lugia/mega-utils/lib/WebpackDevServerUtils';
 import is from '@lugia/mega-utils/lib/is';
@@ -23,7 +25,7 @@ import {
   CONFIG_FILE_NAME,
   DEFAULT_BROWSER_SYNC_PORT,
   DLL_OUTPUT,
-  DLL_NAME,
+  DLL_NAME
 } from './constants';
 
 const debug = require('debug')('@lugia/mega-scripts:dev');
@@ -36,7 +38,7 @@ export default function runDev(opts = {}) {
     applyConfig,
     onOpenPort,
     configFile,
-    _cliEnv = {},
+    _cliEnv = {}
   } = opts;
 
   const babel = resolve(__dirname, './babel.js');
@@ -45,7 +47,7 @@ export default function runDev(opts = {}) {
   // register babel for config files
   registerBabel(babel, {
     cwd,
-    configOnly: true,
+    configOnly: true
   });
 
   let isFirstCompile = true;
@@ -56,12 +58,13 @@ export default function runDev(opts = {}) {
     urls,
     HOST,
     PROTOCOL,
-    cwd,
     disableBrowserSync,
-    autoOpenBrowser = true,
+    autoOpenBrowser = true
   }) {
+    // eslint-disable-next-line
     disableBrowserSync =
       process.env.BROWSER_SYNC === 'none' ? true : disableBrowserSync;
+    // eslint-disable-next-line
     autoOpenBrowser = process.env.BROWSER === 'none' ? false : autoOpenBrowser;
 
     debug('disableBrowserSync', disableBrowserSync);
@@ -89,34 +92,34 @@ export default function runDev(opts = {}) {
             notify: false,
             proxy: {
               target: urls.localUrlForBrowser,
-              ws: true,
+              ws: true
             },
             cwd,
-            port,
+            port
           },
           () => {
             if (onOpenPort) {
-              const urls = prepareUrls(PROTOCOL, HOST, port);
+              const bsUrls = prepareUrls(PROTOCOL, HOST, port);
               onOpenPort(
                 {
                   port,
-                  urls,
+                  urls: bsUrls,
                   appName,
                   HOST,
-                  PROTOCOL,
+                  PROTOCOL
                 },
-                'BROWSER_SYNC',
+                'BROWSER_SYNC'
               );
             }
-          },
+          }
         );
       },
       err => {
         chalk.red(
           `[BROWSER_SYNC] Could not find an open port.\nNetwork error message: ${err.message ||
-            err}\n`,
+            err}\n`
         );
-      },
+      }
     );
 
     isFirstCompile = false;
@@ -129,7 +132,7 @@ export default function runDev(opts = {}) {
   try {
     ({ config, userPKG, watch: returnedWatchConfig } = getUserConfig({
       cwd,
-      configFileName: configFile || CONFIG_FILE_NAME,
+      configFileName: configFile || CONFIG_FILE_NAME
     }));
     debug(`user config: ${JSON.stringify(config)}`);
   } catch (e) {
@@ -145,7 +148,7 @@ export default function runDev(opts = {}) {
         bs = null;
         unwatchConfigs();
         runDev(opts);
-      },
+      }
     );
     return;
   }
@@ -157,7 +160,7 @@ export default function runDev(opts = {}) {
       : !_cliEnv.BROWSER_SYNC,
     copy,
     dllDependenciesExcludes = [],
-    dllDependenciesIncludes = [],
+    dllDependenciesIncludes = []
   } = config;
   const { dependencies = {} } = userPKG;
   const disableDll =
@@ -179,17 +182,14 @@ export default function runDev(opts = {}) {
     if (!needBuild) {
       try {
         const dllDependencies = [
-          ...new Set([
-            ...Object.keys(dependencies),
-            ...dllDependenciesIncludes,
-          ]),
+          ...new Set([...Object.keys(dependencies), ...dllDependenciesIncludes])
         ].filter(dependency => !dllDependenciesExcludes.includes(dependency));
         const dependenciesVersion = getDependenciesVersion(
           dllDependencies,
-          cwd,
+          cwd
         );
         const oldDependenciesVersion = readJsonSync(
-          resolve(dllDir, `${DLL_NAME}.dependencies.json`),
+          resolve(dllDir, `${DLL_NAME}.dependencies.json`)
         );
         needUpdate = !isEqual(dependenciesVersion, oldDependenciesVersion);
 
@@ -205,12 +205,12 @@ export default function runDev(opts = {}) {
         chalk.black.bgYellow.bold(
           `The DLL files are missing. Sit back while we ${
             needBuild ? 'build' : 'update'
-          } them for you.`,
-        ),
+          } them for you.`
+        )
       );
       // win 10 不行？
       execSync(`node ${require.resolve('../../bin/mega-scripts.js')} dll`, {
-        stdio: 'inherit',
+        stdio: 'inherit'
       });
     }
   }
@@ -219,22 +219,22 @@ export default function runDev(opts = {}) {
   const webpackConfig = applyWebpackConfig(
     disableDll
       ? applyWebpack
-      : (webpackConfig, { webpack, merge }) => {
+      : (_webpackConfig, { webpack, merge }) => {
           return applyWebpackConfig(
             applyWebpack,
-            merge(webpackConfig, {
+            merge(_webpackConfig, {
               plugins: [
                 new webpack.DllReferencePlugin({
                   context: cwd,
                   manifest: dllManifest,
-                  sourceType: 'var',
+                  sourceType: 'var'
                 }),
                 new HtmlWebpackIncludeAssetsPlugin({
                   assets: [`${DLL_NAME}.js`],
-                  append: false,
-                }),
-              ],
-            }),
+                  append: false
+                })
+              ]
+            })
           );
         },
     getWebpackConfig(
@@ -247,17 +247,17 @@ export default function runDev(opts = {}) {
             : [
                 {
                   from: dllDir,
-                  toType: 'dir',
+                  toType: 'dir'
                 },
-                ...(copy || []),
-              ],
+                ...(copy || [])
+              ]
         },
         babel,
         paths,
-        entry,
+        entry
       },
-      applyConfig,
-    ),
+      applyConfig
+    )
   );
 
   dev({
@@ -268,6 +268,7 @@ export default function runDev(opts = {}) {
     port: config.port,
     proxy: config.proxy || {},
     historyApiFallback: config.historyApiFallback,
+    contentBase: config.contentBase || paths.appPublic,
     beforeMiddleware(app) {
       // This service worker file is effectively a 'no-op' that will reset any
       // previous service worker registered for the same host:port combination.
@@ -298,12 +299,12 @@ export default function runDev(opts = {}) {
           PROTOCOL,
           cwd,
           autoOpenBrowser,
-          disableBrowserSync,
+          disableBrowserSync
         });
         isFirstCompile = false;
       } else {
         bs && bs.active && bs.reload(); // eslint-disable-line
       }
-    },
+    }
   });
 }

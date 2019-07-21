@@ -2,7 +2,7 @@
  * Created Date: Friday, July 12th 2019, 4:12:50 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Wednesday, July 17th 2019, 2:29:07 pm
+ * Last Modified: Monday, July 22nd 2019, 2:38:47 am
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -127,7 +127,7 @@ module.exports = {
   ],
   rules: {
     'arrow-parens': 'off',
-    'compat/compat': 'error',
+    'compat/compat': 'warn',
     'consistent-return': 'off',
     'comma-dangle': 'off',
     'flowtype/boolean-style': ['error', 'boolean'],
@@ -194,8 +194,8 @@ module.exports = {
     ],
 
     'promise/param-names': 'error',
-    'promise/always-return': 'error',
-    'promise/catch-or-return': 'error',
+    'promise/always-return': 'warn',
+    'promise/catch-or-return': 'warn',
     'promise/no-native': 'off',
     'react/sort-comp': [
       'error',

@@ -15,7 +15,7 @@ export default function choosePort(defaultPort) {
   return detect(defaultPort).then(
     port =>
       new Promise(resolve => {
-        if (port === defaultPort) {
+        if (port === defaultPort || process.env.DETECT_PORT === 'auto') {
           return resolve(port);
         }
         const message =
@@ -31,9 +31,9 @@ export default function choosePort(defaultPort) {
             message: `${chalk.yellow(
               `message${
                 existingProcess ? ` Probably:\n  ${existingProcess}` : ''
-              }`,
+              }`
             )}\n\nWould you like to run the app on another port instead?`,
-            default: true,
+            default: true
           };
           inquirer.prompt(question).then(answer => {
             if (answer.shouldChangePort) {
@@ -51,9 +51,9 @@ export default function choosePort(defaultPort) {
       throw new Error(
         chalk.red(
           `Could not find an open port.\nNetwork error message: ${err.message ||
-            err}\n`,
-        ),
+            err}\n`
+        )
       );
-    },
+    }
   );
 }
