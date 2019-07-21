@@ -139,8 +139,8 @@ loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong[
           "endLine": 3,
           "fix": Object {
             "range": Array [
-              109,
-              109,
+              111,
+              111,
             ],
             "text": "
 ",
@@ -231,10 +231,10 @@ Object {
   [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\React.jsx[24m[8m[90m:11:18[39m[22m[28m
   [31m×[39m  [2m11[90m:[39m18[22m  Replace [1m=>[22m with [1m·=>·[22m                                                                                                                 [2mprettier/prettier[22m
   [31m×[39m  [2m12[90m:[39m10[22m  [1mReact[22m must be in scope when using JSX                                                                                                [2mreact/react-in-jsx-scope[22m
-  [31m×[39m  [2m12[90m:[39m10[22m  Replace [1m<p>dsa<br></br>[22m with [1m(⏎····<p>⏎······dsa<br></br>⏎····[22m                                                                       [2mprettier/prettier[22m
+  [31m×[39m  [2m12[90m:[39m10[22m  Replace [1m<p>dsa<br></br>[22m with [1m(␍⏎····<p>␍⏎······dsa<br></br>␍⏎····[22m                                                                    [2mprettier/prettier[22m
   [31m×[39m  [2m12[90m:[39m16[22m  Empty components are self-closing                                                                                                    [2mreact/self-closing-comp[22m
   [31m×[39m  [2m12[90m:[39m16[22m  [1mReact[22m must be in scope when using JSX                                                                                                [2mreact/react-in-jsx-scope[22m
-  [31m×[39m  [2m13[90m:[39m1[22m   Replace [1m}[22m with [1m··);⏎};[22m                                                                                                               [2mprettier/prettier[22m
+  [31m×[39m  [2m13[90m:[39m1[22m   Replace [1m}[22m with [1m··);␍⏎};[22m                                                                                                              [2mprettier/prettier[22m
 
   [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\d.ts[24m[8m[90m:13:1[39m[22m[28m
   [33m‼[39m  [2m13[90m:[39m5[22m   [1mx[22m is assigned a value but never used.                                                                                                [2m@typescript-eslint/no-unused-vars[22m
@@ -297,8 +297,8 @@ Object {
           "endLine": 13,
           "fix": Object {
             "range": Array [
-              373,
-              376,
+              385,
+              388,
             ],
             "text": "let",
           },
@@ -314,8 +314,8 @@ Object {
           "endLine": 13,
           "fix": Object {
             "range": Array [
-              378,
-              386,
+              390,
+              398,
             ],
             "text": "",
           },
@@ -343,8 +343,8 @@ Object {
           "endLine": 21,
           "fix": Object {
             "range": Array [
-              445,
-              445,
+              465,
+              465,
             ],
             "text": " ",
           },
@@ -360,8 +360,8 @@ Object {
           "endLine": 22,
           "fix": Object {
             "range": Array [
-              471,
-              471,
+              492,
+              492,
             ],
             "text": ";",
           },
@@ -419,8 +419,8 @@ console.log(a)
           "endLine": 14,
           "fix": Object {
             "range": Array [
-              389,
-              389,
+              402,
+              402,
             ],
             "text": " ",
           },
@@ -436,8 +436,8 @@ console.log(a)
           "endLine": 14,
           "fix": Object {
             "range": Array [
-              389,
-              389,
+              402,
+              402,
             ],
             "text": " ",
           },
@@ -487,8 +487,8 @@ const a:string = 0;
           "endLine": 13,
           "fix": Object {
             "range": Array [
-              337,
-              337,
+              349,
+              349,
             ],
             "text": " ",
           },
@@ -514,8 +514,8 @@ const a:string = 0;
           "endLine": 17,
           "fix": Object {
             "range": Array [
-              377,
-              379,
+              393,
+              395,
             ],
             "text": " () ",
           },
@@ -531,8 +531,8 @@ const a:string = 0;
           "endLine": 18,
           "fix": Object {
             "range": Array [
-              396,
-              398,
+              413,
+              415,
             ],
             "text": " />;",
           },
@@ -548,8 +548,8 @@ const a:string = 0;
           "endLine": 19,
           "fix": Object {
             "range": Array [
-              400,
-              400,
+              418,
+              418,
             ],
             "text": ";",
           },
@@ -565,8 +565,8 @@ const a:string = 0;
           "endLine": 21,
           "fix": Object {
             "range": Array [
-              406,
-              406,
+              426,
+              426,
             ],
             "text": ";",
           },
@@ -613,8 +613,8 @@ dd()
           "endLine": 11,
           "fix": Object {
             "range": Array [
-              313,
-              315,
+              323,
+              325,
             ],
             "text": " => ",
           },
@@ -640,8 +640,8 @@ dd()
           "endLine": 12,
           "fix": Object {
             "range": Array [
-              326,
-              341,
+              337,
+              352,
             ],
             "text": "(
     <p>
@@ -649,7 +649,7 @@ dd()
     ",
           },
           "line": 12,
-          "message": "Replace \`<p>dsa<br></br>\` with \`(⏎····<p>⏎······dsa<br></br>⏎····\`",
+          "message": "Replace \`<p>dsa<br></br>\` with \`(␍⏎····<p>␍⏎······dsa<br></br>␍⏎····\`",
           "nodeType": null,
           "ruleId": "prettier/prettier",
           "severity": 2,
@@ -660,8 +660,8 @@ dd()
           "endLine": 12,
           "fix": Object {
             "range": Array [
-              335,
-              341,
+              346,
+              352,
             ],
             "text": " />",
           },
@@ -687,14 +687,14 @@ dd()
           "endLine": 13,
           "fix": Object {
             "range": Array [
-              346,
-              347,
+              358,
+              359,
             ],
             "text": "  );
 };",
           },
           "line": 13,
-          "message": "Replace \`}\` with \`··);⏎};\`",
+          "message": "Replace \`}\` with \`··);␍⏎};\`",
           "nodeType": null,
           "ruleId": "prettier/prettier",
           "severity": 2,
@@ -750,8 +750,8 @@ export default ()=>{
           "endLine": 11,
           "fix": Object {
             "range": Array [
-              308,
-              336,
+              318,
+              346,
             ],
             "text": " children }: { children: string }) ",
           },
@@ -777,8 +777,8 @@ export default ()=>{
           "endLine": 12,
           "fix": Object {
             "range": Array [
-              364,
-              364,
+              375,
+              375,
             ],
             "text": ";",
           },
@@ -794,8 +794,8 @@ export default ()=>{
           "endLine": 15,
           "fix": Object {
             "range": Array [
-              385,
-              385,
+              399,
+              399,
             ],
             "text": " ",
           },
@@ -821,8 +821,8 @@ export default ()=>{
           "endLine": 16,
           "fix": Object {
             "range": Array [
-              401,
-              401,
+              416,
+              416,
             ],
             "text": " ",
           },
@@ -838,8 +838,8 @@ export default ()=>{
           "endLine": 17,
           "fix": Object {
             "range": Array [
-              406,
-              406,
+              422,
+              422,
             ],
             "text": ";",
           },
@@ -899,8 +899,8 @@ export default ()=> {
           "endLine": 2,
           "fix": Object {
             "range": Array [
-              30,
               31,
+              32,
             ],
             "text": "",
           },
@@ -926,8 +926,8 @@ export default ()=> {
           "endLine": 4,
           "fix": Object {
             "range": Array [
-              38,
               41,
+              44,
             ],
             "text": "const",
           },
@@ -944,8 +944,8 @@ export default ()=> {
           "endLine": 4,
           "fix": Object {
             "range": Array [
-              53,
-              53,
+              56,
+              56,
             ],
             "text": ";",
           },
@@ -971,8 +971,8 @@ export default ()=> {
           "endLine": 8,
           "fix": Object {
             "range": Array [
-              81,
-              82,
+              88,
+              89,
             ],
             "text": "",
           },
@@ -988,8 +988,8 @@ export default ()=> {
           "endLine": 9,
           "fix": Object {
             "range": Array [
-              84,
-              84,
+              92,
+              92,
             ],
             "text": ";",
           },

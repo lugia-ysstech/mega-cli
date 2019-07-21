@@ -2,7 +2,7 @@
  * Created Date: Friday, July 19th 2019, 6:42:32 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Sunday, July 21st 2019, 8:48:34 pm
+ * Last Modified: Monday, July 22nd 2019, 2:48:00 am
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -24,7 +24,8 @@ function testEngine(engine, env = 'production') {
             require.resolve(join(__dirname, '../src')),
             {
               env,
-              engine
+              engine,
+              cwd: join(__dirname, '../')
             }
           ]
         ]

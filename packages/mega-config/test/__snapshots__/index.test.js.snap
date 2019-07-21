@@ -42,6 +42,10 @@ Array [
     "validate": [Function],
   },
   Object {
+    "name": "contentBase",
+    "validate": [Function],
+  },
+  Object {
     "name": "copy",
     "validate": [Function],
   },
@@ -163,6 +167,10 @@ Array [
   },
   Object {
     "name": "parallel",
+    "validate": [Function],
+  },
+  Object {
+    "name": "port",
     "validate": [Function],
   },
   Object {
