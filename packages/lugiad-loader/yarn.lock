@@ -25,18 +25,18 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@^1.0.3":
-  version "1.0.3"
-  resolved "http://192.168.102.79:5001/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.3.tgz#6f780acb84f052704ab00c26488ca0a3533d25ec"
-  integrity sha1-b3gKy4TwUnBKsAwmSIygo1M9Jew=
+"@lugia/devtools-conversion@^1.0.4":
+  version "1.0.4"
+  resolved "http://192.168.102.79:5001/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.4.tgz#fd8e02ef087e979d49ae1c2c22a36b4c32c3a63b"
+  integrity sha1-/Y4C7wh+l51JrhwsIqNrTDLDpjs=
   dependencies:
-    "@lugia/devtools-core" "^1.0.2"
+    "@lugia/devtools-core" "^1.0.3"
     chai "^4.1.2"
 
-"@lugia/devtools-core@^1.0.2":
-  version "1.0.2"
-  resolved "http://192.168.102.79:5001/@lugia/devtools-core/download/@lugia/devtools-core-1.0.2.tgz#e4558bba6ef168dce727b230d229ff2fb66453c3"
-  integrity sha1-5FWLum7xaNznJ7Iw0in/L7ZkU8M=
+"@lugia/devtools-core@^1.0.3":
+  version "1.0.3"
+  resolved "http://192.168.102.79:5001/@lugia/devtools-core/download/@lugia/devtools-core-1.0.3.tgz#6202d0a51eed339c1229d319037f17b96c69afe2"
+  integrity sha1-YgLQpR7tM5wSKdMZA38XuWxpr+I=
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
