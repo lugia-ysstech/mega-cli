@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-jest",
-  "version": "1.2.31",
+  "version": "1.2.32",
   "description": "base on jest && enzyme",
   "bin": {
     "lugia-jest": "./bin/mega-jest.js"
