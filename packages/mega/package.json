@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega",
-  "version": "1.3.55",
+  "version": "1.3.56",
   "description": "Quickly create react apps. Based on redux, lugiax and react-router.",
   "main": "./lib/index.js",
   "bin": {
@@ -21,7 +21,7 @@
     "@babel/runtime": "^7.1.5",
     "@lugia/babel-preset-mega": "^1.0.12",
     "@lugia/mega-config": "^1.0.13",
-    "@lugia/mega-scripts": "^1.3.40",
+    "@lugia/mega-scripts": "^1.3.41",
     "@lugia/mega-utils": "^1.4.21",
     "assert": "^1.4.1",
     "chalk": "^2.4.2",
