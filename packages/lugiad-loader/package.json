@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.4.3",
-    "@lugia/devtools-conversion": "^1.0.6"
+    "@lugia/devtools-conversion": "^1.0.7"
   },
   "files": [
     "lib",

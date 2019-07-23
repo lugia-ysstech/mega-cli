@@ -3,34 +3,15 @@
 exports[`babel-preset-mega engine: nodeApp 1`] = `
 Array [
   Object {
-    "code": "import _regeneratorRuntime from \\"@babel/runtime/regenerator\\";
-import _asyncToGenerator from \\"@babel/runtime/helpers/esm/asyncToGenerator\\";
-export default
-/*#__PURE__*/
-_asyncToGenerator(
-/*#__PURE__*/
-_regeneratorRuntime.mark(function _callee() {
-  var go;
-  return _regeneratorRuntime.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          go = function _ref2() {};
+    "code": "export default (async () => {
+  function go() {}
 
-          _context.next = 3;
-          return go();
-
-        case 3:
-        case \\"end\\":
-          return _context.stop();
-      }
-    }
-  }, _callee);
-}));",
+  await go();
+});",
     "file": "async.js",
   },
   Object {
-    "code": "var set = new Set([1, 2, 3]);
+    "code": "const set = new Set([1, 2, 3]);
 [1, 2, 3].includes(2);",
     "file": "core.js",
   },
@@ -51,13 +32,12 @@ ReactDOM.render(React.createElement(\\"h1\\", null, \\"Hello, world!\\"), docume
     "code": "// eslint-disable-next-line
 import * as React from 'react';
 
-function Hello(_ref) {
-  var name = _ref.name,
-      _ref$enthusiasmLevel = _ref.enthusiasmLevel,
-      enthusiasmLevel = _ref$enthusiasmLevel === void 0 ? 1 : _ref$enthusiasmLevel,
-      onIncrement = _ref.onIncrement,
-      onDecrement = _ref.onDecrement;
-
+function Hello({
+  name,
+  enthusiasmLevel = 1,
+  onIncrement,
+  onDecrement
+}) {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -83,7 +63,7 @@ function getExclamationMarks(numChars) {
     "file": "react.tsx",
   },
   Object {
-    "code": "var x = {
+    "code": "const x = {
   languageName: '',
   enthusiasmLevel: 1
 };

@@ -20,6 +20,7 @@ export default (api, opts = {}) => {
   const isEnvProduction = env === 'production';
   const isEnvTest = env === 'test';
   const { engine, cwd = process.cwd() } = opts;
+  const isNodeApp = engine === 'nodeApp';
   let pkg = {};
   try {
     pkg = require(join(cwd, 'package.json')); // eslint-disable-line
@@ -27,7 +28,7 @@ export default (api, opts = {}) => {
   const useESModules = validateOption(
     'useESModules',
     opts.useESModules,
-    isEnvDevelopment || isEnvProduction
+    isNodeApp ? false : isEnvDevelopment || isEnvProduction
   );
   const isFlowEnabled = validateOption('flow', opts.flow, true);
   const isTypeScriptEnabled = validateOption(
@@ -57,10 +58,7 @@ export default (api, opts = {}) => {
     );
   }
 
-  if (
-    engine === 'nodeApp' &&
-    !(pkg.dependencies && pkg.dependencies['@babel/runtime'])
-  ) {
+  if (isNodeApp && !(pkg.dependencies && pkg.dependencies['@babel/runtime'])) {
     throw new Error(
       `@lugia/babel-preset-mega: engine option is 'nodeApp', need '@babel/runtime' dependency, run 'yarn add @babel/runtime' to install.`
     );
@@ -85,12 +83,18 @@ export default (api, opts = {}) => {
           useBuiltIns: opts.useBuiltIns || 'entry',
           corejs: 3,
           // Do not transform modules to CJS
-          modules: false,
+          modules: useESModules ? 'commonjs' : false,
           // Exclude transforms that make all code slower
           exclude: ['transform-typeof-symbol'],
-          targets: opts.targets || {
-            browsers: opts.browsers || ['last 2 versions', 'ie 10']
-          },
+          targets:
+            opts.targets ||
+            (isNodeApp
+              ? {
+                  node: 'current'
+                }
+              : {
+                  browsers: opts.browsers || ['last 2 versions', 'ie 10']
+                }),
           ignoreBrowserslistConfig: true
         }
       ],
