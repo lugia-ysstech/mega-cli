@@ -1,6 +1,6 @@
 {
   "name": "@lugia/babel-preset-mega",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Babel preset used by @lugia/mega",
   "license": "MIT",
   "main": "./lib/index.js",
