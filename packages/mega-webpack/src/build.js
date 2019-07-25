@@ -53,11 +53,11 @@ function buildWebpack(opts = {}) {
         stats,
         {
           root: outputPath,
-          sizes: {},
+          sizes: {}
         },
         outputPath,
         WARN_AFTER_BUNDLE_GZIP_SIZE,
-        WARN_AFTER_CHUNK_GZIP_SIZE,
+        WARN_AFTER_CHUNK_GZIP_SIZE
       );
       console.log();
       console.log('  Images and other types of assets omitted.\n');
@@ -67,19 +67,17 @@ function buildWebpack(opts = {}) {
 
     let assets = [];
     if (useMemoryFS) {
-      assets = stats
-        .toJson()
-        .assets.filter(asset => /\.(js|css)$/.test(asset.name))
-        .map(asset => {
-          const filePath = join(outputPath, asset.name);
-          const fileContent = fs.readFileSync(filePath).toString();
-          return {
-            path: filePath,
-            folder: join(basename(outputPath), dirname(asset.name)),
-            name: basename(asset.name),
-            content: fileContent,
-          };
-        });
+      assets = stats.toJson().assets.map(asset => {
+        const filePath = join(outputPath, asset.name);
+        const fileContent = fs.readFileSync(filePath);
+        return {
+          path: filePath,
+          folder: join(basename(outputPath), dirname(asset.name)),
+          name: basename(asset.name),
+          content: fileContent,
+          originalAsset: asset
+        };
+      });
     }
 
     if (success) {
@@ -112,7 +110,7 @@ function buildWebpack(opts = {}) {
 
     return successHandler({
       stats,
-      warnings: messages.warnings,
+      warnings: messages.warnings
     });
   }
 
@@ -132,7 +130,7 @@ export default function build(opts = {}) {
   assert(webpackConfig, 'webpackConfig should be supplied.');
   assert(
     is.plainObject(webpackConfig),
-    'webpackConfig should be plain object.',
+    'webpackConfig should be plain object.'
   );
 
   buildWebpack(opts);
