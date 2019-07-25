@@ -51,19 +51,19 @@ export default function getConfig(opts = {}, applyConfig) {
       require('postcss-flexbugs-fixes'), // eslint-disable-line
       autoprefixer({
         browsers,
-        flexbox: 'no-2009',
+        flexbox: 'no-2009'
       }),
-      ...(is.array(opts.extraPostCSSPlugins) ? opts.extraPostCSSPlugins : []),
-    ],
+      ...(is.array(opts.extraPostCSSPlugins) ? opts.extraPostCSSPlugins : [])
+    ]
   };
   const cssModulesConfig = {
     modules: true,
     localIdentName: isDev
       ? '[name]__[local]___[hash:base64:5]'
-      : '[local]___[hash:base64:5]',
+      : '[local]___[hash:base64:5]'
   };
   const lessOptions = {
-    modifyVars: theme,
+    modifyVars: theme
   };
   const cssOptions = {
     importLoaders: 1,
@@ -72,15 +72,15 @@ export default function getConfig(opts = {}, applyConfig) {
       : {
           minimize: !(process.env.COMPRESS === 'none')
             ? {
-                minifyFontValues: false,
+                minifyFontValues: false
               }
             : false,
-          sourceMap: !opts.disableCSSSourceMap,
-        }),
+          sourceMap: !opts.disableCSSSourceMap
+        })
   };
 
-  function getCSSLoader(opts = {}) {
-    const { cssModules, less, sass, sassOptions } = opts;
+  function getCSSLoader(opt = {}) {
+    const { cssModules, less, sass, sassOptions } = opt;
 
     // 由于 sass 安装比较慢，所以默认不启用
     // 当检测到项目里安装 node-sass、sass-loader 时，
@@ -89,10 +89,10 @@ export default function getConfig(opts = {}, applyConfig) {
     let sassLoader;
     try {
       sassLoader = require.resolve('sass-loader', {
-        paths: [opts.cwd, join(__dirname)],
+        paths: [opt.cwd, join(__dirname)]
       });
       require.resolve('node-sass', {
-        paths: [opts.cwd, join(__dirname)],
+        paths: [opt.cwd, join(__dirname)]
       });
     } catch (e) {
       hasSassLoader = false;
@@ -104,29 +104,29 @@ export default function getConfig(opts = {}, applyConfig) {
         loader: require.resolve('css-loader'),
         options: {
           ...cssOptions,
-          ...(cssModules ? cssModulesConfig : {}),
-        },
+          ...(cssModules ? cssModulesConfig : {})
+        }
       },
       {
         loader: require.resolve('postcss-loader'),
-        options: postcssOptions,
+        options: postcssOptions
       },
       ...(less
         ? [
             {
               loader: require.resolve('less-loader'),
-              options: lessOptions,
-            },
+              options: lessOptions
+            }
           ]
         : []),
       ...(sass && hasSassLoader
         ? [
             {
               loader: sassLoader,
-              options: sassOptions,
-            },
+              options: sassOptions
+            }
           ]
-        : []),
+        : [])
     ];
   }
 
@@ -138,9 +138,11 @@ export default function getConfig(opts = {}, applyConfig) {
       if (/\.module\.(css|less|sass|scss)$/.test(filePath)) return true;
     }
     if (opts.cssModulesExcludes) {
+      /* eslint-disable */
       for (const exclude of opts.cssModulesExcludes) {
         if (filePath.indexOf(exclude) > -1) return true;
       }
+      /* eslint-enable */
     }
   }
 
@@ -156,8 +158,8 @@ export default function getConfig(opts = {}, applyConfig) {
               sass:
                 extname(file).toLowerCase() === '.sass' ||
                 extname(file).toLowerCase() === '.scss',
-              sassOptions: opts.sass,
-            }),
+              sassOptions: opts.sass
+            })
           };
         })
       : []),
@@ -166,52 +168,52 @@ export default function getConfig(opts = {}, applyConfig) {
           {
             test: /\.module\.css$/,
             use: getCSSLoader({
-              cssModules: true,
-            }),
+              cssModules: true
+            })
           },
           {
             test: /\.module\.less$/,
             use: getCSSLoader({
               cssModules: true,
-              less: true,
-            }),
+              less: true
+            })
           },
           {
             test: /\.module\.(sass|scss)$/,
             use: getCSSLoader({
               cssModules: true,
               sass: true,
-              sassOptions: opts.sass,
-            }),
-          },
+              sassOptions: opts.sass
+            })
+          }
         ]
       : []),
     {
       test: /\.css$/,
       exclude,
       use: getCSSLoader({
-        cssModules: !opts.disableCSSModules,
-      }),
+        cssModules: !opts.disableCSSModules
+      })
     },
     {
       test: /\.css$/,
       include: /node_modules/,
-      use: getCSSLoader(),
+      use: getCSSLoader()
     },
     {
       test: /\.less$/,
       exclude,
       use: getCSSLoader({
         cssModules: !opts.disableCSSModules,
-        less: true,
-      }),
+        less: true
+      })
     },
     {
       test: /\.less$/,
       include: /node_modules/,
       use: getCSSLoader({
-        less: true,
-      }),
+        less: true
+      })
     },
     {
       test: /\.(sass|scss)$/,
@@ -219,24 +221,25 @@ export default function getConfig(opts = {}, applyConfig) {
       use: getCSSLoader({
         cssModules: !opts.disableCSSModules,
         sass: true,
-        sassOptions: opts.sass,
-      }),
+        sassOptions: opts.sass
+      })
     },
     {
       test: /\.(sass|scss)$/,
       include: /node_modules/,
       use: getCSSLoader({
         sass: true,
-        sassOptions: opts.sass,
-      }),
-    },
+        sassOptions: opts.sass
+      })
+    }
   ];
 
   // 生产环境下用 ExtractTextPlugin 提取出来
   if (!isDev && !opts.disableCssExtract) {
     cssRules.forEach(rule => {
+      // eslint-disable-next-line
       rule.use = ExtractTextPlugin.extract({
-        use: rule.use.slice(1),
+        use: rule.use.slice(1)
       });
     });
   }
@@ -261,9 +264,9 @@ export default function getConfig(opts = {}, applyConfig) {
         {
           from: resolve(opts.cwd, 'public'),
           to: outputPath,
-          toType: 'dir',
-        },
-      ]),
+          toType: 'dir'
+        }
+      ])
     );
   }
 
@@ -277,46 +280,46 @@ export default function getConfig(opts = {}, applyConfig) {
   const babelOptions = {
     ...(opts.babel || defaultBabelConfig({ browsers })),
     cacheDirectory: process.env.BABEL_CACHE !== 'none',
-    babelrc: !!process.env.BABELRC,
+    babelrc: !!process.env.BABELRC
   };
   babelOptions.plugins = [
     ...(babelOptions.plugins || []),
     ...(opts.disableDynamicImport
       ? [require.resolve('babel-plugin-dynamic-import-node-sync')]
-      : []),
+      : [])
   ];
   const babelUse = [
     {
-      loader: require.resolve('@lugia/mega-utils/lib/debugLoader'),
+      loader: require.resolve('@lugia/mega-utils/lib/debugLoader')
     },
     {
       loader: require.resolve('babel-loader'),
-      options: babelOptions,
-    },
+      options: babelOptions
+    }
   ];
   const babelOptionsDeps = {
     ...(opts.babel || defaultBabelConfig({ browsers })),
     cacheDirectory: process.env.BABEL_CACHE !== 'none',
-    babelrc: !!process.env.BABELRC,
+    babelrc: !!process.env.BABELRC
   };
   const babelUseDeps = [
     {
-      loader: require.resolve('@lugia/mega-utils/lib/debugLoader'),
+      loader: require.resolve('@lugia/mega-utils/lib/debugLoader')
     },
     {
       loader: require.resolve('babel-loader'),
-      options: babelOptionsDeps,
-    },
+      options: babelOptionsDeps
+    }
   ];
 
   const eslintOptions = {
     formatter: eslintFormatter,
     baseConfig: {
-      extends: [require.resolve('eslint-config-react-app')],
+      extends: [require.resolve('eslint-config-react-app')]
     },
     ignore: false,
     eslintPath: require.resolve('eslint'),
-    useEslintrc: false,
+    useEslintrc: false
   };
 
   // 使用 user 的 eslint
@@ -324,7 +327,7 @@ export default function getConfig(opts = {}, applyConfig) {
     const { dependencies, devDependencies } = require(resolve('package.json')); // eslint-disable-line
     if (dependencies.eslint || devDependencies.eslint) {
       const eslintPath = resolveSync('eslint', {
-        basedir: opts.cwd,
+        basedir: opts.cwd
       });
       eslintOptions.eslintPath = eslintPath;
       debug(`use user's eslint bin: ${eslintPath}`);
@@ -347,7 +350,7 @@ export default function getConfig(opts = {}, applyConfig) {
         debug(`extend with user's .eslintrc: ${resolve('.eslintrc')}`);
         eslintOptions.baseConfig = {
           ...eslintOptions.baseConfig,
-          ...userRc,
+          ...userRc
         };
       }
     } catch (e) {
@@ -374,14 +377,14 @@ export default function getConfig(opts = {}, applyConfig) {
       pathinfo: isDev,
       filename: `[name]${jsHash}.js`,
       publicPath: opts.publicPath || (isDev ? '/' : './'),
-      chunkFilename: `[name]${jsHash}.async.js`,
+      chunkFilename: `[name]${jsHash}.async.js`
     },
     resolve: {
       modules: [
         'node_modules',
         resolve(opts.cwd, 'node_modules'),
         resolve(__dirname, '../node_modules'),
-        ...(opts.extraResolveModules || []),
+        ...(opts.extraResolveModules || [])
       ],
       // require时省略的扩展名，如：require('module') 不需要module.js
       extensions: [
@@ -394,24 +397,24 @@ export default function getConfig(opts = {}, applyConfig) {
         '.json',
         '.jsx',
         '.ts',
-        '.tsx',
+        '.tsx'
       ],
       // 别名，可以直接使用别名来代表设定的路径以及其他
       alias: {
         '@babel/runtime': dirname(
-          require.resolve('@babel/runtime-corejs2/package.json'),
+          require.resolve('@babel/runtime-corejs2/package.json')
         ),
         '@babel/runtime-corejs2': dirname(
-          require.resolve('@babel/runtime-corejs2/package.json'),
+          require.resolve('@babel/runtime-corejs2/package.json')
         ),
         'babel-runtime': dirname(require.resolve('babel-runtime/package.json')),
-        ...opts.alias,
+        ...opts.alias
       },
       plugins:
         process.env.TS_CONFIG_PATHS_PLUGIN &&
         process.env.TS_CONFIG_PATHS_PLUGIN !== 'none'
           ? [new TsConfigPathsPlugin()]
-          : [],
+          : []
     },
     module: {
       rules: [
@@ -425,13 +428,13 @@ export default function getConfig(opts = {}, applyConfig) {
                 use: [
                   {
                     options: {
-                      emitErrors: true,
+                      emitErrors: true
                       // formatter: eslintFormatter,
                     },
-                    loader: require.resolve('tslint-loader'),
-                  },
-                ],
-              },
+                    loader: require.resolve('tslint-loader')
+                  }
+                ]
+              }
             ]),
         ...(process.env.DISABLE_ESLINT || process.env.ESLINT === 'none'
           ? []
@@ -443,10 +446,10 @@ export default function getConfig(opts = {}, applyConfig) {
                 use: [
                   {
                     options: eslintOptions,
-                    loader: require.resolve('eslint-loader'),
-                  },
-                ],
-              },
+                    loader: require.resolve('eslint-loader')
+                  }
+                ]
+              }
             ]),
         {
           exclude: [
@@ -455,22 +458,22 @@ export default function getConfig(opts = {}, applyConfig) {
             /\.(js|jsx|ts|tsx)$/,
             /\.lugiad$/,
             /\.(css|less|scss|sass)$/,
-            ...(opts.urlLoaderExcludes || []),
+            ...(opts.urlLoaderExcludes || [])
           ],
           loader: require.resolve('url-loader'),
           options: {
-            limit: 10000,
-            name: 'static/[name].[hash:8].[ext]',
-          },
+            limit: process.env.FILE_LIMIT || 10000,
+            name: 'static/[name].[hash:8].[ext]'
+          }
         },
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: babelUse,
+          use: babelUse
         },
         {
           test: /\.jsx$/,
-          use: babelUse,
+          use: babelUse
         },
         {
           test: /\.(ts|tsx)$/,
@@ -483,10 +486,10 @@ export default function getConfig(opts = {}, applyConfig) {
                 configFileName:
                   opts.tsConfigFile || join(opts.cwd, 'tsconfig.json'),
                 transpileOnly: true,
-                ...(opts.typescript || {}),
-              },
-            },
-          ],
+                ...(opts.typescript || {})
+              }
+            }
+          ]
         },
         {
           test: /\.lugiad$/,
@@ -494,16 +497,16 @@ export default function getConfig(opts = {}, applyConfig) {
           use: [
             ...babelUse,
             {
-              loader: require.resolve('@lugia/lugiad-loader'),
-            },
-          ],
+              loader: require.resolve('@lugia/lugiad-loader')
+            }
+          ]
         },
         ...extraBabelIncludes.map(include => {
           return {
             test: /\.(js|jsx)$/,
             include:
               typeof include === 'string' ? join(opts.cwd, include) : include,
-            use: babelUseDeps,
+            use: babelUseDeps
           };
         }),
         {
@@ -514,11 +517,11 @@ export default function getConfig(opts = {}, applyConfig) {
               : undefined,
           loader: require.resolve('file-loader'),
           options: {
-            name: '[name].[ext]',
-          },
+            name: '[name].[ext]'
+          }
         },
-        ...cssRules,
-      ],
+        ...cssRules
+      ]
     },
     plugins: [
       ...(isDev
@@ -529,7 +532,7 @@ export default function getConfig(opts = {}, applyConfig) {
             new SystemBellWebpackPlugin(),
             ...(process.env.HARD_SOURCE && process.env.HARD_SOURCE !== 'none'
               ? [new HardSourceWebpackPlugin()]
-              : []),
+              : [])
           ].concat(
             opts.devtool
               ? []
@@ -539,7 +542,7 @@ export default function getConfig(opts = {}, applyConfig) {
                     moduleFilenameTemplate: info => {
                       if (
                         /\/koi-pkgs\/packages/.test(
-                          info.absoluteResourcePath,
+                          info.absoluteResourcePath
                         ) ||
                         /packages\/koi-core/.test(info.absoluteResourcePath) ||
                         /webpack\/bootstrap/.test(info.absoluteResourcePath) ||
@@ -549,13 +552,14 @@ export default function getConfig(opts = {}, applyConfig) {
                       }
                       return resolve(info.absoluteResourcePath).replace(
                         /\\/g,
-                        '/',
+                        '/'
                       );
-                    },
-                  }),
-                ],
+                    }
+                  })
+                ]
           )
         : [
+            // eslint-disable-next-line
             ...(process.env.__FROM_TEST
               ? []
               : [new webpack.HashedModuleIdsPlugin()]),
@@ -565,8 +569,8 @@ export default function getConfig(opts = {}, applyConfig) {
               : [
                   new ExtractTextPlugin({
                     filename: `[name]${cssHash}.css`,
-                    allChunks: true,
-                  }),
+                    allChunks: true
+                  })
                 ]),
             ...(opts.serviceworker
               ? [
@@ -600,20 +604,20 @@ export default function getConfig(opts = {}, applyConfig) {
                     // Don't precache sourcemaps (they're large) and build asset manifest:
                     staticFileGlobsIgnorePatterns: [
                       /\.map$/,
-                      /asset-manifest\.json$/,
+                      /asset-manifest\.json$/
                     ],
-                    ...opts.serviceworker,
-                  }),
+                    ...opts.serviceworker
+                  })
                 ]
               : []),
             ...(opts.manifest
               ? [
                   new ManifestPlugin({
                     fileName: 'asset-manifest.json',
-                    ...opts.manifest,
-                  }),
+                    ...opts.manifest
+                  })
                 ]
-              : []),
+              : [])
           ]),
       ...(isDev || process.env.COMPRESS === 'none'
         ? []
@@ -625,28 +629,28 @@ export default function getConfig(opts = {}, applyConfig) {
                     ? opts.parallel
                     : undefined,
                   sourceMap: !!opts.devtool,
-                  uglifyJS: uglifyJSConfig,
+                  uglifyJS: uglifyJSConfig
                 })
               : new webpack.optimize.UglifyJsPlugin({
                   ...uglifyJSConfig,
-                  ...(opts.devtool ? { sourceMap: true } : {}),
-                }),
+                  ...(opts.devtool ? { sourceMap: true } : {})
+                })
           ]),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(
           // eslint-disable-line
-          isDev ? 'development' : 'production',
+          isDev ? 'development' : 'production'
         ), // eslint-disable-line
         'process.env.HMR': process.env.HMR,
         // 给 socket server 用
         ...(process.env.SOCKET_SERVER
           ? {
               'process.env.SOCKET_SERVER': JSON.stringify(
-                process.env.SOCKET_SERVER,
-              ),
+                process.env.SOCKET_SERVER
+              )
             }
           : {}),
-        ...stringifyObject(opts.define || {}),
+        ...stringifyObject(opts.define || {})
       }),
       ...(opts.html
         ? [new InterpolateHtmlPlugin(env.raw), new HTMLWebpackPlugin(opts.html)]
@@ -654,8 +658,8 @@ export default function getConfig(opts = {}, applyConfig) {
       new CaseSensitivePathsPlugin(),
       new webpack.LoaderOptionsPlugin({
         options: {
-          context: __dirname,
-        },
+          context: __dirname
+        }
       }),
       new ProgressPlugin(),
       ...(process.env.TS_TYPECHECK ? [new ForkTsCheckerWebpackPlugin()] : []),
@@ -665,7 +669,7 @@ export default function getConfig(opts = {}, applyConfig) {
       ...commonsPlugins,
       new CleanWebpackPlugin([outputPath, ...(opts.clean || [])], {
         root: opts.cwd,
-        verbose: false,
+        verbose: false
       }),
       ...copyPlugins,
       ...(process.env.ANALYZE
@@ -673,10 +677,10 @@ export default function getConfig(opts = {}, applyConfig) {
             new BundleAnalyzerPlugin({
               analyzerMode: 'server',
               analyzerPort: process.env.ANALYZE_PORT || 8888,
-              openAnalyzer: true,
-            }),
+              openAnalyzer: true
+            })
           ]
-        : []),
+        : [])
     ],
     externals: opts.externals,
     node: {
@@ -684,13 +688,13 @@ export default function getConfig(opts = {}, applyConfig) {
       fs: 'empty',
       net: 'empty',
       tls: 'empty',
-      child_process: 'empty',
+      child_process: 'empty'
     },
     performance: isDev
       ? {
-          hints: false,
+          hints: false
         }
-      : {},
+      : {}
   };
 
   if (PUBLIC_PATH) {
@@ -704,7 +708,7 @@ export function applyWebpackConfig(applyConfig, config) {
   if (is.function(applyConfig)) {
     return applyConfig(config, {
       webpack,
-      merge,
+      merge
     });
   }
   return config;
