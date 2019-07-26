@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@^1.0.8":
-  version "1.0.8"
-  resolved "http://192.168.102.79:5001/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.8.tgz#36c67f55883f33660ae40803b918444d7d2f67bb"
-  integrity sha1-NsZ/VYg/M2YK5AgDuRhETX0vZ7s=
+"@lugia/devtools-conversion@^1.0.9":
+  version "1.0.9"
+  resolved "http://192.168.102.79:5001/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.9.tgz#567c1524a443e65806390c359136d7d34e6aff8a"
+  integrity sha1-VnwVJKRD5lgGOQw1kTbX005q/4o=
   dependencies:
     "@lugia/devtools-core" "^1.0.4"
 
