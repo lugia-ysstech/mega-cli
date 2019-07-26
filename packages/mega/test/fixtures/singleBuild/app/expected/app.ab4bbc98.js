@@ -1,0 +1,1 @@
+webpackJsonp([0],{"2O6T":function(e,n,o){"use strict";function t(){return l.createElement("p",null,"sads")}var l=o("dmLA"),c=o("/k/u");console.log(321312),console.log(l),console.log(c),c.render(l.createElement(t,null),document.getElementById("root")),e.exports=t}},["2O6T"]);

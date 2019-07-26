@@ -67,13 +67,19 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 __webpack_require__(1);
 
 console.log('index');
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 console.log('a');
 
