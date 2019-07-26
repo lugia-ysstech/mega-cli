@@ -2,7 +2,7 @@
  * Created Date: Friday, July 19th 2019, 6:42:32 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Monday, July 22nd 2019, 2:48:00 am
+ * Last Modified: Friday, July 26th 2019, 5:52:27 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -14,8 +14,10 @@ import { transformFileSync } from '@babel/core';
 import { readdirSync } from 'fs';
 import { join } from 'path';
 
-function testEngine(engine, env = 'production') {
-  it(`engine: ${engine}`, () => {
+const cwd = join(__dirname, '../');
+
+function testEngine(engine, opts) {
+  it(`engine: ${engine}, opts: ${JSON.stringify(opts)}`, () => {
     const fixtures = join(__dirname, './fixtures');
     const results = readdirSync(fixtures).map(file => {
       const { code } = transformFileSync(join(fixtures, file), {
@@ -23,16 +25,18 @@ function testEngine(engine, env = 'production') {
           [
             require.resolve(join(__dirname, '../src')),
             {
-              env,
+              env: 'production',
               engine,
-              cwd: join(__dirname, '../')
+              cwd,
+              autoInstall: true,
+              ...opts
             }
           ]
         ]
       });
       return {
         file,
-        code
+        code: code.replace(/from .*babel-preset-mega/g, '"./babel-preset-mega')
       };
     });
 
@@ -41,8 +45,24 @@ function testEngine(engine, env = 'production') {
 }
 
 describe('babel-preset-mega', () => {
-  // testEngine('webpackApp');
-  // testEngine('webpackLib');
+  testEngine('webpackApp');
+  testEngine('webpackApp', {
+    imports: [
+      {
+        libraryName: '@lugia/lugia-web',
+        libraryDirectory: 'dist'
+      }
+    ]
+  });
+  testEngine('webpackLib');
+  testEngine('webpackLib', {
+    browsers: 'chrome 70'
+  });
   testEngine('nodeApp');
-  // testEngine('nodeLib');
+  testEngine('nodeLib');
+  testEngine('nodeLib', {
+    targets: {
+      node: 4
+    }
+  });
 });

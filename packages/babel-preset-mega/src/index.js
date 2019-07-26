@@ -3,6 +3,7 @@
 // https://github.com/babel/babel/issues/10008
 // https://github.com/facebook/create-react-app/blob/master/packages/babel-preset-react-app/README.md
 import { join, dirname } from 'path';
+import { execSync } from 'child_process';
 
 export default (api, opts = {}) => {
   // This is similar to how `env` works in Babel:
@@ -19,8 +20,11 @@ export default (api, opts = {}) => {
   const isEnvDevelopment = env === 'development';
   const isEnvProduction = env === 'production';
   const isEnvTest = env === 'test';
-  const { engine, cwd = process.cwd() } = opts;
+  const { engine, cwd = process.cwd(), autoInstall = false } = opts;
   const isNodeApp = engine === 'nodeApp';
+  const isNodeLib = engine === 'nodeLib';
+  const isWebpackApp = engine === 'webpackApp';
+  const isWebpackLib = engine === 'webpackLib';
   let pkg = {};
   try {
     pkg = require(join(cwd, 'package.json')); // eslint-disable-line
@@ -28,8 +32,10 @@ export default (api, opts = {}) => {
   const useESModules = validateOption(
     'useESModules',
     opts.useESModules,
-    isNodeApp ? false : isEnvDevelopment || isEnvProduction
+    isNodeApp || isNodeLib ? false : isEnvDevelopment || isEnvProduction
   );
+  const alias = validateOption('alias', opts.alias, {});
+  const imports = validateOption('imports', opts.imports, []);
   const isFlowEnabled = validateOption('flow', opts.flow, true);
   const isTypeScriptEnabled = validateOption(
     'typescript',
@@ -40,7 +46,7 @@ export default (api, opts = {}) => {
   const useAbsoluteRuntime = validateOption(
     'absoluteRuntime',
     opts.absoluteRuntime,
-    engine !== 'nodeApp'
+    isWebpackApp
   );
 
   let absoluteRuntimePath;
@@ -58,10 +64,46 @@ export default (api, opts = {}) => {
     );
   }
 
-  if (isNodeApp && !(pkg.dependencies && pkg.dependencies['@babel/runtime'])) {
-    throw new Error(
-      `@lugia/babel-preset-mega: engine option is 'nodeApp', need '@babel/runtime' dependency, run 'yarn add @babel/runtime' to install.`
-    );
+  if (
+    isNodeApp &&
+    !(
+      pkg.dependencies &&
+      pkg.dependencies['@babel/runtime'] &&
+      pkg.dependencies['core-js']
+    )
+  ) {
+    if (autoInstall) {
+      console.warn(
+        `@lugia/babel-preset-mega: engine option is 'nodeApp', need '@babel/runtime@7、core-js@3' dependency, start automatic installation.
+You need to introduce 'core-js/stable' in the entry file.`
+      );
+      execSync('yarn add @babel/runtime@7 core-js@3', {
+        cwd
+      });
+    } else {
+      throw new Error(
+        `@lugia/babel-preset-mega: engine option is 'nodeApp', need '@babel/runtime@7、core-js@3' dependency, run 'yarn add @babel/runtime@7 core-js@3' to install.
+You need to introduce 'core-js/stable' in the entry file.`
+      );
+    }
+  }
+
+  if (
+    isNodeLib &&
+    !(pkg.dependencies && pkg.dependencies['@babel/runtime-corejs3'])
+  ) {
+    if (autoInstall) {
+      console.warn(
+        `@lugia/babel-preset-mega: engine option is 'nodeLib', need '@babel/runtime-corejs3' dependency, start automatic installation.`
+      );
+      execSync('yarn add @babel/runtime-corejs3', {
+        cwd
+      });
+    } else {
+      throw new Error(
+        `@lugia/babel-preset-mega: engine option is 'nodeLib', need '@babel/runtime-corejs3' dependency, run 'yarn add @babel/runtime-corejs3' to install.`
+      );
+    }
   }
 
   return {
@@ -80,15 +122,17 @@ export default (api, opts = {}) => {
         require.resolve('@babel/preset-env'),
         {
           // Allow importing core-js in entrypoint and use browserlist to select polyfills
-          useBuiltIns: opts.useBuiltIns || 'entry',
+          useBuiltIns:
+            opts.useBuiltIns || (isNodeLib || isWebpackLib ? false : 'entry'),
           corejs: 3,
-          // Do not transform modules to CJS
-          modules: useESModules ? 'commonjs' : false,
+          // (Webpack) Do not transform modules to CJS
+          // https://babeljs.io/docs/en/babel-preset-env#modules
+          modules: useESModules ? false : 'auto',
           // Exclude transforms that make all code slower
           exclude: ['transform-typeof-symbol'],
           targets:
             opts.targets ||
-            (isNodeApp
+            (isNodeApp || isNodeLib
               ? {
                   node: 'current'
                 }
@@ -125,6 +169,7 @@ export default (api, opts = {}) => {
       // Experimental macros support. Will be documented after it's had some time
       // in the wild.
       require.resolve('babel-plugin-macros'),
+
       // Necessary to include regardless of the environment because
       // in practice some other transforms (such as object-rest-spread)
       // don't work without it: https://github.com/babel/babel/issues/7215
@@ -176,7 +221,8 @@ export default (api, opts = {}) => {
       [
         require.resolve('@babel/plugin-transform-runtime'),
         {
-          corejs: opts.corejs || false,
+          // https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md#babelruntime-for-target-environment
+          corejs: isNodeLib ? 3 : false,
           helpers: areHelpersEnabled,
           regenerator: true,
           // https://babeljs.io/docs/en/babel-plugin-transform-runtime#useesmodules
@@ -204,7 +250,17 @@ export default (api, opts = {}) => {
       // https://github.com/styled-components/babel-plugin-styled-components
       !isEnvProduction && require.resolve('babel-plugin-styled-components'),
       // add the module.exports if only the export default declaration exists.
-      require.resolve('babel-plugin-add-module-exports')
+      require.resolve('babel-plugin-add-module-exports'),
+      Object.keys(alias).length > 0 && [
+        require.resolve('babel-plugin-module-resolver'),
+        {
+          alias
+        }
+      ],
+      ...imports.map(i => {
+        const { libraryName } = i;
+        return [require.resolve('babel-plugin-import'), i, libraryName];
+      })
     ].filter(Boolean),
     overrides: [
       isFlowEnabled && {
@@ -227,12 +283,12 @@ export default (api, opts = {}) => {
 function validateOption(name, value, defaultValue) {
   const validateType = isType(defaultValue);
 
-  if (typeof value === 'undefined') {
+  if (isType(value) === 'undefined') {
     value = defaultValue; // eslint-disable-line
   }
 
   // eslint-disable-next-line
-  if (typeof value !== validateType) {
+  if (isType(value) !== validateType) {
     throw new Error(
       `@lugia/babel-preset-mega: '${name}' option must be a ${validateType}.`
     );
