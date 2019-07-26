@@ -1,6 +1,6 @@
 {
   "name": "@lugia/lugiad-loader",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Webpack loader for lugiad",
   "main": "./lib/index.js",
   "repository": {
