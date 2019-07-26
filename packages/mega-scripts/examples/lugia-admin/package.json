@@ -1,0 +1,40 @@
+{
+  "name": "@lugia/scaffolding-admin",
+  "version": "1.1.2",
+  "scripts": {
+    "start": "node ../../bin/mega-scripts.js start",
+    "build": "node ../../bin/mega-scripts.js build",
+    "dll": "node ../../bin/mega-scripts.js dll",
+    "test": "node ../../bin/mega-scripts.js test -w"
+  },
+  "dependencies": {
+    "@lugia/lugia-web": "^1.1.0-39",
+    "@lugia/lugiax": "^1.0.9",
+    "@lugia/lugiax-router": "^1.0.12",
+    "history": "^4.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "4.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.12.0"
+  },
+  "files": [
+    "config",
+    "mock",
+    "portal",
+    "public",
+    "test",
+    ".editorconfig",
+    "gitignore",
+    "lugia.config.js",
+    "mock.config.js",
+    "README.md",
+    "yarn.lock"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=5.2.0",
+    "yarn": ">=1.x"
+  }
+}
