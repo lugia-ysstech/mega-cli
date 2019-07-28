@@ -5,11 +5,10 @@ process.on('SIGINT', () => {
   process.exit(1);
 });
 
-const ops = {};
+let entry;
 if (argv._.length > 0) {
-  const entry = argv._[0];
-  ops.entry = entry;
+  [entry] = argv._;
 }
 
 process.env.NODE_ENV = 'development';
-require('../utils/dev')(ops);
+require('../utils/dev')({ entry });

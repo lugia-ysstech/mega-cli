@@ -10,6 +10,7 @@ const args = process.argv.slice(3);
 // Notify update when process exits
 const updater = require('update-notifier');
 const pkg = require('../package.json');
+
 updater({ pkg }).notify({ defer: true });
 
 if (script === 'start') script = 'dev';
@@ -25,7 +26,7 @@ switch (script) {
   case 'dev':
   case 'test': {
     const proc = fork(require.resolve(`./commands/${script}.js`), args, {
-      stdio: 'inherit',
+      stdio: 'inherit'
     });
     proc.once('exit', code => {
       process.exit(code);
@@ -38,9 +39,7 @@ switch (script) {
   default:
     console.log('');
     console.log(
-      `${chalk.red('Unknown command')} ${chalk.yellow(script)}${chalk.red(
-        '.',
-      )}`,
+      `${chalk.red('Unknown command')} ${chalk.yellow(script)}${chalk.red('.')}`
     );
     break;
 }

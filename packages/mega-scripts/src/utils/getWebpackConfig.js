@@ -33,12 +33,13 @@ export default function(opts = {}, applyConfig) {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
+        useShortDoctype: true
       };
     }
   }
 
   if (!is.function(applyConfig)) {
+    // eslint-disable-next-line
     applyConfig = c => c;
   }
 
@@ -58,25 +59,28 @@ export default function(opts = {}, applyConfig) {
                 /\.css$/.test(module.resource)) &&
               module.resource.indexOf('node_modules') > -1
             );
-          },
-        },
+          }
+        }
       ],
       ...config,
 
       entry: getEntry({
         cwd: paths.appDirectory,
         entry: entry || config.entry,
-        isBuild: !isDev,
+        isBuild: !isDev
       }),
       babel: config.babel || {
         presets: [
-          [babel, { browsers: browserslist }],
-          ...(config.extraBabelPresets || []),
+          [
+            babel,
+            { browsers: browserslist, autoInstall: true, engine: 'webpackApp' }
+          ],
+          ...(config.extraBabelPresets || [])
         ],
-        plugins: config.extraBabelPlugins || [],
+        plugins: config.extraBabelPlugins || []
       },
-      browserslist,
+      browserslist
     }),
-    config.applyWebpack,
+    config.applyWebpack
   );
 }

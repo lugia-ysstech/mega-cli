@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve as resolvePath } from 'path';
 import { build, applyWebpackConfig } from '@lugia/mega-webpack';
 import getUserConfig from '@lugia/mega-config';
 import getWebpackConfig from './getWebpackConfig';
@@ -6,7 +6,7 @@ import getPaths from './getPaths';
 import registerBabel from './registerBabel';
 import { CONFIG_FILE_NAME } from './constants';
 
-const debug = require('debug')('@lugia/mega-scripts:build');
+const debug = require('debug')('@lugia/mega-scripts:buildApp');
 
 export default function(opts = {}, cb) {
   const {
@@ -16,23 +16,23 @@ export default function(opts = {}, cb) {
     useMemoryFS,
     applyWebpack,
     applyConfig,
-    configFile,
+    configFile
   } = opts;
 
-  const babel = resolve(__dirname, './babel.js');
+  const babel = resolvePath(__dirname, './babel.js');
   const paths = getPaths(cwd);
 
   return new Promise((resolve, reject) => {
     // register babel for config files
     registerBabel(babel, {
       cwd,
-      configOnly: true,
+      configOnly: true
     });
 
     // get user config
     const { config } = getUserConfig({
       cwd,
-      configFileName: configFile || CONFIG_FILE_NAME,
+      configFileName: configFile || CONFIG_FILE_NAME
     });
     debug(`user config: ${JSON.stringify(config)}`);
 
@@ -45,10 +45,10 @@ export default function(opts = {}, cb) {
           config,
           babel,
           paths,
-          entry,
+          entry
         },
-        applyConfig,
-      ),
+        applyConfig
+      )
     );
 
     build({
@@ -66,7 +66,7 @@ export default function(opts = {}, cb) {
           cb(err);
         }
         reject(err);
-      },
+      }
     });
   });
 }
