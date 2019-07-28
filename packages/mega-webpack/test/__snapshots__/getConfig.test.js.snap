@@ -471,9 +471,9 @@ Object {
   ],
   "resolve": Object {
     "alias": Object {
-      "@babel/runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime-corejs2",
-      "@babel/runtime-corejs2": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime-corejs2",
+      "@babel/runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime",
       "babel-runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-runtime",
+      "core-js": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\core-js",
     },
     "extensions": Array [
       ".web.js",
