@@ -36,6 +36,14 @@ export default (api, opts = {}) => {
   );
   const alias = validateOption('alias', opts.alias, {});
   const imports = validateOption('imports', opts.imports, []);
+  /* eslint-disable */
+  const useBuiltIns =
+    isType(opts.useBuiltIns) === 'undefined'
+      ? isNodeLib || isWebpackLib
+        ? false
+        : 'entry'
+      : opts.useBuiltIns;
+  /* eslint-enable */
   const isFlowEnabled = validateOption('flow', opts.flow, true);
   const isTypeScriptEnabled = validateOption(
     'typescript',
@@ -122,9 +130,8 @@ You need to introduce 'core-js/stable' in the entry file.`
         require.resolve('@babel/preset-env'),
         {
           // Allow importing core-js in entrypoint and use browserlist to select polyfills
-          useBuiltIns:
-            opts.useBuiltIns || (isNodeLib || isWebpackLib ? false : 'entry'),
-          corejs: 3,
+          useBuiltIns,
+          corejs: useBuiltIns ? 3 : undefined,
           // (Webpack) Do not transform modules to CJS
           // https://babeljs.io/docs/en/babel-preset-env#modules
           modules: useESModules ? false : 'auto',
