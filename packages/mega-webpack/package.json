@@ -13,8 +13,7 @@
   "author": "#lugia# @hanjingbo",
   "dependencies": {
     "@babel/core": "7.1.5",
-    "@babel/runtime": "^7.1.5",
-    "@babel/runtime-corejs2": "^7.1.5",
+    "@babel/runtime": "^7.5.5",
     "@lugia/babel-preset-mega": "^1.0.17",
     "@lugia/lugiad-loader": "^1.0.10",
     "@lugia/mega-utils": "^1.4.21",
@@ -25,6 +24,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-dynamic-import-node-sync": "^2.0.1",
     "babel-runtime": "^6.26.0",
+    "core-js": "^3.1.4",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",
     "clean-webpack-plugin": "^0.1.19",
