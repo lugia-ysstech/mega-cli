@@ -1,0 +1,28 @@
+{
+  "widgetName": "Btn",
+  "title": "Btn 组件",
+  "desc": "自定义的 Btn 组件",
+  "category": ["数据展示"],
+  "events": {
+    "onClick": {
+      "desc": "点击按钮时触发",
+      "args": [
+        {
+          "name": "event",
+          "desc": "点击的DOM事件",
+          "type": "Object"
+        }
+      ]
+    }
+  },
+  "props": {
+    "text": {
+      "type": "string | React.node",
+      "desc": "设置按钮的文本内容",
+      "defaultValue": "Btn"
+    }
+  },
+  "type": {},
+  "designInfo": {},
+  "theme": {}
+}
