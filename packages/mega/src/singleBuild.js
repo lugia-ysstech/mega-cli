@@ -2,7 +2,7 @@
  * Created Date: Wednesday, January 23rd 2019, 5:40:43 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Wednesday, April 10th 2019, 11:23:34 pm
+ * Last Modified: Monday, July 29th 2019, 2:44:55 am
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -11,20 +11,22 @@
  */
 
 import { join, parse } from 'path';
-import build from '@lugia/mega-scripts/lib/utils/build';
+import build from '@lugia/mega-scripts/lib/utils/buildApp';
 import getDefaultEntry from './getDefaultEntry';
 
 const cwd = process.cwd();
 
 export default function singleBuild(
   entry = getDefaultEntry(cwd),
-  { target = 'app', libName, dest = 'dist', sourceMap },
+  { target = 'app', libName, dest = 'dist', sourceMap }
 ) {
   const { name: entryName } = parse(entry);
   const isLib = target === 'lib';
   const name = libName || entryName;
   const applyConfig = config => {
+    // eslint-disable-next-line
     if (config.html._fromMegaScriptsDefault) {
+      // eslint-disable-next-line
       config.html = {};
     }
     if (isLib) {
@@ -36,9 +38,9 @@ export default function singleBuild(
           template: join(__dirname, '../templates/html.ejs'),
           title: 'Lugia Mega Demo',
           filename: 'demo.html',
-          ...config.html,
+          ...config.html
         },
-        manifest: null,
+        manifest: null
       };
     }
     return {
@@ -53,10 +55,10 @@ export default function singleBuild(
           removeRedundantAttributes: true,
           removeScriptTypeAttributes: true,
           removeStyleLinkTypeAttributes: true,
-          useShortDoctype: true,
+          useShortDoctype: true
         },
-        ...config.html,
-      },
+        ...config.html
+      }
     };
   };
 
@@ -68,18 +70,18 @@ export default function singleBuild(
           ? {
               library: name,
               libraryTarget: 'umd',
-              filename: `${name}.umd.js`,
+              filename: `${name}.umd.js`
             }
-          : {}),
+          : {})
       },
       resolve: {
         alias: {
           react: require.resolve('react', { paths: [cwd, join(__dirname)] }),
           'react-dom': require.resolve('react-dom', {
-            paths: [cwd, join(__dirname)],
-          }),
-        },
-      },
+            paths: [cwd, join(__dirname)]
+          })
+        }
+      }
     });
   };
 
@@ -87,6 +89,6 @@ export default function singleBuild(
     cwd,
     entry,
     applyConfig,
-    applyWebpack,
+    applyWebpack
   });
 }
