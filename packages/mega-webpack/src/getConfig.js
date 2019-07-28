@@ -404,7 +404,7 @@ export default function getConfig(opts = {}, applyConfig) {
         '@babel/runtime': dirname(
           require.resolve('@babel/runtime/package.json')
         ),
-        'core-js': dirname(require.resolve('core-js/package.json')),
+        // 'core-js': dirname(require.resolve('core-js/package.json')),
         'babel-runtime': dirname(require.resolve('babel-runtime/package.json')),
         ...opts.alias
       },
