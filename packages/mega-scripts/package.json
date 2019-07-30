@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-scripts",
-  "version": "1.3.48",
+  "version": "1.3.49",
   "description": "cli tool for dev, build, test, and mock.",
   "main": "./lib/index.js",
   "bin": {
@@ -49,8 +49,8 @@
     "yargs": "^12.0.2"
   },
   "devDependencies": {
-    "got": "^9.3.1",
-    "@lugia/mega-jest": "^1.2.38"
+    "@lugia/mega-jest": "^1.2.38",
+    "got": "^9.3.1"
   },
   "peerDependencies": {
     "@lugia/mega-jest": "^1.2.38"
