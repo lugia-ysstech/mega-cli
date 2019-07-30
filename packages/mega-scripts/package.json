@@ -20,7 +20,7 @@
     "@babel/core": "7.4.3",
     "@babel/runtime": "^7.1.5",
     "@lugia/babel-preset-mega": "^1.0.18",
-    "@lugia/devtools-conversion": "^1.0.11",
+    "@lugia/devtools-conversion": "^1.0.12",
     "@lugia/devtools-material": "^1.0.29",
     "@lugia/mega-config": "^1.0.14",
     "@lugia/mega-utils": "^1.4.22",
