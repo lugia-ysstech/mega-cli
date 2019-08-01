@@ -174,10 +174,10 @@
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/devtools-material@^1.0.29":
-  version "1.0.29"
-  resolved "http://192.168.102.79:5001/@lugia/devtools-material/download/@lugia/devtools-material-1.0.29.tgz#3cb6c7fbfdd8eb9e2229103b035571b01f36c30a"
-  integrity sha1-PLbH+/3Y654iKRA7A1VxsB82wwo=
+"@lugia/devtools-material@^1.0.30":
+  version "1.0.30"
+  resolved "http://192.168.102.79:5001/@lugia/devtools-material/download/@lugia/devtools-material-1.0.30.tgz#cb9a8098dfb215967a0413dec082bf38996fb7d2"
+  integrity sha1-y5qAmN+yFZZ6BBPewIK/OJlvt9I=
   dependencies:
     babel-runtime "^6.26.0"
     immutable "^3.8.2"
