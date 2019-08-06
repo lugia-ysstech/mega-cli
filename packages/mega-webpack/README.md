@@ -6,18 +6,6 @@
 
 - @lugia/mega-scripts
 
-## How to config
-
-在项目根目录下新建文件 `webpack.config.js`：
-
-```js
-module.exports = {
-  alias: {
-    react: 'preact-compat'
-  }
-};
-```
-
 ## API
 
 **mega-webpack/getConfig**
