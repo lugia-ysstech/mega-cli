@@ -66,3 +66,4 @@ import webpack from '@lugia/mega-webpack';
 - [autoprefixer](https://github.com/postcss/autoprefixer)
 - [eslint](https://github.com/eslint/eslint)
 - [babel-eslint](https://github.com/babel/babel-eslint)
+  ...

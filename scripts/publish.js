@@ -6,15 +6,17 @@ const { fork } = require('child_process');
 
 const registry = ['http://192.168.102.79:5001/', 'https://registry.npmjs.org/'];
 const configRegistry = shell.exec('npm config get registry').stdout;
-let useRegistry;
+let publishRegistry;
 
 registry.forEach(r => {
   if (configRegistry.includes(r)) {
-    useRegistry = r;
+    publishRegistry = r;
   }
 });
 
-if (!useRegistry) {
+console.log(`Publish registry: ${publishRegistry}`);
+
+if (!publishRegistry) {
   console.error(
     'Failed: ',
     `set npm / yarn registry to ${registry.join(
@@ -66,6 +68,6 @@ function publishToNpm() {
   updatedRepos.forEach(repo => {
     shell.cd(join(cwd, 'packages', repo.replace('@lugia/', '')));
     console.log(`[${repo}] npm publish`);
-    shell.exec(`npm publish --registry ${useRegistry}`);
+    shell.exec(`npm publish --registry ${publishRegistry}`);
   });
 }
