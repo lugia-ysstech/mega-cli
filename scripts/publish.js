@@ -5,14 +5,21 @@ const { join } = require('path');
 const { fork } = require('child_process');
 
 const registry = ['http://192.168.102.79:5001/', 'https://registry.npmjs.org/'];
+const configRegistry = shell.exec('npm config get registry').stdout;
+let useRegistry;
 
-if (
-  shell.exec('npm config get registry').stdout.indexOf(registry[0]) === -1 &&
-  shell.exec('npm config get registry').stdout.indexOf(registry[1]) === -1
-) {
+registry.forEach(r => {
+  if (configRegistry.includes(r)) {
+    useRegistry = r;
+  }
+});
+
+if (!useRegistry) {
   console.error(
     'Failed: ',
-    `set npm / yarn registry to ${registry} first. You can use [nrm](https://github.com/Pana/nrm).`
+    `set npm / yarn registry to ${registry.join(
+      ' | '
+    )} first. You can use [nrm](https://github.com/Pana/nrm).`
   );
   process.exit(1);
 }
@@ -59,6 +66,6 @@ function publishToNpm() {
   updatedRepos.forEach(repo => {
     shell.cd(join(cwd, 'packages', repo.replace('@lugia/', '')));
     console.log(`[${repo}] npm publish`);
-    shell.exec('npm publish');
+    shell.exec(`npm publish --registry ${useRegistry}`);
   });
 }
