@@ -13,35 +13,10 @@
 ```js
 module.exports = {
   alias: {
-    react: 'preact-compat',
-  },
+    react: 'preact-compat'
+  }
 };
 ```
-
-### Options
-
-|                        | Default Value                                             | Notes |
-| :--------------------- | :-------------------------------------------------------- | :---- |
-| entry                  | null                                                      |       |
-| browsers               | [ '>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9' ] |       |
-| theme                  | {}                                                        |       |
-| babel                  |                                                           |       |
-| define                 | {}                                                        |       |
-| outputPath             | null                                                      |       |
-| publicPath             | undefined                                                 |       |
-| commons                | []                                                        |       |
-| hash                   | false                                                     |       |
-| externals              | {}                                                        |       |
-| copy                   | []                                                        |       |
-| disableCSSModules      | false                                                     |       |
-| extraBabelIncludes     | []                                                        |       |
-| extraResolveExtensions | []                                                        |       |
-| extraPostCSSPlugins    | []                                                        |       |
-| ignoreMomentLocale     | false                                                     |       |
-| extraResolveModules    | []                                                        |       |
-| disableCSSSourceMap    | false                                                     |       |
-| sass                   | {}                                                        |       |
-| devtool                | false                                                     |       |
 
 ## API
 
@@ -69,7 +44,7 @@ dev({
   beforeServer,
   afterServer,
   proxy,
-  ...otherConfig,
+  ...otherConfig
 });
 ```
 
@@ -83,7 +58,7 @@ import { build } from '@lugia/mega-webpack';
 build({
   webpackConfig,
   success,
-  ...otherConfig,
+  ...otherConfig
 });
 ```
 
