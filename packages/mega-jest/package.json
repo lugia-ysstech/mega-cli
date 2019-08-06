@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-jest",
-  "version": "1.2.38",
+  "version": "1.2.39",
   "description": "base on jest && enzyme",
   "publishConfig": {
     "access": "public"
@@ -27,9 +27,9 @@
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/polyfill": "7.0.0",
     "@babel/runtime": "^7.1.5",
-    "@lugia/babel-preset-mega": "^1.0.18",
-    "@lugia/mega-config": "^1.0.14",
-    "@lugia/mega-utils": "^1.4.22",
+    "@lugia/babel-preset-mega": "^1.0.19",
+    "@lugia/mega-config": "^1.0.15",
+    "@lugia/mega-utils": "^1.4.23",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.7.1",
     "babel-plugin-module-resolver": "^3.2.0",
