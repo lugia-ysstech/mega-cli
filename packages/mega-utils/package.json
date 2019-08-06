@@ -3,6 +3,9 @@
   "version": "1.4.22",
   "description": "This package includes some utilities used by @lugia/mega.",
   "main": "./lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"

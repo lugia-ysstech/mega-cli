@@ -4,14 +4,15 @@ const shell = require('shelljs');
 const { join } = require('path');
 const { fork } = require('child_process');
 
-const registry = 'http://192.168.102.79:5001/';
+const registry = ['http://192.168.102.79:5001/', 'https://registry.npmjs.org/'];
 
 if (
-  shell.exec('npm config get @lugia:registry').stdout.indexOf(registry) === -1
+  shell.exec('npm config get registry').stdout.indexOf(registry[0]) === -1 &&
+  shell.exec('npm config get registry').stdout.indexOf(registry[1]) === -1
 ) {
   console.error(
     'Failed: ',
-    `set npm / yarn registry to ${registry} first. You can use [nrm](https://github.com/Pana/nrm).`,
+    `set npm / yarn registry to ${registry} first. You can use [nrm](https://github.com/Pana/nrm).`
   );
   process.exit(1);
 }
@@ -37,8 +38,8 @@ const cp = fork(
   join(cwd, './node_modules/lerna/cli.js'),
   ['publish', '--skip-npm'].concat(process.argv.slice(2)),
   {
-    cwd,
-  },
+    cwd
+  }
 );
 cp.on('error', err => {
   console.log(err);

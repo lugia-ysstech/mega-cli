@@ -3,6 +3,9 @@
   "version": "1.0.14",
   "description": "Webpack loader for lugiad",
   "main": "./lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
