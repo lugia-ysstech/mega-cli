@@ -57,8 +57,7 @@
   },
   "files": [
     "bin",
-    "lib",
-    "yarn.lock"
+    "lib"
   ],
   "engines": {
     "node": ">=10",

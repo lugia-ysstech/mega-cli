@@ -18,8 +18,7 @@
     "@lugia/devtools-conversion": "^1.0.13"
   },
   "files": [
-    "lib",
-    "yarn.lock"
+    "lib"
   ],
   "engines": {
     "node": ">=10",

@@ -13,8 +13,7 @@
     "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
   },
   "files": [
-    "lib",
-    "yarn.lock"
+    "lib"
   ],
   "license": "MIT",
   "dependencies": {

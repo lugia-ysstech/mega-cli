@@ -46,8 +46,7 @@
     "bin",
     "lib",
     "scaffolding",
-    "templates",
-    "yarn.lock"
+    "templates"
   ],
   "engines": {
     "node": ">=10",

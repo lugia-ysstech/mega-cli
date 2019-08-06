@@ -77,8 +77,7 @@
     "glob": "^7.1.3"
   },
   "files": [
-    "lib",
-    "yarn.lock"
+    "lib"
   ],
   "license": "MIT",
   "engines": {
