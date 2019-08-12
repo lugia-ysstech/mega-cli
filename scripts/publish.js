@@ -4,7 +4,7 @@ const shell = require('shelljs');
 const { join } = require('path');
 const { fork } = require('child_process');
 
-const registry = ['http://192.168.102.79:5001/', 'https://registry.npmjs.org/'];
+const registry = ['https://registry.npmjs.org/'];
 const configRegistry = shell.exec('npm config get registry').stdout;
 let publishRegistry;
 

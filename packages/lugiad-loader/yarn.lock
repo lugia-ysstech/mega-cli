@@ -3,23 +3,23 @@
 
 
 "@babel/runtime@^7.4.3":
-  version "7.4.3"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
-  integrity sha512-9lsJwJLxDh/T3Q3SZszfWOTkk3pHbkmH+3KY+zwIDmsNlxsumuhS2TH3NIpktU4kNvfzy+k3eLT7aTJSPTo0OA==
+  version "7.5.5"
+  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  integrity sha1-dPulbTXvvspEQJHHhQzNSU/S8TI=
   dependencies:
     regenerator-runtime "^0.13.2"
 
 "@lugia/devtools-conversion@^1.0.13":
   version "1.0.13"
-  resolved "http://192.168.102.79:5001/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.13.tgz#bb4d5b10c5b0e1cb63ee4f0dcf9665c097190840"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.13.tgz#bb4d5b10c5b0e1cb63ee4f0dcf9665c097190840"
   integrity sha1-u01bEMWw4ctj7k8Nz5ZlwJcZCEA=
   dependencies:
     "@lugia/devtools-core" "^1.0.4"
 
 "@lugia/devtools-core@^1.0.4":
   version "1.0.4"
-  resolved "http://192.168.102.79:5001/@lugia/devtools-core/download/@lugia/devtools-core-1.0.4.tgz#0889542a3ec1f0900e2a6997a097839b4ca18ef8"
-  integrity sha1-CIlUKj7B8JAOKmmXoJeDm0yhjvg=
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.4.tgz#1e23e7f84363c81b0819f7df40baecf2f8b6be76"
+  integrity sha1-HiPn+ENjyBsIGfffQLrs8vi2vnY=
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
@@ -94,17 +94,17 @@ redux-saga@^0.16.0:
   integrity sha1-mTZi6GvJRdhQmsK42ro6jGFcyXE=
 
 redux@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
-  integrity sha1-Q2yubMQPvkcnaJ18j65EgI8b/vU=
+  version "4.0.4"
+  resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  integrity sha1-TuGusWS2PWobzFeuSqC25vp6N5Y=
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
 
 regenerator-runtime@^0.13.2:
-  version "0.13.2"
-  resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
-  integrity sha1-MuWcmm+5saSv8JtJMMotRHc0NEc=
+  version "0.13.3"
+  resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
+  integrity sha1-fPanfY9cb2Drc8X8GVWyzrAea/U=
 
 symbol-observable@^1.2.0:
   version "1.2.0"
