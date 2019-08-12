@@ -8,17 +8,17 @@
   "description": "ESLint configuration used by Lugia",
   "repository": {
     "type": "git",
-    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+    "url": "https://github.com/lugia-ysstech/lugia-mega"
   },
-  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "homepage": "https://github.com/lugia-ysstech/lugia-mega",
   "author": "#lugia# @hanjingbo",
   "bugs": {
-    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+    "url": "https://github.com/lugia-ysstech/lugia-mega/issues"
   },
   "files": [
     "lib"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",

@@ -8,11 +8,11 @@
   "description": "For webpack on wrapper, zero configuration use.",
   "repository": {
     "type": "git",
-    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+    "url": "https://github.com/lugia-ysstech/lugia-mega"
   },
-  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "homepage": "https://github.com/lugia-ysstech/lugia-mega",
   "bugs": {
-    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+    "url": "https://github.com/lugia-ysstech/lugia-mega/issues"
   },
   "author": "#lugia# @hanjingbo",
   "dependencies": {
@@ -83,7 +83,7 @@
   "files": [
     "lib"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">=10",
     "npm": ">=5.2.0"

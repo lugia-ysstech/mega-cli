@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega"
+    "url": "https://github.com/lugia-ysstech/lugia-mega"
   },
-  "homepage": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega",
+  "homepage": "https://github.com/lugia-ysstech/lugia-mega",
   "bugs": {
-    "url": "http://192.168.102.73:8081/BigFrontend/Work/lugia/lugia-mega/issues"
+    "url": "https://github.com/lugia-ysstech/lugia-mega/issues"
   },
   "author": "#lugia# @hanjingbo",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@babel/register": "^7.4.0",

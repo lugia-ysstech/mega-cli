@@ -1,10 +1,18 @@
 {
   "name": "lugia-mega",
-  "version": "1.0.0",
-  "description": "一个基于前端物料库体系的可视化开发工具",
+  "version": "1.x",
+  "description": "Standard, efficient, out-of-the-box visual design development tools",
   "private": true,
-  "author": "@lugia#hanjingbo",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lugia-ysstech/lugia-mega"
+  },
+  "homepage": "https://github.com/lugia-ysstech/lugia-mega",
+  "bugs": {
+    "url": "https://github.com/lugia-ysstech/lugia-mega/issues"
+  },
+  "author": "#lugia# @hanjingbo",
+  "license": "Apache-2.0",
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "start": "node scripts/build.js --watch",
