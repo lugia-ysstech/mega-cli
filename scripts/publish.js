@@ -5,7 +5,7 @@ const { join } = require('path');
 const { fork } = require('child_process');
 
 const registry = ['https://registry.npmjs.org/'];
-const configRegistry = shell.exec('npm config get registry').stdout;
+const configRegistry = 'https://registry.npmjs.org/';
 let publishRegistry;
 
 registry.forEach(r => {
