@@ -4,7 +4,7 @@ import { getConfig } from '@lugia/mega-webpack';
 import is from '@lugia/mega-utils/lib/is';
 import getEntry from './getEntry';
 
-const defaultBrowsers = ['last 2 versions'];
+const defaultBrowsers = ['last 2 versions', 'ie 10'];
 const debug = require('debug')('@lugia/mega-scripts:getWebpackConfig');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -12,9 +12,10 @@ const isDev = process.env.NODE_ENV === 'development';
 export default function(opts = {}, applyConfig) {
   const { cwd, config, babel, paths, entry } = opts;
 
-  const browserslist = config.browserslist || defaultBrowsers;
+  const { browserslist = defaultBrowsers, polyfills = true } = config;
   debug(`babel: ${babel}`);
   debug(`browserslist: ${browserslist}`);
+  debug(`polyfills: ${polyfills}`);
 
   if (!config.html) {
     config.html = { _fromMegaScriptsDefault: true };
@@ -67,7 +68,8 @@ export default function(opts = {}, applyConfig) {
       entry: getEntry({
         cwd: paths.appDirectory,
         entry: entry || config.entry,
-        isBuild: !isDev
+        isBuild: !isDev,
+        polyfills
       }),
       babel: config.babel || {
         presets: [
@@ -79,7 +81,10 @@ export default function(opts = {}, applyConfig) {
         ],
         plugins: config.extraBabelPlugins || []
       },
-      browserslist
+      browserslist,
+      extraBabelIncludes: polyfills
+        ? [/react-app-polyfill/, ...(config.extraBabelIncludes || [])]
+        : config.extraBabelIncludes
     }),
     config.applyWebpack
   );

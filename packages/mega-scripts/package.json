@@ -43,6 +43,7 @@
     "lodash.escaperegexp": "^4.1.2",
     "lodash.isequal": "^4.5.0",
     "parse-json-pretty": "^0.1.0",
+    "react-app-polyfill": "^1.0.2",
     "rimraf": "^2.6.2",
     "terser": "^3.17.0",
     "through2": "^3.0.1",

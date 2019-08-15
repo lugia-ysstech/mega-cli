@@ -144,7 +144,7 @@ You need to introduce 'core-js/stable' in the entry file.`
                   node: 'current'
                 }
               : {
-                  browsers: opts.browsers || ['last 2 versions', 'ie 10']
+                  browsers: opts.browsers || ['last 2 versions']
                 }),
           ignoreBrowserslistConfig: true
         }

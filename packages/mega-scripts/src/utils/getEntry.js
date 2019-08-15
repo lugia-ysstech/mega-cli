@@ -4,7 +4,7 @@ import glob from 'glob';
 import is from '@lugia/mega-utils/lib/is';
 
 const webpackHotDevClientPath = require.resolve(
-  '@lugia/mega-utils/lib/webpackHotDevClient',
+  '@lugia/mega-utils/lib/webpackHotDevClient'
 );
 
 // entry 支持 4 种格式：
@@ -14,7 +14,7 @@ const webpackHotDevClientPath = require.resolve(
 // 3. 字符串
 // 4. 数组
 export default function(opts = {}) {
-  const { cwd = '', entry, isBuild } = opts;
+  const { cwd = '', entry, isBuild, polyfills = true } = opts;
 
   let entryObj = null;
   if (is.undefined(entry)) {
@@ -31,7 +31,7 @@ export default function(opts = {}) {
     entryObj = entry;
   } else {
     throw new Error(
-      `entry should be String, Array or Plain Object, but got ${entry}`,
+      `entry should be String, Array or Plain Object, but got ${entry}`
     );
   }
 
@@ -40,11 +40,11 @@ export default function(opts = {}) {
       return !is.array(entryObj[key])
         ? {
             ...memo,
-            [key]: [webpackHotDevClientPath, entryObj[key]],
+            [key]: [webpackHotDevClientPath, entryObj[key]]
           }
         : {
             ...memo,
-            [key]: entryObj[key],
+            [key]: entryObj[key]
           };
     }, {});
   }
@@ -53,15 +53,29 @@ export default function(opts = {}) {
   if (process.env.SET_PUBLIC_PATH) {
     const setPublicPathFile = join(
       __dirname,
-      '../template/setPublicPath.tpl.js',
+      '../template/setPublicPath.tpl.js'
     );
     entryObj = Object.keys(entryObj).reduce((memo, key) => {
       return {
         ...memo,
         [key]: [
           setPublicPathFile,
-          ...(is.array(entryObj[key]) ? entryObj[key] : [entryObj[key]]),
-        ],
+          ...(is.array(entryObj[key]) ? entryObj[key] : [entryObj[key]])
+        ]
+      };
+    }, {});
+  }
+
+  // use polyfill
+  if (polyfills) {
+    entryObj = Object.keys(entryObj).reduce((memo, key) => {
+      return {
+        ...memo,
+        [key]: [
+          require.resolve('react-app-polyfill/ie9'),
+          require.resolve('react-app-polyfill/stable'),
+          ...(is.array(entryObj[key]) ? entryObj[key] : [entryObj[key]])
+        ]
       };
     }, {});
   }
@@ -72,13 +86,13 @@ export default function(opts = {}) {
 function getEntry(filePath) {
   const key = basename(filePath).replace(/\.(j|t)sx?$/, '');
   return {
-    [key]: filePath,
+    [key]: filePath
   };
 }
 
 function getFiles(entry, cwd) {
   const files = glob.sync(entry, {
-    cwd,
+    cwd
   });
   return files.map(file => {
     return file.charAt(0) === '.' ? file : `.${sep}${file}`;
@@ -89,7 +103,7 @@ function getEntries(files) {
   return files.reduce((memo, file) => {
     return {
       ...memo,
-      ...getEntry(file),
+      ...getEntry(file)
     };
   }, {});
 }
