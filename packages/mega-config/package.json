@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-config",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Find and load configuration from the user",
   "license": "Apache-2.0",
   "main": "./lib/index.js",
