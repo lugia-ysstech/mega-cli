@@ -6,6 +6,9 @@ const { fork } = require('child_process');
 
 const { argv } = process;
 const isAlpha = argv.includes('-a') || argv.includes('--alpha');
+if (isAlpha) {
+  argv.splice(argv.indexOf('-a') || argv.indexOf('--alpha'), 1);
+}
 
 const registry = ['https://registry.npmjs.org/'];
 const configRegistry = 'https://registry.npmjs.org/';
@@ -48,7 +51,7 @@ if (buildCode === 1) {
 
 const cp = fork(
   join(cwd, './node_modules/lerna/cli.js'),
-  ['publish', '--skip-npm'].concat(process.argv.slice(2)),
+  ['publish', '--skip-npm'].concat(argv.slice(2)),
   {
     cwd
   }
