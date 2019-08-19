@@ -497,7 +497,7 @@ export default function getConfig(opts = {}, applyConfig) {
             {
               loader: require.resolve('@lugia/lugiad-loader'),
               options: {
-                resourcesHead: '@/'
+                resourcesHead: '@/assets/'
               }
             }
           ]
