@@ -4,6 +4,9 @@ const shell = require('shelljs');
 const { join } = require('path');
 const { fork } = require('child_process');
 
+const { argv } = process;
+const isAlpha = argv.includes('-a') || argv.includes('--alpha');
+
 const registry = ['https://registry.npmjs.org/'];
 const configRegistry = 'https://registry.npmjs.org/';
 let publishRegistry;
@@ -68,6 +71,10 @@ function publishToNpm() {
   updatedRepos.forEach(repo => {
     shell.cd(join(cwd, 'packages', repo.replace('@lugia/', '')));
     console.log(`[${repo}] npm publish`);
-    shell.exec(`npm publish --registry ${publishRegistry}`);
+    shell.exec(
+      `npm publish --registry ${publishRegistry}${
+        isAlpha ? ' --tag alpha' : ''
+      }`
+    );
   });
 }
