@@ -495,7 +495,10 @@ export default function getConfig(opts = {}, applyConfig) {
           use: [
             ...babelUse,
             {
-              loader: require.resolve('@lugia/lugiad-loader')
+              loader: require.resolve('@lugia/lugiad-loader'),
+              options: {
+                resourcesHead: '@/'
+              }
             }
           ]
         },
