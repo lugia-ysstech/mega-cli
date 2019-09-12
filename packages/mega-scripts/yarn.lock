@@ -126,10 +126,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@lugia/devtools-conversion@1.0.15-alpha-0":
-  version "1.0.15-alpha-0"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.15-alpha-0.tgz?cache=0&sync_timestamp=1568022880515&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Fdevtools-conversion%2Fdownload%2F%40lugia%2Fdevtools-conversion-1.0.15-alpha-0.tgz#b9ddb914a8412e0db96789bd0f7d6bbba6dfc92d"
-  integrity sha1-ud25FKhBLg25Z4m9D31ru6bfyS0=
+"@lugia/devtools-conversion@1.0.15":
+  version "1.0.15"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.15.tgz#1f393f3ceb67f553d84862280c80858c417bd7d0"
+  integrity sha1-Hzk/POtn9VPYSGIoDICFjEF719A=
   dependencies:
     "@lugia/devtools-core" "^1.0.5"
 
