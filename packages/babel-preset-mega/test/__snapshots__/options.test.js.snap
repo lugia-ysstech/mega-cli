@@ -569,8 +569,8 @@ module.exports = exports.default;",
 exports[`babel-preset-mega engine: webpackApp, opts: {"imports":[{"libraryName":"@lugia/lugia-web","libraryDirectory":"dist"}]} 1`] = `
 Array [
   Object {
-    "code": "import _regeneratorRuntime \\"./babel-preset-mega\\\\\\\\node_modules\\\\\\\\@babel\\\\\\\\runtime/regenerator\\";
-import _asyncToGenerator \\"./babel-preset-mega\\\\\\\\node_modules\\\\\\\\@babel\\\\\\\\runtime/helpers/esm/asyncToGenerator\\";
+    "code": "import _regeneratorRuntime from \\"...\\";
+import _asyncToGenerator from \\"...\\";
 export default
 /*#__PURE__*/
 _asyncToGenerator(
@@ -868,8 +868,8 @@ export default x;",
 exports[`babel-preset-mega engine: webpackApp, opts: undefined 1`] = `
 Array [
   Object {
-    "code": "import _regeneratorRuntime \\"./babel-preset-mega\\\\\\\\node_modules\\\\\\\\@babel\\\\\\\\runtime/regenerator\\";
-import _asyncToGenerator \\"./babel-preset-mega\\\\\\\\node_modules\\\\\\\\@babel\\\\\\\\runtime/helpers/esm/asyncToGenerator\\";
+    "code": "import _regeneratorRuntime from \\"...\\";
+import _asyncToGenerator from \\"...\\";
 export default
 /*#__PURE__*/
 _asyncToGenerator(

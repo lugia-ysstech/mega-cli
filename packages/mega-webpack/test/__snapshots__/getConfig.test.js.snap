@@ -14,7 +14,7 @@ Object {
         "test": /\\\\\\.tsx\\?\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\tslint-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/tslint-loader/index.js",
             "options": Object {
               "emitErrors": true,
             },
@@ -27,10 +27,10 @@ Object {
         "test": /\\\\\\.\\(js\\|jsx\\)\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\eslint-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/eslint-loader/index.js",
             "options": Object {
               "baseConfig": false,
-              "eslintPath": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\eslint\\\\lib\\\\api.js",
+              "eslintPath": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/eslint/lib/api.js",
               "formatter": [Function],
               "ignore": true,
               "useEslintrc": true,
@@ -46,7 +46,7 @@ Object {
           /\\\\\\.lugiad\\$/,
           /\\\\\\.\\(css\\|less\\|scss\\|sass\\)\\$/,
         ],
-        "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\url-loader\\\\index.js",
+        "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/url-loader/index.js",
         "options": Object {
           "limit": 10000,
           "name": "static/[name].[hash:8].[ext]",
@@ -57,17 +57,17 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-utils/lib/debugLoader.js",
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
+                  "/Users/hanbo/github/lugia-mega/packages/babel-preset-mega/lib/index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
@@ -86,17 +86,17 @@ Object {
         "test": /\\\\\\.jsx\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-utils/lib/debugLoader.js",
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
+                  "/Users/hanbo/github/lugia-mega/packages/babel-preset-mega/lib/index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
@@ -116,17 +116,17 @@ Object {
         "test": /\\\\\\.\\(ts\\|tsx\\)\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-utils/lib/debugLoader.js",
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
+                  "/Users/hanbo/github/lugia-mega/packages/babel-preset-mega/lib/index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
@@ -140,9 +140,9 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\awesome-typescript-loader\\\\dist\\\\entry.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/awesome-typescript-loader/dist/entry.js",
             "options": Object {
-              "configFileName": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\tsconfig.json",
+              "configFileName": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/test/tsconfig.json",
               "transpileOnly": true,
             },
           },
@@ -153,17 +153,17 @@ Object {
         "test": /\\\\\\.lugiad\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-utils\\\\lib\\\\debugLoader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-utils/lib/debugLoader.js",
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
               "plugins": Array [],
               "presets": Array [
                 Array [
-                  "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\babel-preset-mega\\\\lib\\\\index.js",
+                  "/Users/hanbo/github/lugia-mega/packages/babel-preset-mega/lib/index.js",
                   Object {
                     "browsers": Array [
                       ">1%",
@@ -177,13 +177,16 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\lugiad-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/lugiad-loader/lib/index.js",
+            "options": Object {
+              "resourcesHead": "@/assets/",
+            },
           },
         ],
       },
       Object {
         "exclude": undefined,
-        "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\file-loader\\\\index.js",
+        "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/file-loader/index.js",
         "options": Object {
           "name": "[name].[ext]",
         },
@@ -194,14 +197,14 @@ Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/extract-text-webpack-plugin/dist/loader.js",
             "options": Object {
               "omit": 0,
               "remove": true,
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/css-loader/index.js",
             "options": Object {
               "importLoaders": 1,
               "localIdentName": "[local]___[hash:base64:5]",
@@ -213,7 +216,7 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/postcss-loader/lib/index.js",
             "options": Object {
               "ident": "postcss",
               "plugins": [Function],
@@ -226,14 +229,14 @@ Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/extract-text-webpack-plugin/dist/loader.js",
             "options": Object {
               "omit": 0,
               "remove": true,
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/css-loader/index.js",
             "options": Object {
               "importLoaders": 1,
               "minimize": Object {
@@ -243,7 +246,7 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/postcss-loader/lib/index.js",
             "options": Object {
               "ident": "postcss",
               "plugins": [Function],
@@ -256,14 +259,14 @@ Object {
         "test": /\\\\\\.less\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/extract-text-webpack-plugin/dist/loader.js",
             "options": Object {
               "omit": 0,
               "remove": true,
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/css-loader/index.js",
             "options": Object {
               "importLoaders": 1,
               "localIdentName": "[local]___[hash:base64:5]",
@@ -275,14 +278,14 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/postcss-loader/lib/index.js",
             "options": Object {
               "ident": "postcss",
               "plugins": [Function],
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\less-loader\\\\dist\\\\cjs.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/less-loader/dist/cjs.js",
             "options": Object {
               "modifyVars": Object {},
             },
@@ -294,14 +297,14 @@ Object {
         "test": /\\\\\\.less\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/extract-text-webpack-plugin/dist/loader.js",
             "options": Object {
               "omit": 0,
               "remove": true,
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/css-loader/index.js",
             "options": Object {
               "importLoaders": 1,
               "minimize": Object {
@@ -311,14 +314,14 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/postcss-loader/lib/index.js",
             "options": Object {
               "ident": "postcss",
               "plugins": [Function],
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\less-loader\\\\dist\\\\cjs.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/less-loader/dist/cjs.js",
             "options": Object {
               "modifyVars": Object {},
             },
@@ -330,14 +333,14 @@ Object {
         "test": /\\\\\\.\\(sass\\|scss\\)\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/extract-text-webpack-plugin/dist/loader.js",
             "options": Object {
               "omit": 0,
               "remove": true,
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/css-loader/index.js",
             "options": Object {
               "importLoaders": 1,
               "localIdentName": "[local]___[hash:base64:5]",
@@ -349,7 +352,7 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/postcss-loader/lib/index.js",
             "options": Object {
               "ident": "postcss",
               "plugins": [Function],
@@ -362,14 +365,14 @@ Object {
         "test": /\\\\\\.\\(sass\\|scss\\)\\$/,
         "use": Array [
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\extract-text-webpack-plugin\\\\dist\\\\loader.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/extract-text-webpack-plugin/dist/loader.js",
             "options": Object {
               "omit": 0,
               "remove": true,
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\css-loader\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/css-loader/index.js",
             "options": Object {
               "importLoaders": 1,
               "minimize": Object {
@@ -379,7 +382,7 @@ Object {
             },
           },
           Object {
-            "loader": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\postcss-loader\\\\lib\\\\index.js",
+            "loader": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/postcss-loader/lib/index.js",
             "options": Object {
               "ident": "postcss",
               "plugins": [Function],
@@ -399,7 +402,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].async.js",
     "filename": "[name].js",
-    "path": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\dist",
+    "path": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/test/dist",
     "pathinfo": false,
     "publicPath": "./",
   },
@@ -449,7 +452,7 @@ Object {
     LoaderOptionsPlugin {
       "options": Object {
         "options": Object {
-          "context": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\lib",
+          "context": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/lib",
         },
         "test": Object {
           "test": [Function],
@@ -461,19 +464,18 @@ Object {
       "options": Object {
         "allowExternal": false,
         "dry": false,
-        "root": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test",
+        "root": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/test",
         "verbose": false,
       },
       "paths": Array [
-        "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\dist",
+        "/Users/hanbo/github/lugia-mega/packages/mega-webpack/test/dist",
       ],
     },
   ],
   "resolve": Object {
     "alias": Object {
-      "@babel/runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\@babel\\\\runtime",
-      "babel-runtime": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\babel-runtime",
-      "core-js": "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules\\\\core-js",
+      "@babel/runtime": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/@babel/runtime",
+      "babel-runtime": "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules/babel-runtime",
     },
     "extensions": Array [
       ".web.js",
@@ -488,8 +490,8 @@ Object {
     ],
     "modules": Array [
       "node_modules",
-      "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\test\\\\node_modules",
-      "F:\\\\yssgitlab\\\\lugia-mega\\\\packages\\\\mega-webpack\\\\node_modules",
+      "/Users/hanbo/github/lugia-mega/packages/mega-webpack/test/node_modules",
+      "/Users/hanbo/github/lugia-mega/packages/mega-webpack/node_modules",
     ],
     "plugins": Array [],
   },

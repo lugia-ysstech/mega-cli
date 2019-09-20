@@ -2,7 +2,7 @@
  * Created Date: Friday, July 19th 2019, 6:42:32 pm
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Friday, July 26th 2019, 5:52:27 pm
+ * Last Modified: Friday, September 20th 2019, 6:06:30 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2019-present, #Lugia#.
@@ -36,7 +36,7 @@ function testEngine(engine, opts) {
       });
       return {
         file,
-        code: code.replace(/from .*babel-preset-mega/g, '"./babel-preset-mega')
+        code: code.replace(/from ".*babel-preset-mega.*"/g, 'from "..."')
       };
     });
 

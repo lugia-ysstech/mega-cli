@@ -5,25 +5,10 @@ Object {
   "errorCount": 6,
   "fixableErrorCount": 1,
   "fixableWarningCount": 0,
-  "formatResults": "
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\lints\\\\standard.js[24m[8m[90m:3:1[39m[22m[28m
-  [31m×[39m  [2m3[90m:[39m1[22m   [1mloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong[22m is not defined.  [2mno-undef[22m
-  [31m×[39m  [2m3[90m:[39m1[22m   Expected an assignment or function call and instead saw an expression.                     [2mno-unused-expressions[22m
-  [31m×[39m  [2m4[90m:[39m3[22m   [1mindex[22m is not defined.                                                                      [2mno-undef[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\lints\\\\unicorn.js[24m[8m[90m:3:1[39m[22m[28m
-  [31m×[39m  [2m3[90m:[39m1[22m   Expected an assignment or function call and instead saw an expression.                     [2mno-unused-expressions[22m
-  [31m×[39m  [2m3[90m:[39m1[22m   Expected newline before \\"16777215\\" directive.                                              [2mlines-around-directive[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\lints\\\\react.js[24m[8m[90m:1:23[39m[22m[28m
-  [31m×[39m  [2m1[90m:[39m23[22m  Unable to resolve path to module [1mreact[22m.                                                    [2mimport/no-unresolved[22m
-
-  [31m6 errors[39m
-",
   "results": Array [
     Object {
       "errorCount": 0,
-      "filePath": "test\\\\lints\\\\@typescript-eslint.ts",
+      "filePath": "@typescript-eslint.ts",
       "fixableErrorCount": 0,
       "fixableWarningCount": 0,
       "messages": Array [],
@@ -31,7 +16,7 @@ Object {
     },
     Object {
       "errorCount": 0,
-      "filePath": "test\\\\lints\\\\babel.js",
+      "filePath": "babel.js",
       "fixableErrorCount": 0,
       "fixableWarningCount": 0,
       "messages": Array [],
@@ -39,7 +24,7 @@ Object {
     },
     Object {
       "errorCount": 0,
-      "filePath": "test\\\\lints\\\\flowtype.js",
+      "filePath": "flowtype.js",
       "fixableErrorCount": 0,
       "fixableWarningCount": 0,
       "messages": Array [],
@@ -47,7 +32,7 @@ Object {
     },
     Object {
       "errorCount": 1,
-      "filePath": "test\\\\lints\\\\react.js",
+      "filePath": "react.js",
       "fixableErrorCount": 0,
       "fixableWarningCount": 0,
       "messages": Array [
@@ -72,10 +57,20 @@ module.exports = <div one two />;
     },
     Object {
       "errorCount": 3,
-      "filePath": "test\\\\lints\\\\standard.js",
+      "filePath": "standard.js",
       "fixableErrorCount": 0,
       "fixableWarningCount": 0,
       "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 3,
+          "endLine": 5,
+          "line": 3,
+          "message": "Expected an assignment or function call and instead saw an expression.",
+          "nodeType": "ExpressionStatement",
+          "ruleId": "no-unused-expressions",
+          "severity": 2,
+        },
         Object {
           "column": 1,
           "endColumn": 74,
@@ -85,16 +80,6 @@ module.exports = <div one two />;
           "messageId": "undef",
           "nodeType": "Identifier",
           "ruleId": "no-undef",
-          "severity": 2,
-        },
-        Object {
-          "column": 1,
-          "endColumn": 3,
-          "endLine": 5,
-          "line": 3,
-          "message": "Expected an assignment or function call and instead saw an expression.",
-          "nodeType": "ExpressionStatement",
-          "ruleId": "no-unused-expressions",
           "severity": 2,
         },
         Object {
@@ -119,7 +104,7 @@ loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong[
     },
     Object {
       "errorCount": 2,
-      "filePath": "test\\\\lints\\\\unicorn.js",
+      "filePath": "unicorn.js",
       "fixableErrorCount": 1,
       "fixableWarningCount": 0,
       "messages": Array [
@@ -127,20 +112,10 @@ loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong[
           "column": 1,
           "endColumn": 10,
           "endLine": 3,
-          "line": 3,
-          "message": "Expected an assignment or function call and instead saw an expression.",
-          "nodeType": "ExpressionStatement",
-          "ruleId": "no-unused-expressions",
-          "severity": 2,
-        },
-        Object {
-          "column": 1,
-          "endColumn": 10,
-          "endLine": 3,
           "fix": Object {
             "range": Array [
-              111,
-              111,
+              109,
+              109,
             ],
             "text": "
 ",
@@ -150,6 +125,16 @@ loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong[
           "messageId": "expected",
           "nodeType": "ExpressionStatement",
           "ruleId": "lines-around-directive",
+          "severity": 2,
+        },
+        Object {
+          "column": 1,
+          "endColumn": 10,
+          "endLine": 3,
+          "line": 3,
+          "message": "Expected an assignment or function call and instead saw an expression.",
+          "nodeType": "ExpressionStatement",
+          "ruleId": "no-unused-expressions",
           "severity": 2,
         },
       ],
@@ -197,70 +182,317 @@ Object {
   "errorCount": 36,
   "fixableErrorCount": 26,
   "fixableWarningCount": 0,
-  "formatResults": "
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\semicolon.js[24m[8m[90m:1:13[39m[22m[28m
-  [31m×[39m   [2m1[90m:[39m13[22m  Replace [1m\\"foo\\"[22m with [1m'foo';[22m                                                                                                            [2mprettier/prettier[22m
-  [31m×[39m   [2m2[90m:[39m13[22m  Delete [1m·[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m   [2m4[90m:[39m5[22m   [1mbar[22m is assigned a value but never used.                                                                                              [2mno-unused-vars[22m
-  [31m×[39m   [2m4[90m:[39m5[22m   [1mbar[22m is never reassigned. Use [1mconst[22m instead.                                                                                          [2mprefer-const[22m
-  [31m×[39m   [2m4[90m:[39m16[22m  Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m   [2m6[90m:[39m7[22m   [1ma[22m is assigned a value but never used.                                                                                                [2mno-unused-vars[22m
-  [31m×[39m   [2m8[90m:[39m7[22m   Delete [1m,[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m   [2m9[90m:[39m2[22m   Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\React.tsx[24m[8m[90m:11:13[39m[22m[28m
-  [33m‼[39m  [2m11[90m:[39m1[22m   Missing return type on function.                                                                                                     [2m@typescript-eslint/explicit-function-return-type[22m
-  [33m‼[39m  [2m15[90m:[39m16[22m  Missing return type on function.                                                                                                     [2m@typescript-eslint/explicit-function-return-type[22m
-  [31m×[39m  [2m11[90m:[39m13[22m  Replace [1mchildren}:{children:string})[22m with [1m·children·}:·{·children:·string·})·[22m                                                        [2mprettier/prettier[22m
-  [31m×[39m  [2m12[90m:[39m10[22m  [1mReact[22m must be in scope when using JSX                                                                                                [2mreact/react-in-jsx-scope[22m
-  [31m×[39m  [2m12[90m:[39m27[22m  Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m  [2m15[90m:[39m18[22m  Insert [1m·[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m  [2m16[90m:[39m10[22m  [1mReact[22m must be in scope when using JSX                                                                                                [2mreact/react-in-jsx-scope[22m
-  [31m×[39m  [2m16[90m:[39m12[22m  Insert [1m·[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m  [2m17[90m:[39m2[22m   Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\hooks.jsx[24m[8m[90m:11:19[39m[22m[28m
-  [31m×[39m  [2m11[90m:[39m19[22m  Unable to resolve path to module [1mreact[22m.                                                                                              [2mimport/no-unresolved[22m
-  [31m×[39m  [2m13[90m:[39m14[22m  Insert [1m·[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m  [2m14[90m:[39m3[22m   React Hook \\"React.useState\\" is called in function \\"dd\\" which is neither a React function component or a custom React Hook function.  [2mreact-hooks/rules-of-hooks[22m
-  [31m×[39m  [2m17[90m:[39m15[22m  Replace [1m()[22m with [1m·()·[22m                                                                                                                 [2mprettier/prettier[22m
-  [31m×[39m  [2m18[90m:[39m13[22m  Replace [1m/>[22m with [1m·/>;[22m                                                                                                                 [2mprettier/prettier[22m
-  [31m×[39m  [2m19[90m:[39m2[22m   Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m  [2m21[90m:[39m5[22m   Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\React.jsx[24m[8m[90m:11:18[39m[22m[28m
-  [31m×[39m  [2m11[90m:[39m18[22m  Replace [1m=>[22m with [1m·=>·[22m                                                                                                                 [2mprettier/prettier[22m
-  [31m×[39m  [2m12[90m:[39m10[22m  [1mReact[22m must be in scope when using JSX                                                                                                [2mreact/react-in-jsx-scope[22m
-  [31m×[39m  [2m12[90m:[39m10[22m  Replace [1m<p>dsa<br></br>[22m with [1m(␍⏎····<p>␍⏎······dsa<br></br>␍⏎····[22m                                                                    [2mprettier/prettier[22m
-  [31m×[39m  [2m12[90m:[39m16[22m  Empty components are self-closing                                                                                                    [2mreact/self-closing-comp[22m
-  [31m×[39m  [2m12[90m:[39m16[22m  [1mReact[22m must be in scope when using JSX                                                                                                [2mreact/react-in-jsx-scope[22m
-  [31m×[39m  [2m13[90m:[39m1[22m   Replace [1m}[22m with [1m··);␍⏎};[22m                                                                                                              [2mprettier/prettier[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\d.ts[24m[8m[90m:13:1[39m[22m[28m
-  [33m‼[39m  [2m13[90m:[39m5[22m   [1mx[22m is assigned a value but never used.                                                                                                [2m@typescript-eslint/no-unused-vars[22m
-  [33m‼[39m  [2m15[90m:[39m7[22m   [1md[22m is assigned a value but never used.                                                                                                [2m@typescript-eslint/no-unused-vars[22m
-  [33m‼[39m  [2m18[90m:[39m5[22m   [1mc[22m is assigned a value but never used.                                                                                                [2m@typescript-eslint/no-unused-vars[22m
-  [31m×[39m  [2m13[90m:[39m1[22m   Unexpected var, use let or const instead.                                                                                            [2mno-var[22m
-  [31m×[39m  [2m13[90m:[39m5[22m   Type number trivially inferred from a number literal, remove type annotation.                                                        [2m@typescript-eslint/no-inferrable-types[22m
-  [31m×[39m  [2m16[90m:[39m1[22m   [1md[22m is constant.                                                                                                                       [2mno-const-assign[22m
-  [31m×[39m  [2m21[90m:[39m9[22m   Insert [1m·[22m                                                                                                                             [2mprettier/prettier[22m
-  [31m×[39m  [2m22[90m:[39m15[22m  Insert [1m;[22m                                                                                                                             [2mprettier/prettier[22m
-
-  [4mpackages\\\\eslint-config-mega\\\\test\\\\errors\\\\flow.js[24m[8m[90m:14:7[39m[22m[28m
-  [31m×[39m  [2m14[90m:[39m7[22m   [1ma[22m is assigned a value but never used.                                                                                                [2mno-unused-vars[22m
-  [31m×[39m  [2m14[90m:[39m7[22m   There must be a space after const type annotation colon.                                                                             [2mflowtype/space-after-type-colon[22m
-  [31m×[39m  [2m14[90m:[39m9[22m   Insert [1m·[22m                                                                                                                             [2mprettier/prettier[22m
-
-  [33m5 warnings[39m
-  [31m36 errors[39m
-",
   "results": Array [
     Object {
-      "errorCount": 5,
-      "filePath": "test\\\\errors\\\\d.ts",
+      "errorCount": 6,
+      "filePath": "React.jsx",
       "fixableErrorCount": 4,
       "fixableWarningCount": 0,
       "messages": Array [
+        Object {
+          "column": 18,
+          "endColumn": 20,
+          "endLine": 11,
+          "fix": Object {
+            "range": Array [
+              313,
+              315,
+            ],
+            "text": " => ",
+          },
+          "line": 11,
+          "message": "Replace \`=>\` with \`·=>·\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+        Object {
+          "column": 10,
+          "endColumn": 25,
+          "endLine": 12,
+          "fix": Object {
+            "range": Array [
+              326,
+              341,
+            ],
+            "text": "(
+    <p>
+      dsa<br></br>
+    ",
+          },
+          "line": 12,
+          "message": "Replace \`<p>dsa<br></br>\` with \`(⏎····<p>⏎······dsa<br></br>⏎····\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+        Object {
+          "column": 10,
+          "endColumn": 13,
+          "endLine": 12,
+          "line": 12,
+          "message": "'React' must be in scope when using JSX",
+          "nodeType": "JSXOpeningElement",
+          "ruleId": "react/react-in-jsx-scope",
+          "severity": 2,
+        },
+        Object {
+          "column": 16,
+          "endColumn": 20,
+          "endLine": 12,
+          "line": 12,
+          "message": "'React' must be in scope when using JSX",
+          "nodeType": "JSXOpeningElement",
+          "ruleId": "react/react-in-jsx-scope",
+          "severity": 2,
+        },
+        Object {
+          "column": 16,
+          "endColumn": 20,
+          "endLine": 12,
+          "fix": Object {
+            "range": Array [
+              335,
+              341,
+            ],
+            "text": " />",
+          },
+          "line": 12,
+          "message": "Empty components are self-closing",
+          "nodeType": "JSXOpeningElement",
+          "ruleId": "react/self-closing-comp",
+          "severity": 2,
+        },
+        Object {
+          "column": 1,
+          "endColumn": 2,
+          "endLine": 13,
+          "fix": Object {
+            "range": Array [
+              346,
+              347,
+            ],
+            "text": "  );
+};",
+          },
+          "line": 13,
+          "message": "Replace \`}\` with \`··);⏎};\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+      ],
+      "source": "/*
+ * Created Date: Sunday, July 14th 2019, 5:15:23 pm
+ * Author: hanjingbo@ysstech.com | jingboup@gmail.com
+ * -----
+ * Last Modified: Sunday, July 14th 2019, 8:19:52 pm
+ * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
+ * -----
+ * Copyright (c) 2019-present, #Lugia#.
+ */
+
+export default ()=>{
+  return <p>dsa<br></br></p>
+}
+",
+      "warningCount": 0,
+    },
+    Object {
+      "errorCount": 7,
+      "filePath": "React.tsx",
+      "fixableErrorCount": 5,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 2,
+          "endLine": 13,
+          "line": 11,
+          "message": "Missing return type on function.",
+          "messageId": "missingReturnType",
+          "nodeType": "FunctionDeclaration",
+          "ruleId": "@typescript-eslint/explicit-function-return-type",
+          "severity": 1,
+        },
+        Object {
+          "column": 13,
+          "endColumn": 41,
+          "endLine": 11,
+          "fix": Object {
+            "range": Array [
+              308,
+              336,
+            ],
+            "text": " children }: { children: string }) ",
+          },
+          "line": 11,
+          "message": "Replace \`children}:{children:string})\` with \`·children·}:·{·children:·string·})·\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+        Object {
+          "column": 10,
+          "endColumn": 13,
+          "endLine": 12,
+          "line": 12,
+          "message": "'React' must be in scope when using JSX",
+          "nodeType": "JSXOpeningElement",
+          "ruleId": "react/react-in-jsx-scope",
+          "severity": 2,
+        },
+        Object {
+          "column": 27,
+          "endColumn": 27,
+          "endLine": 12,
+          "fix": Object {
+            "range": Array [
+              364,
+              364,
+            ],
+            "text": ";",
+          },
+          "line": 12,
+          "message": "Insert \`;\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+        Object {
+          "column": 16,
+          "endColumn": 2,
+          "endLine": 17,
+          "line": 15,
+          "message": "Missing return type on function.",
+          "messageId": "missingReturnType",
+          "nodeType": "ArrowFunctionExpression",
+          "ruleId": "@typescript-eslint/explicit-function-return-type",
+          "severity": 1,
+        },
+        Object {
+          "column": 18,
+          "endColumn": 18,
+          "endLine": 15,
+          "fix": Object {
+            "range": Array [
+              385,
+              385,
+            ],
+            "text": " ",
+          },
+          "line": 15,
+          "message": "Insert \`·\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+        Object {
+          "column": 10,
+          "endColumn": 14,
+          "endLine": 16,
+          "line": 16,
+          "message": "'React' must be in scope when using JSX",
+          "nodeType": "JSXOpeningElement",
+          "ruleId": "react/react-in-jsx-scope",
+          "severity": 2,
+        },
+        Object {
+          "column": 12,
+          "endColumn": 12,
+          "endLine": 16,
+          "fix": Object {
+            "range": Array [
+              401,
+              401,
+            ],
+            "text": " ",
+          },
+          "line": 16,
+          "message": "Insert \`·\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+        Object {
+          "column": 2,
+          "endColumn": 2,
+          "endLine": 17,
+          "fix": Object {
+            "range": Array [
+              406,
+              406,
+            ],
+            "text": ";",
+          },
+          "line": 17,
+          "message": "Insert \`;\`",
+          "nodeType": null,
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+        },
+      ],
+      "source": "/*
+ * Created Date: Sunday, July 14th 2019, 9:09:22 pm
+ * Author: hanjingbo@ysstech.com | jingboup@gmail.com
+ * -----
+ * Last Modified: Sunday, July 14th 2019, 9:34:27 pm
+ * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
+ * -----
+ * Copyright (c) 2019-present, #Lugia#.
+ */
+
+function P({children}:{children:string}){
+  return <p>{children}</p>
+}
+
+export default ()=> {
+  return <P/>;
+}
+",
+      "warningCount": 2,
+    },
+    Object {
+      "errorCount": 5,
+      "filePath": "d.ts",
+      "fixableErrorCount": 4,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 19,
+          "endLine": 13,
+          "fix": Object {
+            "range": Array [
+              373,
+              376,
+            ],
+            "text": "let",
+          },
+          "line": 13,
+          "message": "Unexpected var, use let or const instead.",
+          "nodeType": "VariableDeclaration",
+          "ruleId": "no-var",
+          "severity": 2,
+        },
+        Object {
+          "column": 5,
+          "endColumn": 18,
+          "endLine": 13,
+          "fix": Object {
+            "range": Array [
+              378,
+              386,
+            ],
+            "text": "",
+          },
+          "line": 13,
+          "message": "Type number trivially inferred from a number literal, remove type annotation.",
+          "messageId": "noInferrableType",
+          "nodeType": "VariableDeclarator",
+          "ruleId": "@typescript-eslint/no-inferrable-types",
+          "severity": 2,
+        },
         Object {
           "column": 5,
           "endColumn": 14,
@@ -282,51 +514,6 @@ Object {
           "severity": 1,
         },
         Object {
-          "column": 5,
-          "endColumn": 6,
-          "endLine": 18,
-          "line": 18,
-          "message": "'c' is assigned a value but never used.",
-          "nodeType": "Identifier",
-          "ruleId": "@typescript-eslint/no-unused-vars",
-          "severity": 1,
-        },
-        Object {
-          "column": 1,
-          "endColumn": 19,
-          "endLine": 13,
-          "fix": Object {
-            "range": Array [
-              385,
-              388,
-            ],
-            "text": "let",
-          },
-          "line": 13,
-          "message": "Unexpected var, use let or const instead.",
-          "nodeType": "VariableDeclaration",
-          "ruleId": "no-var",
-          "severity": 2,
-        },
-        Object {
-          "column": 5,
-          "endColumn": 18,
-          "endLine": 13,
-          "fix": Object {
-            "range": Array [
-              390,
-              398,
-            ],
-            "text": "",
-          },
-          "line": 13,
-          "message": "Type number trivially inferred from a number literal, remove type annotation.",
-          "messageId": "noInferrableType",
-          "nodeType": "VariableDeclarator",
-          "ruleId": "@typescript-eslint/no-inferrable-types",
-          "severity": 2,
-        },
-        Object {
           "column": 1,
           "endColumn": 2,
           "endLine": 16,
@@ -338,13 +525,23 @@ Object {
           "severity": 2,
         },
         Object {
+          "column": 5,
+          "endColumn": 6,
+          "endLine": 18,
+          "line": 18,
+          "message": "'c' is assigned a value but never used.",
+          "nodeType": "Identifier",
+          "ruleId": "@typescript-eslint/no-unused-vars",
+          "severity": 1,
+        },
+        Object {
           "column": 9,
           "endColumn": 9,
           "endLine": 21,
           "fix": Object {
             "range": Array [
-              465,
-              465,
+              445,
+              445,
             ],
             "text": " ",
           },
@@ -360,8 +557,8 @@ Object {
           "endLine": 22,
           "fix": Object {
             "range": Array [
-              492,
-              492,
+              471,
+              471,
             ],
             "text": ";",
           },
@@ -399,10 +596,27 @@ console.log(a)
     },
     Object {
       "errorCount": 3,
-      "filePath": "test\\\\errors\\\\flow.js",
+      "filePath": "flow.js",
       "fixableErrorCount": 2,
       "fixableWarningCount": 0,
       "messages": Array [
+        Object {
+          "column": 7,
+          "endColumn": 19,
+          "endLine": 14,
+          "fix": Object {
+            "range": Array [
+              389,
+              389,
+            ],
+            "text": " ",
+          },
+          "line": 14,
+          "message": "There must be a space after const type annotation colon.",
+          "nodeType": "VariableDeclarator",
+          "ruleId": "flowtype/space-after-type-colon",
+          "severity": 2,
+        },
         Object {
           "column": 7,
           "endColumn": 15,
@@ -414,30 +628,13 @@ console.log(a)
           "severity": 2,
         },
         Object {
-          "column": 7,
-          "endColumn": 19,
-          "endLine": 14,
-          "fix": Object {
-            "range": Array [
-              402,
-              402,
-            ],
-            "text": " ",
-          },
-          "line": 14,
-          "message": "There must be a space after const type annotation colon.",
-          "nodeType": "VariableDeclarator",
-          "ruleId": "flowtype/space-after-type-colon",
-          "severity": 2,
-        },
-        Object {
           "column": 9,
           "endColumn": 9,
           "endLine": 14,
           "fix": Object {
             "range": Array [
-              402,
-              402,
+              389,
+              389,
             ],
             "text": " ",
           },
@@ -467,7 +664,7 @@ const a:string = 0;
     },
     Object {
       "errorCount": 7,
-      "filePath": "test\\\\errors\\\\hooks.jsx",
+      "filePath": "hooks.jsx",
       "fixableErrorCount": 5,
       "fixableWarningCount": 0,
       "messages": Array [
@@ -487,8 +684,8 @@ const a:string = 0;
           "endLine": 13,
           "fix": Object {
             "range": Array [
-              349,
-              349,
+              337,
+              337,
             ],
             "text": " ",
           },
@@ -514,8 +711,8 @@ const a:string = 0;
           "endLine": 17,
           "fix": Object {
             "range": Array [
-              393,
-              395,
+              377,
+              379,
             ],
             "text": " () ",
           },
@@ -531,8 +728,8 @@ const a:string = 0;
           "endLine": 18,
           "fix": Object {
             "range": Array [
-              413,
-              415,
+              396,
+              398,
             ],
             "text": " />;",
           },
@@ -548,8 +745,8 @@ const a:string = 0;
           "endLine": 19,
           "fix": Object {
             "range": Array [
-              418,
-              418,
+              400,
+              400,
             ],
             "text": ";",
           },
@@ -565,8 +762,8 @@ const a:string = 0;
           "endLine": 21,
           "fix": Object {
             "range": Array [
-              426,
-              426,
+              406,
+              406,
             ],
             "text": ";",
           },
@@ -602,277 +799,8 @@ dd()
       "warningCount": 0,
     },
     Object {
-      "errorCount": 6,
-      "filePath": "test\\\\errors\\\\React.jsx",
-      "fixableErrorCount": 4,
-      "fixableWarningCount": 0,
-      "messages": Array [
-        Object {
-          "column": 18,
-          "endColumn": 20,
-          "endLine": 11,
-          "fix": Object {
-            "range": Array [
-              323,
-              325,
-            ],
-            "text": " => ",
-          },
-          "line": 11,
-          "message": "Replace \`=>\` with \`·=>·\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-        Object {
-          "column": 10,
-          "endColumn": 13,
-          "endLine": 12,
-          "line": 12,
-          "message": "'React' must be in scope when using JSX",
-          "nodeType": "JSXOpeningElement",
-          "ruleId": "react/react-in-jsx-scope",
-          "severity": 2,
-        },
-        Object {
-          "column": 10,
-          "endColumn": 25,
-          "endLine": 12,
-          "fix": Object {
-            "range": Array [
-              337,
-              352,
-            ],
-            "text": "(
-    <p>
-      dsa<br></br>
-    ",
-          },
-          "line": 12,
-          "message": "Replace \`<p>dsa<br></br>\` with \`(␍⏎····<p>␍⏎······dsa<br></br>␍⏎····\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-        Object {
-          "column": 16,
-          "endColumn": 20,
-          "endLine": 12,
-          "fix": Object {
-            "range": Array [
-              346,
-              352,
-            ],
-            "text": " />",
-          },
-          "line": 12,
-          "message": "Empty components are self-closing",
-          "nodeType": "JSXOpeningElement",
-          "ruleId": "react/self-closing-comp",
-          "severity": 2,
-        },
-        Object {
-          "column": 16,
-          "endColumn": 20,
-          "endLine": 12,
-          "line": 12,
-          "message": "'React' must be in scope when using JSX",
-          "nodeType": "JSXOpeningElement",
-          "ruleId": "react/react-in-jsx-scope",
-          "severity": 2,
-        },
-        Object {
-          "column": 1,
-          "endColumn": 2,
-          "endLine": 13,
-          "fix": Object {
-            "range": Array [
-              358,
-              359,
-            ],
-            "text": "  );
-};",
-          },
-          "line": 13,
-          "message": "Replace \`}\` with \`··);␍⏎};\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-      ],
-      "source": "/*
- * Created Date: Sunday, July 14th 2019, 5:15:23 pm
- * Author: hanjingbo@ysstech.com | jingboup@gmail.com
- * -----
- * Last Modified: Sunday, July 14th 2019, 8:19:52 pm
- * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
- * -----
- * Copyright (c) 2019-present, #Lugia#.
- */
-
-export default ()=>{
-  return <p>dsa<br></br></p>
-}
-",
-      "warningCount": 0,
-    },
-    Object {
-      "errorCount": 7,
-      "filePath": "test\\\\errors\\\\React.tsx",
-      "fixableErrorCount": 5,
-      "fixableWarningCount": 0,
-      "messages": Array [
-        Object {
-          "column": 1,
-          "endColumn": 2,
-          "endLine": 13,
-          "line": 11,
-          "message": "Missing return type on function.",
-          "messageId": "missingReturnType",
-          "nodeType": "FunctionDeclaration",
-          "ruleId": "@typescript-eslint/explicit-function-return-type",
-          "severity": 1,
-        },
-        Object {
-          "column": 16,
-          "endColumn": 2,
-          "endLine": 17,
-          "line": 15,
-          "message": "Missing return type on function.",
-          "messageId": "missingReturnType",
-          "nodeType": "ArrowFunctionExpression",
-          "ruleId": "@typescript-eslint/explicit-function-return-type",
-          "severity": 1,
-        },
-        Object {
-          "column": 13,
-          "endColumn": 41,
-          "endLine": 11,
-          "fix": Object {
-            "range": Array [
-              318,
-              346,
-            ],
-            "text": " children }: { children: string }) ",
-          },
-          "line": 11,
-          "message": "Replace \`children}:{children:string})\` with \`·children·}:·{·children:·string·})·\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-        Object {
-          "column": 10,
-          "endColumn": 13,
-          "endLine": 12,
-          "line": 12,
-          "message": "'React' must be in scope when using JSX",
-          "nodeType": "JSXOpeningElement",
-          "ruleId": "react/react-in-jsx-scope",
-          "severity": 2,
-        },
-        Object {
-          "column": 27,
-          "endColumn": 27,
-          "endLine": 12,
-          "fix": Object {
-            "range": Array [
-              375,
-              375,
-            ],
-            "text": ";",
-          },
-          "line": 12,
-          "message": "Insert \`;\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-        Object {
-          "column": 18,
-          "endColumn": 18,
-          "endLine": 15,
-          "fix": Object {
-            "range": Array [
-              399,
-              399,
-            ],
-            "text": " ",
-          },
-          "line": 15,
-          "message": "Insert \`·\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-        Object {
-          "column": 10,
-          "endColumn": 14,
-          "endLine": 16,
-          "line": 16,
-          "message": "'React' must be in scope when using JSX",
-          "nodeType": "JSXOpeningElement",
-          "ruleId": "react/react-in-jsx-scope",
-          "severity": 2,
-        },
-        Object {
-          "column": 12,
-          "endColumn": 12,
-          "endLine": 16,
-          "fix": Object {
-            "range": Array [
-              416,
-              416,
-            ],
-            "text": " ",
-          },
-          "line": 16,
-          "message": "Insert \`·\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-        Object {
-          "column": 2,
-          "endColumn": 2,
-          "endLine": 17,
-          "fix": Object {
-            "range": Array [
-              422,
-              422,
-            ],
-            "text": ";",
-          },
-          "line": 17,
-          "message": "Insert \`;\`",
-          "nodeType": null,
-          "ruleId": "prettier/prettier",
-          "severity": 2,
-        },
-      ],
-      "source": "/*
- * Created Date: Sunday, July 14th 2019, 9:09:22 pm
- * Author: hanjingbo@ysstech.com | jingboup@gmail.com
- * -----
- * Last Modified: Sunday, July 14th 2019, 9:34:27 pm
- * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
- * -----
- * Copyright (c) 2019-present, #Lugia#.
- */
-
-function P({children}:{children:string}){
-  return <p>{children}</p>
-}
-
-export default ()=> {
-  return <P/>;
-}
-",
-      "warningCount": 2,
-    },
-    Object {
       "errorCount": 8,
-      "filePath": "test\\\\errors\\\\semicolon.js",
+      "filePath": "semicolon.js",
       "fixableErrorCount": 6,
       "fixableWarningCount": 0,
       "messages": Array [
@@ -899,8 +827,8 @@ export default ()=> {
           "endLine": 2,
           "fix": Object {
             "range": Array [
+              30,
               31,
-              32,
             ],
             "text": "",
           },
@@ -914,20 +842,10 @@ export default ()=> {
           "column": 5,
           "endColumn": 8,
           "endLine": 4,
-          "line": 4,
-          "message": "'bar' is assigned a value but never used.",
-          "nodeType": "Identifier",
-          "ruleId": "no-unused-vars",
-          "severity": 2,
-        },
-        Object {
-          "column": 5,
-          "endColumn": 8,
-          "endLine": 4,
           "fix": Object {
             "range": Array [
+              38,
               41,
-              44,
             ],
             "text": "const",
           },
@@ -939,13 +857,23 @@ export default ()=> {
           "severity": 2,
         },
         Object {
+          "column": 5,
+          "endColumn": 8,
+          "endLine": 4,
+          "line": 4,
+          "message": "'bar' is assigned a value but never used.",
+          "nodeType": "Identifier",
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+        },
+        Object {
           "column": 16,
           "endColumn": 16,
           "endLine": 4,
           "fix": Object {
             "range": Array [
-              56,
-              56,
+              53,
+              53,
             ],
             "text": ";",
           },
@@ -971,8 +899,8 @@ export default ()=> {
           "endLine": 8,
           "fix": Object {
             "range": Array [
-              88,
-              89,
+              81,
+              82,
             ],
             "text": "",
           },
@@ -988,8 +916,8 @@ export default ()=> {
           "endLine": 9,
           "fix": Object {
             "range": Array [
-              92,
-              92,
+              84,
+              84,
             ],
             "text": ";",
           },
@@ -1015,18 +943,6 @@ const a = {
   ],
   "usedDeprecatedRules": Array [
     Object {
-      "replacedBy": Array [
-        "triple-slash-reference",
-      ],
-      "ruleId": "@typescript-eslint/no-triple-slash-reference",
-    },
-    Object {
-      "replacedBy": Array [
-        "consistent-type-definitions",
-      ],
-      "ruleId": "@typescript-eslint/prefer-interface",
-    },
-    Object {
       "replacedBy": Array [],
       "ruleId": "flowtype/valid-syntax",
     },
@@ -1039,6 +955,18 @@ const a = {
         "padding-line-between-statements",
       ],
       "ruleId": "lines-around-directive",
+    },
+    Object {
+      "replacedBy": Array [
+        "triple-slash-reference",
+      ],
+      "ruleId": "@typescript-eslint/no-triple-slash-reference",
+    },
+    Object {
+      "replacedBy": Array [
+        "consistent-type-definitions",
+      ],
+      "ruleId": "@typescript-eslint/prefer-interface",
     },
   ],
   "warningCount": 5,

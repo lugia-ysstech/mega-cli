@@ -1,5 +1,5 @@
 import { CLIEngine } from 'eslint';
-import { join } from 'path';
+import { join, basename } from 'path';
 
 const cwd = join(__dirname, '../');
 
@@ -12,15 +12,13 @@ function testRules(dir) {
     fix: false,
     useEslintrc: true
   });
-  const formatter = cli.getFormatter('pretty');
   const report = cli.executeOnFiles([rulesDir]);
   expect({
     ...report,
     results: report.results.map(r => ({
       ...r,
-      filePath: r.filePath.replace(cwd, '')
-    })),
-    formatResults: formatter(report.results)
+      filePath: basename(r.filePath)
+    }))
   }).toMatchSnapshot();
 }
 
