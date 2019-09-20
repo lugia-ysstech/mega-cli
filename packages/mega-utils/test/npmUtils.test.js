@@ -2,7 +2,7 @@
  * Created Date: Monday, September 3rd 2018, 10:46:46 am
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Wednesday, January 16th 2019, 12:25:42 am
+ * Last Modified: Friday, September 20th 2019, 5:25:19 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2018-present, #Lugia#.
@@ -13,7 +13,7 @@
 import { execSync } from 'child_process';
 import getPackageInfo, {
   getRegistryInfo,
-  getRegistryUrl,
+  getRegistryUrl
 } from '../lib/npmUtils';
 import is from '../lib/is';
 
@@ -31,7 +31,7 @@ describe('npmUtils', () => {
     expect(Object.keys(getRegistryInfo())).toEqual([
       'registryUrl',
       'authToken',
-      'authorization',
+      'authorization'
     ]);
     expect(getRegistryInfo().registryUrl).toBe(registry);
   });
@@ -52,12 +52,22 @@ describe('npmUtils', () => {
     expect(versions['2.0.0'].dist.tarball.indexOf('.tgz') > 0).toBe(true);
   });
 
+  it('getPackageInfo allInfo', async () => {
+    const info = await getPackageInfo('got', { allInfo: true });
+    expect(is.object(info)).toBe(true);
+
+    const infoItems = Object.keys(info);
+    ['name', 'dist-tags', 'time', 'versions'].forEach(item => {
+      expect(infoItems.includes(item)).toBe(true);
+    });
+  });
+
   it('getPackageInfo registry', async () => {
     const version = await getPackageInfo('got@2.0.0', {
-      registry: 'https://registry.npmjs.org/',
+      registry: 'https://registry.npmjs.org/'
     });
     expect(version.dist.tarball).toBe(
-      'https://registry.npmjs.org/got/-/got-2.0.0.tgz',
+      'https://registry.npmjs.org/got/-/got-2.0.0.tgz'
     );
   });
 

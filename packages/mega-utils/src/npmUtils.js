@@ -2,7 +2,7 @@
  * Created Date: Friday, August 31st 2018, 10:42:30 am
  * Author: hanjingbo@ysstech.com | jingboup@gmail.com
  * -----
- * Last Modified: Monday, September 3rd 2018, 2:59:30 pm
+ * Last Modified: Friday, September 20th 2019, 5:37:45 pm
  * Modified By: hanjingbo <hanjingbo@ysstech.com | jingboup@gmail.com>
  * -----
  * Copyright (c) 2018-present, #Lugia#.
@@ -19,7 +19,7 @@ import semver from 'semver';
 
 export function getRegistryUrl(
   scope,
-  npmrc = rc('npm', { registry: 'https://registry.npmjs.org/' }),
+  npmrc = rc('npm', { registry: 'https://registry.npmjs.org/' })
 ) {
   const url =
     npmrc[`${scope}:registry`] || npmrc.config_registry || npmrc.registry;
@@ -35,16 +35,17 @@ export function getRegistryInfo(scope) {
   return {
     registryUrl,
     authToken,
-    authorization,
+    authorization
   };
 }
 
 export default function getPackageInfo(
   packageName,
-  { registry, allVersions } = {
+  { registry, allVersions, allInfo } = {
     registry: undefined,
-    allVersions: undefined,
-  },
+    allVersions: false,
+    allInfo: false
+  }
 ) {
   // npa('@dd/got@1.2.0') ==>
   // { type: 'version',
@@ -77,20 +78,23 @@ export default function getPackageInfo(
   //   hosted: undefined }
   const { scope, escapedName, fetchSpec = 'latest', name } = npa(packageName);
   const { authorization, registryUrl } = getRegistryInfo(scope);
-  registry = registry || registryUrl;
+  const useRegistry = registry || registryUrl;
   const headers = authorization ? { authorization } : {};
-  const url = `${registry.replace(/\/$/, '')}/${escapedName}`;
+  const url = `${useRegistry.replace(/\/$/, '')}/${escapedName}`;
 
   return new Promise((resolve, reject) => {
     got(url, {
       headers,
-      json: true,
+      json: true
     })
       .then(({ body }) => {
         const error = version =>
           new Error(`Can not found version ${version} of ${name}.`);
         if (!(body && body['dist-tags'] && body.versions)) {
           return reject(error(fetchSpec));
+        }
+        if (allInfo) {
+          return resolve(body);
         }
         if (allVersions) {
           return resolve(body.versions);
