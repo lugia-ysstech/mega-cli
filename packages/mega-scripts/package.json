@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-scripts",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "cli tool for dev, build, test, and mock.",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -27,7 +27,7 @@
     "@lugia/devtools-material": "^1.0.33",
     "@lugia/mega-config": "^1.2.1",
     "@lugia/mega-utils": "^1.5.1",
-    "@lugia/mega-webpack": "^1.4.4",
+    "@lugia/mega-webpack": "^1.4.5",
     "babel-plugin-add-module-exports": "^1.0.0",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.26.3",
