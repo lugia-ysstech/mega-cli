@@ -126,18 +126,18 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@lugia/devtools-conversion@1.0.17":
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/@lugia/devtools-conversion/-/devtools-conversion-1.0.17.tgz#3924cef6e38df9ab71a986bbf2310226bb4693a6"
-  integrity sha512-utvsly74/0SBRi+bgPFAGMAgApIcQMr+cqQ9k5I2Cb36nnwQJ7jCywloaGp3Amw8qnCgki0EjsZSwmkJLHR0EQ==
+"@lugia/devtools-conversion@1.0.19":
+  version "1.0.19"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.19.tgz#db84e6266884cc6ff1c989aae7af80bfd021c55f"
+  integrity sha1-24TmJmiEzG/xyYmq56+Av9AhxV8=
   dependencies:
-    "@lugia/devtools-core" "^1.0.7"
+    "@lugia/devtools-core" "^1.0.8"
     "@lugia/lugiad-core" "^1.0.2"
 
-"@lugia/devtools-core@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@lugia/devtools-core/-/devtools-core-1.0.7.tgz#b1a2f4591339a5d1ff960ac96eaf48ebb46cebd7"
-  integrity sha512-toPbh+QCP3VmK8vlP6vWhRv5RF6CYMaShtVUFpxUS9mM5G+J+lQaM9yQqAjn4U3QIR/7c7fQUf7V3QfxQ6vmTg==
+"@lugia/devtools-core@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.8.tgz#8856c5530424c36f387b668e2abfeef17ecc11fd"
+  integrity sha1-iFbFUwQkw284e2aOKr/u8X7MEf0=
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
@@ -145,10 +145,10 @@
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/devtools-material@^1.0.33":
-  version "1.0.33"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-material/download/@lugia/devtools-material-1.0.33.tgz#c9d3ca6565bc90a8715a6a120646d2abd0da0356"
-  integrity sha1-ydPKZWW8kKhxWmoSBkbSq9DaA1Y=
+"@lugia/devtools-material@^1.0.34":
+  version "1.0.34"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-material/download/@lugia/devtools-material-1.0.34.tgz#59c9c42d6f775d6f351acf06aed09007f1d0ce25"
+  integrity sha1-WcnELW93XW81Gs8GrtCQB/HQziU=
   dependencies:
     babel-runtime "^6.26.0"
     immutable "^3.8.2"

@@ -3,24 +3,24 @@
 
 
 "@babel/runtime@^7.4.3":
-  version "7.5.5"
-  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
-  integrity sha1-dPulbTXvvspEQJHHhQzNSU/S8TI=
+  version "7.7.2"
+  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.7.2.tgz?cache=0&sync_timestamp=1573083187206&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
+  integrity sha1-ERp4ACpcJfyOM2G+3JUpxpa4Wmo=
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@1.0.17":
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/@lugia/devtools-conversion/-/devtools-conversion-1.0.17.tgz#3924cef6e38df9ab71a986bbf2310226bb4693a6"
-  integrity sha512-utvsly74/0SBRi+bgPFAGMAgApIcQMr+cqQ9k5I2Cb36nnwQJ7jCywloaGp3Amw8qnCgki0EjsZSwmkJLHR0EQ==
+"@lugia/devtools-conversion@1.0.19":
+  version "1.0.19"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.19.tgz#db84e6266884cc6ff1c989aae7af80bfd021c55f"
+  integrity sha1-24TmJmiEzG/xyYmq56+Av9AhxV8=
   dependencies:
-    "@lugia/devtools-core" "^1.0.7"
+    "@lugia/devtools-core" "^1.0.8"
     "@lugia/lugiad-core" "^1.0.2"
 
-"@lugia/devtools-core@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@lugia/devtools-core/-/devtools-core-1.0.7.tgz#b1a2f4591339a5d1ff960ac96eaf48ebb46cebd7"
-  integrity sha512-toPbh+QCP3VmK8vlP6vWhRv5RF6CYMaShtVUFpxUS9mM5G+J+lQaM9yQqAjn4U3QIR/7c7fQUf7V3QfxQ6vmTg==
+"@lugia/devtools-core@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.8.tgz#8856c5530424c36f387b668e2abfeef17ecc11fd"
+  integrity sha1-iFbFUwQkw284e2aOKr/u8X7MEf0=
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
@@ -30,8 +30,8 @@
 
 "@lugia/lugiad-core@^1.0.2":
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiad-core/-/lugiad-core-1.0.2.tgz#186c5de344cdf62a3cadbfb51787c29c5aa530e9"
-  integrity sha512-dS9G6o6ggGtGGWCJW3aQAUOT92Ud2lcGcJhSibMEnSDsAG63+yKNcXMpyULAG/DdbM5y/GC+aBSevbQkQ3I46A==
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-core/download/@lugia/lugiad-core-1.0.2.tgz#186c5de344cdf62a3cadbfb51787c29c5aa530e9"
+  integrity sha1-GGxd40TN9io8rb+1F4fCnFqlMOk=
   dependencies:
     chai "^4.1.2"
 
@@ -47,7 +47,7 @@ big.js@^5.2.2:
 
 chai@^4.1.2:
   version "4.2.0"
-  resolved "https://registry.npm.taobao.org/chai/download/chai-4.2.0.tgz#760aa72cf20e3795e84b12877ce0e83737aa29e5"
+  resolved "https://registry.npm.taobao.org/chai/download/chai-4.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchai%2Fdownload%2Fchai-4.2.0.tgz#760aa72cf20e3795e84b12877ce0e83737aa29e5"
   integrity sha1-dgqnLPION5XoSxKHfODoNzeqKeU=
   dependencies:
     assertion-error "^1.1.0"
@@ -134,7 +134,7 @@ redux-saga@^0.16.0:
 
 redux@^4.0.0:
   version "4.0.4"
-  resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fredux%2Fdownload%2Fredux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
   integrity sha1-TuGusWS2PWobzFeuSqC25vp6N5Y=
   dependencies:
     loose-envify "^1.4.0"
