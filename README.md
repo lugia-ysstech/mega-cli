@@ -57,6 +57,9 @@ $ yarn run lerna exec --scope mega-webpack -- yarn run test
 ```bash
 $ yarn run publish
 
+## 发 alpha 版本
+$ yarn run publish -a
+
 # 忽略
 $ yarn run publish -- --ignore mega-webpack
 ```
