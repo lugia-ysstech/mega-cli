@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Quickly create react apps. Based on @lugia/mega-scripts.",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -24,7 +24,7 @@
     "@babel/runtime": "^7.1.5",
     "@lugia/babel-preset-mega": "^1.1.2",
     "@lugia/mega-config": "^1.2.1",
-    "@lugia/mega-scripts": "^1.4.6",
+    "@lugia/mega-scripts": "^1.4.7",
     "@lugia/mega-utils": "^1.5.1",
     "assert": "^1.4.1",
     "chalk": "^2.4.2",
