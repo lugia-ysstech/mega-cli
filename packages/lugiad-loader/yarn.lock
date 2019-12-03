@@ -9,18 +9,18 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@1.0.19":
-  version "1.0.19"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.19.tgz#db84e6266884cc6ff1c989aae7af80bfd021c55f"
-  integrity sha1-24TmJmiEzG/xyYmq56+Av9AhxV8=
+"@lugia/devtools-conversion@1.0.20":
+  version "1.0.20"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.20.tgz#18186fcde896c82f1ba1e82b78ca8140a8343dbb"
+  integrity sha1-GBhvzeiWyC8boegreMqBQKg0Pbs=
   dependencies:
-    "@lugia/devtools-core" "^1.0.8"
+    "@lugia/devtools-core" "^1.0.9"
     "@lugia/lugiad-core" "^1.0.2"
 
-"@lugia/devtools-core@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.8.tgz#8856c5530424c36f387b668e2abfeef17ecc11fd"
-  integrity sha1-iFbFUwQkw284e2aOKr/u8X7MEf0=
+"@lugia/devtools-core@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.9.tgz#ff7dc75406f8cc7893ffa58cddc67f8e506c4be1"
+  integrity sha1-/33HVAb4zHiT/6WM3cZ/jlBsS+E=
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
