@@ -9,9 +9,9 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@1.0.22":
+"@lugia/devtools-conversion@1.0.23":
   version "1.0.22"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.22.tgz#29914ab513e612acaba58b01f0c6a0aae2bfcdc3"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.23.tgz#29914ab513e612acaba58b01f0c6a0aae2bfcdc3"
   integrity sha1-KZFKtRPmEqyrpYsB8MagquK/zcM=
   dependencies:
     "@lugia/devtools-core" "^1.0.10"
