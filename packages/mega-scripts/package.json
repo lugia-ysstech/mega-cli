@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-scripts",
-  "version": "1.4.11",
+  "version": "1.4.12",
   "description": "cli tool for dev, build, test, and mock.",
   "main": "./lib/index.js",
   "publishConfig": {
