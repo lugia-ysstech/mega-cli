@@ -48,7 +48,7 @@
     "fork-ts-checker-webpack-plugin": "^0.4.15",
     "hard-source-webpack-plugin": "^0.6.12",
     "html-webpack-plugin": "^3.2.0",
-    "inquirer": "^3.3.0",
+    "inquirer": "^7.0.4",
     "is-root": "^2.0.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
