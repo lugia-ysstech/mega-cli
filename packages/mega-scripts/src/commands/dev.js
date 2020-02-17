@@ -11,4 +11,4 @@ if (argv._.length > 0) {
 }
 
 process.env.NODE_ENV = 'development';
-require('../utils/dev')({ entry });
+require('../utils/dev')({ entry, port: argv.port });

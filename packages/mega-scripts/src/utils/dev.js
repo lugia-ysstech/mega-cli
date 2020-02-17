@@ -38,7 +38,8 @@ export default function runDev(opts = {}) {
     applyConfig,
     onOpenPort,
     configFile,
-    _cliEnv = {}
+    _cliEnv = {},
+    port: startPort
   } = opts;
 
   const babel = resolve(__dirname, './babel.js');
@@ -265,7 +266,7 @@ export default function runDev(opts = {}) {
     userPKG,
     autoOpenBrowser,
     index: config.html && config.html.filename,
-    port: config.port,
+    port: startPort || config.port,
     proxy: config.proxy || {},
     historyApiFallback: config.historyApiFallback,
     contentBase: config.contentBase || paths.appPublic,
