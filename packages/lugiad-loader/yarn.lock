@@ -9,18 +9,18 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@1.0.23":
-  version "1.0.22"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.23.tgz#29914ab513e612acaba58b01f0c6a0aae2bfcdc3"
-  integrity sha1-KZFKtRPmEqyrpYsB8MagquK/zcM=
+"@lugia/devtools-conversion@^1.0.25":
+  version "1.0.25"
+  resolved "https://registry.npmjs.org/@lugia/devtools-conversion/-/devtools-conversion-1.0.25.tgz#9db6fe790a42ccf5a3b251bdd65ba73ece66c468"
+  integrity sha512-+uqEiXdMA/olalksXysLdVgLweEE42aIZmAAtk3DqI+9hccw63AvtJWlLYnFe1xvbDo79Jn6UlempwB/mw9jtA==
   dependencies:
-    "@lugia/devtools-core" "^1.0.10"
-    "@lugia/lugiad-core" "^1.0.2"
+    "@lugia/devtools-core" "^1.0.12"
+    "@lugia/lugiad-core" "^1.0.4"
 
-"@lugia/devtools-core@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.10.tgz#b7c93a77aa82eaf5e10f07261bffa866b6fa9f64"
-  integrity sha1-t8k6d6qC6vXhDwcmG/+oZrb6n2Q=
+"@lugia/devtools-core@^1.0.12":
+  version "1.0.13"
+  resolved "https://registry.npmjs.org/@lugia/devtools-core/-/devtools-core-1.0.13.tgz#3add59fadead8b1daf600b18b10b3501e93852fa"
+  integrity sha512-QWZDTDzySawfrBmo/xiZcpTv9m6koVRwmAXZru7xwNQ3xyqB3M+sCt8wCvZW13YdIcGHOkn7f4IzLZ4R7N1AZA==
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
@@ -28,10 +28,10 @@
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/lugiad-core@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-core/download/@lugia/lugiad-core-1.0.2.tgz#186c5de344cdf62a3cadbfb51787c29c5aa530e9"
-  integrity sha1-GGxd40TN9io8rb+1F4fCnFqlMOk=
+"@lugia/lugiad-core@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-core/-/lugiad-core-1.0.4.tgz#54f95f6541fd9434f5a90c6f759fde6c561d7fff"
+  integrity sha512-4rXrBt3BGuJ+muCBxggHo7aUKlGImoxyInUtMvjj8iQPiELl+Dx6r2cxY6RkI/jUoV1Tca8mhNQFffBRkvwkSQ==
   dependencies:
     chai "^4.1.2"
 
