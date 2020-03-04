@@ -126,18 +126,18 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@lugia/devtools-conversion@^1.0.25":
-  version "1.0.25"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.25.tgz#9db6fe790a42ccf5a3b251bdd65ba73ece66c468"
-  integrity sha1-nbb+eQpCzPWjslG91lunPs5mxGg=
+"@lugia/devtools-conversion@^1.0.26":
+  version "1.0.26"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.26.tgz#c8cc4e2824e6ae40c25c84a15c44ec7ab3043303"
+  integrity sha1-yMxOKCTmrkDCXIShXETserMEMwM=
   dependencies:
-    "@lugia/devtools-core" "^1.0.12"
+    "@lugia/devtools-core" "^1.0.14"
     "@lugia/lugiad-core" "^1.0.4"
 
-"@lugia/devtools-core@^1.0.12":
-  version "1.0.13"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.13.tgz#3add59fadead8b1daf600b18b10b3501e93852fa"
-  integrity sha1-Ot1Z+t6tix2vYAsYsQs1Aek4Uvo=
+"@lugia/devtools-core@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.14.tgz#0889ee7f29e066275ef0de71a7acc45b3c1333b1"
+  integrity sha1-CInufyngZide8N5xp6zEWzwTM7E=
   dependencies:
     chai "^4.1.2"
     immutable "^3.8.2"
