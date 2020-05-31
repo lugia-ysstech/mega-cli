@@ -27,7 +27,8 @@
     "stylelint": "stylelint",
     "lint": "eslint --format=pretty --ext .js packages scripts",
     "lint:fix": "eslint --fix --format=pretty --ext .js packages scripts",
-    "publish": "node ./scripts/publish.js"
+    "publish": "node ./scripts/publish.js",
+    "alpha": "node ./scripts/publish.js -a"
   },
   "husky": {
     "hooks": {
