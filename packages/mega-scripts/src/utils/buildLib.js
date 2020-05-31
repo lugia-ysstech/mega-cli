@@ -20,7 +20,7 @@ import through from 'through2';
 import Terser from 'terser';
 import getUserConfig from '@lugia/mega-config';
 import { replaceDefine } from '@lugia/mega-utils/lib/lugiaxModelDefine';
-import lugiad2js from '@lugia/devtools-conversion';
+import lugiad2js from '@lugia/lugiad-runtime';
 import { createDesignInfo } from '@lugia/devtools-material';
 import getPaths from './getPaths';
 import registerBabel from './registerBabel';

@@ -14,7 +14,7 @@
  * webpack loader
  * .lugiad ==> .js
  */
-import lugiad2js from '@lugia/devtools-conversion';
+import lugiad2js from '@lugia/lugiad-runtime';
 import loaderUtils from 'loader-utils';
 
 export default function(content, map, meta) {

@@ -9,85 +9,132 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@lugia/devtools-conversion@^1.0.35":
-  version "1.0.35"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.35.tgz?cache=0&sync_timestamp=1584426399791&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Fdevtools-conversion%2Fdownload%2F%40lugia%2Fdevtools-conversion-1.0.35.tgz#7f3a5e32fad0b4f6f266fa906937544937349485"
-  integrity sha1-fzpeMvrQtPbyZvqQaTdUSTc0lIU=
+"@lugia/array-utils@^1.0.2":
+  version "1.0.2"
+  resolved "http://192.168.102.79:5001/@lugia%2farray-utils/-/array-utils-1.0.2.tgz#34d364b94d2919b6ec891124c84157a07b28211d"
+  integrity sha1-NNNkuU0pGbbsiREkyEFXoHsoIR0=
   dependencies:
-    "@lugia/devtools-core" "^1.0.15"
-    "@lugia/lugiad-core" "^1.0.5"
+    tslib "^1.11.1"
 
-"@lugia/devtools-core@^1.0.15":
-  version "1.0.15"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.15.tgz#b257b87c9acd8939098e2420b76c6b89c02e6046"
-  integrity sha1-sle4fJrNiTkJjiQgt2xricAuYEY=
+"@lugia/geometry@^1.0.4":
+  version "1.0.4"
+  resolved "http://192.168.102.79:5001/@lugia%2fgeometry/-/geometry-1.0.4.tgz#476f9173174b2b52360d6bcb973d91891903e8aa"
+  integrity sha1-R2+RcxdLK1I2DWvLlz2RiRkD6Ko=
   dependencies:
-    chai "^4.1.2"
-    immutable "^3.8.2"
-    redux "^4.0.0"
-    redux-immutable "^4.0.0"
-    redux-saga "^0.16.0"
+    "@lugia/math" "^1.0.10"
+    tslib "^1.11.1"
 
-"@lugia/lugiad-core@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-core/download/@lugia/lugiad-core-1.0.5.tgz#1bab9e8aef7481e9893b3b72e6e6199e3e8a0df7"
-  integrity sha1-G6ueiu90gemJOzty5uYZnj6KDfc=
+"@lugia/lugiad-compiler-types@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad-compiler-types/-/lugiad-compiler-types-1.0.1-alpha.2.tgz#ac8b72d5bda9c765314d241128fd206b48e55a52"
+  integrity sha1-rIty1b2px2UxTSQRKP0ga0jlWlI=
   dependencies:
-    chai "^4.1.2"
+    "@lugia/lugiad-types" "^1.0.1-alpha.2"
 
-assertion-error@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/assertion-error/download/assertion-error-1.1.0.tgz#e60b6b0e8f301bd97e5375215bda406c85118c0b"
-  integrity sha1-5gtrDo8wG9l+U3UhW9pAbIURjAs=
+"@lugia/lugiad-compiler@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad-compiler/-/lugiad-compiler-1.0.1-alpha.2.tgz#3d2480324f8a2783453a04c4a0dcc95381cd3f94"
+  integrity sha1-PSSAMk+KJ4NFOgTEoNzJU4HNP5Q=
+  dependencies:
+    "@lugia/array-utils" "^1.0.2"
+    "@lugia/geometry" "^1.0.4"
+    "@lugia/lugiad" "^1.0.0"
+    "@lugia/lugiad-compiler-types" "^1.0.1-alpha.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.1-alpha.1"
+    tslib "^1.11.1"
+
+"@lugia/lugiad-runtime-lib@^1.0.1-alpha.1":
+  version "1.0.1-alpha.1"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad-runtime-lib/-/lugiad-runtime-lib-1.0.1-alpha.1.tgz#f42299fd4efde30a435edce226591318ebcd5c5f"
+  integrity sha1-9CKZ/U794wpDXtziJlkTGOvNXF8=
+  dependencies:
+    tslib "^1.11.1"
+
+"@lugia/lugiad-runtime@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad-runtime/-/lugiad-runtime-1.0.1-alpha.2.tgz#266c6f3f7f19ef5507923a9c7dc15219dd7d2654"
+  integrity sha1-JmxvP38Z71UHkjqcfcFSGd19JlQ=
+  dependencies:
+    "@lugia/lugiad-compiler" "^1.0.1-alpha.2"
+    "@lugia/lugiad-compiler-types" "^1.0.1-alpha.2"
+    "@lugia/lugiad-types" "^1.0.1-alpha.2"
+    "@lugia/lugiadc-render" "^1.0.1-alpha.2"
+    "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.2"
+    "@lugia/lugiadc-render-types" "^1.0.1-alpha.2"
+    tslib "^1.11.1"
+
+"@lugia/lugiad-types@^1.0.0":
+  version "1.0.0"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad-types/-/lugiad-types-1.0.0.tgz#b17136922657227142f2e1bbab5ca215b3971dd3"
+  integrity sha1-sXE2kiZXInFC8uG7q1yiFbOXHdM=
+
+"@lugia/lugiad-types@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad-types/-/lugiad-types-1.0.1-alpha.2.tgz#bc715353248112b12d38bbc69b71a2b468549940"
+  integrity sha1-vHFTUySBErEtOLvGm3GitGhUmUA=
+
+"@lugia/lugiad@^1.0.0":
+  version "1.0.0"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiad/-/lugiad-1.0.0.tgz#4714e9be2ef05af8a6f150fd838fe1fd3e79c696"
+  integrity sha1-RxTpvi7wWvim8VD9g4/h/T55xpY=
+  dependencies:
+    "@lugia/lugiad-types" "^1.0.0"
+    tslib "^1.11.1"
+
+"@lugia/lugiadc-render-react-plugin@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.0.1-alpha.2.tgz#c6ec98db6b1d53578585030af056b8270c8e8e28"
+  integrity sha1-xuyY22sdU1eFhQMK8Fa4JwyOjig=
+  dependencies:
+    "@lugia/lugiad-compiler-types" "^1.0.1-alpha.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.1-alpha.1"
+    "@lugia/lugiadc-render-types" "^1.0.1-alpha.2"
+    tslib "^1.11.1"
+
+"@lugia/lugiadc-render-types@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiadc-render-types/-/lugiadc-render-types-1.0.1-alpha.2.tgz#1e08bb1443f04a57ab508639a61dd9eabbaca2b4"
+  integrity sha1-Hgi7FEPwSlerUIY5ph3Z6rusorQ=
+  dependencies:
+    "@lugia/lugiad-compiler-types" "^1.0.1-alpha.2"
+
+"@lugia/lugiadc-render@^1.0.1-alpha.2":
+  version "1.0.1-alpha.2"
+  resolved "http://192.168.102.79:5001/@lugia%2flugiadc-render/-/lugiadc-render-1.0.1-alpha.2.tgz#f80eef39739911a17a2263eb29c132794042af5b"
+  integrity sha1-+A7vOXOZEaF6ImPrKcEyeUBCr1s=
+  dependencies:
+    "@lugia/geometry" "^1.0.4"
+    "@lugia/lugiad" "^1.0.0"
+    "@lugia/lugiad-compiler" "^1.0.1-alpha.2"
+    "@lugia/lugiad-compiler-types" "^1.0.1-alpha.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.1-alpha.1"
+    "@lugia/lugiad-types" "^1.0.1-alpha.2"
+    "@lugia/lugiadc-render-types" "^1.0.1-alpha.2"
+    "@types/prettier" "^2.0.0"
+    prettier "^2.0.5"
+    tslib "^1.11.1"
+
+"@lugia/math@^1.0.10":
+  version "1.0.10"
+  resolved "http://192.168.102.79:5001/@lugia%2fmath/-/math-1.0.10.tgz#5325c247507999c711e41fb9248a9d9a582ed44e"
+  integrity sha1-UyXCR1B5mccR5B+5JIqdmlgu1E4=
+  dependencies:
+    tslib "^1.11.1"
+
+"@types/prettier@^2.0.0":
+  version "2.0.1"
+  resolved "http://192.168.102.79:5001/@types%2fprettier/-/prettier-2.0.1.tgz#b6e98083f13faa1e5231bfa3bdb1b0feff536b6d"
+  integrity sha1-tumAg/E/qh5SMb+jvbGw/v9Ta20=
 
 big.js@^5.2.2:
   version "5.2.2"
   resolved "https://registry.npm.taobao.org/big.js/download/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=
 
-chai@^4.1.2:
-  version "4.2.0"
-  resolved "https://registry.npm.taobao.org/chai/download/chai-4.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchai%2Fdownload%2Fchai-4.2.0.tgz#760aa72cf20e3795e84b12877ce0e83737aa29e5"
-  integrity sha1-dgqnLPION5XoSxKHfODoNzeqKeU=
-  dependencies:
-    assertion-error "^1.1.0"
-    check-error "^1.0.2"
-    deep-eql "^3.0.1"
-    get-func-name "^2.0.0"
-    pathval "^1.1.0"
-    type-detect "^4.0.5"
-
-check-error@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/check-error/download/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
-  integrity sha1-V00xLt2Iu13YkS6Sht1sCu1KrII=
-
-deep-eql@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/deep-eql/download/deep-eql-3.0.1.tgz#dfc9404400ad1c8fe023e7da1df1c147c4b444df"
-  integrity sha1-38lARACtHI/gI+faHfHBR8S0RN8=
-  dependencies:
-    type-detect "^4.0.0"
-
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/emojis-list/download/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
-
-get-func-name@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.taobao.org/get-func-name/download/get-func-name-2.0.0.tgz#ead774abee72e20409433a066366023dd6887a41"
-  integrity sha1-6td0q+5y4gQJQzoGY2YCPdaIekE=
-
-immutable@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.npm.taobao.org/immutable/download/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
-  integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
-
-"js-tokens@^3.0.0 || ^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
-  integrity sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
 
 json5@^1.0.1:
   version "1.0.1"
@@ -105,52 +152,22 @@ loader-utils@1.2.3:
     emojis-list "^2.0.0"
     json5 "^1.0.1"
 
-loose-envify@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/loose-envify/download/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
-  integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
-  dependencies:
-    js-tokens "^3.0.0 || ^4.0.0"
-
 minimist@^1.2.0:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-pathval@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/pathval/download/pathval-1.1.0.tgz#b942e6d4bde653005ef6b71361def8727d0645e0"
-  integrity sha1-uULm1L3mUwBe9rcTYd74cn0GReA=
-
-redux-immutable@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/redux-immutable/download/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
-  integrity sha1-Ohoy32Y2ZGK2NpHw4dw15HK7yfM=
-
-redux-saga@^0.16.0:
-  version "0.16.2"
-  resolved "https://registry.npm.taobao.org/redux-saga/download/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
-  integrity sha1-mTZi6GvJRdhQmsK42ro6jGFcyXE=
-
-redux@^4.0.0:
-  version "4.0.4"
-  resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fredux%2Fdownload%2Fredux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
-  integrity sha1-TuGusWS2PWobzFeuSqC25vp6N5Y=
-  dependencies:
-    loose-envify "^1.4.0"
-    symbol-observable "^1.2.0"
+prettier@^2.0.5:
+  version "2.0.5"
+  resolved "http://192.168.102.79:5001/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  integrity sha1-1tVigkVSQ/L5LMFxZpLAiqMVItQ=
 
 regenerator-runtime@^0.13.2:
   version "0.13.3"
   resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
   integrity sha1-fPanfY9cb2Drc8X8GVWyzrAea/U=
 
-symbol-observable@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
-  integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
-
-type-detect@^4.0.0, type-detect@^4.0.5:
-  version "4.0.8"
-  resolved "https://registry.npm.taobao.org/type-detect/download/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
-  integrity sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=
+tslib@^1.11.1:
+  version "1.13.0"
+  resolved "http://192.168.102.79:5001/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
+  integrity sha1-yIHhPMcBWJTtkUhi0nZDb6mkcEM=
