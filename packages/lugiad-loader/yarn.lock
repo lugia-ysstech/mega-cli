@@ -50,15 +50,15 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.1-alpha.5":
-  version "1.0.1-alpha.5"
-  resolved "https://registry.npmjs.org/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.1-alpha.5.tgz#f88fe6b0556ffeba01437d893ef997e59779a33b"
-  integrity sha512-7fpaMAjv75dtdfE83gSFekW1SwMx1b2IY1YkfIhl/ePv3V9SutXITTXCDPmFAjP0CNlnHyGfnL9+2ixvDJqQjA==
+"@lugia/lugiad-runtime@^1.0.1-alpha.6":
+  version "1.0.1-alpha.6"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.1-alpha.6.tgz#9b97cd057095bc69c18ec2894a91401a80e85614"
+  integrity sha512-5H7XU6DHYH5fufZfW5gtCw3jdu9fzU8JWqjiO+wButh7xZKYtAzHqaDlw+Um6FmV23LtFh/82fZRy7I68VR1+g==
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.1-alpha.3"
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.3"
     "@lugia/lugiad-types" "^1.0.1-alpha.3"
-    "@lugia/lugiadc-render" "^1.0.1-alpha.5"
+    "@lugia/lugiadc-render" "^1.0.1-alpha.6"
     "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.3"
     "@lugia/lugiadc-render-types" "^1.0.1-alpha.3"
     tslib "^1.11.1"
@@ -98,10 +98,10 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.3"
 
-"@lugia/lugiadc-render@^1.0.1-alpha.5":
-  version "1.0.1-alpha.5"
-  resolved "https://registry.npmjs.org/@lugia/lugiadc-render/-/lugiadc-render-1.0.1-alpha.5.tgz#22332217a9b02e646db92484a614983cc6bef74a"
-  integrity sha512-tCy2QOV6sGywlGlw48sVZ0D8OQY/C4CH2dvQP7ifauGo28+SOqHLqcVha1501aXZhQVsDMuyIAtHFxtfbDxiyw==
+"@lugia/lugiadc-render@^1.0.1-alpha.6":
+  version "1.0.1-alpha.6"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render/-/lugiadc-render-1.0.1-alpha.6.tgz#3f279a56120080a627534d1ef084472588ac2e3e"
+  integrity sha512-5bNrGuokvdico2lF1PjGm84W1rb/aWcEp4eANjhuuSFnxbONvwEwol+1frYMqFtIBRm4QtwYUw2Zpr13GkwATA==
   dependencies:
     "@lugia/geometry" "^1.0.4"
     "@lugia/lugiad" "^1.0.0"
