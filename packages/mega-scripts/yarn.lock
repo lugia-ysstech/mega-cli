@@ -183,15 +183,15 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.1-alpha.14":
-  version "1.0.1-alpha.14"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.14.tgz#bd00ab0f1881e880dd29b8405d8cfd134945f543"
-  integrity sha1-vQCrDxiB6IDdKbhAXYz9E0lF9UM=
+"@lugia/lugiad-runtime@^1.0.1-alpha.15":
+  version "1.0.1-alpha.15"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.15.tgz#cb8470fe6fac229f47787ae0aaaad6a745429d4a"
+  integrity sha1-y4Rw/m+sIp9HeHrgqqrWp0VCnUo=
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.1-alpha.11"
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
     "@lugia/lugiad-types" "^1.0.1-alpha.7"
-    "@lugia/lugiadc-render" "^1.0.1-alpha.14"
+    "@lugia/lugiadc-render" "^1.0.1-alpha.15"
     "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.7"
     "@lugia/lugiadc-render-types" "^1.0.1-alpha.7"
     tslib "^1.11.1"
@@ -241,10 +241,10 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
 
-"@lugia/lugiadc-render@^1.0.1-alpha.14":
-  version "1.0.1-alpha.14"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.1-alpha.14.tgz#15f70678d803114faced55d3187649eb87dafb5f"
-  integrity sha1-FfcGeNgDEU+s7VXTGHZJ64fa+18=
+"@lugia/lugiadc-render@^1.0.1-alpha.15":
+  version "1.0.1-alpha.15"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.1-alpha.15.tgz#13eae3137da12c7c985910c5900f34ef50571292"
+  integrity sha1-E+rjE32hLHyYWRDFkA8071BXEpI=
   dependencies:
     "@lugia/geometry" "^1.0.4"
     "@lugia/lugiad" "^1.0.2-alpha.12"
