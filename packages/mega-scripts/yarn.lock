@@ -183,16 +183,16 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.1-alpha.17":
-  version "1.0.1-alpha.17"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.17.tgz#f6661fa765b2da06768e0e4e5af5f31c9dc28f0b"
-  integrity sha1-9mYfp2Wy2gZ2jg5OWvXzHJ3Cjws=
+"@lugia/lugiad-runtime@^1.0.1-alpha.18":
+  version "1.0.1-alpha.18"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.18.tgz#524b49d34c2d2903457cc1bb28232e08e7a3be06"
+  integrity sha1-UktJ00wtKQNFfMG7KCMuCOejvgY=
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.1-alpha.12"
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
     "@lugia/lugiad-types" "^1.0.1-alpha.7"
     "@lugia/lugiadc-render" "^1.0.1-alpha.17"
-    "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.7"
+    "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.8"
     "@lugia/lugiadc-render-types" "^1.0.1-alpha.7"
     tslib "^1.11.1"
 
@@ -222,10 +222,10 @@
     prettier "^2.0.5"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-react-plugin@^1.0.1-alpha.7":
-  version "1.0.1-alpha.7"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render-react-plugin/download/@lugia/lugiadc-render-react-plugin-1.0.1-alpha.7.tgz#4c2e0ff664f6a7f1b42a21bc46ac04652743ef48"
-  integrity sha1-TC4P9mT2p/G0KiG8RqwEZSdD70g=
+"@lugia/lugiadc-render-react-plugin@^1.0.1-alpha.8":
+  version "1.0.1-alpha.8"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render-react-plugin/download/@lugia/lugiadc-render-react-plugin-1.0.1-alpha.8.tgz#0974c2f9a9cdd7e247bcf65c300a163047927061"
+  integrity sha1-CXTC+anN1+JHvPZcMAoWMEeScGE=
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
     "@lugia/lugiad-runtime-lib" "^1.0.1-alpha.2"
