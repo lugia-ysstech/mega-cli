@@ -164,10 +164,10 @@
   dependencies:
     "@lugia/lugiad-types" "^1.0.1-alpha.7"
 
-"@lugia/lugiad-compiler@^1.0.1-alpha.11":
-  version "1.0.1-alpha.11"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-compiler/download/@lugia/lugiad-compiler-1.0.1-alpha.11.tgz#5ccdca79a602ecc40168c80c1b1178daccd70689"
-  integrity sha1-XM3KeaYC7MQBaMgMGxF42szXBok=
+"@lugia/lugiad-compiler@^1.0.1-alpha.12":
+  version "1.0.1-alpha.12"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-compiler/download/@lugia/lugiad-compiler-1.0.1-alpha.12.tgz?cache=0&sync_timestamp=1591342251522&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-compiler%2Fdownload%2F%40lugia%2Flugiad-compiler-1.0.1-alpha.12.tgz#49586a254b9342215633614831f838855c21c9db"
+  integrity sha1-SVhqJUuTQiFWM2FIMfg4hVwhyds=
   dependencies:
     "@lugia/array-utils" "^1.0.2"
     "@lugia/geometry" "^1.0.4"
@@ -183,15 +183,15 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.1-alpha.15":
-  version "1.0.1-alpha.15"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.15.tgz#cb8470fe6fac229f47787ae0aaaad6a745429d4a"
-  integrity sha1-y4Rw/m+sIp9HeHrgqqrWp0VCnUo=
+"@lugia/lugiad-runtime@^1.0.1-alpha.17":
+  version "1.0.1-alpha.17"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.17.tgz#f6661fa765b2da06768e0e4e5af5f31c9dc28f0b"
+  integrity sha1-9mYfp2Wy2gZ2jg5OWvXzHJ3Cjws=
   dependencies:
-    "@lugia/lugiad-compiler" "^1.0.1-alpha.11"
+    "@lugia/lugiad-compiler" "^1.0.1-alpha.12"
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
     "@lugia/lugiad-types" "^1.0.1-alpha.7"
-    "@lugia/lugiadc-render" "^1.0.1-alpha.15"
+    "@lugia/lugiadc-render" "^1.0.1-alpha.17"
     "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.7"
     "@lugia/lugiadc-render-types" "^1.0.1-alpha.7"
     tslib "^1.11.1"
@@ -241,14 +241,14 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
 
-"@lugia/lugiadc-render@^1.0.1-alpha.15":
-  version "1.0.1-alpha.15"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.1-alpha.15.tgz#13eae3137da12c7c985910c5900f34ef50571292"
-  integrity sha1-E+rjE32hLHyYWRDFkA8071BXEpI=
+"@lugia/lugiadc-render@^1.0.1-alpha.17":
+  version "1.0.1-alpha.17"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.1-alpha.17.tgz#a082bd44d4d318e29e916eb6e07a036c79defbce"
+  integrity sha1-oIK9RNTTGOKekW624HoDbHne+84=
   dependencies:
     "@lugia/geometry" "^1.0.4"
     "@lugia/lugiad" "^1.0.2-alpha.12"
-    "@lugia/lugiad-compiler" "^1.0.1-alpha.11"
+    "@lugia/lugiad-compiler" "^1.0.1-alpha.12"
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.7"
     "@lugia/lugiad-runtime-lib" "^1.0.1-alpha.2"
     "@lugia/lugiad-types" "^1.0.1-alpha.7"
