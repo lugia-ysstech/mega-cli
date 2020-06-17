@@ -57,16 +57,16 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.1-alpha.31":
-  version "1.0.1-alpha.31"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.31.tgz?cache=0&sync_timestamp=1592213820780&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-runtime%2Fdownload%2F%40lugia%2Flugiad-runtime-1.0.1-alpha.31.tgz#b9403f3a65501ad2489a94fb6d04773207a40505"
-  integrity sha1-uUA/OmVQGtJImpT7bQR3MgekBQU=
+"@lugia/lugiad-runtime@^1.0.1-alpha.32":
+  version "1.0.1-alpha.32"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.1-alpha.32.tgz?cache=0&sync_timestamp=1592395858893&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-runtime%2Fdownload%2F%40lugia%2Flugiad-runtime-1.0.1-alpha.32.tgz#f7e5b5d4787bf8940001c5d2b290bf87e25f1e21"
+  integrity sha1-9+W11Hh7+JQAAcXSspC/h+JfHiE=
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.1-alpha.22"
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.10"
     "@lugia/lugiad-types" "^1.0.1-alpha.10"
     "@lugia/lugiadc-render" "^1.0.1-alpha.27"
-    "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.15"
+    "@lugia/lugiadc-render-react-plugin" "^1.0.1-alpha.16"
     "@lugia/lugiadc-render-types" "^1.0.1-alpha.10"
     tslib "^1.11.1"
 
@@ -96,10 +96,10 @@
     prettier "^2.0.5"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-react-plugin@^1.0.1-alpha.15":
-  version "1.0.1-alpha.15"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render-react-plugin/download/@lugia/lugiadc-render-react-plugin-1.0.1-alpha.15.tgz#79e615ff3d22b6f5b94e538aab0f4dfdbe2e181e"
-  integrity sha1-eeYV/z0itvW5TlOKqw9N/b4uGB4=
+"@lugia/lugiadc-render-react-plugin@^1.0.1-alpha.16":
+  version "1.0.1-alpha.16"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render-react-plugin/download/@lugia/lugiadc-render-react-plugin-1.0.1-alpha.16.tgz?cache=0&sync_timestamp=1592395863688&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiadc-render-react-plugin%2Fdownload%2F%40lugia%2Flugiadc-render-react-plugin-1.0.1-alpha.16.tgz#ba9a7da4192773c83fae267b37ebfc3e4df3a70e"
+  integrity sha1-upp9pBknc8g/riZ7N+v8Pk3zpw4=
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.1-alpha.10"
     "@lugia/lugiad-runtime-lib" "^1.0.1-alpha.2"
