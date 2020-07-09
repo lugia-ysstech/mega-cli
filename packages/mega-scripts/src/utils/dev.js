@@ -157,7 +157,7 @@ export default function runDev(opts = {}) {
   const {
     openBrowser: autoOpenBrowser = _cliEnv.BROWSER,
     disableBrowserSync = is.undefined(_cliEnv.BROWSER_SYNC)
-      ? undefined
+      ? true
       : !_cliEnv.BROWSER_SYNC,
     copy,
     dllDependenciesExcludes = [],
