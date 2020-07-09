@@ -57,15 +57,15 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.3-alpha.4":
-  version "1.0.3-alpha.4"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.3-alpha.4.tgz?cache=0&sync_timestamp=1594127847962&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-runtime%2Fdownload%2F%40lugia%2Flugiad-runtime-1.0.3-alpha.4.tgz#f3ffb79e56ac68b2644d819f5f127384757517dd"
-  integrity sha1-8/+3nlasaLJkTYGfXxJzhHV1F90=
+"@lugia/lugiad-runtime@^1.0.3-alpha.5":
+  version "1.0.3-alpha.5"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.3-alpha.5.tgz?cache=0&sync_timestamp=1594297935224&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-runtime%2Fdownload%2F%40lugia%2Flugiad-runtime-1.0.3-alpha.5.tgz#b96aa8dee0e02409af897a1926bd768836a9e29f"
+  integrity sha1-uWqo3uDgJAmviXoZJr12iDap4p8=
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.3-alpha.3"
     "@lugia/lugiad-compiler-types" "^1.0.3-alpha.3"
     "@lugia/lugiad-types" "^1.0.3-alpha.3"
-    "@lugia/lugiadc-render" "^1.0.3-alpha.3"
+    "@lugia/lugiadc-render" "^1.0.3-alpha.4"
     "@lugia/lugiadc-render-react-plugin" "^1.0.3-alpha.4"
     "@lugia/lugiadc-render-types" "^1.0.3-alpha.3"
     tslib "^1.11.1"
@@ -116,10 +116,10 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.3-alpha.3"
 
-"@lugia/lugiadc-render@^1.0.3-alpha.3":
-  version "1.0.3-alpha.3"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.3-alpha.3.tgz?cache=0&sync_timestamp=1594126702180&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiadc-render%2Fdownload%2F%40lugia%2Flugiadc-render-1.0.3-alpha.3.tgz#c04d8d5ea642a9138c7b1a7df3a562a020a241fd"
-  integrity sha1-wE2NXqZCqROMexp986VioCCiQf0=
+"@lugia/lugiadc-render@^1.0.3-alpha.4":
+  version "1.0.3-alpha.4"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.3-alpha.4.tgz?cache=0&sync_timestamp=1594297945213&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiadc-render%2Fdownload%2F%40lugia%2Flugiadc-render-1.0.3-alpha.4.tgz#bb506576f29dd71b4d3366ac8960d020c9f056ab"
+  integrity sha1-u1BldvKd1xtNM2asiWDQIMnwVqs=
   dependencies:
     "@lugia/geometry" "^1.0.6"
     "@lugia/lugiad" "^1.0.4-alpha.3"
