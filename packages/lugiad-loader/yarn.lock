@@ -57,15 +57,15 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.4.tgz?cache=0&sync_timestamp=1595002824500&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-runtime%2Fdownload%2F%40lugia%2Flugiad-runtime-1.0.4.tgz#b3d19d2c0c7843687e9cd635e7d0b76ee31e2736"
-  integrity sha1-s9GdLAx4Q2h+nNY159C3buMeJzY=
+"@lugia/lugiad-runtime@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiad-runtime/download/@lugia/lugiad-runtime-1.0.5.tgz?cache=0&sync_timestamp=1595316398162&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiad-runtime%2Fdownload%2F%40lugia%2Flugiad-runtime-1.0.5.tgz#c43f195e0cf2025f219de6f3cc56626161ade39c"
+  integrity sha1-xD8ZXgzyAl8hnebzzFZiYWGt45w=
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.4"
     "@lugia/lugiad-compiler-types" "^1.0.4"
     "@lugia/lugiad-types" "^1.0.5"
-    "@lugia/lugiadc-render" "^1.0.4"
+    "@lugia/lugiadc-render" "^1.0.5"
     "@lugia/lugiadc-render-react-plugin" "^1.0.4"
     "@lugia/lugiadc-render-types" "^1.0.4"
     tslib "^1.11.1"
@@ -116,10 +116,10 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.4"
 
-"@lugia/lugiadc-render@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.4.tgz?cache=0&sync_timestamp=1595002864531&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiadc-render%2Fdownload%2F%40lugia%2Flugiadc-render-1.0.4.tgz#0bae2e2059586e1d4c66f856620497ee0240d9d4"
-  integrity sha1-C64uIFlYbh1MZvhWYgSX7gJA2dQ=
+"@lugia/lugiadc-render@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@lugia/lugiadc-render/download/@lugia/lugiadc-render-1.0.5.tgz?cache=0&sync_timestamp=1595316407594&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugiadc-render%2Fdownload%2F%40lugia%2Flugiadc-render-1.0.5.tgz#10334714a610f8be14e8fcad5459c06cfb3bce04"
+  integrity sha1-EDNHFKYQ+L4U6PytVFnAbPs7zgQ=
   dependencies:
     "@lugia/geometry" "^1.0.6"
     "@lugia/lugiad" "^1.0.5"
