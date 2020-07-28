@@ -31,22 +31,22 @@
     "@lugia/math" "^1.0.10"
     tslib "^1.11.1"
 
-"@lugia/lugiad-compiler-types@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@lugia/lugiad-compiler-types/-/lugiad-compiler-types-1.0.6.tgz#e55f032804e1f252ffc668fd57b2cbc457022ae8"
-  integrity sha512-g4EmgLN68GQots5FWNS6gH7sVHeQjggnszQF7dQeH5QgAJ+tUYgyHeUVt7PmRif6WktknG2lWQFG+hzx5l1HYw==
+"@lugia/lugiad-compiler-types@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-compiler-types/-/lugiad-compiler-types-1.0.7.tgz#81b233baee843c8d459cf136bd402afd3c00340c"
+  integrity sha512-OUSuS4lLCCi6leBacvFLYN4fLWOiw7UE9n7DmRdXbT211I8NnBiHO65yZDoqRffpbGRU7wKY45m7kATmY5yhsA==
   dependencies:
     "@lugia/lugiad-types" "^1.0.7"
 
-"@lugia/lugiad-compiler@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@lugia/lugiad-compiler/-/lugiad-compiler-1.0.6.tgz#168f58c5207c508bb935c8f2a33e4c47c25fc684"
-  integrity sha512-y0cNaZIyQ5l860LuJ5MPNVH2BEcDJ5z42KYTm21MxvGs4sG6oCrjgSB+E8ueqDL3CIvL9othq+q4D8ib2P50vQ==
+"@lugia/lugiad-compiler@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-compiler/-/lugiad-compiler-1.0.7.tgz#085bc02bc3c4202c5c437c1b1770057e40b91e1c"
+  integrity sha512-81NbrsvVZTtB+fS7Uo5hYIpKMkN+6I2NNgJDnPlSoa/cetIyp1gyREJvStUueT0BmCX6iAaUSLgZXL9frJ6t2Q==
   dependencies:
     "@lugia/array-utils" "^1.0.2"
     "@lugia/geometry" "^1.0.6"
     "@lugia/lugiad" "^1.0.7"
-    "@lugia/lugiad-compiler-types" "^1.0.6"
+    "@lugia/lugiad-compiler-types" "^1.0.7"
     "@lugia/lugiad-runtime-lib" "^1.0.2"
     tslib "^1.11.1"
 
@@ -57,17 +57,17 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.7.tgz#bd4bf567f4c043cd0db3fd581d07786290d891c4"
-  integrity sha512-DDCUi1NnhCO0TB6jkAsN08ZNXSyN9Esq7ClqPAAuc7O5Ww9vSQbDUYPyZe6wC2gzR1ug+BGQAol2md8ic+jotA==
+"@lugia/lugiad-runtime@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.8.tgz#ced6a550eb7a7d65684330ed8371e968ab8342e6"
+  integrity sha512-l1lnTUn5Q+WnWN/UC5V14gBo8CuHnSwV8duB6piWWolxLt+V71MthIoUeUAb4KSAYvWI55MiC2x1pEstmmoGAA==
   dependencies:
-    "@lugia/lugiad-compiler" "^1.0.6"
-    "@lugia/lugiad-compiler-types" "^1.0.6"
+    "@lugia/lugiad-compiler" "^1.0.7"
+    "@lugia/lugiad-compiler-types" "^1.0.7"
     "@lugia/lugiad-types" "^1.0.7"
-    "@lugia/lugiadc-render" "^1.0.7"
-    "@lugia/lugiadc-render-react-plugin" "^1.0.6"
-    "@lugia/lugiadc-render-types" "^1.0.6"
+    "@lugia/lugiadc-render" "^1.0.8"
+    "@lugia/lugiadc-render-react-plugin" "^1.0.7"
+    "@lugia/lugiadc-render-types" "^1.0.7"
     tslib "^1.11.1"
 
 "@lugia/lugiad-types@^1.0.7":
@@ -83,52 +83,52 @@
     "@lugia/lugiad-types" "^1.0.7"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-lib@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-lib/-/lugiadc-render-lib-1.0.6.tgz#a87ef08954c7f174f01c0663434501f912a7be8c"
-  integrity sha512-/jkB0Vmpfh5GT+C9hlRPADCTiGUUdCF8S/1JNUBOXyrekg8YnMBBzpbXeFG5MgWRxMUPCOlShlrXA1nhDUvY6A==
+"@lugia/lugiadc-render-lib@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-lib/-/lugiadc-render-lib-1.0.7.tgz#afaee4bc3caf5fc8a7413f2caad38cfae6f18008"
+  integrity sha512-v6+YwS7bCsKNxkTidea0LoLOQu4rThB+BXb/qzr0+Hq19ZJ8FpIx/+7k0tvJcxl9As1kSOLottheH8PVTTsBCg==
   dependencies:
-    "@lugia/lugiad-compiler-types" "^1.0.6"
+    "@lugia/lugiad-compiler-types" "^1.0.7"
     "@lugia/lugiad-runtime-lib" "^1.0.2"
     "@lugia/lugiad-types" "^1.0.7"
-    "@lugia/lugiadc-render-types" "^1.0.6"
+    "@lugia/lugiadc-render-types" "^1.0.7"
     "@types/prettier" "^2.0.0"
     prettier "^2.0.5"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-react-plugin@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.0.6.tgz#264866fb41cd8d8cbfd13c2d3e05ce05b6e32777"
-  integrity sha512-ez9eAFVM5W4xn6RFwdfoKKiMrAKO4VKyaxBZo5Bl62/6qE0gmqrBAL+25piQQplw0zfCtAhomcLeteAt0AmMtg==
+"@lugia/lugiadc-render-react-plugin@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.0.7.tgz#4d99814eef314bbb13e6da16a054eb43ab883d7a"
+  integrity sha512-01gChg5jNumYn5Oqp+vSd3Ei3fM1lNBqXzHhY+mdg3zt5Fm729XMmOVKAu9pfPs8i0mUIrwEPjsqetLrpz/r5g==
   dependencies:
-    "@lugia/lugiad-compiler-types" "^1.0.6"
+    "@lugia/lugiad-compiler-types" "^1.0.7"
     "@lugia/lugiad-runtime-lib" "^1.0.2"
     "@lugia/lugiad-types" "^1.0.7"
-    "@lugia/lugiadc-render-lib" "^1.0.6"
-    "@lugia/lugiadc-render-types" "^1.0.6"
+    "@lugia/lugiadc-render-lib" "^1.0.7"
+    "@lugia/lugiadc-render-types" "^1.0.7"
     "@lugia/object-utils" "^1.0.16"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-types@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-types/-/lugiadc-render-types-1.0.6.tgz#32f247c1c14cee811449b144dd39947498d7b3e6"
-  integrity sha512-OA8vSBRW6i7KilOFMO0sL5rKSArCuOJD49XOaGUuPiEKUPJLQoHBLNH3AkkuG31c1YC5WFo/V2i78g/CVc4IHQ==
-  dependencies:
-    "@lugia/lugiad-compiler-types" "^1.0.6"
-
-"@lugia/lugiadc-render@^1.0.7":
+"@lugia/lugiadc-render-types@^1.0.7":
   version "1.0.7"
-  resolved "https://registry.npmjs.org/@lugia/lugiadc-render/-/lugiadc-render-1.0.7.tgz#a5fbb309c209f045d76b4962129244965e56e049"
-  integrity sha512-Pow9uyGhsbMK9yUN6I9cmGKK90HMHU9yJMahRdMH9N6wBX41pJmfjRYLgE6mi9pUNyhgQBWQoQAyuBxt/ylv9A==
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-types/-/lugiadc-render-types-1.0.7.tgz#02e8aea32dbb75cc8b2349cd63430df8a6d1f73e"
+  integrity sha512-YBeFWwtioTChoz91EIGq7r6bbN/YjJHx7ZPymzvZR9nPYybjyWnTc2ExmhTdwwwLSKtC46YOT8UIgqqfl9YFHw==
+  dependencies:
+    "@lugia/lugiad-compiler-types" "^1.0.7"
+
+"@lugia/lugiadc-render@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render/-/lugiadc-render-1.0.8.tgz#51efd73ced2398eaa652f2ecb8c479e9e48eaff2"
+  integrity sha512-ZlLCgeR/+UuwJ7gEXbpZN66mjLaJY+p0m15zvA3GRtN/DvTQrCui2OS8TnUyTYcyqveki/rdfFMpmMepbD9PiA==
   dependencies:
     "@lugia/geometry" "^1.0.6"
     "@lugia/lugiad" "^1.0.7"
-    "@lugia/lugiad-compiler" "^1.0.6"
-    "@lugia/lugiad-compiler-types" "^1.0.6"
+    "@lugia/lugiad-compiler" "^1.0.7"
+    "@lugia/lugiad-compiler-types" "^1.0.7"
     "@lugia/lugiad-runtime-lib" "^1.0.2"
     "@lugia/lugiad-types" "^1.0.7"
-    "@lugia/lugiadc-render-lib" "^1.0.6"
-    "@lugia/lugiadc-render-types" "^1.0.6"
+    "@lugia/lugiadc-render-lib" "^1.0.7"
+    "@lugia/lugiadc-render-types" "^1.0.7"
     "@types/prettier" "^2.0.0"
     prettier "^2.0.5"
     tslib "^1.11.1"
