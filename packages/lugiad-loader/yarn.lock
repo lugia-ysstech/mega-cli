@@ -57,15 +57,15 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.16.tgz#67c84903aef9bb8459158088fc2606e570bc89c5"
-  integrity sha512-i/HhWO9fCWVKaH4vXDfuICPXD8hNeaTYOHuFUihnQrLdje5inoIvBjw7EPisKA1KM2DCwIbXKA8K4MqyXSwCeg==
+"@lugia/lugiad-runtime@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.17.tgz#31b600e562ecaaf8b616496ba1d0522dd29b5a40"
+  integrity sha512-boatgnak0ch49Mi+ibNFf83Oo+Ep6vsPJSPEyY13ihchvtFOht2Hj1oynkfCD5o4S/MEqUwMK2RLCJME+mVfjA==
   dependencies:
     "@lugia/lugiad-compiler" "^1.0.14"
     "@lugia/lugiad-compiler-types" "^1.0.8"
     "@lugia/lugiad-types" "^1.0.7"
-    "@lugia/lugiadc-render" "^1.0.16"
+    "@lugia/lugiadc-render" "^1.0.17"
     "@lugia/lugiadc-render-react-plugin" "^1.0.9"
     "@lugia/lugiadc-render-types" "^1.0.8"
     tslib "^1.11.1"
@@ -116,10 +116,10 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.0.8"
 
-"@lugia/lugiadc-render@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiadc-render/-/lugiadc-render-1.0.16.tgz#f1ff812d5af7577d113ac74d044e94a086477a43"
-  integrity sha512-qZGX/JpjA424D2UTRsOoaxut3rbMwbrO1tlBYJ568kiTLpdtSYxuP/d4XPHu5pZp4X2EznJdAY5XwsQQecezhQ==
+"@lugia/lugiadc-render@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@lugia/lugiadc-render/-/lugiadc-render-1.0.17.tgz#9a3aa9d7e953694d14fab61b2364f61cbe501f75"
+  integrity sha512-wru6reGMksc4HS3yPGCyxjTidM56QTnBJe6bG7sIzIRgXQ/NSYBNO9NtlUyQPBrcGn2lTyYfnzy1eVxb/JM6OQ==
   dependencies:
     "@lugia/geometry" "^1.0.12"
     "@lugia/lugiad" "^1.0.7"
