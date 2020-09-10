@@ -180,10 +180,10 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@1.1.0-alpha.0":
-  version "1.1.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.1.0-alpha.0.tgz#22ec0925a0e4960ca321f2d0c3dbdf566acfddef"
-  integrity sha512-AoEmvH1U6i5IqZM6N2u/WsOiQ2qBMbnEYi6e2Qy2jPt2Yb5q0+SdECdiZ88Ya1Im+h9jJENzP7yapvxyIHqNrA==
+"@lugia/lugiad-runtime@1.1.0-alpha.1":
+  version "1.1.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.1.0-alpha.1.tgz#6aacf93b77a01ba4646f118e7d54fd2ac034ab0c"
+  integrity sha512-Rz20cO7rjoCbC+cldeT5M/J2hc/cdV0WCGysxVDl7c/JntoA9HSAvwler6zYPfWXUz724espo1k6RwFAPGtBKA==
   dependencies:
     "@lugia/lugiad-compiler" "^1.1.0-alpha.0"
     "@lugia/lugiad-compiler-types" "^1.1.0-alpha.0"
