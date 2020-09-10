@@ -502,6 +502,19 @@ export default function getConfig(opts = {}, applyConfig) {
             }
           ]
         },
+        {
+          test: /\.lugiadac$/,
+          exclude: /node_modules/,
+          use: [
+            ...babelUse,
+            {
+              loader: require.resolve('@lugia/lugiadac-loader'),
+              options: {
+                resourcesHead: '@/assets/'
+              }
+            }
+          ]
+        },
         ...extraBabelIncludes.map(include => {
           return {
             test: /\.(js|jsx)$/,
