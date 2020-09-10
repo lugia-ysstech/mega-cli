@@ -455,6 +455,7 @@ export default function getConfig(opts = {}, applyConfig) {
             /\.json$/,
             /\.(js|jsx|ts|tsx)$/,
             /\.lugiad$/,
+            /\.lugiadc$/,
             /\.(css|less|scss|sass)$/,
             ...(opts.urlLoaderExcludes || [])
           ],
