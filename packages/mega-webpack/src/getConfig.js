@@ -8,7 +8,7 @@ import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import ParallelUglifyPlugin from 'webpack-parallel-uglify-plugin';
 import autoprefixer from 'autoprefixer';
 import { dirname, resolve, join, extname } from 'path';
-import { existsSync } from 'fs';
+import { existsSync, readJsonSync } from 'fs-extra';
 import eslintFormatter from '@lugia/mega-utils/lib/eslintFormatter';
 import stringifyObject from '@lugia/mega-utils/lib/stringifyObject';
 import stripLastSlash from '@lugia/mega-utils/lib/stripLastSlash';
@@ -31,11 +31,11 @@ import defaultBrowsers from './defaultConfigs/browsers';
 import normalizeTheme from './normalizeTheme';
 import { getPkgPath, shouldTransform } from './es5ImcompatibleVersions';
 
-const { TsConfigPathsPlugin } = require('awesome-typescript-loader'); // eslint-disable-line
 const debug = require('debug')('@lugia/mega-webpack:getConfig');
 
 export default function getConfig(opts = {}, applyConfig) {
-  assert(opts.cwd, 'opts.cwd must be specified');
+  const { cwd } = opts;
+  assert(cwd, 'opts.cwd must be specified');
 
   const { PUBLIC_PATH } = process.env;
   const isDev = process.env.NODE_ENV === 'development';
@@ -251,18 +251,18 @@ export default function getConfig(opts = {}, applyConfig) {
 
   // 下面会多次用到 outputPath
   const outputPath = opts.outputPath
-    ? resolve(opts.cwd, opts.outputPath)
-    : resolve(opts.cwd, 'dist');
+    ? resolve(cwd, opts.outputPath)
+    : resolve(cwd, 'dist');
 
   // 把公共路径下的静态资源复制到 outputPath
   const copyPlugins = opts.copy
     ? [new CopyWebpackPlugin(opts.copy.map(c => ({ to: outputPath, ...c })))]
     : [];
-  if (existsSync(resolve(opts.cwd, 'public'))) {
+  if (existsSync(resolve(cwd, 'public'))) {
     copyPlugins.push(
       new CopyWebpackPlugin([
         {
-          from: resolve(opts.cwd, 'public'),
+          from: resolve(cwd, 'public'),
           to: outputPath,
           toType: 'dir'
         }
@@ -327,7 +327,7 @@ export default function getConfig(opts = {}, applyConfig) {
     const { dependencies, devDependencies } = require(resolve('package.json')); // eslint-disable-line
     if (dependencies.eslint || devDependencies.eslint) {
       const eslintPath = resolveSync('eslint', {
-        basedir: opts.cwd
+        basedir: cwd
       });
       eslintOptions.eslintPath = eslintPath;
       debug(`use user's eslint bin: ${eslintPath}`);
@@ -367,6 +367,27 @@ export default function getConfig(opts = {}, applyConfig) {
     });
   }
 
+  let tsConfig;
+  const tsConfigPath = join(cwd, 'tsconfig.json');
+  if (existsSync(tsConfigPath)) {
+    tsConfig = readJsonSync(tsConfigPath);
+  }
+  const compilerOptions = tsConfig || {
+    module: 'es2015',
+    declaration: true,
+    sourceMap: false,
+    jsx: 'react',
+    target: 'es5',
+    outDir: 'lib',
+    strict: true,
+    importHelpers: true,
+    esModuleInterop: true,
+    moduleResolution: 'node',
+    allowSyntheticDefaultImports: true,
+    lib: ['esnext', 'dom'],
+    types: ['jest']
+  };
+
   const config = {
     bail: !isDev,
     devtool: opts.devtool || undefined,
@@ -382,7 +403,7 @@ export default function getConfig(opts = {}, applyConfig) {
     resolve: {
       modules: [
         'node_modules',
-        resolve(opts.cwd, 'node_modules'),
+        resolve(cwd, 'node_modules'),
         resolve(__dirname, '../node_modules'),
         ...(opts.extraResolveModules || [])
       ],
@@ -407,33 +428,10 @@ export default function getConfig(opts = {}, applyConfig) {
         // 'core-js': dirname(require.resolve('core-js/package.json')),
         'babel-runtime': dirname(require.resolve('babel-runtime/package.json')),
         ...opts.alias
-      },
-      plugins:
-        process.env.TS_CONFIG_PATHS_PLUGIN &&
-        process.env.TS_CONFIG_PATHS_PLUGIN !== 'none'
-          ? [new TsConfigPathsPlugin()]
-          : []
+      }
     },
     module: {
       rules: [
-        ...(process.env.DISABLE_TSLINT || process.env.TSLINT === 'none'
-          ? []
-          : [
-              {
-                test: /\.tsx?$/,
-                exclude: /node_modules/,
-                enforce: 'pre',
-                use: [
-                  {
-                    options: {
-                      emitErrors: true
-                      // formatter: eslintFormatter,
-                    },
-                    loader: require.resolve('tslint-loader')
-                  }
-                ]
-              }
-            ]),
         ...(process.env.DISABLE_ESLINT || process.env.ESLINT === 'none'
           ? []
           : [
@@ -480,12 +478,10 @@ export default function getConfig(opts = {}, applyConfig) {
           use: [
             ...babelUse,
             {
-              loader: require.resolve('awesome-typescript-loader'),
+              loader: 'ts-loader',
               options: {
-                configFileName:
-                  opts.tsConfigFile || join(opts.cwd, 'tsconfig.json'),
                 transpileOnly: true,
-                ...(opts.typescript || {})
+                compilerOptions
               }
             }
           ]
@@ -519,8 +515,7 @@ export default function getConfig(opts = {}, applyConfig) {
         ...extraBabelIncludes.map(include => {
           return {
             test: /\.(js|jsx)$/,
-            include:
-              typeof include === 'string' ? join(opts.cwd, include) : include,
+            include: typeof include === 'string' ? join(cwd, include) : include,
             use: babelUseDeps
           };
         }),
@@ -528,7 +523,7 @@ export default function getConfig(opts = {}, applyConfig) {
           test: /\.html$/,
           exclude:
             opts.html && opts.html.template
-              ? resolve(opts.cwd, opts.html.template)
+              ? resolve(cwd, opts.html.template)
               : undefined,
           loader: require.resolve('file-loader'),
           options: {
@@ -683,7 +678,7 @@ export default function getConfig(opts = {}, applyConfig) {
         : []),
       ...commonsPlugins,
       new CleanWebpackPlugin([outputPath, ...(opts.clean || [])], {
-        root: opts.cwd,
+        root: cwd,
         verbose: false
       }),
       ...copyPlugins,
