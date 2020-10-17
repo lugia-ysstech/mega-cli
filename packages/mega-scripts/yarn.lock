@@ -180,16 +180,16 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@1.1.14":
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.1.14.tgz#5cf2a20a5a79f07e1c984bfad98c9ca5da657cef"
-  integrity sha512-ToFBRGSHFl+1Z9hXfmveelUZhe1n8VIVTJtD34TSky+MTlVKbwRMwWQLnsB7mOUfiUhhq6I58VqHSd6qH5tfEQ==
+"@lugia/lugiad-runtime@1.1.15":
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.1.15.tgz#c37c2bb6f28230f010caba498acbf844a9e88aa1"
+  integrity sha512-luHr+z+BKCaJyF7JkSfxTlYyXRZ8IpBX+gZzLAS5CMSLeR3oNIfKWnI1AXEE1b7A2jXzeHE3/PAwvxv3ugE1dQ==
   dependencies:
     "@lugia/lugiad-compiler" "^1.1.12"
     "@lugia/lugiad-compiler-types" "^1.1.7"
     "@lugia/lugiad-types" "^1.1.8"
     "@lugia/lugiadc-render" "^1.1.12"
-    "@lugia/lugiadc-render-react-plugin" "^1.1.9"
+    "@lugia/lugiadc-render-react-plugin" "^1.1.10"
     "@lugia/lugiadc-render-types" "^1.1.7"
     tslib "^1.11.1"
 
@@ -219,10 +219,10 @@
     prettier "^2.0.5"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-react-plugin@^1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.1.9.tgz#4aea7311f4e1d272a7251f5634d27a14319ba9db"
-  integrity sha512-4ApBalhpZxprs6xpaOVOXWHbRxhAk1xkJfy0VqaABafUR2WC4nyPdgZwTnXfWJyt0uGJlg0h3MHFnXpZBkFZJQ==
+"@lugia/lugiadc-render-react-plugin@^1.1.10":
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/@lugia/lugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.1.10.tgz#bb1d8a8a4cc66bd7415842900ed959deebcb5c64"
+  integrity sha512-+EtzgM92L11QPN63DWpwfaoa43n1BjT628thCRlXncLmpj+b16WGaeeT0bcp2VmsiN+8BcThGEnJt02rsJG11A==
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.1.7"
     "@lugia/lugiad-runtime-lib" "^1.0.3"
