@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-webpack",
-  "version": "1.6.0-alpha.10",
+  "version": "1.6.0-alpha.11",
   "main": "./lib/index.js",
   "publishConfig": {
     "access": "public"
@@ -19,8 +19,8 @@
     "@babel/core": "7.1.5",
     "@babel/runtime": "^7.5.5",
     "@lugia/babel-preset-mega": "^1.2.0-alpha.0",
-    "@lugia/lugiad-loader": "^1.4.0-alpha.9",
-    "@lugia/lugiadac-loader": "^1.0.1-alpha.9",
+    "@lugia/lugiad-loader": "^1.4.0-alpha.10",
+    "@lugia/lugiadac-loader": "^1.0.1-alpha.10",
     "@lugia/mega-utils": "^1.6.0-alpha.0",
     "assert": "^1.4.1",
     "autoprefixer": "^8.6.5",
