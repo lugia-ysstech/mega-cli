@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-utils",
-  "version": "1.6.0-alpha.0",
+  "version": "1.6.0",
   "description": "This package includes some utilities used by @lugia/mega.",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -17,7 +17,6 @@
   "author": "#lugia# @hanjingbo",
   "license": "Apache-2.0",
   "dependencies": {
-    "ts-loader": "^8.0.4",
     "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@babel/register": "^7.4.0",
     "@babel/runtime": "^7.4.3",
@@ -40,6 +39,7 @@
     "semver": "^5.7.0",
     "strip-json-comments": "^2.0.1",
     "tar-fs": "^1.16.3",
+    "ts-loader": "^8.0.4",
     "uri-js": "^4.2.2",
     "username": "^4.1.0",
     "which": "^1.3.1"
