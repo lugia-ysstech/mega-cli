@@ -57,10 +57,10 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@1.1.17":
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.1.17.tgz#0bcd0d9dce3edc10d5c00a337907717ab4b2ce9f"
-  integrity sha512-l5QgezrE0fdt23uCssASifkZ+j7Y6L5lsHjnOh4usKIIJ0AyPgoFZ4Q+wq4+R5j6LWcoqDxIjIYgf/30xEP5Jg==
+"@lugia/lugiad-runtime@1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@lugia/lugiad-runtime/-/lugiad-runtime-1.1.18.tgz#32b7f5d9b885488ffee95c7b3c3202b7469439a7"
+  integrity sha512-i4tuHVii4vVWZTnW4oK9SykPX3gusuuY9E8rD6bwSdtz7cvTAUQ8Nb7ER7+b+16r1DZ8lxRVyhHvb7aT9fIkqQ==
   dependencies:
     "@lugia/lugiad-compiler" "^1.1.13"
     "@lugia/lugiad-compiler-types" "^1.1.8"
