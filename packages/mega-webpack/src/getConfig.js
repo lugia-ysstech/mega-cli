@@ -494,7 +494,10 @@ export default function getConfig(opts = {}, applyConfig) {
             {
               loader: require.resolve('@lugia/lugiad-loader'),
               options: {
-                resourcesHead: '@/assets/'
+                resourcesHead: '@/assets/',
+                ...(process.env.LugiadConfig
+                  ? JSON.parse(process.env.LugiadConfig)
+                  : {})
               }
             }
           ]
