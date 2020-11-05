@@ -146,6 +146,15 @@ export default function getConfig(opts = {}, applyConfig) {
     }
   }
 
+  function loadLugiadConfig() {
+    const lugiadConfig = {};
+    const lugiadConfigFile = join(cwd, 'config', 'lugiad.config.json');
+    if (existsSync(lugiadConfigFile)) {
+      return readJsonSync(lugiadConfigFile);
+    }
+    return lugiadConfig;
+  }
+
   const cssRules = [
     ...(opts.cssModulesExcludes
       ? opts.cssModulesExcludes.map(file => {
@@ -495,9 +504,7 @@ export default function getConfig(opts = {}, applyConfig) {
               loader: require.resolve('@lugia/lugiad-loader'),
               options: {
                 resourcesHead: '@/assets/',
-                ...(process.env.LugiadConfig
-                  ? JSON.parse(process.env.LugiadConfig)
-                  : {})
+                ...loadLugiadConfig()
               }
             }
           ]
