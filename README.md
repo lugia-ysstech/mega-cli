@@ -49,7 +49,7 @@ $ yarn build
 ### 运行单个 package 的测试
 
 ```bash
-$ yarn run lerna exec --scope mega-webpack -- yarn run test
+$ yarn run lerna exec --scope @lugia/mega-webpack -- yarn run test
 ```
 
 ### 发布 package 到 npm 或 私服
