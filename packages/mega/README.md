@@ -27,6 +27,14 @@ $ mega -h
 
 Use @lugia/lugiax、@lugia/lugia-web、@lugia/lugiax-router
 
+### web
+
+Use lugia-web scaffolding
+
+### action
+
+Use lugia-action scaffolding
+
 ### dva
 
 Use [dva](https://github.com/dvajs/dva)
