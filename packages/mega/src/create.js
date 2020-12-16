@@ -115,7 +115,7 @@ export default async function create(
   }
 
   if (!hasSlash) {
-    scaffolding = `mega-scaffoldings/${scaffolding}`;
+    scaffolding = `lugia-ysstech/scaffolding-${scaffolding}`;
   }
   const { type, checkout, url, origin } = normalizeGitRepo(scaffolding);
   cacheScaffoldingPath = getCacheScaffoldingPath(
