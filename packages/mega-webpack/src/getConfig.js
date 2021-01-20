@@ -25,7 +25,6 @@ import ProgressPlugin from 'progress-bar-webpack-plugin';
 import { sync as resolveSync } from 'resolve';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
-import { deepMerge } from '@lugia/object-utils';
 import uglifyJSConfig from './defaultConfigs/uglifyJS';
 import defaultBabelConfig from './defaultConfigs/babel';
 import defaultBrowsers from './defaultConfigs/browsers';
@@ -166,7 +165,7 @@ export default function getConfig(opts = {}, applyConfig) {
           name,
           'dist/lugiad.config.json'
         );
-        uiLugiadConfig = deepMerge(
+        uiLugiadConfig = merge(
           uiLugiadConfig,
           loadLugiadConfigFile(lugiadConfigFile)
         );
@@ -183,7 +182,7 @@ export default function getConfig(opts = {}, applyConfig) {
     const uiLibs = existsSync(uiConfigPath) ? readJsonSync(uiConfigPath) : [];
     const uiLibLugiadConfig = loadUiLibLugiadConfig(uiLibs);
 
-    return deepMerge(uiLibLugiadConfig, projectLugiadConfig);
+    return merge(uiLibLugiadConfig, projectLugiadConfig);
   }
 
   const cssRules = [
