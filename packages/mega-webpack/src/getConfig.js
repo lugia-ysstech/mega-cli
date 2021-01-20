@@ -160,18 +160,16 @@ export default function getConfig(opts = {}, applyConfig) {
     if (uiConfig && Array.isArray(uiConfig)) {
       uiConfig.forEach(uiLibInfo => {
         const { name } = uiLibInfo;
-        if (name !== '@lugia/lugia-web') {
-          const lugiadConfigFile = join(
-            cwd,
-            'node_modules',
-            name,
-            'dist/lugiad.config.json'
-          );
-          uiLugiadConfig = deepMerge(
-            uiLugiadConfig,
-            loadLugiadConfigFile(lugiadConfigFile)
-          );
-        }
+        const lugiadConfigFile = join(
+          cwd,
+          'node_modules',
+          name,
+          'dist/lugiad.config.json'
+        );
+        uiLugiadConfig = deepMerge(
+          uiLugiadConfig,
+          loadLugiadConfigFile(lugiadConfigFile)
+        );
       });
     }
 
