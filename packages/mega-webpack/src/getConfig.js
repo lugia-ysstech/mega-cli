@@ -25,6 +25,7 @@ import ProgressPlugin from 'progress-bar-webpack-plugin';
 import { sync as resolveSync } from 'resolve';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
+import { deepMerge } from '@lugia/object-utils';
 import uglifyJSConfig from './defaultConfigs/uglifyJS';
 import defaultBabelConfig from './defaultConfigs/babel';
 import defaultBrowsers from './defaultConfigs/browsers';
@@ -146,13 +147,45 @@ export default function getConfig(opts = {}, applyConfig) {
     }
   }
 
-  function loadLugiadConfig() {
-    const lugiadConfig = {};
-    const lugiadConfigFile = join(cwd, 'config', 'lugiad.config.json');
-    if (existsSync(lugiadConfigFile)) {
-      return readJsonSync(lugiadConfigFile);
+  function loadLugiadConfigFile(filePath) {
+    if (existsSync(filePath)) {
+      return readJsonSync(filePath);
     }
-    return lugiadConfig;
+
+    return {};
+  }
+
+  function loadUiLibLugiadConfig(uiConfig) {
+    let uiLugiadConfig = {};
+    if (uiConfig && Array.isArray(uiConfig)) {
+      uiConfig.forEach(uiLibInfo => {
+        const { name } = uiLibInfo;
+        if (name !== '@lugia/lugia-web') {
+          const lugiadConfigFile = join(
+            cwd,
+            'node_modules',
+            name,
+            'dist/lugiad.config.json'
+          );
+          uiLugiadConfig = deepMerge(
+            uiLugiadConfig,
+            loadLugiadConfigFile(lugiadConfigFile)
+          );
+        }
+      });
+    }
+
+    return uiLugiadConfig;
+  }
+
+  function loadLugiadConfig() {
+    const lugiadConfigFile = join(cwd, 'config', 'lugiad.config.json');
+    const projectLugiadConfig = loadLugiadConfigFile(lugiadConfigFile);
+    const uiConfigPath = join(cwd, 'config', 'ui.config.json');
+    const uiLibs = existsSync(uiConfigPath) ? readJsonSync(uiConfigPath) : [];
+    const uiLibLugiadConfig = loadUiLibLugiadConfig(uiLibs);
+
+    return deepMerge(uiLibLugiadConfig, projectLugiadConfig);
   }
 
   const cssRules = [
