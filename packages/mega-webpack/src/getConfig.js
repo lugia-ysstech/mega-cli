@@ -146,13 +146,43 @@ export default function getConfig(opts = {}, applyConfig) {
     }
   }
 
-  function loadLugiadConfig() {
-    const lugiadConfig = {};
-    const lugiadConfigFile = join(cwd, 'config', 'lugiad.config.json');
-    if (existsSync(lugiadConfigFile)) {
-      return readJsonSync(lugiadConfigFile);
+  function loadLugiadConfigFile(filePath) {
+    if (existsSync(filePath)) {
+      return readJsonSync(filePath);
     }
-    return lugiadConfig;
+
+    return {};
+  }
+
+  function loadUiLibLugiadConfig(uiConfig) {
+    let uiLugiadConfig = {};
+    if (uiConfig && Array.isArray(uiConfig)) {
+      uiConfig.forEach(uiLibInfo => {
+        const { name } = uiLibInfo;
+        const lugiadConfigFile = join(
+          cwd,
+          'node_modules',
+          name,
+          'dist/lugiad.config.json'
+        );
+        uiLugiadConfig = merge(
+          uiLugiadConfig,
+          loadLugiadConfigFile(lugiadConfigFile)
+        );
+      });
+    }
+
+    return uiLugiadConfig;
+  }
+
+  function loadLugiadConfig() {
+    const lugiadConfigFile = join(cwd, 'config', 'lugiad.config.json');
+    const projectLugiadConfig = loadLugiadConfigFile(lugiadConfigFile);
+    const uiConfigPath = join(cwd, 'config', 'ui.config.json');
+    const uiLibs = existsSync(uiConfigPath) ? readJsonSync(uiConfigPath) : [];
+    const uiLibLugiadConfig = loadUiLibLugiadConfig(uiLibs);
+
+    return merge(uiLibLugiadConfig, projectLugiadConfig);
   }
 
   const cssRules = [
