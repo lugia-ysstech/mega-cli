@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-jest",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "base on jest && enzyme",
   "publishConfig": {
     "access": "public"
