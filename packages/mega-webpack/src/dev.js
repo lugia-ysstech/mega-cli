@@ -95,7 +95,7 @@ export default function dev({
           'access-control-allow-origin': '*'
         },
         publicPath: webpackConfig.output.publicPath,
-        watchOptions: {
+        watchOptions: webpackConfig.watchOptions || {
           ignored: /node_modules/
         },
         historyApiFallback,
