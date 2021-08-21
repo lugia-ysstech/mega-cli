@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega",
-  "version": "1.6.15",
+  "version": "1.6.16",
   "description": "Quickly create react apps. Based on @lugia/mega-scripts.",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -21,10 +21,10 @@
   "author": "#lugia# @hanjingbo",
   "license": "Apache-2.0",
   "dependencies": {
-    "@lugia/babel-preset-mega": "^1.2.0",
-    "@lugia/mega-config": "^1.3.1",
-    "@lugia/mega-scripts": "^1.6.15",
-    "@lugia/mega-utils": "^1.6.1",
+    "@lugia/babel-preset-mega": "^1.2.1",
+    "@lugia/mega-config": "^1.3.2",
+    "@lugia/mega-scripts": "^1.6.16",
+    "@lugia/mega-utils": "^1.6.2",
     "assert": "^1.4.1",
     "chalk": "^2.4.2",
     "clipboardy": "^1.2.3",
