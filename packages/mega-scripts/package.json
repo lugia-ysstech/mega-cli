@@ -20,8 +20,6 @@
   "author": "#lugia# @hanjingbo",
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/core": "7.12.9",
-    "@babel/runtime": "^7.1.5",
     "@lugia/babel-preset-mega": "^1.2.0",
     "@lugia/devtools-material": "^1.0.40",
     "@lugia/lugiad-runtime": "^1.2.9",

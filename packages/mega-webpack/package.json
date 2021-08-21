@@ -16,8 +16,6 @@
   },
   "author": "#lugia# @hanjingbo",
   "dependencies": {
-    "@babel/core": "7.12.9",
-    "@babel/runtime": "^7.5.5",
     "@lugia/babel-preset-mega": "^1.2.0",
     "@lugia/lugiad-loader": "^1.4.9",
     "@lugia/lugiadac-loader": "^1.0.10",

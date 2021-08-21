@@ -17,7 +17,6 @@
     "url": "https://github.com/lugia-ysstech/lugia-mega/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
     "@lugia/mega-utils": "^1.6.1",
     "assert": "^1.4.1",
     "chalk": "^2.4.1",
