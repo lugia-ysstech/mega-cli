@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-scripts",
-  "version": "1.6.14",
+  "version": "1.6.15",
   "description": "cli tool for dev, build, test, and mock.",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -22,12 +22,12 @@
   "dependencies": {
     "@babel/core": "7.12.9",
     "@babel/runtime": "^7.1.5",
-    "@lugia/babel-preset-mega": "^1.2.0-alpha.0",
+    "@lugia/babel-preset-mega": "^1.2.0",
     "@lugia/devtools-material": "^1.0.40",
     "@lugia/lugiad-runtime": "^1.2.9",
     "@lugia/mega-config": "^1.3.1",
     "@lugia/mega-utils": "^1.6.1",
-    "@lugia/mega-webpack": "^1.6.13",
+    "@lugia/mega-webpack": "^1.6.14",
     "babel-plugin-add-module-exports": "^1.0.0",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.26.3",
@@ -53,7 +53,7 @@
     "yargs": "^12.0.2"
   },
   "devDependencies": {
-    "@lugia/mega-jest": "^1.4.2",
+    "@lugia/mega-jest": "^1.4.3",
     "got": "^9.3.1"
   },
   "peerDependencies": {
