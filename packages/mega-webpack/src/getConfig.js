@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import SystemBellWebpackPlugin from 'system-bell-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
@@ -449,6 +448,7 @@ export default function getConfig(opts = {}, applyConfig) {
           }
         },
     bail: !isDev,
+    mode: isDev ? 'development' : 'production',
     devtool: opts.devtool || false,
     entry: opts.entry || null,
     output: {
@@ -516,11 +516,15 @@ export default function getConfig(opts = {}, applyConfig) {
             /\.(css|less|scss|sass)$/,
             ...(opts.urlLoaderExcludes || [])
           ],
-          use: [require.resolve('url-loader')],
-          options: {
-            limit: process.env.FILE_LIMIT || 10000,
-            name: 'static/[name].[hash:8].[ext]'
-          }
+          use: [
+            {
+              loader: require.resolve('url-loader'),
+              options: {
+                limit: process.env.FILE_LIMIT || 10000,
+                name: 'static/[name].[hash:8].[ext]'
+              }
+            }
+          ]
         },
         {
           test: /\.js$/,
@@ -585,10 +589,14 @@ export default function getConfig(opts = {}, applyConfig) {
             opts.html && opts.html.template
               ? resolve(cwd, opts.html.template)
               : undefined,
-          use: [require.resolve('file-loader')],
-          options: {
-            name: '[name].[ext]'
-          }
+          use: [
+            {
+              loader: require.resolve('file-loader'),
+              options: {
+                name: '[name].[ext]'
+              }
+            }
+          ]
         },
         ...cssRules
       ]
@@ -599,7 +607,6 @@ export default function getConfig(opts = {}, applyConfig) {
             new webpack.HotModuleReplacementPlugin(),
             // Disable this plugin since it causes 100% cpu when have lost deps
             // new WatchMissingNodeModulesPlugin(join(opts.cwd, 'node_modules')),
-            new SystemBellWebpackPlugin(),
             ...(process.env.HARD_SOURCE && process.env.HARD_SOURCE !== 'none'
               ? [new HardSourceWebpackPlugin()]
               : [])
@@ -629,10 +636,6 @@ export default function getConfig(opts = {}, applyConfig) {
                 ]
           )
         : [
-            // eslint-disable-next-line
-            ...(process.env.__FROM_TEST
-              ? []
-              : [new webpack.HashedModuleIdsPlugin()]),
             new webpack.optimize.ModuleConcatenationPlugin(),
             ...(opts.disableCssExtract
               ? []
@@ -689,23 +692,7 @@ export default function getConfig(opts = {}, applyConfig) {
                 ]
               : [])
           ]),
-      ...(isDev || process.env.COMPRESS === 'none'
-        ? []
-        : [
-            opts.parallel
-              ? new ParallelUglifyPlugin({
-                  exclude: /\.min\.js$/,
-                  workerCount: is.number(opts.parallel)
-                    ? opts.parallel
-                    : undefined,
-                  sourceMap: !!opts.devtool,
-                  uglifyJS: uglifyJSConfig
-                })
-              : new webpack.optimize.UglifyJsPlugin({
-                  ...uglifyJSConfig,
-                  ...(opts.devtool ? { sourceMap: true } : {})
-                })
-          ]),
+
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(
           // eslint-disable-line
@@ -723,7 +710,10 @@ export default function getConfig(opts = {}, applyConfig) {
         ...stringifyObject(opts.define || {})
       }),
       ...(opts.html
-        ? [new InterpolateHtmlPlugin(env.raw), new HTMLWebpackPlugin(opts.html)]
+        ? [
+            new InterpolateHtmlPlugin(HTMLWebpackPlugin, env.raw),
+            new HTMLWebpackPlugin(opts.html)
+          ]
         : []),
       new CaseSensitivePathsPlugin(),
       new webpack.LoaderOptionsPlugin({

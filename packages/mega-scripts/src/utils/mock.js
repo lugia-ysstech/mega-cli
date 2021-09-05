@@ -29,9 +29,8 @@ function getConfig() {
       }
     });
     return require(mockConfigFile); // eslint-disable-line
-  } else {
-    return {};
   }
+  return {};
 }
 
 function createMockHandler(method, path, value) {
@@ -57,7 +56,7 @@ function createProxy(method, path, target) {
         [, matchPath] = matches;
       }
       return winPath(join(url.parse(target).path, matchPath));
-    },
+    }
   });
 }
 
@@ -74,12 +73,12 @@ export function applyMock(devServer) {
 
     const watcher = chokidar.watch([mockConfigFile, mockDir], {
       ignored: /node_modules/,
-      ignoreInitial: true,
+      ignoreInitial: true
     });
     watcher.on('change', path => {
       console.log(
         chalk.green('CHANGED'),
-        path.replace(paths.appDirectory, '.'),
+        path.replace(paths.appDirectory, '.')
       );
       watcher.close();
       applyMock(devServer);
@@ -91,12 +90,12 @@ function realApplyMock(devServer) {
   const config = getConfig();
   const { app } = devServer;
 
-  devServer.use(bodyParser.json({ limit: '5mb', strict: false }));
-  devServer.use(
+  app.use(bodyParser.json({ limit: '5mb', strict: false }));
+  app.use(
     bodyParser.urlencoded({
       extended: true,
-      limit: '5mb',
-    }),
+      limit: '5mb'
+    })
   );
 
   Object.keys(config).forEach(key => {
@@ -111,8 +110,8 @@ function realApplyMock(devServer) {
         is.array(config[key]) ||
         is.string(config[key]),
       `mock value of ${key} should be function or object or string, but got ${is(
-        config[key],
-      )}`,
+        config[key]
+      )}`
     );
 
     if (is.string(config[key])) {
@@ -143,7 +142,7 @@ function realApplyMock(devServer) {
 
   const watcher = chokidar.watch([mockConfigFile, mockDir], {
     ignored: /node_modules/,
-    persistent: true,
+    persistent: true
   });
   watcher.on('change', path => {
     console.log(chalk.green('CHANGED'), path.replace(paths.appDirectory, '.'));
