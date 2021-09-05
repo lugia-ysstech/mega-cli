@@ -18,6 +18,7 @@
   "dependencies": {
     "@lugia/babel-preset-mega": "^1.2.1",
     "@lugia/lugiad-loader": "^1.4.10",
+    "hard-source-webpack-plugin": "^0.13.1",
     "@lugia/lugiadac-loader": "^1.0.11",
     "@lugia/mega-utils": "^1.6.2",
     "assert": "^1.4.1",
@@ -45,7 +46,6 @@
     "file-loader": "^0.11.2",
     "fork-ts-checker-webpack-plugin": "^0.4.15",
     "fs-extra": "^9.0.1",
-    "hard-source-webpack-plugin": "^0.6.12",
     "html-webpack-plugin": "^3.2.0",
     "inquirer": "^7.0.4",
     "is-root": "^2.0.0",

@@ -7,7 +7,7 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import ParallelUglifyPlugin from 'webpack-parallel-uglify-plugin';
 import autoprefixer from 'autoprefixer';
-import { dirname, resolve, join, extname } from 'path';
+import { dirname, extname, join, resolve } from 'path';
 import { existsSync, readJsonSync } from 'fs-extra';
 import eslintFormatter from '@lugia/mega-utils/lib/eslintFormatter';
 import stringifyObject from '@lugia/mega-utils/lib/stringifyObject';
@@ -283,11 +283,6 @@ export default function getConfig(opts = {}, applyConfig) {
     });
   }
 
-  // TODO: 根据 opts.hash 自动处理这里的 filename
-  const commonsPlugins = (opts.commons || []).map(common => {
-    return new webpack.optimize.CommonsChunkPlugin(common);
-  });
-
   // 下面会多次用到 outputPath
   const outputPath = opts.outputPath
     ? resolve(cwd, opts.outputPath)
@@ -428,8 +423,33 @@ export default function getConfig(opts = {}, applyConfig) {
   };
 
   const config = {
+    optimization: isDev
+      ? {}
+      : {
+          splitChunks: {
+            chunks: 'async',
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+              vendors: {
+                test: /[\\/]node_modules[\\/]/,
+                priority: -10
+              },
+              default: {
+                minChunks: 2,
+                priority: -20,
+                reuseExistingChunk: true
+              }
+            }
+          }
+        },
     bail: !isDev,
-    devtool: opts.devtool || undefined,
+    devtool: opts.devtool || false,
     entry: opts.entry || null,
     output: {
       path: outputPath,
@@ -496,7 +516,7 @@ export default function getConfig(opts = {}, applyConfig) {
             /\.(css|less|scss|sass)$/,
             ...(opts.urlLoaderExcludes || [])
           ],
-          loader: require.resolve('url-loader'),
+          use: [require.resolve('url-loader')],
           options: {
             limit: process.env.FILE_LIMIT || 10000,
             name: 'static/[name].[hash:8].[ext]'
@@ -565,7 +585,7 @@ export default function getConfig(opts = {}, applyConfig) {
             opts.html && opts.html.template
               ? resolve(cwd, opts.html.template)
               : undefined,
-          loader: require.resolve('file-loader'),
+          use: [require.resolve('file-loader')],
           options: {
             name: '[name].[ext]'
           }
@@ -716,7 +736,6 @@ export default function getConfig(opts = {}, applyConfig) {
       ...(opts.ignoreMomentLocale
         ? [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)]
         : []),
-      ...commonsPlugins,
       new CleanWebpackPlugin([outputPath, ...(opts.clean || [])], {
         root: cwd,
         verbose: false
@@ -732,13 +751,11 @@ export default function getConfig(opts = {}, applyConfig) {
           ]
         : [])
     ],
-    externals: opts.externals,
+    externals: opts.externals || {},
     node: {
-      dgram: 'empty',
-      fs: 'empty',
-      net: 'empty',
-      tls: 'empty',
-      child_process: 'empty'
+      global: false,
+      __filename: false,
+      __dirname: false
     },
     performance: isDev
       ? {

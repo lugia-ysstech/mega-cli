@@ -33,7 +33,7 @@
     "proper-url-join": "^2.0.1",
     "pump": "^3.0.0",
     "rc": "^1.2.8",
-    "react-dev-utils": "^5.0.3",
+    "react-dev-utils": "^11.0.4",
     "registry-auth-token": "^3.4.0",
     "rimraf": "^2.6.3",
     "semver": "^5.7.0",

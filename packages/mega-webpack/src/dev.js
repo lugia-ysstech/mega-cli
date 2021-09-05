@@ -59,13 +59,13 @@ export default function dev({
         HOST,
         PROTOCOL
       };
-      const compiler = createCompiler(
+      const compiler = createCompiler({
         webpack,
-        webpackConfig,
+        config: webpackConfig,
         appName,
         urls,
-        useYarn()
-      );
+        useYarn: useYarn()
+      });
 
       // Webpack startup recompilation fix. Remove when @sokra fixes the bug.
       // https://github.com/webpack/webpack/issues/2983
