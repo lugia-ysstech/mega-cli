@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-config",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Find and load configuration from the user",
   "license": "Apache-2.0",
   "main": "./lib/index.js",
@@ -17,7 +17,7 @@
     "url": "https://github.com/lugia-ysstech/lugia-mega/issues"
   },
   "dependencies": {
-    "@lugia/mega-utils": "^1.6.2",
+    "@lugia/mega-utils": "^1.6.3",
     "assert": "^1.4.1",
     "chalk": "^2.4.1",
     "chokidar": "^2.0.4",
