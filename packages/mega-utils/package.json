@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-utils",
-  "version": "1.6.3-alpha.0",
+  "version": "1.6.2",
   "description": "This package includes some utilities used by @lugia/mega.",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -33,7 +33,7 @@
     "proper-url-join": "^2.0.1",
     "pump": "^3.0.0",
     "rc": "^1.2.8",
-    "react-dev-utils": "^11.0.4",
+    "react-dev-utils": "^5.0.3",
     "registry-auth-token": "^3.4.0",
     "rimraf": "^2.6.3",
     "semver": "^5.7.0",

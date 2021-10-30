@@ -49,7 +49,20 @@ export default function(opts = {}, applyConfig) {
       cwd,
       hash: true,
       manifest: {},
-
+      commons: [
+        {
+          name: 'vendors',
+          minChunks(module) {
+            // 把node_modules中的模块提取到vendors.js中
+            return (
+              module.resource &&
+              (/\.js$/.test(module.resource) ||
+                /\.css$/.test(module.resource)) &&
+              module.resource.indexOf('node_modules') > -1
+            );
+          }
+        }
+      ],
       ...config,
 
       entry: getEntry({

@@ -90,8 +90,8 @@ function realApplyMock(devServer) {
   const config = getConfig();
   const { app } = devServer;
 
-  app.use(bodyParser.json({ limit: '5mb', strict: false }));
-  app.use(
+  devServer.use(bodyParser.json({ limit: '5mb', strict: false }));
+  devServer.use(
     bodyParser.urlencoded({
       extended: true,
       limit: '5mb'

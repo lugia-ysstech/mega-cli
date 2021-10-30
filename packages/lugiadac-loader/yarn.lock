@@ -25,7 +25,7 @@
 
 "@lugia/array-utils@^1.0.2":
   version "1.0.2"
-  resolved "http://192.168.102.79:5001/@lugia%2farray-utils/-/array-utils-1.0.2.tgz#34d364b94d2919b6ec891124c84157a07b28211d"
+  resolved "https://registry.npm.taobao.org/@lugia%2farray-utils/-/array-utils-1.0.2.tgz#34d364b94d2919b6ec891124c84157a07b28211d"
   integrity sha1-NNNkuU0pGbbsiREkyEFXoHsoIR0=
   dependencies:
     tslib "^1.11.1"
@@ -66,7 +66,7 @@
 
 "@lugia/lugiad-runtime@^1.2.9":
   version "1.2.9"
-  resolved "http://192.168.102.79:5001/@lugia%2flugiad-runtime/-/lugiad-runtime-1.2.9.tgz#a7c6043152b1d669044fd313c5e049aca715ef5c"
+  resolved "https://registry.npm.taobao.org/@lugia%2flugiad-runtime/-/lugiad-runtime-1.2.9.tgz#a7c6043152b1d669044fd313c5e049aca715ef5c"
   integrity sha512-5OG7POz4rBzolXNF5vq4eH/iWFioQy79kk8wMXLW29ndZYC8ECUi9MQYKdH74WipSV+/iV8I/yigCT9MDNudFw==
   dependencies:
     "@lugia/lugiad-compiler" "^1.2.5"
@@ -128,7 +128,7 @@
 
 "@lugia/lugiadc-render@^1.2.7":
   version "1.2.7"
-  resolved "http://192.168.102.79:5001/@lugia%2flugiadc-render/-/lugiadc-render-1.2.7.tgz#9cb409305c753994003726361bb5a82077a2ec02"
+  resolved "https://registry.npm.taobao.org/@lugia%2flugiadc-render/-/lugiadc-render-1.2.7.tgz#9cb409305c753994003726361bb5a82077a2ec02"
   integrity sha512-1W2tx77J3GsdE+RWOcI8e0ZuvrkeHM+HZBRRGT6IGJ+ge8Od01KmMBIFLsJbWTMshzvAO2h4Y45dhp//5aa1Sg==
   dependencies:
     "@lugia/geometry" "^1.0.13"
@@ -145,7 +145,7 @@
 
 "@lugia/math@^1.0.10":
   version "1.0.10"
-  resolved "http://192.168.102.79:5001/@lugia%2fmath/-/math-1.0.10.tgz#5325c247507999c711e41fb9248a9d9a582ed44e"
+  resolved "https://registry.npm.taobao.org/@lugia%2fmath/-/math-1.0.10.tgz#5325c247507999c711e41fb9248a9d9a582ed44e"
   integrity sha1-UyXCR1B5mccR5B+5JIqdmlgu1E4=
   dependencies:
     tslib "^1.11.1"
@@ -172,7 +172,7 @@
 
 "@types/prettier@^2.0.0":
   version "2.0.1"
-  resolved "http://192.168.102.79:5001/@types%2fprettier/-/prettier-2.0.1.tgz#b6e98083f13faa1e5231bfa3bdb1b0feff536b6d"
+  resolved "https://registry.npm.taobao.org/@types%2fprettier/-/prettier-2.0.1.tgz#b6e98083f13faa1e5231bfa3bdb1b0feff536b6d"
   integrity sha1-tumAg/E/qh5SMb+jvbGw/v9Ta20=
 
 big.js@^5.2.2:
@@ -225,7 +225,7 @@ minimist@^1.2.0:
 
 prettier@^2.0.5:
   version "2.0.5"
-  resolved "http://192.168.102.79:5001/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  resolved "https://registry.npm.taobao.org/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
   integrity sha1-1tVigkVSQ/L5LMFxZpLAiqMVItQ=
 
 regenerator-runtime@^0.13.2:
@@ -240,5 +240,5 @@ regenerator-runtime@^0.13.4:
 
 tslib@^1.11.1:
   version "1.13.0"
-  resolved "http://192.168.102.79:5001/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
+  resolved "https://registry.npm.taobao.org/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha1-yIHhPMcBWJTtkUhi0nZDb6mkcEM=

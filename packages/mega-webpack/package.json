@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-webpack",
-  "version": "1.6.16-alpha.2",
+  "version": "1.6.15",
   "main": "./lib/index.js",
   "publishConfig": {
     "access": "public"
@@ -19,7 +19,7 @@
     "@lugia/babel-preset-mega": "^1.2.1",
     "@lugia/lugiad-loader": "^1.4.10",
     "@lugia/lugiadac-loader": "^1.0.11",
-    "@lugia/mega-utils": "^1.6.3-alpha.0",
+    "@lugia/mega-utils": "^1.6.2",
     "assert": "^1.4.1",
     "autoprefixer": "^8.6.5",
     "babel-eslint": "^8.2.6",
@@ -41,11 +41,12 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.11.2",
     "fork-ts-checker-webpack-plugin": "^0.4.15",
     "fs-extra": "^9.0.1",
-    "hard-source-webpack-plugin": "^0.13.1",
-    "html-webpack-plugin": "^5.3.2",
+    "hard-source-webpack-plugin": "^0.6.12",
+    "html-webpack-plugin": "^3.2.0",
     "inquirer": "^7.0.4",
     "is-root": "^2.0.0",
     "less": "^3.8.1",
@@ -67,15 +68,15 @@
     "tslint": "^5.16.0",
     "typescript": "^3.4.5",
     "url-loader": "^0.6.2",
-    "webpack": "^5.52.0",
+    "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-dev-server": "^4.1.0",
+    "webpack-dev-server": "^2.11.3",
     "webpack-manifest-plugin": "^1.3.2",
     "webpack-merge": "^4.2.1",
     "webpack-parallel-uglify-plugin": "^1.1.0"
   },
   "devDependencies": {
-    "@lugia/mega-config": "^1.3.3-alpha.0",
+    "@lugia/mega-config": "^1.3.2",
     "glob": "^7.1.3"
   },
   "files": [

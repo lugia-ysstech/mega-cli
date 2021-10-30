@@ -59,60 +59,75 @@ export default function dev({
         HOST,
         PROTOCOL
       };
-      const compiler = createCompiler({
+      const compiler = createCompiler(
         webpack,
-        config: webpackConfig,
+        webpackConfig,
         appName,
         urls,
-        useYarn: useYarn()
+        useYarn()
+      );
+
+      // Webpack startup recompilation fix. Remove when @sokra fixes the bug.
+      // https://github.com/webpack/webpack/issues/2983
+      // https://github.com/webpack/watchpack/issues/25
+      const timefix = 11000;
+      compiler.plugin('watch-run', (watching, callback) => {
+        watching.startTime += timefix; // eslint-disable-line
+        callback();
+      });
+      compiler.plugin('done', stats => {
+        send({ type: DONE });
+        stats.startTime -= timefix; // eslint-disable-line
+        onCompileDone(urlsInfo);
+      });
+      compiler.plugin('invalid', () => {
+        send({ type: COMPILING });
+        onCompileInvalid(urlsInfo);
       });
       const serverConfig = {
-        // index,
-        // disableHostCheck: true,
-        // compress: true,
-        // clientLogLevel: 'none',
+        index,
+        disableHostCheck: true,
+        compress: true,
+        clientLogLevel: 'none',
         hot: true,
-        // quiet: true,
+        quiet: true,
         headers: {
           'access-control-allow-origin': '*'
         },
-        // publicPath: webpackConfig.output.publicPath,
-        // watchOptions: webpackConfig.watchOptions || {
-        //   ignored: /node_modules/
-        // },
+        publicPath: webpackConfig.output.publicPath,
+        watchOptions: webpackConfig.watchOptions || {
+          ignored: /node_modules/
+        },
         historyApiFallback,
-        // overlay: false,
+        overlay: false,
         host: HOST,
         proxy,
-        https: !!process.env.HTTPS
-        // contentBase,
-
-        // before(app) {
-        //   if (beforeMiddleware) {
-        //     beforeMiddleware(app, urlsInfo);
-        //   } // This lets us open files from the runtime error overlay.
-        //
-        //
-        //   app.use((0, _errorOverlayMiddleware.default)());
-        // },
-        //
-        // after(app) {
-        //   if (afterMiddleware) {
-        //     afterMiddleware(app, urlsInfo);
-        //   }
-        // }
+        https: !!process.env.HTTPS,
+        contentBase,
+        before(app) {
+          if (beforeMiddleware) {
+            beforeMiddleware(app, urlsInfo);
+          }
+          // This lets us open files from the runtime error overlay.
+          app.use(errorOverlayMiddleware());
+        },
+        after(app) {
+          if (afterMiddleware) {
+            afterMiddleware(app, urlsInfo);
+          }
+        }
       };
-      const devServer = new WebpackDevServer(serverConfig, compiler);
+      const devServer = new WebpackDevServer(compiler, serverConfig);
+
+      if (beforeServer) {
+        beforeServer(devServer, urlsInfo);
+      }
 
       devServer.listen(port, HOST, err => {
         if (err) {
           console.log(err);
           return;
         }
-        if (beforeServer) {
-          beforeServer(devServer, urlsInfo);
-        }
-
         if (isInteractive) {
           clearConsole();
         }
