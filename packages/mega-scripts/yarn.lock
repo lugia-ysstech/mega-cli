@@ -47,14 +47,14 @@
   dependencies:
     "@lugia/lugiad-types" "^1.2.10"
 
-"@lugia/lugiad-compiler@^1.2.15":
-  version "1.2.15"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad-compiler/-/lugiad-compiler-1.2.15.tgz#e0624f96b7d7020d0bb78650b123caf4c4c02165"
-  integrity sha512-W8l45aURvgjhcnfo3qSeX97IYVGecXuSHjRfcHG+uG9K8oH0P/+kJHv4C8Rew4ykUxRrgr6T56EG40Mjgxj6kA==
+"@lugia/lugiad-compiler@^1.2.16":
+  version "1.2.16"
+  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad-compiler/-/lugiad-compiler-1.2.16.tgz#df64a9302e4a92e8c84bf1fbe236b38abb9991e0"
+  integrity sha512-EaeTGA18wN9RCJuUeRT86+cfRAvUj1ChkX99nlecho2CBQl0AeePBZxEUkrvsxYSLkS01Z8GzShHxvAAU9JpqQ==
   dependencies:
     "@lugia/array-utils" "^1.0.2"
     "@lugia/geometry" "^1.0.14"
-    "@lugia/lugiad" "^1.2.12"
+    "@lugia/lugiad" "^1.2.13"
     "@lugia/lugiad-compiler-types" "^1.2.11"
     "@lugia/lugiad-runtime-lib" "^1.1.6"
     tslib "^1.11.1"
@@ -68,16 +68,16 @@
     "@lugia/string-utils" "^1.0.2"
     tslib "^1.11.1"
 
-"@lugia/lugiad-runtime@1.2.21":
-  version "1.2.21"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad-runtime/-/lugiad-runtime-1.2.21.tgz#909cd5a2010a58ec240b506fbb1b69b612f87972"
-  integrity sha512-bZrbpSuAvZfx4AiRuNPZtNa/3mnxr6jQEZBUxcAhxV6SKx9FSUkVZ5HlnAT+1zQN2nNB4X9lFH/RnMGyfp0fSg==
+"@lugia/lugiad-runtime@1.2.23":
+  version "1.2.23"
+  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad-runtime/-/lugiad-runtime-1.2.23.tgz#9e6e2d96fb62958c70d7b269bffebcb04bcac231"
+  integrity sha512-F24Jx2UIXrC6rrqK1Sh3NjxEGkOa5yEPMJ2xEiLMghw0woDcfGzCtUDirzjGV22kPSdT0LwxTNoIyxtIeH8Ipw==
   dependencies:
-    "@lugia/lugiad-compiler" "^1.2.15"
+    "@lugia/lugiad-compiler" "^1.2.16"
     "@lugia/lugiad-compiler-types" "^1.2.11"
     "@lugia/lugiad-types" "^1.2.10"
-    "@lugia/lugiadc-render" "^1.2.17"
-    "@lugia/lugiadc-render-react-plugin" "^1.2.17"
+    "@lugia/lugiadc-render" "^1.2.18"
+    "@lugia/lugiadc-render-react-plugin" "^1.2.18"
     "@lugia/lugiadc-render-types" "^1.2.11"
     tslib "^1.11.1"
 
@@ -89,10 +89,10 @@
     "@lugia/array-utils" "1.0.6"
     "@lugia/object-utils" "^1.1.0"
 
-"@lugia/lugiad@^1.2.12":
-  version "1.2.12"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad/-/lugiad-1.2.12.tgz#bebe9b1e4324f12d4f5af8a18bf225c6a0223017"
-  integrity sha512-/XRYD3uFvsXYIa4ynlZCe0lgUj2nm7cAC1W6TLU83vVjOlWOrB4mXlMr/Im+wSUh3KszHUx813MC2oZo1HSHVQ==
+"@lugia/lugiad@^1.2.13":
+  version "1.2.13"
+  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad/-/lugiad-1.2.13.tgz#fa445f8b2f0812e2448aba07ed4aa391139552eb"
+  integrity sha512-JHsDuZSIZor/tdjN+8LViPHdn0EbN9OFR/b80Ev7hoCUzyuz5Ug+MGT89PgIbTt+S0ctEOQj9bpJsNGWNrqipg==
   dependencies:
     "@lugia/lugiad-types" "^1.2.10"
     tslib "^1.11.1"
@@ -110,10 +110,10 @@
     prettier "^2.0.5"
     tslib "^1.11.1"
 
-"@lugia/lugiadc-render-react-plugin@^1.2.17":
-  version "1.2.17"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.2.17.tgz#73d5d98529ae41d3b2f42607a5f7365510f69d5e"
-  integrity sha512-eS+idW5ru3xbe6mnJEkwjIyePeN/m7+znQRmI5HKswqb5sp6+U05epCxCDaa3B5n9krnvkYoLwrrdjCBW8hAnw==
+"@lugia/lugiadc-render-react-plugin@^1.2.18":
+  version "1.2.18"
+  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.2.18.tgz#4d911c0357ead13c67811f7168e89f4f539e0b2e"
+  integrity sha512-1joyNRj12IEwM0O8To1V5LfYo98UMkebp4WCdoSGSu5/zJroDKmWVuLxrX2DqA+ByDLgWXyad/vgpgy1Xok7PA==
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.2.11"
     "@lugia/lugiad-runtime-lib" "^1.1.6"
@@ -130,14 +130,14 @@
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.2.11"
 
-"@lugia/lugiadc-render@^1.2.17":
-  version "1.2.17"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiadc-render/-/lugiadc-render-1.2.17.tgz#95c0e74e6e49be1a2a5809737aece9b06a5f000f"
-  integrity sha512-/wecpTuEtxrwcD8cOLJOc5nT2DtxPzRHlcUgtagiA/9XGAg31UUHJCm4wmdrfFXfNR2ME9N9aQ7bwDEuye/GoA==
+"@lugia/lugiadc-render@^1.2.18":
+  version "1.2.18"
+  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiadc-render/-/lugiadc-render-1.2.18.tgz#f16efcb481c0531329c28fff85c2b246f1dfba1e"
+  integrity sha512-hiWTDdm0P4pNaK+1/O/fRDl98/2bLtussT3/4LnnPdRZVSWgUoS1YjXHIy/lfCFV/acL42vF6Ph93IQ2BGiK1Q==
   dependencies:
     "@lugia/geometry" "^1.0.14"
-    "@lugia/lugiad" "^1.2.12"
-    "@lugia/lugiad-compiler" "^1.2.15"
+    "@lugia/lugiad" "^1.2.13"
+    "@lugia/lugiad-compiler" "^1.2.16"
     "@lugia/lugiad-compiler-types" "^1.2.11"
     "@lugia/lugiad-runtime-lib" "^1.1.6"
     "@lugia/lugiad-types" "^1.2.10"
