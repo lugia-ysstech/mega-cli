@@ -1,6 +1,6 @@
 {
   "name": "@lugia/mega-webpack",
-  "version": "1.6.19",
+  "version": "1.6.20",
   "main": "./lib/index.js",
   "publishConfig": {
     "access": "public"
@@ -17,8 +17,8 @@
   "author": "#lugia# @hanjingbo",
   "dependencies": {
     "@lugia/babel-preset-mega": "^1.2.2",
-    "@lugia/lugiad-loader": "^1.4.14",
-    "@lugia/lugiadac-loader": "^1.0.15",
+    "@lugia/lugiad-loader": "^1.4.15",
+    "@lugia/lugiadac-loader": "^1.0.16",
     "@lugia/mega-utils": "^1.6.3",
     "assert": "^1.4.1",
     "autoprefixer": "^8.6.5",
