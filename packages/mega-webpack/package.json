@@ -53,7 +53,7 @@
     "less-loader": "^4.1.0",
     "memory-fs": "^0.4.1",
     "pkg-up": "^2.0.0",
-    "postcss": "^6.0.23",
+    "postcss": "^7.0.36",
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-loader": "^2.1.6",
     "progress-bar-webpack-plugin": "^1.12.1",
