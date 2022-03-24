@@ -18,7 +18,7 @@
 
 "@babel/runtime-corejs2@^7.2.0":
   version "7.5.5"
-  resolved "https://registry.npm.taobao.org/@babel/runtime-corejs2/download/@babel/runtime-corejs2-7.5.5.tgz?cache=0&sync_timestamp=1563398510575&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime-corejs2%2Fdownload%2F%40babel%2Fruntime-corejs2-7.5.5.tgz#c3214c08ef20341af4187f1c9fbdc357fbec96b2"
+  resolved "https://registry.npmmirror.com/@babel/runtime-corejs2/download/@babel/runtime-corejs2-7.5.5.tgz?cache=0&sync_timestamp=1563398510575&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime-corejs2%2Fdownload%2F%40babel%2Fruntime-corejs2-7.5.5.tgz#c3214c08ef20341af4187f1c9fbdc357fbec96b2"
   integrity sha1-wyFMCO8gNBr0GH8cn73DV/vslrI=
   dependencies:
     core-js "^2.6.5"
@@ -33,7 +33,7 @@
 
 "@babel/runtime@^7.4.5":
   version "7.5.5"
-  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  resolved "https://registry.npmmirror.com/@babel/runtime/download/@babel/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha1-dPulbTXvvspEQJHHhQzNSU/S8TI=
   dependencies:
     regenerator-runtime "^0.13.2"
@@ -49,24 +49,24 @@
 
 "@emotion/is-prop-valid@^0.7.3":
   version "0.7.3"
-  resolved "https://registry.npm.taobao.org/@emotion/is-prop-valid/download/@emotion/is-prop-valid-0.7.3.tgz#a6bf4fa5387cbba59d44e698a4680f481a8da6cc"
+  resolved "https://registry.npmmirror.com/@emotion/is-prop-valid/download/@emotion/is-prop-valid-0.7.3.tgz#a6bf4fa5387cbba59d44e698a4680f481a8da6cc"
   integrity sha1-pr9PpTh8u6WdROaYpGgPSBqNpsw=
   dependencies:
     "@emotion/memoize" "0.7.1"
 
 "@emotion/memoize@0.7.1":
   version "0.7.1"
-  resolved "https://registry.npm.taobao.org/@emotion/memoize/download/@emotion/memoize-0.7.1.tgz#e93c13942592cf5ef01aa8297444dc192beee52f"
+  resolved "https://registry.npmmirror.com/@emotion/memoize/download/@emotion/memoize-0.7.1.tgz#e93c13942592cf5ef01aa8297444dc192beee52f"
   integrity sha1-6TwTlCWSz17wGqgpdETcGSvu5S8=
 
 "@emotion/unitless@^0.7.0":
   version "0.7.3"
-  resolved "https://registry.npm.taobao.org/@emotion/unitless/download/@emotion/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
+  resolved "https://registry.npmmirror.com/@emotion/unitless/download/@emotion/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
   integrity sha1-YxCgR/EtIaEDb7AxMXIZiSRAQW8=
 
 "@lugia/css@1.0.18", "@lugia/css@^1.0.18":
   version "1.0.18"
-  resolved "https://registry.npm.taobao.org/@lugia/css/download/@lugia/css-1.0.18.tgz#41980fa070285d3073de1b2a6db114564355cc34"
+  resolved "https://registry.npmmirror.com/@lugia/css/download/@lugia/css-1.0.18.tgz#41980fa070285d3073de1b2a6db114564355cc34"
   integrity sha1-QZgPoHAoXTBz3hsqbbEUVkNVzDQ=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -74,7 +74,7 @@
 
 "@lugia/lugia-web@^1.1.0-39":
   version "1.1.0-39"
-  resolved "https://registry.npm.taobao.org/@lugia/lugia-web/download/@lugia/lugia-web-1.1.0-39.tgz#97d0e2662898dc6cdcba10beb5134db53ad6d65a"
+  resolved "https://registry.npmmirror.com/@lugia/lugia-web/download/@lugia/lugia-web-1.1.0-39.tgz#97d0e2662898dc6cdcba10beb5134db53ad6d65a"
   integrity sha1-l9DiZiiY3GzcuhC+tRNNtTrW1lo=
   dependencies:
     "@lugia/css" "1.0.18"
@@ -110,7 +110,7 @@
 
 "@lugia/lugiax-core@^1.0.8":
   version "1.0.8"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.8.tgz#400526fb14b6049febf5c808cb913226379ef3b6"
+  resolved "https://registry.npmmirror.com/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.8.tgz#400526fb14b6049febf5c808cb913226379ef3b6"
   integrity sha1-QAUm+xS2BJ/r9cgIy5EyJjee87Y=
   dependencies:
     immutable "^3.8.2"
@@ -120,7 +120,7 @@
 
 "@lugia/lugiax-router@^1.0.12":
   version "1.0.12"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.12.tgz#fb15d4525a234d71272f145952faba50b20d72ef"
+  resolved "https://registry.npmmirror.com/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.12.tgz#fb15d4525a234d71272f145952faba50b20d72ef"
   integrity sha1-+xXUUlojTXEnLxRZUvq6ULINcu8=
   dependencies:
     "@lugia/lugiax" "^1.0.9"
@@ -131,7 +131,7 @@
 
 "@lugia/lugiax@^1.0.9":
   version "1.0.9"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiax/download/@lugia/lugiax-1.0.9.tgz#97d26f74ca7304628190e98eb0bca439054a597b"
+  resolved "https://registry.npmmirror.com/@lugia/lugiax/download/@lugia/lugiax-1.0.9.tgz#97d26f74ca7304628190e98eb0bca439054a597b"
   integrity sha1-l9JvdMpzBGKBkOmOsLykOQVKWXs=
   dependencies:
     "@lugia/lugiax-core" "^1.0.8"
@@ -139,14 +139,14 @@
 
 "@lugia/math@1.0.8":
   version "1.0.8"
-  resolved "https://registry.npm.taobao.org/@lugia/math/download/@lugia/math-1.0.8.tgz#c82818fc22bbfd2d98d33ac1ad39ab165116e8ef"
+  resolved "https://registry.npmmirror.com/@lugia/math/download/@lugia/math-1.0.8.tgz#c82818fc22bbfd2d98d33ac1ad39ab165116e8ef"
   integrity sha1-yCgY/CK7/S2Y0zrBrTmrFlEW6O8=
   dependencies:
     "@babel/runtime" "^7.4.5"
 
 "@lugia/object-utils@1.0.12", "@lugia/object-utils@^1.0.12":
   version "1.0.12"
-  resolved "https://registry.npm.taobao.org/@lugia/object-utils/download/@lugia/object-utils-1.0.12.tgz#7706dce14319fe107b6ca08595827cc77a46e270"
+  resolved "https://registry.npmmirror.com/@lugia/object-utils/download/@lugia/object-utils-1.0.12.tgz#7706dce14319fe107b6ca08595827cc77a46e270"
   integrity sha1-dwbc4UMZ/hB7bKCFlYJ8x3pG4nA=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -155,14 +155,14 @@
 
 "@lugia/ramada@1.0.2", "@lugia/ramada@^1.0.2":
   version "1.0.2"
-  resolved "https://registry.npm.taobao.org/@lugia/ramada/download/@lugia/ramada-1.0.2.tgz#a5e8e4fd1681ff85849688e6f70b72a312c6ad26"
+  resolved "https://registry.npmmirror.com/@lugia/ramada/download/@lugia/ramada-1.0.2.tgz#a5e8e4fd1681ff85849688e6f70b72a312c6ad26"
   integrity sha1-pejk/RaB/4WElojm9wtyoxLGrSY=
   dependencies:
     "@babel/runtime" "^7.4.5"
 
 "@lugia/react-devtools-core@^1.0.3":
   version "1.0.3"
-  resolved "https://registry.npm.taobao.org/@lugia/react-devtools-core/download/@lugia/react-devtools-core-1.0.3.tgz#9533850da98000b49cf9c62db34383d5270d669e"
+  resolved "https://registry.npmmirror.com/@lugia/react-devtools-core/download/@lugia/react-devtools-core-1.0.3.tgz#9533850da98000b49cf9c62db34383d5270d669e"
   integrity sha1-lTOFDamAALSc+cYts0OD1ScNZp4=
   dependencies:
     shell-quote "^1.6.1"
@@ -170,7 +170,7 @@
 
 "@lugia/theme-config@1.0.33":
   version "1.0.33"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-config/download/@lugia/theme-config-1.0.33.tgz#8087d4832236e939790ccd5b0f0243c262d9b9ca"
+  resolved "https://registry.npmmirror.com/@lugia/theme-config/download/@lugia/theme-config-1.0.33.tgz#8087d4832236e939790ccd5b0f0243c262d9b9ca"
   integrity sha1-gIfUgyI26Tl5DM1bDwJDwmLZuco=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -179,7 +179,7 @@
 
 "@lugia/theme-core@1.0.33", "@lugia/theme-core@^1.0.33":
   version "1.0.33"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-core/download/@lugia/theme-core-1.0.33.tgz#c0bafea05c4f3b0d0d396cea0b582bae0909f51d"
+  resolved "https://registry.npmmirror.com/@lugia/theme-core/download/@lugia/theme-core-1.0.33.tgz#c0bafea05c4f3b0d0d396cea0b582bae0909f51d"
   integrity sha1-wLr+oFxPOw0NOWzqC1grrgkJ9R0=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -187,7 +187,7 @@
 
 "@lugia/theme-css-hoc@1.0.60":
   version "1.0.60"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-css-hoc/download/@lugia/theme-css-hoc-1.0.60.tgz#4be39848f53c5d51db21736f7bd232e46d2ebfac"
+  resolved "https://registry.npmmirror.com/@lugia/theme-css-hoc/download/@lugia/theme-css-hoc-1.0.60.tgz#4be39848f53c5d51db21736f7bd232e46d2ebfac"
   integrity sha1-S+OYSPU8XVHbIXNve9Iy5G0uv6w=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -200,14 +200,14 @@
 
 "@lugia/theme-hoc-devtools@1.0.7", "@lugia/theme-hoc-devtools@^1.0.7":
   version "1.0.7"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-hoc-devtools/download/@lugia/theme-hoc-devtools-1.0.7.tgz#01dd36ae9715a3df743a3563022cf6401017cac9"
+  resolved "https://registry.npmmirror.com/@lugia/theme-hoc-devtools/download/@lugia/theme-hoc-devtools-1.0.7.tgz#01dd36ae9715a3df743a3563022cf6401017cac9"
   integrity sha1-Ad02rpcVo990OjVjAiz2QBAXysk=
   dependencies:
     "@lugia/react-devtools-core" "^1.0.3"
 
 "@lugia/theme-hoc@1.0.44":
   version "1.0.44"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-hoc/download/@lugia/theme-hoc-1.0.44.tgz#fe61bedb303197e5c44bcd0dde67bdb8a3a6907a"
+  resolved "https://registry.npmmirror.com/@lugia/theme-hoc/download/@lugia/theme-hoc-1.0.44.tgz#fe61bedb303197e5c44bcd0dde67bdb8a3a6907a"
   integrity sha1-/mG+2zAxl+XES80N3me9uKOmkHo=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -217,7 +217,7 @@
 
 "@lugia/theme-utils@1.0.7", "@lugia/theme-utils@^1.0.7":
   version "1.0.7"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-utils/download/@lugia/theme-utils-1.0.7.tgz#1ae88cc755d1e177bbd60a347e58801f6653be4c"
+  resolved "https://registry.npmmirror.com/@lugia/theme-utils/download/@lugia/theme-utils-1.0.7.tgz#1ae88cc755d1e177bbd60a347e58801f6653be4c"
   integrity sha1-GuiMx1XR4Xe71go0fliAH2ZTvkw=
   dependencies:
     "@babel/runtime" "^7.4.5"
@@ -225,7 +225,7 @@
 
 "@lugia/type-utils@^1.0.4":
   version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@lugia/type-utils/download/@lugia/type-utils-1.0.4.tgz#d1a4ffc670ae4bdac6326f376f97a18d3476b366"
+  resolved "https://registry.npmmirror.com/@lugia/type-utils/download/@lugia/type-utils-1.0.4.tgz#d1a4ffc670ae4bdac6326f376f97a18d3476b366"
   integrity sha1-0aT/xnCuS9rGMm83b5ehjTR2s2Y=
 
 add-dom-event-listener@1.x, add-dom-event-listener@^1.1.0:
@@ -318,7 +318,7 @@ babel-code-frame@6.22.0:
 
 babel-plugin-import@^1.12.0:
   version "1.12.0"
-  resolved "https://registry.npm.taobao.org/babel-plugin-import/download/babel-plugin-import-1.12.0.tgz#12d50950aecfd8de3f10880730221f0f0843a755"
+  resolved "https://registry.npmmirror.com/babel-plugin-import/download/babel-plugin-import-1.12.0.tgz#12d50950aecfd8de3f10880730221f0f0843a755"
   integrity sha1-EtUJUK7P2N4/EIgHMCIfDwhDp1U=
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
@@ -326,7 +326,7 @@ babel-plugin-import@^1.12.0:
 
 "babel-plugin-styled-components@>= 1":
   version "1.10.0"
-  resolved "https://registry.npm.taobao.org/babel-plugin-styled-components/download/babel-plugin-styled-components-1.10.0.tgz#ff1f42ad2cc78c21f26b62266b8f564dbc862939"
+  resolved "https://registry.npmmirror.com/babel-plugin-styled-components/download/babel-plugin-styled-components-1.10.0.tgz#ff1f42ad2cc78c21f26b62266b8f564dbc862939"
   integrity sha1-/x9CrSzHjCHya2Ima49WTbyGKTk=
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.0.0"
@@ -336,7 +336,7 @@ babel-plugin-import@^1.12.0:
 
 babel-plugin-syntax-jsx@^6.18.0:
   version "6.18.0"
-  resolved "https://registry.npm.taobao.org/babel-plugin-syntax-jsx/download/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
+  resolved "https://registry.npmmirror.com/babel-plugin-syntax-jsx/download/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
   integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
 
 babel-polyfill@6.26.0:
@@ -379,7 +379,7 @@ brace-expansion@^1.0.0:
 
 camelize@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/camelize/download/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
+  resolved "https://registry.npmmirror.com/camelize/download/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
 chalk@1.1.3, chalk@^1.1.0:
@@ -479,7 +479,7 @@ core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7:
 
 core-js@^2.6.5:
   version "2.6.9"
-  resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
+  resolved "https://registry.npmmirror.com/core-js/download/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
   integrity sha1-a0shRiDINBUuF5Mjcn/Bl0GwhPI=
 
 cross-spawn@5.1.0:
@@ -506,7 +506,7 @@ css-color-keywords@^1.0.0:
 
 css-to-react-native@^2.2.2:
   version "2.3.0"
-  resolved "https://registry.npm.taobao.org/css-to-react-native/download/css-to-react-native-2.3.0.tgz#bf80d24ec4a08e430306ef429c0586e6ed5485f7"
+  resolved "https://registry.npmmirror.com/css-to-react-native/download/css-to-react-native-2.3.0.tgz#bf80d24ec4a08e430306ef429c0586e6ed5485f7"
   integrity sha1-v4DSTsSgjkMDBu9CnAWG5u1Uhfc=
   dependencies:
     camelize "^1.0.0"
@@ -522,14 +522,14 @@ debug@^2.6.0, debug@^2.6.6:
 
 decamelize@^3.2.0:
   version "3.2.0"
-  resolved "https://registry.npm.taobao.org/decamelize/download/decamelize-3.2.0.tgz#84b8e8f4f8c579f938e35e2cc7024907e0090851"
+  resolved "https://registry.npmmirror.com/decamelize/download/decamelize-3.2.0.tgz#84b8e8f4f8c579f938e35e2cc7024907e0090851"
   integrity sha1-hLjo9PjFefk4414sxwJJB+AJCFE=
   dependencies:
     xregexp "^4.2.4"
 
 deepmerge@^3.2.0:
   version "3.3.0"
-  resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
+  resolved "https://registry.npmmirror.com/deepmerge/download/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha1-08R/1vOpPVF7FEJrBiihewEl9fc=
 
 detect-port-alt@1.1.3:
@@ -784,7 +784,7 @@ is-fullwidth-code-point@^2.0.0:
 
 is-plain-object@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.npm.taobao.org/is-plain-object/download/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
+  resolved "https://registry.npmmirror.com/is-plain-object/download/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
   integrity sha1-R7/F2htdUNZBEIBsGZNZSC51qSg=
   dependencies:
     isobject "^4.0.0"
@@ -831,7 +831,7 @@ ismobilejs@^0.5.1:
 
 isobject@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.npm.taobao.org/isobject/download/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
+  resolved "https://registry.npmmirror.com/isobject/download/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
   integrity sha1-PxyRVec7GSAiqAgZus0DQ3EWl7A=
 
 isomorphic-fetch@^2.1.1:
@@ -908,7 +908,7 @@ lru-cache@^4.0.1:
 
 memoize-one@^5.0.0:
   version "5.0.4"
-  resolved "https://registry.npm.taobao.org/memoize-one/download/memoize-one-5.0.4.tgz#005928aced5c43d890a4dfab18ca908b0ec92cbc"
+  resolved "https://registry.npmmirror.com/memoize-one/download/memoize-one-5.0.4.tgz#005928aced5c43d890a4dfab18ca908b0ec92cbc"
   integrity sha1-AFkorO1cQ9iQpN+rGMqQiw7JLLw=
 
 mimic-fn@^1.0.0:
@@ -1351,7 +1351,7 @@ regenerator-runtime@^0.12.0:
 
 regenerator-runtime@^0.13.2:
   version "0.13.2"
-  resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
+  resolved "https://registry.npmmirror.com/regenerator-runtime/download/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
   integrity sha1-MuWcmm+5saSv8JtJMMotRHc0NEc=
 
 requires-port@^1.0.0:
@@ -1517,7 +1517,7 @@ strip-ansi@^4.0.0:
 
 styled-components@4.2.0:
   version "4.2.0"
-  resolved "https://registry.npm.taobao.org/styled-components/download/styled-components-4.2.0.tgz#811fbbec4d64c7189f6c7482b9eb6fefa7fefef7"
+  resolved "https://registry.npmmirror.com/styled-components/download/styled-components-4.2.0.tgz#811fbbec4d64c7189f6c7482b9eb6fefa7fefef7"
   integrity sha1-gR+77E1kxxifbHSCuetv76f+/vc=
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
@@ -1655,7 +1655,7 @@ which@^1.2.14, which@^1.2.9:
 
 ws@^3.3.1:
   version "3.3.3"
-  resolved "https://registry.npm.taobao.org/ws/download/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
+  resolved "https://registry.npmmirror.com/ws/download/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
   integrity sha1-8c+E/i1ekB686U767OeF8YeiKPI=
   dependencies:
     async-limiter "~1.0.0"
@@ -1664,7 +1664,7 @@ ws@^3.3.1:
 
 xregexp@^4.2.4:
   version "4.2.4"
-  resolved "https://registry.npm.taobao.org/xregexp/download/xregexp-4.2.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxregexp%2Fdownload%2Fxregexp-4.2.4.tgz#02a4aea056d65a42632c02f0233eab8e4d7e57ed"
+  resolved "https://registry.npmmirror.com/xregexp/download/xregexp-4.2.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxregexp%2Fdownload%2Fxregexp-4.2.4.tgz#02a4aea056d65a42632c02f0233eab8e4d7e57ed"
   integrity sha1-AqSuoFbWWkJjLALwIz6rjk1+V+0=
   dependencies:
     "@babel/runtime-corejs2" "^7.2.0"

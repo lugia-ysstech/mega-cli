@@ -49,7 +49,7 @@
 
 "@lugia/lugiad-compiler@^1.2.16":
   version "1.2.16"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad-compiler/-/lugiad-compiler-1.2.16.tgz#df64a9302e4a92e8c84bf1fbe236b38abb9991e0"
+  resolved "https://registry.npmmirror.com/@lugia%2flugiad-compiler/-/lugiad-compiler-1.2.16.tgz#df64a9302e4a92e8c84bf1fbe236b38abb9991e0"
   integrity sha512-EaeTGA18wN9RCJuUeRT86+cfRAvUj1ChkX99nlecho2CBQl0AeePBZxEUkrvsxYSLkS01Z8GzShHxvAAU9JpqQ==
   dependencies:
     "@lugia/array-utils" "^1.0.2"
@@ -70,7 +70,7 @@
 
 "@lugia/lugiad-runtime@1.2.23":
   version "1.2.23"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad-runtime/-/lugiad-runtime-1.2.23.tgz#9e6e2d96fb62958c70d7b269bffebcb04bcac231"
+  resolved "https://registry.npmmirror.com/@lugia%2flugiad-runtime/-/lugiad-runtime-1.2.23.tgz#9e6e2d96fb62958c70d7b269bffebcb04bcac231"
   integrity sha512-F24Jx2UIXrC6rrqK1Sh3NjxEGkOa5yEPMJ2xEiLMghw0woDcfGzCtUDirzjGV22kPSdT0LwxTNoIyxtIeH8Ipw==
   dependencies:
     "@lugia/lugiad-compiler" "^1.2.16"
@@ -91,7 +91,7 @@
 
 "@lugia/lugiad@^1.2.13":
   version "1.2.13"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiad/-/lugiad-1.2.13.tgz#fa445f8b2f0812e2448aba07ed4aa391139552eb"
+  resolved "https://registry.npmmirror.com/@lugia%2flugiad/-/lugiad-1.2.13.tgz#fa445f8b2f0812e2448aba07ed4aa391139552eb"
   integrity sha512-JHsDuZSIZor/tdjN+8LViPHdn0EbN9OFR/b80Ev7hoCUzyuz5Ug+MGT89PgIbTt+S0ctEOQj9bpJsNGWNrqipg==
   dependencies:
     "@lugia/lugiad-types" "^1.2.10"
@@ -112,7 +112,7 @@
 
 "@lugia/lugiadc-render-react-plugin@^1.2.18":
   version "1.2.18"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.2.18.tgz#4d911c0357ead13c67811f7168e89f4f539e0b2e"
+  resolved "https://registry.npmmirror.com/@lugia%2flugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.2.18.tgz#4d911c0357ead13c67811f7168e89f4f539e0b2e"
   integrity sha512-1joyNRj12IEwM0O8To1V5LfYo98UMkebp4WCdoSGSu5/zJroDKmWVuLxrX2DqA+ByDLgWXyad/vgpgy1Xok7PA==
   dependencies:
     "@lugia/lugiad-compiler-types" "^1.2.11"
@@ -132,7 +132,7 @@
 
 "@lugia/lugiadc-render@^1.2.18":
   version "1.2.18"
-  resolved "http://192.168.102.79/verdaccio/@lugia%2flugiadc-render/-/lugiadc-render-1.2.18.tgz#f16efcb481c0531329c28fff85c2b246f1dfba1e"
+  resolved "https://registry.npmmirror.com/@lugia%2flugiadc-render/-/lugiadc-render-1.2.18.tgz#f16efcb481c0531329c28fff85c2b246f1dfba1e"
   integrity sha512-hiWTDdm0P4pNaK+1/O/fRDl98/2bLtussT3/4LnnPdRZVSWgUoS1YjXHIy/lfCFV/acL42vF6Ph93IQ2BGiK1Q==
   dependencies:
     "@lugia/geometry" "^1.0.14"
