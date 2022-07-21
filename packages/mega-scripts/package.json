@@ -43,7 +43,7 @@
     "parse-json-pretty": "^0.1.0",
     "react-app-polyfill": "^1.0.2",
     "rimraf": "^2.6.2",
-    "terser": "^3.17.0",
+    "terser": "^4.8.1",
     "through2": "^3.0.1",
     "update-notifier": "^2.5.0",
     "vinyl-fs": "^3.0.3",
