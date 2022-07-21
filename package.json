@@ -78,7 +78,7 @@
     "slash": "^3.0.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
-    "terser": "^3.17.0",
+    "terser": "^4.8.1",
     "through2": "^3.0.1",
     "typescript": "^3.5.3",
     "vinyl-fs": "^3.0.3"
