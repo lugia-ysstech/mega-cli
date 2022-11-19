@@ -192,10 +192,10 @@ deepmerge@^3.2.0:
   resolved "https://registry.npmmirror.com/deepmerge/download/deepmerge-3.3.0.tgz?cache=0&sync_timestamp=1572279812893&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdeepmerge%2Fdownload%2Fdeepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha1-08R/1vOpPVF7FEJrBiihewEl9fc=
 
-emojis-list@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/emojis-list/download/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
-  integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
+emojis-list@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
+  integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
 is-plain-object@^3.0.0:
   version "3.0.0"
@@ -216,13 +216,13 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-loader-utils@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.npmmirror.com/loader-utils/download/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
-  integrity sha1-H/XcaRHJ8KBiUxpMBLYJQGEIwsc=
+loader-utils@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.2.tgz#29a957f3a63973883eb684f10ffd3d151fec01a3"
+  integrity sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==
   dependencies:
     big.js "^5.2.2"
-    emojis-list "^2.0.0"
+    emojis-list "^3.0.0"
     json5 "^1.0.1"
 
 minimist@^1.2.0:
